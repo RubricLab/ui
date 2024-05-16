@@ -42,5 +42,5 @@
     "prepublishOnly": "bun run build && changeset && changeset version && changeset publish"
   },
   "type": "module",
-  "version": "0.0.0"
+  "version": "0.0.1"
 }
