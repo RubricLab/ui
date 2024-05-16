@@ -1,4 +1,4 @@
-import '~/styles.css'
+import "./styles.css"
 
-export * from '~/ui/button'
-export * from '~/ui/tooltip'
+export * from './ui/button'
+export * from './ui/tooltip'

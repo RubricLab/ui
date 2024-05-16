@@ -29,8 +29,7 @@
     "typescript": "^5.4.5"
   },
   "files": [
-    "build",
-    "src"
+    "build"
   ],
   "license": "gonuts",
   "main": "build/index.js",
@@ -46,9 +45,9 @@
     "cosmos": "cosmos",
     "cosmos-export": "cosmos-export",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
-    "prepublishOnly": "bun run build && changeset && changeset version && changeset publish"
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
   },
+  "source": "src/index.ts",
   "type": "module",
-  "version": "0.0.1"
+  "version": "2.0.8"
 }
