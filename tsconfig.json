@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./src/*"]
+		},
+		"outDir": "./build"
+	},
+	"extends": "@rubriclab/typescript-config/react-library",
+	"exclude": ["node_modules", "build"],
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}
