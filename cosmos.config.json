@@ -1,0 +1,4 @@
+{
+  "plugins": ["react-cosmos-plugin-webpack"],
+  "port": 5001
+}

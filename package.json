@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.0.7",
+    "html-webpack-plugin": "^5.6.0",
     "react": "^18.3.1"
   },
   "devDependencies": {
@@ -18,9 +19,12 @@
     "eslint": "^8.52.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "react-cosmos": "^6.1.1",
+    "react-cosmos-plugin-webpack": "^6.1.1",
     "rollup": "^4.17.2",
     "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.3",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.4.5"
   },
   "files": [
@@ -38,6 +42,8 @@
     "bleed": "ncu -u && bun i",
     "build": "rollup -c",
     "clean": "find . \\( -name 'node_modules' -o -name 'bun.lockb' -o -name 'build' \\) -prune -exec rm -rf {} +",
+    "cosmos": "cosmos",
+    "cosmos-export": "cosmos-export",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
     "prepublishOnly": "bun run build && changeset && changeset version && changeset publish"
