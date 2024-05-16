@@ -1,13 +1,17 @@
 import config from '@rubriclab/tailwind-config'
-import {Config} from 'tailwindcss'
+import { Config } from 'tailwindcss'
 
 export default {
 	content: ['./src/**/*.tsx'],
 	presets: [config],
 	theme: {
-		colors: {
-			...config.theme.colors
+		extend: {
+			fontFamily: {
+				geist: ['GeistSans', 'sans-serif'],
+			},
 		},
-		extend: {}
-	}
+		colors: {
+			...config.theme.colors,
+		},
+	},
 } satisfies Config
