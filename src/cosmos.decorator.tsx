@@ -1,9 +1,17 @@
+import clsx from 'clsx'
 import * as React from 'react'
 import {DarkMode} from 'react-cosmos-dark-mode/DarkMode'
 
 export default function GlobalDecorator(props: {children: React.ReactNode}) {
+	const scale: {[key: string]: string} = {
+		'100%': 'scale-[100%]',
+		'150%': 'scale-[150%]',
+		'200%': 'scale-[200%]',
+		'350%': 'scale-[300%]'
+	}
+	const [currentScale, setCurrentScale] = React.useState<string>(scale['100%'])
+
 	const positions: {[key: string]: string} = {
-		top: 'top-0',
 		center: 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
 	}
 
@@ -11,21 +19,24 @@ export default function GlobalDecorator(props: {children: React.ReactNode}) {
 		positions.center
 	)
 
-	const handleClick = (position: string) => {
-		setCurrentPosition(positions[position])
+	const handleClick = (type: 'position' | 'scale', value: string) => {
+		if (type === 'position') setCurrentPosition(positions[value])
+		else setCurrentScale(scale[value])
 	}
 
 	return (
 		<>
-			<div className={`absolute ${currentPosition}`}>
-				<DarkMode>{props.children}</DarkMode>
+			<div className={clsx('absolute', currentPosition)}>
+				<DarkMode>
+					<div className={clsx(currentScale)}>{props.children}</div>
+				</DarkMode>
 			</div>
 			<div className='absolute bottom-0 left-1/2 mb-2 flex -translate-x-1/2 transform justify-between divide-x-[1px] divide-dashed divide-zinc-500 rounded-md bg-black py-1 text-xs leading-[100%] text-white ring-1 ring-zinc-500'>
 				{Object.keys(positions).map(position => (
 					<button
 						className='flex px-2 py-0.5 text-xs'
 						key={position}
-						onClick={() => handleClick(position)}>
+						onClick={() => handleClick('position', position)}>
 						{position === 'top' ? (
 							<svg
 								data-testid='geist-icon'
@@ -55,6 +66,14 @@ export default function GlobalDecorator(props: {children: React.ReactNode}) {
 									fill='currentColor'></path>
 							</svg>
 						)}
+					</button>
+				))}
+				{Object.keys(scale).map(s => (
+					<button
+						className='flex px-2 py-0.5 text-xs'
+						key={s}
+						onClick={() => handleClick('scale', s)}>
+						{s}
 					</button>
 				))}
 			</div>
