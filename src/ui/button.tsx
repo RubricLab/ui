@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import * as React from 'react'
 
 const buttonVariants = cva(
-	'inline-flex items-center border-[1px] justify-center border-[var(--foreground)] leading-[120%] text-[var(--foreground)] bg-[var(--background)] focus:outline-2 focus:outline-offset-2 focus:outline-[var(--foreground)] disabled:opacity-80 disabled:pointer-events-none',
+	'inline-flex items-center border-[1px] justify-center dark:border-[#fcfcfc] border-[#050505] leading-[120%] dark:text-[#fcfcfc] text-[#050505] dark:bg-[#050505] bg-[#fcfcfc] focus:outline-2 focus:outline-offset-2 focus:outline-[#fcfcfc] disabled:opacity-80 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -19,7 +19,7 @@ const buttonVariants = cva(
 				sm: 'rounded-[2px] py-[3px] px-[6px] text-[12px]',
 				md: 'rounded-[3px] py-[4px] px-[8px] text-[16px]',
 				lg: 'rounded-[4px] py-[6px] px-[14px] text-[18px]'
-			},
+			}
 		},
 		defaultVariants: {
 			variant: 'default',

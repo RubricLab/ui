@@ -1,6 +1,6 @@
 {
 	"globalImports": ["styles.css"],
-	"plugins": ["react-cosmos-plugin-webpack"],
+	"plugins": ["react-cosmos-dark-mode", "react-cosmos-plugin-webpack"],
 	"port": 5001,
 	"rootDir": "src",
 	"watchDir": "src/ui/__fixtures__"

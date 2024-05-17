@@ -5,26 +5,12 @@
 @font-face {
 	font-family: 'GeistSans';
 	src: url('/src/assets/fonts/GeistVF.woff2') format('woff2');
-	font-weight: 100 900; /* Define the range of weights */
+	font-weight: 100 900;
 	font-style: normal;
 }
 
 @layer base {
-	:root {
-		--background: #fcfcfc;
-        --foreground: #050505;
-	}
-
-	.dark {
-		--background: #050505;
-        --foreground: #fcfcfc;
-	}
-
 	* {
-		@apply font-sans;
-	}
-
-	body {
-		@apply bg-[var(--background)];
+		@apply font-geist;
 	}
 }
