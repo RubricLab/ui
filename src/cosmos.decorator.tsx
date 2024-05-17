@@ -58,6 +58,19 @@ export default function GlobalDecorator(props: {children: React.ReactNode}) {
 					</button>
 				))}
 			</div>
+			<div className='absolute bottom-0 right-0'>
+				<svg
+					width='60'
+					height='60'
+					viewBox='0 0 800 800'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'>
+					<path
+						d='M300 600V300H400V400H500V300H600V400H500V500H400V600H300Z'
+						fill='black'
+					/>
+				</svg>
+			</div>
 		</>
 	)
 }
