@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import * as React from 'react'
 
 const buttonVariants = cva(
-	'inline-flex items-center border-[1px] justify-center dark:border-[#fcfcfc] border-[#050505] leading-[120%] dark:text-[#fcfcfc] text-[#050505] dark:bg-[#050505] bg-[#fcfcfc] focus:outline-2 focus:outline-offset-2 focus:outline-[#fcfcfc] disabled:opacity-80 disabled:pointer-events-none',
+	'inline-flex items-center border-[1px] justify-center dark:border-[#050505] border-[#050505] leading-[120%] dark:text-[#fcfcfc] text-[#050505] dark:bg-[#050505] bg-[#fcfcfc] focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800 disabled:opacity-80 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -13,7 +13,7 @@ const buttonVariants = cva(
 				outline: '',
 				secondary: '',
 				ghost: '',
-				link: ''
+				loading: 'dark:border-[#050505] border-[#050505]'
 			},
 			size: {
 				sm: 'rounded-[2px] py-[3px] px-[6px] text-[12px]',
@@ -38,11 +38,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	({className, variant, size, asChild = false, ...props}, ref) => {
 		const Comp = asChild ? Slot : 'button'
 		return (
-			<Comp
-				className={clsx(buttonVariants({variant, size, className}))}
-				ref={ref}
-				{...props}
-			/>
+			<>
+				<Comp
+					className={clsx(buttonVariants({variant, size, className}))}
+					ref={ref}
+					{...props}>
+					{variant == 'loading' ? '' : props.children}
+				</Comp>
+			</>
 		)
 	}
 )
