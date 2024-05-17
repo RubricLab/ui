@@ -2,8 +2,9 @@ import React from 'react';
 import { Button } from '../button';
 
 const buttonFixtures = {
-  default: <Button lol={true}>Click me</Button>,
-  large: <Button lol={false}>Click me</Button>,
+  large: <Button size="lg">Button</Button>,
+  medium: <Button size="md">Button</Button>,
+  small: <Button size="sm">Button</Button>,
 };
 
 export default buttonFixtures;
