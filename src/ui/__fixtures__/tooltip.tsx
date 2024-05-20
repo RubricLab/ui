@@ -5,12 +5,15 @@ import {
 	TooltipProvider,
 	TooltipTrigger
 } from '../tooltip'
+import { Button } from '../button'
 
 const tooltipFixtures = {
 	default: (
 		<TooltipProvider>
 			<Tooltip>
-				<TooltipTrigger>hello</TooltipTrigger>
+				<TooltipTrigger>
+					<Button>Hello</Button>
+				</TooltipTrigger>
 				<TooltipContent>
 					<p>Add to library</p>
 				</TooltipContent>
