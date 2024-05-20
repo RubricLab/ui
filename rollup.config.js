@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript'
 import autoprefixer from 'autoprefixer'
 import {defineConfig} from 'rollup'
 import postcss from 'rollup-plugin-postcss'
+import {typescriptPaths} from 'rollup-plugin-typescript-paths'
 import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
 		resolve(),
 		commonjs(),
 		typescript(),
+		typescriptPaths(),
 		postcss({
 			extract: true,
 			minimize: true,
