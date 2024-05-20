@@ -1,4 +1,5 @@
 module.exports = {
-	extends: ['@rubriclab/eslint-config'],
-	root: true
+	extends: ['@rubriclab/eslint-config', 'next/babel'],
+	root: true,
+	ignorePatterns: ['package-lock.json']
 }

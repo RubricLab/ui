@@ -8,6 +8,6 @@
 		"outDir": "./build"
 	},
 	"extends": "@rubriclab/typescript-config/react-library",
-	"exclude": ["node_modules", "build"],
+	"exclude": ["node_modules", "build", "package-lock.json"],
 	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./*.ts"]
 }
