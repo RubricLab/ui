@@ -5,7 +5,8 @@
 			"~/*": ["./src/*"]
 		},
 		"jsx": "react",
-		"outDir": "./build"
+		"outDir": "./build",
+		"esModuleInterop": true
 	},
 	"extends": "@rubriclab/typescript-config/react-library",
 	"exclude": ["node_modules", "build", "package-lock.json"],

@@ -36,6 +36,9 @@
 		"ts-loader": "^9.5.1",
 		"typescript": "^5.4.5"
 	},
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "4.9.5"
+	},
 	"files": [
 		"build"
 	],
