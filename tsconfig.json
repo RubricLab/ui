@@ -9,5 +9,5 @@
 	},
 	"extends": "@rubriclab/typescript-config/react-library",
 	"exclude": ["node_modules", "build"],
-	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./*.ts"]
 }

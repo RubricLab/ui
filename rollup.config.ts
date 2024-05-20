@@ -6,6 +6,7 @@ import {defineConfig} from 'rollup'
 import postcss from 'rollup-plugin-postcss'
 import {typescriptPaths} from 'rollup-plugin-typescript-paths'
 import tailwindcss from 'tailwindcss'
+import tailwindConfig from './tailwind.config'
 
 export default defineConfig({
 	input: 'src/index.ts',
@@ -22,7 +23,7 @@ export default defineConfig({
 			extract: true,
 			minimize: true,
 			sourceMap: true,
-			plugins: [tailwindcss(), autoprefixer()]
+			plugins: [tailwindcss(tailwindConfig), autoprefixer()]
 		})
 	],
 	external: ['react', 'react-dom']
