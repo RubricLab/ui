@@ -17,6 +17,13 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: https://registry.npmjs.org/
+      - name: 'Automated Version Bump'
+        id: version-bump
+        uses: 'phips28/gh-action-bump-version@master'
+        with:
+          tag-prefix: 'v'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - run: npm ci
       - run: npm run build
       - run: npm publish
