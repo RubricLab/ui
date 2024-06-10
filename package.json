@@ -51,12 +51,14 @@
 	},
 	"scripts": {
 		"bleed": "ncu -u && bun i",
-		"build": "rollup --config rollup.config.ts --configPlugin typescript",
+		"rollup": "rollup --config rollup.config.ts --configPlugin typescript",
+		"build": "bun build ./src/index.tsx --outdir ./build && bun run tailwindcss -i ./src/styles.css -o ./build/styles.css",
 		"clean": "find . \\( -name 'node_modules' -o -name 'bun.lockb' -o -name 'build' \\) -prune -exec rm -rf {} +",
 		"cosmos": "cosmos",
 		"cosmos-export": "cosmos-export",
 		"format": "prettier --write .",
-		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
+		"link": "link @rubriclabs/ui"
 	},
 	"source": "src/index.ts",
 	"type": "module",
