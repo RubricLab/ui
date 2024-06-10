@@ -1,4 +1,4 @@
-# @rubricLab/ui
+# @rubriclab/ui
 
 ## Description
 
