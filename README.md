@@ -1,16 +1,25 @@
-# @RubricLab/ui
+# @rubricLab/ui
 
 ## Description
-This project is a UI component library built with React and TypeScript. It includes various components like buttons and tooltips, styled with Tailwind CSS.
 
-## Installation
-To install the dependencies, run:
+This project is a UI component library built with React and TypeScript.
+
 ```sh
 bun i
 ```
 
-## Running React Cosmos
-To start React Cosmos for component development and testing, run:
+## Local testing
+
+To test a package without publishing it, run:
+
 ```sh
-bun run cosmos
+npm link
 ```
+
+Inside the project that is going to use your package, run:
+
+```sh
+npm link @rubriclab/ui
+```
+
+You can test the package locally now.
