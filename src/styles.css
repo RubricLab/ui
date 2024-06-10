@@ -13,4 +13,30 @@
 	* {
 		@apply font-geist;
 	}
+	.button-hover {
+		box-shadow: 0px 0px 0px 2px rgba(5, 5, 5, 0.05);
+	}
+
+	.button-loading-animate {
+		animation: loading-rotate 1s steps(1) infinite;
+	  }
+	
+	  @keyframes loading-rotate {
+		0% {
+		  transform: rotate(0deg);
+		}
+		25% {
+		  transform: rotate(90deg);
+		}
+		50% {
+		  transform: rotate(180deg);
+		}
+		75% {
+		  transform: rotate(270deg);
+		}
+		100% {
+		  transform: rotate(360deg);
+		}
+	  }
+
 }
