@@ -1,0 +1,22 @@
+{
+  "name": "@rubriclab/ui",
+  "version": "0.0.1",
+  "files": [
+    "src/**/*"
+  ],
+  "module": "src/index.ts",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
