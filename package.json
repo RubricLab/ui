@@ -61,7 +61,8 @@
     "cosmos-export": "cosmos-export",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
-    "link": "link @rubriclabs/ui"
+    "link": "link @rubriclabs/ui",
+	"publish": "npm publish"
   },
   "source": "src/index.ts",
   "type": "module",
