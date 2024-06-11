@@ -62,9 +62,9 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
     "link": "link @rubriclabs/ui",
-	"publish": "npm publish"
+    "publish": "npm publish"
   },
   "source": "src/index.ts",
   "type": "module",
-  "version": "2.1.1"
+  "version": "2.1.2"
 }
