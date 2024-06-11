@@ -66,5 +66,5 @@
   },
   "source": "src/index.ts",
   "type": "module",
-  "version": "2.1.7"
+  "version": "3.0.0"
 }
