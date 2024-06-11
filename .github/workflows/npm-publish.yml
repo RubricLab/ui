@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
       - uses: actions/setup-node@v3
         with:
           node-version: '20.x'
           registry-url: https://registry.npmjs.org/
+      - uses: oven-sh/setup-bun@v1
 
       - name: 'Automated Version Bump'
         id: version-bump
@@ -31,6 +31,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - run: bun install
       - run: bun run build
-      - run: bun run publish
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
