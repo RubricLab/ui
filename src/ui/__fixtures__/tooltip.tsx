@@ -14,8 +14,8 @@ const tooltipFixtures = {
 				<TooltipTrigger>
 					<Button>Hello</Button>
 				</TooltipTrigger>
-				<TooltipContent>
-					<p>Add to library</p>
+				<TooltipContent side='left'>
+					<p>Tooltip</p>
 				</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>
