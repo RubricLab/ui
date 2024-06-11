@@ -3,7 +3,7 @@ import {Checkbox} from '../checkbox'
 
 const checkboxFixtures = {
 	default: (
-		<Checkbox disabled={false} checked={false} />
+		<Checkbox disabled={false} />
 	)
 }
 
