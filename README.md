@@ -15,6 +15,20 @@ bun test
 bun run build
 ```
 
+## Test locally
+
+Inside your package, run:
+
+```sh
+bun local
+```
+
+Inside the project which is going to use the package, run:
+
+```sh
+npm link rubricui
+```
+
 ## Publish
 
 To publish a new version, bump the version number and run
