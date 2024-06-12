@@ -12,10 +12,13 @@
   },
   "files": [
     "dist/*.js",
-    "dist/*.d.ts"
+    "dist/*.d.ts",
+    "dist/*.css"
   ],
   "keywords": [
-    "UI",
+    "tailwindcss",
+    "react",
+    "ui",
     "bun"
   ],
   "license": "MIT",
@@ -29,7 +32,10 @@
   "module": "src/index.ts",
   "devDependencies": {
     "@types/bun": "latest",
+    "autoprefixer": "^10.4.19",
     "bun-plugin-dts": "latest",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
