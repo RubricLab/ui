@@ -1,5 +1,5 @@
 {
-  "name": "@rubriclab/ui",
+  "name": "rubricui",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -41,5 +41,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.3.0"
+  },
+  "publishConfig": {
+    "@RubricLab:registry": "https://registry.npmjs.org",
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
