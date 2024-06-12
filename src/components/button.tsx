@@ -6,7 +6,7 @@ const variants = { primary: "", secondary: "" };
 const sizes = { small: "", medium: "", large: "" };
 
 interface ButtonProps {
-  className: string;
+  className?: string;
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
   icon?: ReactNode;
