@@ -10,9 +10,11 @@
     "clean": "rm -rf node_modules && rm -rf bun.lockb"
   },
   "files": [
-    "dist"
+    "dist/*.js",
+    "dist/*.d.ts"
   ],
   "keywords": [
+    "UI",
     "bun"
   ],
   "license": "MIT",
