@@ -1,6 +1,7 @@
 # Dependency directories
 node_modules/
 dist
+.DS_Store
 
 # Output of 'npm pack'
 *.tgz

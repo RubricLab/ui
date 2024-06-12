@@ -6,7 +6,7 @@
   "description": "UI package by Rubric Labs",
   "scripts": {
     "build": "bun run build.mjs",
-    "local": "bun run build && npm link",
+    "watch": "bun run build --watch",
     "prepublishOnly": "bun run build",
     "clean": "rm -rf node_modules && rm -rf bun.lockb"
   },

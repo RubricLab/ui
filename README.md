@@ -17,16 +17,22 @@ bun run build
 
 ## Test locally
 
-Inside your package, run:
+Use Bun's linking commands to create a symlink between your library and the project where you want to test it, run in your package:
 
 ```sh
-bun local
+bun link
 ```
 
-Inside the project which is going to use the package, run:
+In your test project, run:
 
 ```sh
-npm link rubricui
+bun link rubricui
+```
+
+While working on your library, run the watch script to automatically rebuild your library on changes:
+
+```sh
+bun run watch
 ```
 
 ## Publish
