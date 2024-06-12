@@ -1,4 +1,3 @@
-import { cva } from "class-variance-authority";
 import { forwardRef, type ReactNode } from "react";
 import { cn } from "../utils/cn";
 
@@ -8,16 +7,16 @@ const sizes = { small: "", medium: "", large: "" };
 
 interface ButtonProps {
   className: string;
-  variant: keyof typeof variants;
-  size: keyof typeof sizes;
-  icon: ReactNode;
+  variant?: keyof typeof variants;
+  size?: keyof typeof sizes;
+  icon?: ReactNode;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant = "primary", size = "medium", ...props }, ref) => {
     return (
       <button
-        className={cn(variants[variant], sizes[size], className)}
+        className={cn("", variants[variant], sizes[size], className)}
         ref={ref}
         {...props}
       />
