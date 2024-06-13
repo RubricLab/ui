@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "description": "UI package by Rubric Labs",
   "scripts": {
-    "build": "bun run build.mjs && bun run tailwind",
+    "build": "bun run build.mjs",
     "tailwind": "bunx tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
     "prepublishOnly": "bun run build",

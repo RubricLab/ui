@@ -3,7 +3,11 @@ import { cn } from "../utils/cn";
 
 const variants = { primary: "", secondary: "" };
 
-const sizes = { small: "", medium: "", large: "" };
+const sizes = {
+  small: "rounded-[2px] h-[20px] px-[6px] py-[3px] text-xs",
+  medium: "rounded-[3px] h-[28px] px-[10px] py-[4px] text-md",
+  large: "rounded-[4px] h-[36px] px-[16px] py-[6px] text-lg",
+};
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -16,14 +20,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "medium", ...props }, ref) => {
     return (
       <button
-        style={{
-          background: "white",
-          borderColor: "black",
-          borderWidth: "1px",
-          padding: "5px 10px",
-        }}
         className={cn(
-          "underline underline-offset-4",
+          "flex items-center justify-center border",
           variants[variant],
           sizes[size],
           className
