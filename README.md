@@ -29,6 +29,18 @@ In your test project, run:
 bun link rubricui
 ```
 
+In your test project, add the file path to the `tailwind.confg.ts`
+
+```
+    {
+        ...,
+        content: [
+            ...,
+            './node_modules/rubricui/src/**/*.{js,jsx,ts,tsx}'
+        ],
+    }
+```
+
 While working on your library, run the watch script to automatically rebuild your library on changes:
 
 ```sh
