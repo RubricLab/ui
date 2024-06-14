@@ -51,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             isLoading ? "opacity-0" : "opacity-100"
           }`}
         >
-          <span>{props.icon}</span>
+          {props.icon && <span>{props.icon}</span>}
           <>{props.children}</>
         </div>
       </button>
