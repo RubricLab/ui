@@ -3,13 +3,9 @@ const rubricConfig = {
 	theme: {
 		extend: {
 			colors: {
-				"brand-primary": {
-					DEFAULT: "#FCFCFC",
-				},
-				"brand-contrast": {
-					DEFAULT: "#050505",
-				},
-			},
+        primary: "rgb(var(--primary) / <alpha-value>)",
+        contrast: "rgb(var(--contrast) / <alpha-value>)",
+      },
 			transitionDuration: {
 				"brand-duration": "300ms",
 			},
