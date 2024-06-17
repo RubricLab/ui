@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 			<input
 				type={type}
 				className={cn(
-					"flex items-center self-stretch placeholder:text-gray-400 text-xs leading-[130%] tracking-[0.12px] border bg-contrast/5 border-contrast/10 focus:outline-contrast/20",
+					"flex items-center self-stretch placeholder:text-gray-400 border bg-contrast/5 border-contrast/10 focus:outline-contrast/20",
 					sizes[size],
 					className,
 				)}
