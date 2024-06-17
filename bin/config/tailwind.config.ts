@@ -7,7 +7,7 @@ const tailwindConfig = {
 		"./src/**/*.tsx",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./node_modules/rubricui/src/**/*.{js,jsx,ts,tsx}"
+		"./node_modules/rubricui/dist/**/*.{js,jsx,ts,tsx}"
 	],
 	presets: [require("./rubric.preset.ts")],
 } satisfies Config;

@@ -1,6 +1,6 @@
 {
   "name": "rubricui",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "UI package by Rubric Labs",
@@ -17,7 +17,9 @@
   "files": [
     "dist/*.js",
     "dist/*.d.ts",
-    "dist/*.css"
+    "dist/*.css",
+    "bin/commands",
+    "bin/config"
   ],
   "keywords": [
     "tailwindcss",

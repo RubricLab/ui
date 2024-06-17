@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const rubricConfig = {
-	content: ["./node_modules/rubricui/src/**/*.{js,jsx,ts,tsx}"],
+	content: ["./node_modules/rubricui/dist/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
 			colors: {
