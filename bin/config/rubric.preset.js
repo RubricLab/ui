@@ -3,11 +3,11 @@ const rubricConfig = {
 	theme: {
 		extend: {
 			colors: {
-        primary: "rgb(var(--primary) / <alpha-value>)",
-        contrast: "rgb(var(--contrast) / <alpha-value>)",
-      },
+				"rubricui-primary": "rgb(var(--rubricui-primary) / <alpha-value>)",
+				"rubricui-contrast": "rgb(var(--rubricui-contrast) / <alpha-value>)",
+			},
 			transitionDuration: {
-				"brand-duration": "300ms",
+				"rubricui-duration": "300ms",
 			},
 		},
 	},

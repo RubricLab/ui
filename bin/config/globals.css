@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --primary: 252 252 252;
-    --contrast: 5 5 5;
+    --rubricui-primary: 252 252 252;
+    --rubricui-contrast: 5 5 5;
   }
 
   .dark {
-    --primary: 5 5 5;
-    --contrast: 252 252 252;
+    --rubricui-primary: 5 5 5;
+    --rubricui-contrast: 252 252 252;
   }
 }
 
 @layer base {
   body {
-    @apply bg-primary text-contrast;
+    @apply bg-rubricui-primary text-rubricui-contrast;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
