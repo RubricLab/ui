@@ -1,52 +1,51 @@
 import { cn } from "../utils/cn";
 
-const Loading = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      className={cn("", className)}
-      xmlns="http://www.w3.org/2000/svg"
-      width="11"
-      height="11"
-      viewBox="0 0 11 11"
-      fill="none"
-    >
-      <rect
-        x="0.393066"
-        y="0.697021"
-        width="4"
-        height="4"
-        rx="0.5"
-        fill="#FCFCFC"
-      />
-      <rect
-        opacity="0.2"
-        x="0.393066"
-        y="6.69702"
-        width="4"
-        height="4"
-        rx="0.5"
-        fill="#FCFCFC"
-      />
-      <rect
-        opacity="0.8"
-        x="6.39307"
-        y="0.697021"
-        width="4"
-        height="4"
-        rx="0.5"
-        fill="#FCFCFC"
-      />
-      <rect
-        opacity="0.4"
-        x="6.39307"
-        y="6.69702"
-        width="4"
-        height="4"
-        rx="0.5"
-        fill="#FCFCFC"
-      />
-    </svg>
-  );
+const Loading = ({
+	className,
+	size,
+}: { className?: string; size?: "small" | "medium" | "large" }) => {
+	return (
+		<svg
+			className={cn(
+				"dark:invert animate-rubricui-loading-rotate",
+				{
+					"w-[10px] h-[10px]": size === "small",
+					"w-[12px] h-[12px]": size === "medium",
+					"w-[14px] h-[14px]": size === "large",
+				},
+				className,
+			)}
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 11 11"
+		>
+			<title>Loading Button</title>
+			<rect x="0" y="0" width="4" height="4" rx="0.5" className="fill-white" />
+			<rect
+				x="0"
+				y="7"
+				width="4"
+				height="4"
+				rx="0.5"
+				className="fill-zinc-700"
+			/>
+			<rect
+				x="7"
+				y="0"
+				width="4"
+				height="4"
+				rx="0.5"
+				className="fill-zinc-200"
+			/>
+			<rect
+				x="7"
+				y="7"
+				width="4"
+				height="4"
+				rx="0.5"
+				className="fill-zinc-400"
+			/>
+		</svg>
+	);
 };
 
 export { Loading };
