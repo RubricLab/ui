@@ -5,8 +5,8 @@ const rubricConfig = {
   theme: {
     extend: {
       colors: {
-        "rubricui-primary": "rgb(var(--primary) / <alpha-value>)",
-        "rubricui-contrast": "rgb(var(--contrast) / <alpha-value>)",
+        "rubricui-primary": "rgb(var(--rubricui-primary) / <alpha-value>)",
+        "rubricui-contrast": "rgb(var(--rubricui-contrast) / <alpha-value>)",
       },
       transitionDuration: {
         "rubricui-duration": "300ms",
