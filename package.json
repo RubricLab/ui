@@ -49,6 +49,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "chalk": "^5.3.0",
