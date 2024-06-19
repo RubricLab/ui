@@ -103,8 +103,8 @@ async function executeConfig(responses) {
 
 	if (!overwriteTWConfig) {
 		const presetPrompt = `${chalk.green("+")} ${chalk.dim("presets: [")}${chalk.blue(`require("./rubric.preset.${extension}")`)}${chalk.dim("],")}`;
-		const contentPrompt = `${chalk.green("+")} ${chalk.dim("content: [")}${chalk.blue(`"./node_modules/rubricui/src/**/*.{js,jsx,ts,tsx}"`)}${chalk.dim("],")}`;
-		console.log(`\nManual changes required to ${chalk.bold("tailwind.config.ts")}:\n${presetPrompt}\n${contentPrompt}`);
+		const contentPrompt = `${chalk.green("+")} ${chalk.dim("content: [")}${chalk.blue(`"./node_modules/rubricui/dist/**/*.{js,jsx,ts,tsx}"`)}${chalk.dim("],")}`;
+		console.log(`\nManual changes required to ${chalk.bold(`tailwind.config.${extension}`)}:\n${presetPrompt}\n${contentPrompt}`);
 	} else if (existsSync(tailwindConfigSourcePath)) {
 		const tailwindConfig = await fs.readFile(tailwindConfigSourcePath, fileEnc);
 		await fs.writeFile(tailwindConfigDestinationPath, tailwindConfig, fileEnc);
