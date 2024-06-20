@@ -4,8 +4,8 @@ import { cn } from "../utils/cn";
 
 const sizes = {
 	small: "h-[20px] px-[3px] rounded-[2px] text-xs w-[180px]",
-	medium: "h-[28px] px-[4px] rounded-[3px] text-md w-[220px]",
-	large: "h-[36px] px-[6px] rounded-[4px] text-lg w-[260px]",
+	medium: "h-[28px] px-[4px] rounded-[3px] text-sm w-[220px]",
+	large: "h-[36px] px-[6px] rounded-[4px] text-base w-[260px]",
 };
 
 export interface InputProps
