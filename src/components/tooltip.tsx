@@ -1,11 +1,19 @@
-"use client"
+"use client";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { forwardRef } from "react";
+import { cn } from "../utils/cn";
 
-import clsx from "clsx";
+interface TooltipProviderProps {
+	children: React.ReactNode;
+	delayDuration?: number;
+	skipDelayDuration?: number;
+	disableHoverableContent?: boolean;
+  }
 
-const TooltipProvider = TooltipPrimitive.Provider;
+const TooltipProvider: React.FC<TooltipProviderProps> = (props) => (
+	<TooltipPrimitive.Provider {...props} />
+);
 
 const Tooltip = TooltipPrimitive.Root;
 
@@ -21,14 +29,14 @@ const TooltipContent = forwardRef<
 		<TooltipPrimitive.Content
 			ref={ref}
 			sideOffset={sideOffset}
-			className={clsx(
+			className={cn(
 				"zoom-in-95 z-50 text-xs text-rubricui-primary overflow-hidden",
 				className,
 			)}
 			{...props}
 		>
 			<div
-				className={clsx("flex items-center", {
+				className={cn("flex items-center", {
 					"flex-col -space-y-0.5": side === "top",
 					"-space-y-0.5 space-y-reverse flex-col-reverse": side === "bottom",
 					"-space-x-1.5 space-x-reverse flex-row-reverse": side === "right",
@@ -39,7 +47,7 @@ const TooltipContent = forwardRef<
 					{children}
 				</span>
 				<svg
-					className={clsx(
+					className={cn(
 						"fill-rubricui-contrast",
 						{
 							"rotate-270": side === "top",

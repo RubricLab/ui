@@ -20,7 +20,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 		return (
 			<textarea
 				className={cn(
-					"flex w-full text-rubricui-contrast border border-rubricui-contrast/20 bg-rubricui-contrast/10 shadow-sm placeholder:text-rubricui-contrast/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-rubricui-contrast/10 disabled:cursor-not-allowed disabled:opacity-50",
+					"flex w-full text-rubricui-contrast border border-rubricui-contrast/10 bg-rubricui-contrast/5 shadow-sm placeholder:text-rubricui-contrast/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-rubricui-contrast/10 disabled:cursor-not-allowed disabled:opacity-50",
 					className,
 					sizes[size],
 				)}
