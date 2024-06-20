@@ -11,8 +11,8 @@ const variants = {
 
 const sizes = {
 	small: "rounded-[2px] min-h-[20px] px-[6px] py-[3px] text-xs min-w-[66px]",
-	medium: "rounded-[3px] min-h-[28px] px-[8px] py-[4px] text-md min-w-[80px]",
-	large: "rounded-[4px] min-h-[36px] px-[14px] py-[6px] text-lg min-w-[115px]",
+	medium: "rounded-[3px] min-h-[28px] px-[8px] py-[4px] text-sm min-w-[80px]",
+	large: "rounded-[4px] min-h-[36px] px-[14px] py-[6px] text-base min-w-[115px]",
 };
 
 const states = {
