@@ -7,3 +7,4 @@ export * from "./components/toggle";
 export * from "./components/switch";
 export * from "./components/checkbox";
 export * from "./components/textarea";
+export * from "./components/popover";
