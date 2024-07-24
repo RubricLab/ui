@@ -8,3 +8,4 @@ export * from "./components/switch";
 export * from "./components/checkbox";
 export * from "./components/textarea";
 export * from "./components/popover";
+export * from "./components/calendar";
