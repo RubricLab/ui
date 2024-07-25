@@ -7,4 +7,8 @@ export * from "./components/toggle";
 export * from "./components/switch";
 export * from "./components/checkbox";
 export * from "./components/textarea";
+export * from "./components/upload";
+export * from "./components/accordion";
+export * from "./components/badge";
+export * from "./components/codeblock";
 export * from "./components/context-menu";
