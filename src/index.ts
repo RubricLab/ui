@@ -10,3 +10,4 @@ export * from "./components/textarea";
 export * from "./components/upload";
 export * from "./components/accordion";
 export * from "./components/badge";
+export * from "./components/codeblock";
