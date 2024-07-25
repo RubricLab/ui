@@ -7,8 +7,18 @@ import { cn } from "../utils/cn";
 
 const ContextMenu = ContextMenuPrimitive.Root;
 
-const ContextMenuTrigger = ({ children, className }: { children: React.ReactNode, className?: string }) => (
-  <ContextMenuPrimitive.Trigger className={cn("text-rubricui-contrast/40", className)}>{children}</ContextMenuPrimitive.Trigger>
+const ContextMenuTrigger = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <ContextMenuPrimitive.Trigger
+    className={cn("text-rubricui-contrast/40", className)}
+  >
+    {children}
+  </ContextMenuPrimitive.Trigger>
 );
 
 const ContextMenuGroup = ContextMenuPrimitive.Group;
@@ -28,7 +38,7 @@ const ContextMenuSubTrigger = forwardRef<
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex justify-between cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-rubricui-primary/10 focus:text-rubricui-primary data-[state=open]:bg-rubricui-primary/10 data-[state=open]:text-rubricui-primary",
+      "flex justify-between cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-rubricui-contrast/10 focus:text-rubricui-contrast data-[state=open]:bg-rubricui-contrast/10 data-[state=open]:text-rubricui-contrast",
       inset && "pl-8",
       className
     )}
@@ -39,18 +49,17 @@ const ContextMenuSubTrigger = forwardRef<
       width="15"
       height="15"
       viewBox="0 0 15 15"
-      className="fill-rubricui-primary"
+      className="fill-rubricui-contrast"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M6.18194 4.18185C6.35767 4.00611 6.6426 4.00611 6.81833 4.18185L9.81833 7.18185C9.90272 7.26624 9.95013 7.3807 9.95013 7.50005C9.95013 7.6194 9.90272 7.73386 9.81833 7.81825L6.81833 10.8182C6.6426 10.994 6.35767 10.994 6.18194 10.8182C6.0062 10.6425 6.0062 10.3576 6.18194 10.1819L8.86374 7.50005L6.18194 4.81825C6.0062 4.64251 6.0062 4.35759 6.18194 4.18185Z"
-        className="fill-rubricui-primary"
+        className="fill-rubricui-contrast"
         fill-rule="evenodd"
         clip-rule="evenodd"
       ></path>
     </svg>
   </ContextMenuPrimitive.SubTrigger>
-  
 ));
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName;
 
@@ -61,7 +70,7 @@ const ContextMenuSubContent = forwardRef<
   <ContextMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-primary/10 bg-rubricui-contrast p-1 text-rubricui-primary shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-contrast/10 bg-rubricui-primary p-1 text-rubricui-contrast shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       className
     )}
     {...props}
@@ -77,7 +86,7 @@ const ContextMenuContent = forwardRef<
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-primary/10 bg-rubricui-contrast p-1 text-rubricui-primary shadow-md animate-in fade-in-80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "z-50 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-contrast/10 bg-rubricui-primary p-1 text-rubricui-contrast shadow-md animate-in fade-in-80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className
       )}
       {...props}
@@ -97,7 +106,7 @@ const ContextMenuItem = forwardRef<
   <ContextMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-rubricui-primary/10 focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-rubricui-contrast/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       inset && !icon && "pl-8",
       destructive && "text-red-500",
       className
@@ -105,7 +114,7 @@ const ContextMenuItem = forwardRef<
     {...props}
   >
     {icon && (
-      <span className="mr-2 h-3.5 w-3.5 flex items-center justify-center text-red-500">
+      <span className={cn("mr-2 h-3.5 w-3.5 flex items-center justify-center")}>
         {icon}
       </span>
     )}
@@ -121,7 +130,7 @@ const ContextMenuCheckboxItem = forwardRef<
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-primary/10 focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-contrast/10 focus:text-rubricui-contrast data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     checked={checked}
@@ -158,7 +167,7 @@ const ContextMenuRadioItem = forwardRef<
   <ContextMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-primary/10 focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-contrast/10 focus:text-rubricui-contrast data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}
@@ -174,7 +183,7 @@ const ContextMenuRadioItem = forwardRef<
         >
           <path
             d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
-            className="fill-rubricui-primary"
+            className="fill-rubricui-contrast"
           ></path>
         </svg>
       </ContextMenuPrimitive.ItemIndicator>
@@ -183,7 +192,6 @@ const ContextMenuRadioItem = forwardRef<
   </ContextMenuPrimitive.RadioItem>
 ));
 ContextMenuRadioItem.displayName = ContextMenuPrimitive.RadioItem.displayName;
-
 
 const ContextMenuLabel = forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Label>,
@@ -194,7 +202,7 @@ const ContextMenuLabel = forwardRef<
   <ContextMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-2 py-1.5 text-xs text-rubricui-primary/40",
+      "px-2 py-1.5 text-xs text-rubricui-contrast/40",
       inset && "pl-8",
       className
     )}
@@ -209,7 +217,7 @@ const ContextMenuSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <ContextMenuPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-rubricui-primary/10", className)}
+    className={cn("-mx-1 my-1 h-px bg-rubricui-contrast/10", className)}
     {...props}
   />
 ));
