@@ -24,7 +24,7 @@ const rubricConfig = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 };
 
 export default rubricConfig;
