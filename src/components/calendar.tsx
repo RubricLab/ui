@@ -18,9 +18,10 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("p-3 border border-rubricui-contrast/10", className)}
       classNames={{
+        months: "relative",
         month: "space-y-4",
         caption_label: "font-semibold text-lg max-w-fit",
-        nav: "flex flex-1 w-fit",
+        nav: "flex absolute right-0 gap-1",
         button_previous: "h-7 w-7 p-0 border border-rubricui-contrast/10 opacity-50 hover:opacity-100 flex items-center justify-center",
         button_next: "h-7 w-7 p-0 border border-rubricui-contrast/10 opacity-50 hover:opacity-100 flex items-center justify-center",
         table: "w-full border-collapse space-y-1",
