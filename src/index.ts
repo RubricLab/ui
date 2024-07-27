@@ -11,4 +11,5 @@ export * from "./components/upload";
 export * from "./components/accordion";
 export * from "./components/badge";
 export * from "./components/codeblock";
+export * from "./components/select";
 export * from "./components/context-menu";
