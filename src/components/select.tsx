@@ -18,26 +18,25 @@ const SelectTrigger = forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border text-rubricui-contrast placeholder:text-rubricui-contrast/40 border-rubricui-contrast/10 bg-rubricui-contrast/5 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rubricui-contrast/20 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+      "flex h-10 w-full group items-center outline-none justify-between rounded-md border text-rubricui-contrast placeholder:text-rubricui-contrast/40 border-rubricui-contrast/10 bg-rubricui-contrast/5 px-3 py-2 text-sm hover:outline-none hover:ring-2 focus:ring-2 focus:ring-rubricui-contrast/50 focus:ring-offset-2 focus:outline-none transition-all duration-rubricui-duration hover:ring-rubricui-contrast/20 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
       className
     )}
     {...props}
   >
     {children}
-    <SelectPrimitive.Icon asChild>
-      <svg
-        width="15"
-        height="15"
-        viewBox="0 0 15 15"
-        className="fill-rubricui-contrast"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z"
+    <div className="group-hover:bg-rubricui-contrast/10 transition-colors duration-rubricui-duration size-6 flex items-center justify-center rounded-md">
+      <SelectPrimitive.Icon asChild>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 15 15"
           className="fill-rubricui-contrast"
-        ></path>
-      </svg>
-    </SelectPrimitive.Icon>
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z"></path>
+        </svg>
+      </SelectPrimitive.Icon>
+    </div>
   </SelectPrimitive.Trigger>
 ));
 SelectTrigger.displayName = "SelectTrigger";
@@ -78,7 +77,10 @@ const SelectLabel = forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-    className={cn("py-1.5 pl-2 pr-2 text-xs text-rubricui-contrast/40", className)}
+    className={cn(
+      "py-1.5 pl-2 pr-2 text-xs text-rubricui-contrast/40",
+      className
+    )}
     {...props}
   />
 ));
@@ -91,7 +93,7 @@ const SelectItem = forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-contrast/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative cursor-pointer flex w-full select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-rubricui-contrast/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}
