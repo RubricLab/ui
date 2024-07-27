@@ -55,9 +55,9 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-checkbox": "^1.1.0",
-    "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-context-menu": "^2.2.1",
     "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.1.0",
@@ -66,7 +66,8 @@
     "commander": "^12.1.0",
     "prism-react-renderer": "^2.3.1",
     "prompts": "^2.4.2",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "publishConfig": {
     "@RubricLab:registry": "https://registry.npmjs.org",
