@@ -13,4 +13,3 @@ export * from "./components/badge";
 export * from "./components/codeblock";
 export * from "./components/select";
 export * from "./components/context-menu";
-export * from "./components/select";
