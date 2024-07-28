@@ -20,28 +20,28 @@ function Calendar({
       classNames={{
         months: "relative",
         month: "space-y-4",
-        caption_label: "font-semibold text-lg max-w-fit",
-        nav: "flex absolute right-0 gap-1",
-        button_previous: "h-7 w-7 p-0 border border-rubricui-contrast/10 opacity-50 hover:opacity-100 flex items-center justify-center",
-        button_next: "h-7 w-7 p-0 border border-rubricui-contrast/10 opacity-50 hover:opacity-100 flex items-center justify-center",
+        caption_label: "font-semibold text-lg max-w-fit text-rubricui-contrast",
+        nav: "flex absolute right-0 gap-1 text-rubricui-contrast",
+        button_previous:
+          "h-7 w-7 p-0 border border-rubricui-contrast/30 opacity-50 hover:opacity-100 flex items-center justify-center duration-rubricui-duration transition-opacity",
+        button_next:
+          "h-7 w-7 p-0 border border-rubricui-contrast/30 opacity-50 hover:opacity-100 flex items-center justify-center duration-rubricui-duration transition-opacity",
         table: "w-full border-collapse space-y-1",
         weekdays: "flex",
         weekday:
           "text-rubricui-contrast rounded-md w-9 font-normal text-[0.8rem]",
         week: "flex w-full mt-2",
-        day: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        day: "h-9 w-9 text-center text-rubricui-contrast text-sm p-0",
         day_button: cn(
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-rubricui-contrast/20"
         ),
-        range_end: "day-range-end",
         selected:
           "bg-rubricui-contrast text-rubricui-primary transition-colors duration-rubricui-duration",
-        today: "bg-accent text-accent-foreground",
-        outside:
-          "day-outside text-rubricui-contrast opacity-50 aria-selected:bg-rubricui-contrast/30 aria-selected:text-rubricui-contrast aria-selected:opacity-30",
+        today: "dark:!bg-blue-400 !bg-blue-500 !text-rubricui-primary",
+        outside: "day-outside text-rubricui-contrast",
         disabled: "text-rubricui-contrast opacity-50",
         range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+          "aria-selected:bg-rubricui-contrast/20 aria-selected:text-rubricui-contrast",
         hidden: "invisible",
         ...classNames,
       }}
