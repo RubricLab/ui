@@ -34,7 +34,7 @@ const rubricConfig = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwindcss-animate")],
 };
 
 export default rubricConfig;
