@@ -67,11 +67,11 @@ const Image = ({
   return (
     <div
       ref={containerRef}
-      className={cn("relative overflow-hidden w-full", className)}
+      className={cn("relative overflow-hidden w-full h-full", className)}
       style={{
         height: height ? `${height}px` : "auto",
-        maxWidth: width ? `${width}px` : "auto",
-        maxHeight: height ? `${height}px` : "auto",
+        maxWidth: width ? `${width}px` : "fit-content",
+        maxHeight: height ? `${height}px` : "fit-content",
       }}
     >
       <img
@@ -81,8 +81,12 @@ const Image = ({
         className={cn(
           "transition-opacity duration-300",
           loaded ? "opacity-100" : "opacity-0",
-          objectFit && `object-${objectFit}`
+          objectFit && `!object-${objectFit}`
         )}
+        style={{
+          height: height ? `${height}px` : "auto",
+          width: width ? `${width}px` : "auto",
+        }}
         loading={priority ? "eager" : "lazy"}
         onLoad={handleImageLoad}
         onError={handleError}
