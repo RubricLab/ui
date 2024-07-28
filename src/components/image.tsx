@@ -1,18 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ImgHTMLAttributes } from "react";
 import { cn } from "../utils/cn";
 
-interface ImageProps {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  className?: string;
+interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
-  priority?: boolean;
-  onLoad?: () => void;
-  onError?: () => void;
   autoResize?: boolean;
 }
 
@@ -23,78 +15,61 @@ const Image = ({
   height,
   className,
   objectFit = "cover",
-  priority = false,
-  onLoad,
-  onError,
   autoResize = false,
+  ...props
 }: ImageProps) => {
   const [loaded, setLoaded] = useState(false);
+  const [dimensions, setDimensions] = useState({ width, height });
   const imgRef = useRef<HTMLImageElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (imgRef.current?.complete) {
+    const img = imgRef.current;
+    if (img?.complete) {
       handleImageLoad();
     }
   }, []);
 
-  useEffect(() => {
-    const updateSize = () => {
-      if (autoResize && imgRef.current && containerRef.current) {
-        const aspectRatio =
-          imgRef.current.naturalWidth / imgRef.current.naturalHeight;
-        const containerWidth = containerRef.current.clientWidth;
-        const newHeight = containerWidth / aspectRatio;
-        containerRef.current.style.height = `${newHeight}px`;
-      }
-    };
-
-    if (loaded) updateSize();
-
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, [loaded, autoResize]);
-
   const handleImageLoad = () => {
-    setLoaded(true);
-    onLoad?.();
-  };
+    if (!loaded) {
+      setLoaded(true);
+      if (autoResize && imgRef.current) {
+        const { naturalWidth, naturalHeight } = imgRef.current;
+        const aspectRatio = naturalWidth / naturalHeight;
 
-  const handleError = () => {
-    onError?.();
+        let newWidth = width || imgRef.current.clientWidth;
+        let newHeight = height || (newWidth as number) / aspectRatio;
+
+        if (height) {
+          newHeight = height;
+          newWidth = (newHeight as number) * aspectRatio;
+        }
+
+        setDimensions({ width: newWidth, height: newHeight });
+      }
+    }
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={cn("relative overflow-hidden w-full h-full", className)}
-      style={{
-        height: height ? `${height}px` : "auto",
-        maxWidth: width ? `${width}px` : "fit-content",
-        maxHeight: height ? `${height}px` : "fit-content",
-      }}
-    >
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        className={cn(
-          "transition-opacity duration-300",
-          loaded ? "opacity-100" : "opacity-0",
-          objectFit && `!object-${objectFit}`
-        )}
-        style={{
-          height: height ? `${height}px` : "auto",
-          width: width ? `${width}px` : "auto",
-        }}
-        loading={priority ? "eager" : "lazy"}
-        onLoad={handleImageLoad}
-        onError={handleError}
-      />
-      {!loaded && (
-        <div className="absolute inset-0 bg-rubricui-contrast/10 animate-pulse" />
+    <img
+      ref={imgRef}
+      src={src}
+      alt={alt}
+      className={cn(
+        "transition-opacity duration-rubricui-duration w-full h-full align-bottom",
+        loaded ? "opacity-100" : "opacity-0",
+        !loaded && "bg-rubricui-contrast/10 animate-pulse",
+        className
       )}
-    </div>
+      style={{
+        objectFit,
+        width: width ? `${width}px` : "auto",
+        height: height ? `${height}px` : "auto",
+        maxWidth: dimensions.width ? `${dimensions.width}px` : "100%",
+        maxHeight: dimensions.height ? `${dimensions.height}px` : "auto",
+        ...props?.style,
+      }}
+      {...props}
+    />
   );
 };
 
