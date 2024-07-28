@@ -16,3 +16,4 @@ export * from "./components/upload";
 export * from "./components/modal";
 export * from "./components/popover";
 export * from "./components/calendar";
+export * from "./components/link";
