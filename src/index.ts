@@ -14,3 +14,4 @@ export * from "./components/select";
 export * from "./components/context-menu";
 export * from "./components/upload";
 export * from "./components/modal";
+export * from "./components/popover";
