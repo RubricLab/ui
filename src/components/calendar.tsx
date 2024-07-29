@@ -13,8 +13,10 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const mode = props.mode ?? "single";
   return (
     <DayPicker
+      mode={mode}
       showOutsideDays={showOutsideDays}
       className={cn("p-3 border border-rubricui-contrast/10", className)}
       classNames={{
@@ -38,7 +40,7 @@ function Calendar({
         selected:
           "bg-rubricui-contrast text-rubricui-primary transition-colors duration-rubricui-duration",
         today: "dark:!bg-blue-400 !bg-blue-500 !text-rubricui-primary",
-        outside: "day-outside text-rubricui-contrast",
+        outside: "day-outside text-rubricui-contrast/50",
         disabled: "text-rubricui-contrast opacity-50",
         range_middle:
           "aria-selected:bg-rubricui-contrast/20 aria-selected:text-rubricui-contrast",

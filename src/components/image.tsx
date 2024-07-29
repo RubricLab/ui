@@ -56,8 +56,6 @@ const Image = ({
       alt={alt}
       className={cn(
         "transition-opacity duration-rubricui-duration w-full h-full align-bottom",
-        loaded ? "opacity-100" : "opacity-0",
-        !loaded && "bg-rubricui-contrast/10 animate-pulse",
         className
       )}
       style={{

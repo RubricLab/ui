@@ -3,6 +3,7 @@
 import GridLayout, { type ReactGridLayoutProps } from "react-grid-layout";
 
 import "react-grid-layout/css/styles.css";
+import { cn } from '../utils/cn';
 
 type GridItemProps = {
   component: React.ReactNode;
@@ -44,10 +45,7 @@ const Grid = ({
 }) => {
   return (
     <GridLayout
-      className="layout w-52"
-      cols={12}
-      rowHeight={30}
-      width={1200}
+      className={cn("layout", layoutProps?.className)}
       {...layoutProps}
     >
       {items.map((item: GridItemProps, index: number) => (

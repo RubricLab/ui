@@ -41,7 +41,7 @@ const Nav = ({
             <Link
               className={cn(
                 "mb-1 px-2.5 py-1.5 text-sm font-medium rounded-sm transition-all duration-rubricui-duration hover:bg-rubricui-contrast/10",
-                route.icon && "px-1.5"
+                route.icon && "px-1.5 text-rubricui-contrast"
               )}
               href={route.href}
               isExternal={route.isExternal}
