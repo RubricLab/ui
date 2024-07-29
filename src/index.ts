@@ -20,3 +20,4 @@ export * from "./components/link";
 export * from "./components/image";
 export * from "./components/stack";
 export * from "./components/card";
+export * from "./components/grid";

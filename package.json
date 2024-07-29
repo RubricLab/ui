@@ -62,6 +62,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.1.0",
+    "@types/react-grid-layout": "^1.3.5",
     "chalk": "^5.3.0",
     "clsx": "^2.1.1",
     "commander": "^12.1.0",
@@ -69,6 +70,7 @@
     "prism-react-renderer": "^2.3.1",
     "prompts": "^2.4.2",
     "react-day-picker": "^9.0.4",
+    "react-grid-layout": "^1.4.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
