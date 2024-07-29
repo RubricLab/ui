@@ -2,18 +2,25 @@ import { forwardRef } from "react";
 
 import { cn } from "../utils/cn";
 
-const Card = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(
-        "rounded-lg border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast shadow w-[300px]",
-        className
-      )}
-      {...props}
-    />
-  )
-);
+const Card = forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    shadow?: boolean;
+    hoverable?: boolean;
+  }
+>(({ className, shadow = true, hoverable = true, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast w-[300px] transition-all duration-rubricui-duration group",
+      shadow && "shadow",
+      hoverable && "hover:border-rubricui-contrast/20",
+      shadow && hoverable && "hover:shadow-lg",
+      className
+    )}
+    {...props}
+  />
+));
 Card.displayName = "Card";
 
 const CardHeader = forwardRef<
@@ -66,7 +73,10 @@ const CardFooter = forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn(
+      "flex items-center py-3 px-6 border-t border-t-rubricui-contrast/10 group-hover:border-t-rubricui-contrast/20 transition-colors duration-rubricui-duration",
+      className
+    )}
     {...props}
   />
 ));
