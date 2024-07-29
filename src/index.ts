@@ -21,3 +21,5 @@ export * from "./components/image";
 export * from "./components/stack";
 export * from "./components/card";
 export * from "./components/grid";
+export * from "./components/form";
+export * from "./components/label";
