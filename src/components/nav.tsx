@@ -35,12 +35,12 @@ const Nav = ({
           {title}
         </h1>
       )}
-      <div className="items-center gap-3 sm:flex hidden">
+      <div className="items-center gap-2 sm:flex hidden">
         {routes.map((route) => (
           <div key={route.label} className="group -bottom-[9px] relative">
             <Link
               className={cn(
-                "mb-1 px-4 py-1.5 text-sm font-medium rounded-sm transition-all duration-rubricui-duration hover:bg-rubricui-contrast/10",
+                "mb-1 px-2.5 py-1.5 text-sm font-medium rounded-sm transition-all duration-rubricui-duration hover:bg-rubricui-contrast/10",
                 route.icon && "px-1.5"
               )}
               href={route.href}
@@ -55,7 +55,7 @@ const Nav = ({
             <div
               className={cn(
                 "border-rubricui-contrast w-full border-b transition-opacity",
-                route.active ? "opacity-100" : "opacity-0"
+                route.active && !route.icon ? "opacity-100" : "opacity-0"
               )}
             />
           </div>
