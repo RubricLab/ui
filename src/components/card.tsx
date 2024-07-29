@@ -12,7 +12,7 @@ const Card = forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast w-[300px] transition-all duration-rubricui-duration group",
+      "rounded-lg border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast w-[300px] transition-all duration-rubricui-duration group dark:shadow-white/10",
       shadow && "shadow",
       hoverable && "hover:border-rubricui-contrast/20",
       shadow && hoverable && "hover:shadow-lg",
