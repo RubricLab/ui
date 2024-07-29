@@ -2,16 +2,18 @@ import { cn } from "../utils/cn";
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   isExternal?: boolean;
-  icon?: boolean;
+  showArrow?: boolean;
   underline?: boolean;
+  active?: boolean;
 }
 
 const Link = ({
   href,
   children,
-  icon = false,
+  showArrow = false,
   isExternal = false,
   underline = false,
+  active = false,
   className = "",
   ...props
 }: LinkProps) => {
@@ -21,8 +23,9 @@ const Link = ({
     <a
       href={href}
       className={cn(
-        "inline-flex items-center text-rubricui-contrast hover:opacity-80 transition-opacity duration-200",
+        "inline-flex items-center text-rubricui-contrast/50 hover:text-rubricui-contrast transition-colors duration-rubricui-duration",
         underline && "underline",
+        active && "text-rubricui-contrast",
         className
       )}
       target={isExternalLink ? "_blank" : undefined}
@@ -30,7 +33,7 @@ const Link = ({
       {...props}
     >
       {children}
-      {icon && (
+      {showArrow && (
         <svg
           width="15"
           height="15"
