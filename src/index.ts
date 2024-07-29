@@ -18,3 +18,4 @@ export * from "./components/popover";
 export * from "./components/calendar";
 export * from "./components/link";
 export * from "./components/image";
+export * from "./components/stack";
