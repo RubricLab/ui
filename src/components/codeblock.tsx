@@ -7,6 +7,8 @@ import { cn } from "../utils/cn";
 
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 require("prismjs/components/prism-python");
+require("prismjs/components/prism-javascript");
+require("prismjs/components/prism-json");
 
 const CodeBlock = ({
   language,
@@ -75,7 +77,7 @@ const CodeBlock = ({
           </button>
         </div>
       )}
-      <Highlight theme={theme} code={children} language={language}>
+      <Highlight theme={theme} code={children} language={language} prism={Prism}>
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre
             className={cn(
