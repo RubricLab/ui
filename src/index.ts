@@ -24,3 +24,4 @@ export * from "./components/grid";
 export * from "./components/form";
 export * from "./components/label";
 export * from "./components/nav";
+export * from "./components/markdown";
