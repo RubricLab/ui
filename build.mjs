@@ -16,6 +16,7 @@ await Bun.build({
   outdir: "./dist",
   minify: true,
   plugins: [dts()],
+  external: ["react", "react-dom"],
 });
 
 // Rename the generated CSS file to index.css
