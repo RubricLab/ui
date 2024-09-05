@@ -18,6 +18,9 @@
     "verbatimModuleSyntax": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  },
+    "noPropertyAccessFromIndexSignature": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }
