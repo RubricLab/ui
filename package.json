@@ -29,7 +29,8 @@
     "tailwindcss",
     "react",
     "ui",
-    "bun"
+    "bun",
+    "genui"
   ],
   "license": "MIT",
   "homepage": "https://github.com/RubricLab/ui#readme",
