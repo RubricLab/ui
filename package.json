@@ -1,19 +1,19 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
   "scripts": {
-    "tailwind": "bunx tailwindcss -i ./src/styles.css -o ./dist/output.css",
+    "tailwind": "bun x tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
     "clean": "rm -rf .next && rm -rf node_modules",
-    "bleed": "bunx npm-check-updates -u && bun i",
+    "bleed": "bun x npm-check-updates -u && bun i",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "bunx simple-git-hooks"
+    "prepare": "bun x simple-git-hooks"
   },
   "bin": {
     "rubricui": "./bin/execute.js"
