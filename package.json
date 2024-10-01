@@ -1,12 +1,11 @@
 {
   "name": "@rubriclab/ui",
   "version": "5.0.2",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
   "scripts": {
-    "build": "NODE_ENV=production bun run build.mjs",
     "tailwind": "bunx tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
     "prepublishOnly": "bun run build",
