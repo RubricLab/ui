@@ -8,7 +8,6 @@
   "scripts": {
     "tailwind": "bunx tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
-    "prepublishOnly": "bun run build",
     "clean": "rm -rf .next && rm -rf node_modules",
     "bleed": "bunx npm-check-updates -u && bun i",
     "format": "prettier --write .",
