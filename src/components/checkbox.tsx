@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import clsx from "clsx";
-import { forwardRef } from "react";
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
+import clsx from 'clsx'
+import { forwardRef } from 'react'
 
 const Checkbox = forwardRef<
 	React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -11,23 +11,15 @@ const Checkbox = forwardRef<
 	<CheckboxPrimitive.Root
 		ref={ref}
 		className={clsx(
-			"peer size-4 shrink-0 rounded-sm data-[state=checked]:bg-rubricui-contrast data-[state=unchecked]:bg-rubricui-primary border-[1px] border-rubricui-contrast/20 shadow focus-visible:outline-none focus:ring-2 focus:ring-rubricui-contrast/10 transition-all duration-rubricui-duration disabled:cursor-not-allowed disabled:bg-opacity-60 flex",
-			className,
+			'peer flex size-4 shrink-0 rounded-sm border-[1px] border-rubricui-contrast/20 shadow transition-all duration-rubricui-duration focus:ring-2 focus:ring-rubricui-contrast/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-opacity-60 data-[state=checked]:bg-rubricui-contrast data-[state=unchecked]:bg-rubricui-primary',
+			className
 		)}
 		{...props}
 	>
 		<CheckboxPrimitive.Indicator
-			className={clsx(
-				"flex items-center justify-center text-current w-full h-full",
-			)}
+			className={clsx('flex h-full w-full items-center justify-center text-current')}
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width={12}
-				height={12}
-				viewBox="0 0 12 12"
-				fill="none"
-			>
+			<svg xmlns="http://www.w3.org/2000/svg" width={12} height={12} viewBox="0 0 12 12" fill="none">
 				<title>Checkbox</title>
 				<path
 					fill-rule="evenodd"
@@ -38,7 +30,7 @@ const Checkbox = forwardRef<
 			</svg>
 		</CheckboxPrimitive.Indicator>
 	</CheckboxPrimitive.Root>
-));
-Checkbox.displayName = "Checkbox";
+))
+Checkbox.displayName = 'Checkbox'
 
-export { Checkbox };
+export { Checkbox }

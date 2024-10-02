@@ -1,15 +1,15 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const tailwindConfig = {
-	darkMode: "class",
+	darkMode: 'class',
 	content: [
-		"./app/**/*.tsx",
-		"./src/**/*.tsx",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./node_modules/rubricui/dist/**/*.{js,jsx,ts,tsx}"
+		'./app/**/*.tsx',
+		'./src/**/*.tsx',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./node_modules/rubricui/dist/**/*.{js,jsx,ts,tsx}'
 	],
-	presets: [require("./rubric.preset.ts")],
-} satisfies Config;
+	presets: [require('./rubric.preset.ts')]
+} satisfies Config
 
-export default tailwindConfig;
+export default tailwindConfig
