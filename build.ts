@@ -1,10 +1,10 @@
 import { rm, rename, readdir } from "node:fs/promises";
 import path from "node:path";
 
-const distDir = "./dist";
+const outdir = "./dist";
 
 // Clean dist directory before building
-await rm(distDir, {
+await rm(outdir, {
   recursive: true,
   force: true,
 });
@@ -14,7 +14,7 @@ try {
   // Run build
   await Bun.build({
     entrypoints: ["./src/index.ts"],
-    outdir: "./dist",
+    outdir,
     minify: true,
     external: ["react", "react-dom"],
   });
@@ -24,10 +24,10 @@ try {
 }
 
 // Rename the generated CSS file to index.css
-const files = await readdir(distDir);
+const files = await readdir(outdir);
 const cssFile = files.find((file) => file.endsWith(".css"));
 if (cssFile) {
-  const oldPath = path.join(distDir, cssFile);
-  const newPath = path.join(distDir, "index.css");
+  const oldPath = path.join(outdir, cssFile);
+  const newPath = path.join(outdir, "index.css");
   await rename(oldPath, newPath);
 }

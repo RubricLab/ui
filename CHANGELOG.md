@@ -1,3 +1,4 @@
+- [2024-10-02] [Bundle css](https://github.com/RubricLab/ui/commit/343655090d6f68bf065807a4552a655a5b660517)
 - [2024-10-02] [Bundle index.ts](https://github.com/RubricLab/ui/commit/1b141ca0383cd61cd0d481a3008f3b122cdb3544)
 - [2024-10-02] [Bundle in components](https://github.com/RubricLab/ui/commit/82009ba695e187560eb4a833a6dc3b25baf67fe3)
 - [2024-10-02] [Bundle index.ts](https://github.com/RubricLab/ui/commit/4de8280c96873fb326fea0b68f83b33cbb4842c8)

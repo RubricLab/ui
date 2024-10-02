@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.7",
+  "version": "5.0.8",
   "main": "dist/index.js",
   "types": "src/index.ts",
   "description": "UI package by Rubric Labs",
@@ -23,7 +23,7 @@
     "dist/*.js",
     "dist/*.d.ts",
     "dist/*.css",
-    "src/**/*.{ts,tsx}",
+    "src/**/*.tsx",
     "bin/commands",
     "bin/config"
   ],
