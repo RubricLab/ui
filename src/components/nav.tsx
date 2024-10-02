@@ -44,10 +44,10 @@ const Nav = ({
                 route.icon && "px-1.5 text-rubricui-contrast"
               )}
               href={route.href}
-              isExternal={route.isExternal}
-              showArrow={route.showArrow}
-              underline={route.underline}
-              active={route.active}
+              isExternal={!!route.isExternal}
+              showArrow={!!route.showArrow}
+              underline={!!route.underline}
+              active={!!route.active}
               aria-label={route.label}
             >
               {route.icon ? <>{route.icon}</> : route.label}
@@ -86,9 +86,9 @@ const Nav = ({
             <Link
               key={route.label}
               href={route.href}
-              isExternal={route.isExternal}
-              underline={route.underline}
-              active={route.active}
+              isExternal={!!route.isExternal}
+              underline={!!route.underline}
+              active={!!route.active}
               aria-label={route.label}
               className="text-right w-full justify-end py-1.5"
             >

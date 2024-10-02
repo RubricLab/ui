@@ -4,16 +4,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { forwardRef } from "react";
 import { cn } from "../utils/cn";
 
-interface TooltipProviderProps {
-	children: React.ReactNode;
-	delayDuration?: number;
-	skipDelayDuration?: number;
-	disableHoverableContent?: boolean;
-  }
-
-const TooltipProvider: React.FC<TooltipProviderProps> = (props) => (
-	<TooltipPrimitive.Provider {...props} />
-);
+const TooltipProvider = TooltipPrimitive.Provider
 
 const Tooltip = TooltipPrimitive.Root;
 

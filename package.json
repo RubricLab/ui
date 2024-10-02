@@ -1,11 +1,12 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.3",
-  "main": "src/index.ts",
+  "version": "5.0.4",
+  "main": "dist/index.js",
   "types": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
   "scripts": {
+    "build": "NODE_ENV=production bun run build.ts",
     "tailwind": "bun x tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
     "clean": "rm -rf .next && rm -rf node_modules",
@@ -45,10 +46,9 @@
     "@rubriclab/eslint-config": "^1.1.4",
     "@rubriclab/prettier-config": "^1.1.1",
     "@types/bun": "latest",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
-    "bun-plugin-dts": "latest",
     "npm-check-updates": "^17.1.1",
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
@@ -56,8 +56,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.2.2",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "type": "module",
   "dependencies": {

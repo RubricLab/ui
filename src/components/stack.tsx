@@ -1,10 +1,10 @@
-import { type HTMLProps } from "react";
 import { cn } from "../utils/cn";
 
-interface StackProps extends HTMLProps<HTMLDivElement> {
+interface StackProps {
   direction?: "vertical" | "horizontal";
   gap?: number;
-  children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode
 }
 
 const Stack = ({

@@ -1,3 +1,4 @@
+- [2024-10-02] [Re-introduce build script](https://github.com/RubricLab/ui/commit/1fd66d02b9483ee756486a6308cce667b524275c)
 - [2024-10-01] [Run bun prepare](https://github.com/RubricLab/ui/commit/18f875caf3471cc646fde08d09b8ba370f35a117)
 - [2024-10-01] [ops](https://github.com/RubricLab/ui/commit/e29798c92e4338b656be7ff0de66fa45573ef35d)
 - [2024-10-01] [try](https://github.com/RubricLab/ui/commit/1fb14b8540d89c893ebdcb48bc836d0c666fc2c0)
