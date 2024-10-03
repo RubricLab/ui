@@ -1,8 +1,8 @@
 'use client'
 
 import * as TogglePrimitive from '@radix-ui/react-toggle'
-import { cn } from '../utils/cn'
 import { forwardRef } from 'react'
+import { cn } from '../utils/cn'
 
 const sizes = {
 	small: 'size-5 text-xs',

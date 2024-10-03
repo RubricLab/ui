@@ -1,9 +1,9 @@
-import { Command } from 'commander'
-import prompts from 'prompts'
-import { existsSync, promises as fs } from 'node:fs'
-import { resolve, dirname, relative } from 'node:path'
+import { promises as fs, existsSync } from 'node:fs'
+import { dirname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
+import { Command } from 'commander'
+import prompts from 'prompts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

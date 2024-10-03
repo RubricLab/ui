@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.11",
+  "version": "5.0.12",
   "main": "dist/index.js",
   "types": "src/index.ts",
   "description": "UI package by Rubric Labs",
@@ -12,8 +12,8 @@
     "prepare": "bun x simple-git-hooks",
     "bleed": "bun x npm-check-updates -u && bun i",
     "format": "bun x biome format --write .",
-    "lint": "bun x biome check .",
-    "lint:fix": "bun x biome lint . --write --unsafe",
+    "lint": "bun x biome check . && bun x biome lint .",
+    "lint:fix": "bun x biome check --fix --unsafe . && bun x biome lint --write --unsafe .",
     "clean": "rm -rf .next && rm -rf node_modules"
   },
   "bin": {

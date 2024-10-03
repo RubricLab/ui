@@ -1,8 +1,8 @@
 'use client'
 
 import MarkdownJSX from 'markdown-to-jsx'
-import { cn } from '../utils/cn'
 import { forwardRef } from 'react'
+import { cn } from '../utils/cn'
 
 const Markdown = forwardRef<
 	HTMLDivElement,

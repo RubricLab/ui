@@ -1,7 +1,7 @@
 'use client'
 
-import { forwardRef } from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
+import { forwardRef } from 'react'
 
 import { cn } from '../utils/cn'
 

@@ -1,4 +1,4 @@
-import { rm, rename, readdir } from 'node:fs/promises'
+import { readdir, rename, rm } from 'node:fs/promises'
 import path from 'node:path'
 
 const outdir = './dist'

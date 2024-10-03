@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
+import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from 'react'
 import { cn } from '../utils/cn'
 import { Loading } from './loading'
 

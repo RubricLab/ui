@@ -1,8 +1,8 @@
 'use client'
 
-import { forwardRef, createContext, useContext, useId } from 'react'
 import type * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
+import { createContext, forwardRef, useContext, useId } from 'react'
 import {
 	Controller,
 	type ControllerProps,
