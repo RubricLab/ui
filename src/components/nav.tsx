@@ -1,47 +1,43 @@
-import { cn } from "../utils/cn";
-import { Button } from "./button";
-import { Link } from "./link";
-import { Popover, PopoverContent, PopoverTrigger } from "./popover";
+import { cn } from '../utils/cn'
+import { Button } from './button'
+import { Link } from './link'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 type RouteProps = {
-	label: string;
-	icon?: React.ReactNode;
-	href: string;
-	isExternal?: boolean;
-	showArrow?: boolean;
-	underline?: boolean;
-	active?: boolean;
-};
+	label: string
+	icon?: React.ReactNode
+	href: string
+	isExternal?: boolean
+	showArrow?: boolean
+	underline?: boolean
+	active?: boolean
+}
 
 const Nav = ({
 	className,
 	routes,
 	title,
 	...props
-}: React.ComponentPropsWithoutRef<"nav"> & {
-	routes: RouteProps[];
-	title?: string;
+}: React.ComponentPropsWithoutRef<'nav'> & {
+	routes: RouteProps[]
+	title?: string
 }) => {
 	return (
 		<nav
 			className={cn(
-				"relative z-10 flex w-full items-center justify-between border-rubricui-contrast/10 border-b bg-rubricui-contrast/5 px-5 pt-2 pb-2 sm:pt-0",
-				className,
+				'relative z-10 flex w-full items-center justify-between border-rubricui-contrast/10 border-b bg-rubricui-contrast/5 px-5 pt-2 pb-2 sm:pt-0',
+				className
 			)}
 			{...props}
 		>
-			{title && (
-				<h1 className="sm:-mb-2.5 font-bold text-lg text-rubricui-contrast">
-					{title}
-				</h1>
-			)}
+			{title && <h1 className="sm:-mb-2.5 font-bold text-lg text-rubricui-contrast">{title}</h1>}
 			<div className="hidden items-center gap-2 sm:flex">
-				{routes.map((route) => (
+				{routes.map(route => (
 					<div key={route.label} className="group -bottom-[9px] relative">
 						<Link
 							className={cn(
-								"mb-1 rounded-sm px-2.5 py-1.5 font-medium text-sm transition-all duration-rubricui-duration hover:bg-rubricui-contrast/10",
-								route.icon && "px-1.5 text-rubricui-contrast",
+								'mb-1 rounded-sm px-2.5 py-1.5 font-medium text-sm transition-all duration-rubricui-duration hover:bg-rubricui-contrast/10',
+								route.icon && 'px-1.5 text-rubricui-contrast'
 							)}
 							href={route.href}
 							isExternal={!!route.isExternal}
@@ -54,8 +50,8 @@ const Nav = ({
 						</Link>
 						<div
 							className={cn(
-								"w-full border-rubricui-contrast border-b transition-opacity",
-								route.active && !route.icon ? "opacity-100" : "opacity-0",
+								'w-full border-rubricui-contrast border-b transition-opacity',
+								route.active && !route.icon ? 'opacity-100' : 'opacity-0'
 							)}
 						/>
 					</div>
@@ -83,7 +79,7 @@ const Nav = ({
 					className="flex w-fit flex-col divide-y divide-rubricui-contrast/10 bg-rubricui-primary px-5"
 					side="bottom"
 				>
-					{routes.map((route) => (
+					{routes.map(route => (
 						<Link
 							key={route.label}
 							href={route.href}
@@ -99,7 +95,7 @@ const Nav = ({
 				</PopoverContent>
 			</Popover>
 		</nav>
-	);
-};
+	)
+}
 
-export { Nav };
+export { Nav }

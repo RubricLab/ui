@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
-import * as SelectPrimitive from "@radix-ui/react-select";
-import { forwardRef } from "react";
+import * as SelectPrimitive from '@radix-ui/react-select'
+import { forwardRef } from 'react'
 
-import { cn } from "../utils/cn";
+import { cn } from '../utils/cn'
 
-const Select = SelectPrimitive.Root;
+const Select = SelectPrimitive.Root
 
-const SelectGroup = SelectPrimitive.Group;
+const SelectGroup = SelectPrimitive.Group
 
-const SelectValue = SelectPrimitive.Value;
+const SelectValue = SelectPrimitive.Value
 
 const SelectTrigger = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Trigger>,
@@ -18,8 +18,8 @@ const SelectTrigger = forwardRef<
 	<SelectPrimitive.Trigger
 		ref={ref}
 		className={cn(
-			"group flex h-10 w-full items-center justify-between rounded-md border border-rubricui-contrast/10 bg-rubricui-contrast/5 px-3 py-2 text-rubricui-contrast text-sm outline-none transition-all duration-rubricui-duration placeholder:text-rubricui-contrast/40 hover:outline-none hover:ring-2 hover:ring-rubricui-contrast/20 focus:outline-none focus:ring-2 focus:ring-rubricui-contrast/50 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-			className,
+			'group flex h-10 w-full items-center justify-between rounded-md border border-rubricui-contrast/10 bg-rubricui-contrast/5 px-3 py-2 text-rubricui-contrast text-sm outline-none transition-all duration-rubricui-duration placeholder:text-rubricui-contrast/40 hover:outline-none hover:ring-2 hover:ring-rubricui-contrast/20 focus:outline-none focus:ring-2 focus:ring-rubricui-contrast/50 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+			className
 		)}
 		{...props}
 	>
@@ -39,38 +39,38 @@ const SelectTrigger = forwardRef<
 			</SelectPrimitive.Icon>
 		</div>
 	</SelectPrimitive.Trigger>
-));
-SelectTrigger.displayName = "SelectTrigger";
+))
+SelectTrigger.displayName = 'SelectTrigger'
 
 const SelectContent = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = "popper", ...props }, ref) => (
+>(({ className, children, position = 'popper', ...props }, ref) => (
 	<SelectPrimitive.Portal>
 		<SelectPrimitive.Content
 			ref={ref}
 			className={cn(
-				"data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast shadow-md data-[state=closed]:animate-out data-[state=open]:animate-in",
-				position === "popper" &&
-					"data-[side=left]:-translate-x-1 data-[side=top]:-translate-y-1 data-[side=right]:translate-x-1 data-[side=bottom]:translate-y-1",
-				className,
+				'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-rubricui-contrast/10 bg-rubricui-primary text-rubricui-contrast shadow-md data-[state=closed]:animate-out data-[state=open]:animate-in',
+				position === 'popper' &&
+					'data-[side=left]:-translate-x-1 data-[side=top]:-translate-y-1 data-[side=right]:translate-x-1 data-[side=bottom]:translate-y-1',
+				className
 			)}
 			position={position}
 			{...props}
 		>
 			<SelectPrimitive.Viewport
 				className={cn(
-					"p-1",
-					position === "popper" &&
-						"h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+					'p-1',
+					position === 'popper' &&
+						'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]'
 				)}
 			>
 				{children}
 			</SelectPrimitive.Viewport>
 		</SelectPrimitive.Content>
 	</SelectPrimitive.Portal>
-));
-SelectContent.displayName = "SelectContent";
+))
+SelectContent.displayName = 'SelectContent'
 
 const SelectLabel = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Label>,
@@ -78,14 +78,11 @@ const SelectLabel = forwardRef<
 >(({ className, ...props }, ref) => (
 	<SelectPrimitive.Label
 		ref={ref}
-		className={cn(
-			"py-1.5 pr-2 pl-2 text-rubricui-contrast/40 text-xs",
-			className,
-		)}
+		className={cn('py-1.5 pr-2 pl-2 text-rubricui-contrast/40 text-xs', className)}
 		{...props}
 	/>
-));
-SelectLabel.displayName = "SelectLabel";
+))
+SelectLabel.displayName = 'SelectLabel'
 
 const SelectItem = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Item>,
@@ -94,20 +91,14 @@ const SelectItem = forwardRef<
 	<SelectPrimitive.Item
 		ref={ref}
 		className={cn(
-			"relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-rubricui-contrast/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-			className,
+			'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-rubricui-contrast/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+			className
 		)}
 		{...props}
 	>
 		<span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
 			<SelectPrimitive.ItemIndicator>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width={15}
-					height={15}
-					viewBox="0 0 15 15"
-					fill="none"
-				>
+				<svg xmlns="http://www.w3.org/2000/svg" width={15} height={15} viewBox="0 0 15 15" fill="none">
 					<title>Checkbox</title>
 					<path
 						d="M11.6705 3L11.2727 3.39775L4.67804 9.99242C4.16548 10.505 3.33445 10.505 2.82189 9.99242L0.727215 7.89775L0.329468 7.5L1.12496 6.70451L1.52271 7.10225L3.61738 9.19692C3.6906 9.27015 3.80932 9.27015 3.88255 9.19692L10.4772 2.60225L10.875 2.20451L11.6705 3Z"
@@ -119,8 +110,8 @@ const SelectItem = forwardRef<
 
 		<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 	</SelectPrimitive.Item>
-));
-SelectItem.displayName = "SelectItem";
+))
+SelectItem.displayName = 'SelectItem'
 
 const SelectSeparator = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Separator>,
@@ -128,11 +119,11 @@ const SelectSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
 	<SelectPrimitive.Separator
 		ref={ref}
-		className={cn("-mx-1 my-1 h-px bg-rubricui-contrast/10", className)}
+		className={cn('-mx-1 my-1 h-px bg-rubricui-contrast/10', className)}
 		{...props}
 	/>
-));
-SelectSeparator.displayName = "SelectSeparator";
+))
+SelectSeparator.displayName = 'SelectSeparator'
 
 export {
 	Select,
@@ -142,5 +133,5 @@ export {
 	SelectContent,
 	SelectLabel,
 	SelectItem,
-	SelectSeparator,
-};
+	SelectSeparator
+}

@@ -1,10 +1,10 @@
-import { cn } from "../utils/cn";
+import { cn } from '../utils/cn'
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-	isExternal?: boolean;
-	showArrow?: boolean;
-	underline?: boolean;
-	active?: boolean;
+	isExternal?: boolean
+	showArrow?: boolean
+	underline?: boolean
+	active?: boolean
 }
 
 const Link = ({
@@ -14,22 +14,22 @@ const Link = ({
 	isExternal = false,
 	underline = false,
 	active = false,
-	className = "",
+	className = '',
 	...props
 }: LinkProps) => {
-	const isExternalLink = isExternal || href?.startsWith("http");
+	const isExternalLink = isExternal || href?.startsWith('http')
 
 	return (
 		<a
 			href={href}
 			className={cn(
-				"inline-flex items-center text-rubricui-contrast/50 transition-colors duration-rubricui-duration hover:text-rubricui-contrast",
-				underline && "underline",
-				active && "text-rubricui-contrast",
-				className,
+				'inline-flex items-center text-rubricui-contrast/50 transition-colors duration-rubricui-duration hover:text-rubricui-contrast',
+				underline && 'underline',
+				active && 'text-rubricui-contrast',
+				className
 			)}
-			target={isExternalLink ? "_blank" : undefined}
-			rel={isExternalLink ? "noopener noreferrer" : undefined}
+			target={isExternalLink ? '_blank' : undefined}
+			rel={isExternalLink ? 'noopener noreferrer' : undefined}
 			{...props}
 		>
 			{children}
@@ -51,7 +51,7 @@ const Link = ({
 				</svg>
 			)}
 		</a>
-	);
-};
+	)
+}
 
-export { Link };
+export { Link }

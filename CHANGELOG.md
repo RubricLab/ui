@@ -1,3 +1,4 @@
+- [2024-10-02] [format, lint](https://github.com/RubricLab/ui/commit/c63735f98ceded961f2f4cb601111afb6b8c5e03)
 - [2024-10-02] [refactor to new biome](https://github.com/RubricLab/ui/commit/8d2aeca6c0ae824b8bcf1f85a7bd1fecda84180e)
 - [2024-10-02] [Again again](https://github.com/RubricLab/ui/commit/ad0f01623966ed33b238a56e1726d89e3e1ed029)
 - [2024-10-02] [Bundle css](https://github.com/RubricLab/ui/commit/343655090d6f68bf065807a4552a655a5b660517)

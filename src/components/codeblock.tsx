@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import { Highlight, type PrismTheme, themes } from "prism-react-renderer";
-import Prism from "prismjs";
-import { useState } from "react";
-import { cn } from "../utils/cn";
-(typeof global !== "undefined" ? global : window).Prism = Prism;
-require("prismjs/components/prism-python");
-require("prismjs/components/prism-javascript");
-require("prismjs/components/prism-json");
+import { Highlight, type PrismTheme, themes } from 'prism-react-renderer'
+import Prism from 'prismjs'
+import { useState } from 'react'
+import { cn } from '../utils/cn'
+;(typeof global !== 'undefined' ? global : window).Prism = Prism
+require('prismjs/components/prism-python')
+require('prismjs/components/prism-javascript')
+require('prismjs/components/prism-json')
 
 const CodeBlock = ({
 	language,
@@ -15,30 +15,30 @@ const CodeBlock = ({
 	fileName,
 	className,
 	headerClassName,
-	theme = themes.github,
+	theme = themes.github
 }: {
-	language: string;
-	children: string;
-	fileName?: string;
-	className?: string;
-	headerClassName?: string;
-	theme?: PrismTheme;
+	language: string
+	children: string
+	fileName?: string
+	className?: string
+	headerClassName?: string
+	theme?: PrismTheme
 }) => {
-	const [copied, setCopied] = useState(false);
+	const [copied, setCopied] = useState(false)
 
 	const copyToClipboard = () => {
-		navigator.clipboard.writeText(children);
-		setCopied(true);
-		setTimeout(() => setCopied(false), 2000);
-	};
+		navigator.clipboard.writeText(children)
+		setCopied(true)
+		setTimeout(() => setCopied(false), 2000)
+	}
 
 	return (
 		<div className="overflow-hidden rounded-lg border border-rubricui-contrast/10">
 			{fileName && (
 				<div
 					className={cn(
-						"flex items-center justify-between bg-rubricui-contrast/10 px-4 py-2 text-rubricui-contrast",
-						headerClassName,
+						'flex items-center justify-between bg-rubricui-contrast/10 px-4 py-2 text-rubricui-contrast',
+						headerClassName
 					)}
 				>
 					<span className="font-mono text-xs">{fileName}</span>
@@ -79,25 +79,13 @@ const CodeBlock = ({
 					</button>
 				</div>
 			)}
-			<Highlight
-				theme={theme}
-				code={children}
-				language={language}
-				prism={Prism}
-			>
+			<Highlight theme={theme} code={children} language={language} prism={Prism}>
 				{({ tokens, getLineProps, getTokenProps }) => (
-					<pre
-						className={cn(
-							"m-0 overflow-x-auto p-4 text-sm dark:invert",
-							className,
-						)}
-					>
+					<pre className={cn('m-0 overflow-x-auto p-4 text-sm dark:invert', className)}>
 						<code>
 							{tokens.map((line, i) => (
 								<div key={i} {...getLineProps({ line })} className="table-row">
-									<span className="table-cell select-none pr-4 text-right opacity-50">
-										{i + 1}
-									</span>
+									<span className="table-cell select-none pr-4 text-right opacity-50">{i + 1}</span>
 									<span className="table-cell">
 										{line.map((token, key) => (
 											<span key={key} {...getTokenProps({ token })} />
@@ -110,9 +98,9 @@ const CodeBlock = ({
 				)}
 			</Highlight>
 		</div>
-	);
-};
+	)
+}
 
-CodeBlock.displayName = "CodeBlock";
+CodeBlock.displayName = 'CodeBlock'
 
-export { CodeBlock };
+export { CodeBlock }
