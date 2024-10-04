@@ -1,3 +1,5 @@
+- [2024-10-04] [bleed for mono](https://github.com/RubricLab/ui/commit/b8d2990221071505d0351f479eacb819fecb8ca4)
+- [2024-10-04] [bleed for mono](https://github.com/RubricLab/ui/commit/9b4845cb31e0c5adbfaaeb361f65ca05fe961b87)
 - [2024-10-03] [mod lint script](https://github.com/RubricLab/ui/commit/adbe50b8b4cd0696a9530a079090152517234122)
 - [2024-10-02] [format, lint](https://github.com/RubricLab/ui/commit/c63735f98ceded961f2f4cb601111afb6b8c5e03)
 - [2024-10-02] [refactor to new biome](https://github.com/RubricLab/ui/commit/8d2aeca6c0ae824b8bcf1f85a7bd1fecda84180e)
