@@ -1,3 +1,4 @@
+- [2024-10-18] [add package dep](https://github.com/RubricLab/ui/commit/aea6017644663c9be118180259e547f52572b548)
 - [2024-10-04] [bleed for mono](https://github.com/RubricLab/ui/commit/b8d2990221071505d0351f479eacb819fecb8ca4)
 - [2024-10-04] [bleed for mono](https://github.com/RubricLab/ui/commit/9b4845cb31e0c5adbfaaeb361f65ca05fe961b87)
 - [2024-10-03] [mod lint script](https://github.com/RubricLab/ui/commit/adbe50b8b4cd0696a9530a079090152517234122)
