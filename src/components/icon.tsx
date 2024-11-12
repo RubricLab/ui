@@ -1,9 +1,10 @@
-import { type Icon as IconType, ui } from '../types'
+import type { DesignSystem } from '../types'
+import { createComponent } from '../utils'
 
 type Size = 'sm' | 'md' | 'lg' | `${number}px`
 
-type IconProps = {
-	icon: IconType
+interface IconProps<UI extends DesignSystem> {
+	icon: keyof UI['icons']
 	size: Size
 }
 
@@ -20,15 +21,18 @@ function getSizeClass(size: Size) {
 	}
 }
 
-export default function Icon({ icon, size }: IconProps) {
-	return (
-		<div className={getSizeClass(size)}>
-			<div className="flex hidden h-full w-full items-center justify-center dark:block">
-				{ui.icons[icon].dark()}
+export default createComponent<DesignSystem, IconProps<DesignSystem>>({
+	render: ({ icon, size }, ui) => {
+		const iconAsset = ui.icons[icon]
+		return (
+			<div className={getSizeClass(size)}>
+				<div className="flex hidden h-full w-full items-center justify-center dark:block">
+					{iconAsset?.dark()}
+				</div>
+				<div className="flex h-full w-full items-center justify-center dark:hidden">
+					{iconAsset?.light()}
+				</div>
 			</div>
-			<div className="flex h-full w-full items-center justify-center dark:hidden">
-				{ui.icons[icon].light()}
-			</div>
-		</div>
-	)
-}
+		)
+	}
+})

@@ -1,26 +1,44 @@
+// components/button.tsx
 'use client'
 
-import type { Icon as IconType } from '~/types'
+import type { DesignSystem } from '../types'
+import { createComponent } from '../utils'
+import {
+	getBackgroundColorClass,
+	getBorderRadiusClass,
+	getFontSizeClass,
+	getPaddingClass,
+	getTextColorClass
+} from '../utils'
 import Icon from './icon'
 
-type ButtonProps = {
+interface ButtonProps<UI extends DesignSystem> {
 	onClick: () => void
 	content: string
-	type: 'primary' | 'subtle'
-	icon?: IconType
+	type: keyof UI['components']['Button']
+	icon?: keyof UI['icons']
 }
 
-export default function Button({ onClick, content, type, icon }: ButtonProps) {
-	return (
-		<button
-			type="button"
-			className="m-2 rounded-xl border-2 border-neutral-200 bg-neutral-100 p-2 px-4 text-black dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
-			onClick={onClick}
-		>
-			<div className="flex items-center gap-2">
-				{icon && <Icon icon={icon} size="sm" />}
+export default createComponent({
+	render: ({ onClick, content, type, icon }: ButtonProps<typeof ui>, ui) => {
+		const { borderRadius, padding, fontSize, backgroundColor, textColor } = ui.components.Button[type]
+
+		const classNames = [
+			getBorderRadiusClass(borderRadius),
+			getPaddingClass(padding),
+			getFontSizeClass(fontSize),
+			getBackgroundColorClass(backgroundColor, ui),
+			getTextColorClass(textColor, ui),
+			'flex items-center gap-2'
+		].join(' ')
+
+		const IconComponent = Icon(ui)
+
+		return (
+			<button type="button" className={classNames} onClick={onClick}>
+				{icon && <IconComponent icon={icon} size="sm" />}
 				{content}
-			</div>
-		</button>
-	)
-}
+			</button>
+		)
+	}
+})

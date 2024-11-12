@@ -1,3 +1,4 @@
+- [2024-11-12] [generics hell](https://github.com/RubricLab/ui/commit/54e9bd394543a1d0b2846359998430071ec9fcf5)
 - [2024-10-22] [rm bun lock](https://github.com/RubricLab/ui/commit/d0a1e2609a043e625758fd200f4c289fce6daff3)
 - [2024-10-18] [add package dep](https://github.com/RubricLab/ui/commit/aea6017644663c9be118180259e547f52572b548)
 - [2024-10-04] [bleed for mono](https://github.com/RubricLab/ui/commit/b8d2990221071505d0351f479eacb819fecb8ca4)
