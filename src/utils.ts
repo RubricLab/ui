@@ -61,15 +61,14 @@ export function getFontSizeClass(size: FontSize): string {
 
 export function getBackgroundColorClass<Colors extends { [K in keyof Colors]: Color }>(
 	color: keyof Colors,
-	ui: { colors: Colors }
+	{ colors }: { colors: Colors }
 ) {
-	const colorValue = ui.colors[color]
-	if (!colorValue) {
-		throw new Error(`Color ${String(color)} not found in design system`)
-	}
-	return `bg-[${colorValue.light}] dark:bg-[${colorValue.dark}]`
+	return `bg-[${colors[color].light}] dark:bg-[${colors[color].dark}]`
 }
 
-export function getTextColorClass<DS extends DesignSystem>(color: keyof DS['colors'], ui: DS) {
-	return `text-[${ui.colors[color]?.light}] dark:text-[${ui.colors[color]?.dark}]`
+export function getTextColorClass<Colors extends { [K in keyof Colors]: Color }>(
+	color: keyof Colors,
+	{ colors }: { colors: Colors }
+) {
+	return `text-[${colors[color].light}] dark:text-[${colors[color].dark}]`
 }
