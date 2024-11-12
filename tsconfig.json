@@ -1,23 +1,10 @@
 {
 	"compilerOptions": {
-		"target": "es2020",
-		"module": "esnext",
-		"strict": true,
-		"esModuleInterop": true,
-		"moduleResolution": "node",
-		"skipLibCheck": true,
-		"noUnusedLocals": true,
-		"noImplicitAny": true,
-		"allowJs": true,
-		"noEmit": true,
-		"outDir": "dist",
-		"resolveJsonModule": true,
-		"moduleDetection": "force",
-		"jsx": "react-jsx",
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false
-	}
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./src/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"extends": "@rubriclab/config/tsconfig"
 }
