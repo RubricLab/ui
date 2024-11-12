@@ -1,8 +1,7 @@
 // components/button.tsx
 'use client'
 
-import type { DesignSystem } from '../types'
-import { createComponent } from '../utils'
+import type { ButtonVariant, DesignSystem } from '~/types'
 import {
 	getBackgroundColorClass,
 	getBorderRadiusClass,
@@ -12,27 +11,28 @@ import {
 } from '../utils'
 import Icon from './icon'
 
-interface ButtonProps<UI extends DesignSystem> {
+interface ButtonProps<DS extends DesignSystem> {
 	onClick: () => void
 	content: string
-	type: keyof UI['components']['Button']
-	icon?: keyof UI['icons']
+	type: keyof DS['components']['Button']
+	icon?: Extract<keyof DS['icons'], string>
 }
 
-export default createComponent({
-	render: ({ onClick, content, type, icon }: ButtonProps<typeof ui>, ui) => {
-		const { borderRadius, padding, fontSize, backgroundColor, textColor } = ui.components.Button[type]
+export default function Button<DS extends DesignSystem>(designSystem: DS) {
+	return (props: ButtonProps<DS>) => {
+		const { onClick, content, type, icon } = props
+		const style = designSystem.components.Button[type as ButtonVariant]
 
 		const classNames = [
-			getBorderRadiusClass(borderRadius),
-			getPaddingClass(padding),
-			getFontSizeClass(fontSize),
-			getBackgroundColorClass(backgroundColor, ui),
-			getTextColorClass(textColor, ui),
+			getBorderRadiusClass(style.borderRadius),
+			getPaddingClass(style.padding),
+			getFontSizeClass(style.fontSize),
+			getBackgroundColorClass(style.backgroundColor, designSystem),
+			getTextColorClass(style.textColor, designSystem),
 			'flex items-center gap-2'
 		].join(' ')
 
-		const IconComponent = Icon(ui)
+		const IconComponent = Icon(designSystem)
 
 		return (
 			<button type="button" className={classNames} onClick={onClick}>
@@ -41,4 +41,4 @@ export default createComponent({
 			</button>
 		)
 	}
-})
+}

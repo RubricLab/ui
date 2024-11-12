@@ -1,11 +1,10 @@
 // utils.ts
 
 import type { ReactElement } from 'react'
-import { Button } from '.'
-import type { BorderRadius, ColorKey, FontSize, Padding } from './types'
-import type { DesignSystem } from './types'
+import Button from './components/button'
+import type { BorderRadius, Color, DesignSystem, FontSize, Padding } from './types'
 
-export function createComponent<UI extends DesignSystem, Props>({
+export function createComponent<UI, Props>({
 	render
 }: {
 	render: (props: Props, ui: UI) => ReactElement
@@ -17,7 +16,7 @@ export function createComponent<UI extends DesignSystem, Props>({
 	}
 }
 
-export function createUI<System extends DesignSystem>(designSystem: System) {
+export function createUI<DS extends DesignSystem>(designSystem: DS) {
 	return {
 		colors: Object.entries(designSystem.colors).reduce(
 			(acc, [key, value]) => {
@@ -60,10 +59,17 @@ export function getFontSizeClass(size: FontSize): string {
 	return sizeMap[size]
 }
 
-export function getBackgroundColorClass(colorKey: ColorKey, ui: DesignSystem) {
-	return `bg-[${ui.colors[colorKey].light}] dark:bg-[${ui.colors[colorKey].dark}]`
+export function getBackgroundColorClass<Colors extends { [K in keyof Colors]: Color }>(
+	color: keyof Colors,
+	ui: { colors: Colors }
+) {
+	const colorValue = ui.colors[color]
+	if (!colorValue) {
+		throw new Error(`Color ${String(color)} not found in design system`)
+	}
+	return `bg-[${colorValue.light}] dark:bg-[${colorValue.dark}]`
 }
 
-export function getTextColorClass(colorKey: ColorKey, ui: DesignSystem) {
-	return `text-[${ui.colors[colorKey].light}] dark:text-[${ui.colors[colorKey].dark}]`
+export function getTextColorClass<DS extends DesignSystem>(color: keyof DS['colors'], ui: DS) {
+	return `text-[${ui.colors[color]?.light}] dark:text-[${ui.colors[color]?.dark}]`
 }

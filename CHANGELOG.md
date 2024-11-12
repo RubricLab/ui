@@ -1,3 +1,5 @@
+- [2024-11-12] [directionally correct ish](https://github.com/RubricLab/ui/commit/f5645419c647687a51d974a9dea01fa6f83ae22a)
+- [2024-11-12] [direction??](https://github.com/RubricLab/ui/commit/1847f168d5cf52bec8add220f468e0c4b3583120)
 - [2024-11-12] [generics hell](https://github.com/RubricLab/ui/commit/54e9bd394543a1d0b2846359998430071ec9fcf5)
 - [2024-10-22] [rm bun lock](https://github.com/RubricLab/ui/commit/d0a1e2609a043e625758fd200f4c289fce6daff3)
 - [2024-10-18] [add package dep](https://github.com/RubricLab/ui/commit/aea6017644663c9be118180259e547f52572b548)

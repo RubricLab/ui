@@ -18,9 +18,8 @@ export type BorderRadius = 'none' | 'small' | 'medium' | 'large'
 export type Padding = 'none' | 'small' | 'medium' | 'large'
 export type FontSize = 'small' | 'medium' | 'large'
 export type ButtonVariant = 'primary' | 'subtle'
-export type ColorKey = keyof DesignSystem['colors']
 
-export type ButtonStyle = {
+export type ButtonStyle<ColorKey> = {
 	borderRadius: BorderRadius
 	padding: Padding
 	backgroundColor: ColorKey
@@ -28,20 +27,21 @@ export type ButtonStyle = {
 	fontSize: FontSize
 }
 
-export type DesignSystem = {
+export type DesignSystem<
+	Colors extends { [K in keyof Colors]: Color } = { [key in string]: Color },
+	Icons extends { [K in keyof Icons]: Asset } = { [key in string]: Asset },
+	Fonts extends { [K in keyof Fonts]: Font } = { [key in string]: Font },
+	ButtonComponents extends { [K in keyof ButtonComponents]: ButtonStyle<keyof Colors> } = {
+		[key in ButtonVariant]: ButtonStyle<keyof Colors>
+	}
+> = {
 	colors: {
 		primary: Color
 		secondary: Color
-	} & Record<string, Color>
-	icons: {
-		sun?: Asset
-	} & Record<string, Asset>
-	fonts: {
-		display: Font
-		paragraph: Font
-		code: Font
-	}
+	} & Colors
+	icons: Icons
+	fonts: Fonts
 	components: {
-		Button: Record<ButtonVariant, ButtonStyle>
+		Button: ButtonComponents
 	}
 }
