@@ -1,5 +1,3 @@
-'use client'
-
 type NavProps = {
 	routes: {
 		title: string
@@ -13,17 +11,26 @@ export default function Nav({ routes }: NavProps) {
 	const endRoutes = routes.filter(route => route.end)
 
 	return (
-		<div className="flex justify-between gap-4 bg-neutral-100 p-4 dark:bg-neutral-900">
-			<div className="flex gap-4">
+		<div
+			style={{
+				display: 'flex',
+				justifyContent: 'space-between',
+				gap: '16px',
+				backgroundColor: '#f5f5f5',
+				padding: '16px',
+				fontFamily: 'sans-serif'
+			}}
+		>
+			<div style={{ display: 'flex', gap: '16px' }}>
 				{startRoutes.map(route => (
-					<a key={route.route} href={route.route} className="text-black dark:text-white">
+					<a key={route.route} href={route.route} style={{ color: 'black' }}>
 						{route.title}
 					</a>
 				))}
 			</div>
-			<div className="flex gap-4">
+			<div style={{ display: 'flex', gap: '16px' }}>
 				{endRoutes.map(route => (
-					<a key={route.route} href={route.route} className="text-black dark:text-white">
+					<a key={route.route} href={route.route} style={{ color: 'black' }}>
 						{route.title}
 					</a>
 				))}

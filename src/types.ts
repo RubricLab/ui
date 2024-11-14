@@ -40,6 +40,10 @@ export type DesignSystem<
 		secondary: Color
 	} & Colors
 	icons: Icons
+	logo: {
+		icon: Asset
+		wordMark: Asset
+	}
 	fonts: Fonts
 	components: {
 		Button: ButtonComponents

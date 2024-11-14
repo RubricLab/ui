@@ -6,11 +6,4 @@ export { default as Page } from './components/page'
 
 export type { Asset } from './types'
 
-export {
-	createUI,
-	getBorderRadiusClass,
-	getBackgroundColorClass,
-	getFontSizeClass,
-	getPaddingClass,
-	getTextColorClass
-} from './utils'
+export { createUI } from './utils'

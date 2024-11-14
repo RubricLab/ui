@@ -8,29 +8,42 @@ interface IconProps<UI extends DesignSystem> {
 	size: Size
 }
 
-function getSizeClass(size: Size) {
-	switch (size) {
-		case 'sm':
-			return 'w-5 h-5'
-		case 'md':
-			return 'w-8 h-8'
-		case 'lg':
-			return 'w-10 h-10'
-		default:
-			return `w-[${size}] h-[${size}]`
-	}
-}
-
 export default createComponent<DesignSystem, IconProps<DesignSystem>>({
 	render: ({ icon, size }, ui) => {
 		const iconAsset = ui.icons[icon]
+
+		function getSizeStyle(size: Size) {
+			let sizeValue: string
+			switch (size) {
+				case 'sm':
+					sizeValue = '20px' // Corresponds to w-5 h-5
+					break
+				case 'md':
+					sizeValue = '32px' // Corresponds to w-8 h-8
+					break
+				case 'lg':
+					sizeValue = '40px' // Corresponds to w-10 h-10
+					break
+				default:
+					sizeValue = size
+			}
+			return { width: sizeValue, height: sizeValue }
+		}
+
+		const sizeStyle = getSizeStyle(size)
+
 		return (
-			<div className={getSizeClass(size)}>
-				<div className="flex hidden h-full w-full items-center justify-center dark:block">
+			<div style={{ ...sizeStyle }}>
+				<div
+					style={{
+						display: 'flex',
+						height: '100%',
+						width: '100%',
+						alignItems: 'center',
+						justifyContent: 'center'
+					}}
+				>
 					{iconAsset?.dark()}
-				</div>
-				<div className="flex h-full w-full items-center justify-center dark:hidden">
-					{iconAsset?.light()}
 				</div>
 			</div>
 		)

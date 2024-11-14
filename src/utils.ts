@@ -30,45 +30,63 @@ export function createUI<DS extends DesignSystem>(designSystem: DS) {
 	}
 }
 
-export function getBorderRadiusClass(radius: BorderRadius): string {
+export function getBorderRadiusStyles(radius: BorderRadius) {
 	const radiusMap = {
-		none: 'rounded-none',
-		small: 'rounded-sm',
-		medium: 'rounded-md',
-		large: 'rounded-lg'
+		none: {
+			borderRadius: '0'
+		},
+		small: {
+			borderRadius: '0.125rem'
+		},
+		medium: {
+			borderRadius: '0.375rem'
+		},
+		large: {
+			borderRadius: '0.5rem'
+		}
 	}
 	return radiusMap[radius]
 }
 
-export function getPaddingClass(padding: Padding): string {
+export function getPaddingStyles(padding: Padding): React.CSSProperties {
 	const paddingMap = {
-		none: 'p-0',
-		small: 'p-2',
-		medium: 'p-4',
-		large: 'p-6'
+		none: { padding: '0' },
+		small: { padding: '0.5rem' }, // p-2 = 0.5rem
+		medium: { padding: '1rem' }, // p-4 = 1rem
+		large: { padding: '1.5rem' } // p-6 = 1.5rem
 	}
 	return paddingMap[padding]
 }
 
-export function getFontSizeClass(size: FontSize): string {
+export function getFontSizeStyles(size: FontSize) {
 	const sizeMap = {
-		small: 'text-sm',
-		medium: 'text-base',
-		large: 'text-lg'
+		small: { fontSize: '0.875rem' }, // text-sm
+		medium: { fontSize: '1rem' }, // text-base
+		large: { fontSize: '1.125rem' } // text-lg
 	}
 	return sizeMap[size]
 }
 
-export function getBackgroundColorClass<Colors extends { [K in keyof Colors]: Color }>(
+export function getBackgroundColorStyles<Colors extends { [K in keyof Colors]: Color }>(
 	color: keyof Colors,
 	{ colors }: { colors: Colors }
 ) {
-	return `bg-[${colors[color].light}] dark:bg-[${colors[color].dark}]`
+	return {
+		backgroundColor: colors[color].light,
+		'@media (prefers-color-scheme: dark)': {
+			backgroundColor: colors[color].dark
+		}
+	}
 }
 
-export function getTextColorClass<Colors extends { [K in keyof Colors]: Color }>(
+export function getTextColorStyles<Colors extends { [K in keyof Colors]: Color }>(
 	color: keyof Colors,
 	{ colors }: { colors: Colors }
 ) {
-	return `text-[${colors[color].light}] dark:text-[${colors[color].dark}]`
+	return {
+		color: colors[color].light,
+		'@media (prefers-color-scheme: dark)': {
+			color: colors[color].dark
+		}
+	}
 }

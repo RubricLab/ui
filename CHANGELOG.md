@@ -1,3 +1,6 @@
+- [2024-11-14] [quality of life simplification of utils](https://github.com/RubricLab/ui/commit/e05a19a0a66012fcd1dade28ce72762414b06f24)
+- [2024-11-14] [quality of life simplification of utils](https://github.com/RubricLab/ui/commit/5d7e8fbf4e3a183980b22edc7f6e3fd2a264391a)
+- [2024-11-14] [wip obliterate deps](https://github.com/RubricLab/ui/commit/0b664436c642bd1ac944a95bc7457f743a8b5200)
 - [2024-11-12] [quality of life simplification of utils](https://github.com/RubricLab/ui/commit/91df0d686257b95af3d9eb30a08df669d5ab5581)
 - [2024-11-12] [directionally correct ish](https://github.com/RubricLab/ui/commit/f5645419c647687a51d974a9dea01fa6f83ae22a)
 - [2024-11-12] [direction??](https://github.com/RubricLab/ui/commit/1847f168d5cf52bec8add220f468e0c4b3583120)
