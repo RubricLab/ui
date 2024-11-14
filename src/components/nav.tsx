@@ -1,9 +1,7 @@
+import type { Route } from '~/types'
+
 type NavProps = {
-	routes: {
-		title: string
-		route: `/${string}`
-		end?: boolean
-	}[]
+	routes: Route[]
 }
 
 export default function Nav({ routes }: NavProps) {

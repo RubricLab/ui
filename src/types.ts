@@ -49,3 +49,9 @@ export type DesignSystem<
 		Button: ButtonComponents
 	}
 }
+
+export type Route = {
+	title: string
+	route: `/${string}`
+	end?: boolean
+}
