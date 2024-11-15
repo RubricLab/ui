@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import type { DesignSystem } from '../types'
 import { createComponent } from '../utils'
 
-type PageProps = { content: ReactElement }
+type PageProps = { content: ReactElement | ReactElement[] }
 
 export default createComponent<DesignSystem, PageProps>({
 	render: ({ content }, _ui) => {
