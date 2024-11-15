@@ -1,7 +1,5 @@
-// components/button.tsx
-'use client'
-
-import type { ButtonVariant, DesignSystem } from '~/types'
+import type { DesignSystem } from '../types'
+import { createComponent } from '../utils'
 import { Styled } from '../utils/styled'
 import Icon from './icon'
 
@@ -12,36 +10,47 @@ interface ButtonProps<DS extends DesignSystem> {
 	icon?: keyof DS['icons']
 }
 
-export default function Button<DS extends DesignSystem>(designSystem: DS) {
-	return (props: ButtonProps<DS>) => {
-		const { onClick, content, type, icon } = props
-		const style = designSystem.components.Button[type as ButtonVariant]
+export default createComponent<DesignSystem, ButtonProps<DesignSystem>>({
+	render: ({ onClick, content, type, icon }, ui) => {
+		const theme = ui.components.Button[type]
 
-		const IconComponent = Icon(designSystem)
+		const color = ui.colors[theme.color]
+
+		const size = ui.sizing[theme.size]
+
+		if (!color || !size) {
+			throw ''
+		}
+
+		const IconComponent = Icon(ui)
 
 		return (
 			<Styled
 				styles={{
-					backgroundColor: designSystem.colors[style.backgroundColor]?.light,
-					color: designSystem.colors[style.textColor]?.light,
-					padding: designSystem.sizing[designSystem.components.Button[type as ButtonVariant].padding],
-					borderRadius: '8px',
+					backgroundColor: color.bg.light,
+					color: color.text.light,
+					padding: size.space,
+					borderRadius: size.rounding,
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
-					gap: '8px'
+					gap: size.space,
+					fontSize: size.text,
+					border: 'none',
+					cursor: 'pointer',
+					margin: ui.sizing.medium.space // consistent margin
 				}}
 				darkStyles={{
-					backgroundColor: designSystem.colors[style.backgroundColor]?.dark,
-					color: designSystem.colors[style.textColor]?.dark
+					backgroundColor: color.bg.dark,
+					color: color.text.dark
 				}}
 				component={id => (
 					<button type="button" id={id} onClick={onClick}>
-						{icon && <IconComponent icon={icon} size="sm" />}
+						{icon && <IconComponent icon={icon} fill={color.text} size="sm" />}
 						{content}
 					</button>
 				)}
 			/>
 		)
 	}
-}
+})

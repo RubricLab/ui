@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.24",
+  "version": "5.0.25",
   "main": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
@@ -32,8 +32,7 @@
   "devDependencies": {
     "@rubriclab/config": "*",
     "@types/bun": "latest",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
+    "next": "^15.0.3",
     "typescript": "^5.6.2"
   },
   "peerDependencies": {
