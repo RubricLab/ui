@@ -1,17 +1,26 @@
+import { z } from 'zod'
 import type { DesignSystem } from '../types'
 import { createComponent } from '../utils'
 import { Styled } from '../utils/styled'
 import Icon from './icon'
 
-interface ButtonProps<DS extends DesignSystem> {
-	onClick: () => void
-	content: string
-	type: keyof DS['components']['Button']
-	icon?: keyof DS['icons']
+function arrayToTuple<T extends string>(arr: T[]): readonly [T, ...T[]] {
+	if (!arr[0]) throw ''
+	return [arr[0], ...arr.slice(1, undefined)]
 }
 
-export default createComponent<DesignSystem, ButtonProps<DesignSystem>>({
-	render: ({ onClick, content, type, icon }, ui) => {
+function createButtonSchema<UI extends DesignSystem>(ui: UI) {
+	return z.object({
+		onClick: z.function().returns(z.void()),
+		content: z.string(),
+		type: z.enum(arrayToTuple(Object.keys(ui.components.Button))),
+		icon: z.string().optional()
+	})
+}
+
+export default createComponent<DesignSystem>(ui => ({
+	schema: createButtonSchema(ui),
+	render: ({ onClick, content, type, icon }) => {
 		const theme = ui.components.Button[type]
 
 		const color = ui.colors[theme.color]
@@ -53,4 +62,4 @@ export default createComponent<DesignSystem, ButtonProps<DesignSystem>>({
 			/>
 		)
 	}
-})
+}))
