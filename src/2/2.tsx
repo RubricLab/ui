@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { type EnumValues, type ZodEnum, z } from 'zod'
 
 type Color = {
 	bg: {
@@ -17,37 +17,35 @@ type Size = {
 	rounding: string
 }
 
-type Asset = { [key: string]: string }
+type Asset = string
 
-function createButton<DS extends { icons: Icons }, Icons extends { [key in keyof Icons]: string }>(
-	ds: DS
-) {
-	const safeIcons = ds.icons
+function getTupleFromObjectKeys<Obj extends { [key in keyof Obj]: unknown }>(obj: Obj) {
+	type Keys = keyof Obj extends string ? keyof Obj : never
+	return Object.keys(obj) as [Keys, ...Keys[]]
+}
 
-	const iconKeys = Object.keys(safeIcons) as ReadonlyArray<keyof typeof safeIcons>
+function createButton<Icons extends { [key: string]: Asset }>({ icons }: { icons: Icons }) {
+	const schema = z.object({
+		icon: z.enum(getTupleFromObjectKeys(icons))
+	})
 
-	const icons = ['cowboy', 'john'] as const
-
-	const badSchema = z.object({ icon: z.enum([ds.icons[0], ...ds.icons.slice(1)]) })
-
-	const goodSchema = z.object({ icon: z.enum(['cowboy']) })
-
-	const component = ({ icon }: z.infer<typeof goodObject>) => (
-		<button type="button">{icon ? ds.icons[icon] : ''}</button>
+	const component = ({ icon }: z.infer<typeof schema>) => (
+		<button type="button">{icon ? icons[icon] : ''}</button>
 	)
 
-	component.schema = goodSchema
+	component.schema = schema
 
 	return component
 }
 
 function createUI<
 	Colors extends { [key: string]: Color; primary: Color; secondary: Color },
-	Sizes extends { [key: string]: Size; small: Size; medium: Size; large: Size }
+	Sizes extends { [key: string]: Size; small: Size; medium: Size; large: Size },
+	Icons extends { [key: string]: Asset }
 >(ds: {
 	colors: Colors
 	sizing: Sizes
-	icons: Asset
+	icons: Icons
 	components: {
 		Button: {
 			primary: {
@@ -58,7 +56,7 @@ function createUI<
 	}
 }) {
 	return {
-		Button: createButton(ds)
+		Button: createButton<Icons>(ds)
 	}
 }
 
@@ -84,7 +82,7 @@ const { Button } = createUI({
 				dark: '#FFFFFF'
 			}
 		},
-		random: {
+		bad: {
 			bg: {
 				light: '#FFFFFF',
 				dark: '#000000'
@@ -97,7 +95,7 @@ const { Button } = createUI({
 	},
 	icons: {
 		cowboy: '🤠'
-	} as const,
+	},
 	sizing: {
 		small: {
 			space: '0.5rem',
@@ -118,13 +116,15 @@ const { Button } = createUI({
 	components: {
 		Button: {
 			primary: {
-				color: 'primary',
+				color: 'bad',
 				size: 'small'
 			}
 		}
 	}
-} as const)
+})
 
 const test = () => {
-	return <Button icon="cowboy" />
+	return <Button icon="bad" />
 }
+
+const parsed = Button.schema.parse({ icon: 'good' })
