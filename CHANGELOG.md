@@ -1,3 +1,4 @@
+- [2024-11-21] [font type issues](https://github.com/RubricLab/ui/commit/5f78fb22222fffa039dd959d928b02a4262fa1fc)
 - [2024-11-21] [mono theme touch](https://github.com/RubricLab/ui/commit/a356c001c23d1e8065553d36740731c2f974ada7)
 - [2024-11-21] [cleanup and comments](https://github.com/RubricLab/ui/commit/763d5620a4219600e98de77ab9caeaf667cd267f)
 - [2024-11-21] [fonts, themes](https://github.com/RubricLab/ui/commit/79f52aa38e4f4cfd02e91fa156ca70ebc1ce402a)

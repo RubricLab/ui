@@ -1,4 +1,4 @@
-import type { FontsConfig } from '~/types'
+import type { FontsConfig } from '../types'
 
 export function FontFaces({ fonts }: { fonts: FontsConfig }) {
 	return (

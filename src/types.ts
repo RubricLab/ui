@@ -1,9 +1,14 @@
 import type { ReactElement, SVGProps } from 'react'
 
-export type Font = {
-	format: 'truetype'
-	base64: `data:font/truetype;charset=utf-8;base64,${string}`
-}
+export type Font =
+	| {
+			format: 'truetype'
+			base64: `data:font/truetype;charset=utf-8;base64,${string}`
+	  }
+	| {
+			format: 'opentype'
+			base64: `data:font/opentype;charset=utf-8;base64,${string}`
+	  }
 
 export type FontsConfig = {
 	display: Font
