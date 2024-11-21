@@ -61,12 +61,12 @@ export const monoTheme = createTheme({
 	sizes: {
 		small: {
 			space: '0.5rem',
-			text: '14px',
+			text: '12px',
 			rounding: '0.5rem'
 		},
 		medium: {
 			space: '1rem',
-			text: '14px',
+			text: '18px',
 			rounding: '0.5rem'
 		},
 		large: {
