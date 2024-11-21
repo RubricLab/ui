@@ -36,7 +36,8 @@ export function createButton<
 					padding: sizes[size]?.space,
 					margin: sizes[size]?.space,
 					borderRadius: sizes[size]?.rounding,
-					fontSize: sizes[size]?.text
+					fontSize: sizes[size]?.text,
+					border: 'none'
 				}}
 				darkStyles={{
 					backgroundColor: colors[color]?.bg.dark,

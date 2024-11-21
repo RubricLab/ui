@@ -84,34 +84,66 @@ export function createForm<
 				styles={{
 					backgroundColor: colors.primary.bg.light,
 					color: colors.primary.text.light,
-					padding: sizes.medium.space,
 					margin: sizes.medium.space,
 					borderRadius: sizes.medium.rounding,
-					fontSize: sizes.medium.text
+					fontSize: sizes.medium.text,
+					display: 'flex',
+					flexDirection: 'column',
+					gap: sizes.medium.space
 				}}
 				darkStyles={{}}
 				component={id => (
 					<form
 						id={id}
-						onSubmit={() => {
+						onSubmit={e => {
+							e.preventDefault()
 							onsubmit(values)
 						}}
 					>
-						<p>{title}</p>
+						<p style={{ margin: 0 }}>{title}</p>
 						{fields.map(({ name, type, placeholder }) => (
 							<input
 								key={name}
 								name={name}
 								type={type}
+								style={{
+									margin: 0,
+									padding: sizes.medium.space
+								}}
 								placeholder={placeholder}
-								onChange={e =>
+								onChange={e => {
+									const value = (() => {
+										switch (type) {
+											case 'number':
+												return Number(e.target.value)
+
+											case 'checkbox':
+											case 'radio':
+												return e.target.checked
+
+											case 'date':
+											case 'time':
+												return new Date(e.target.value)
+											default:
+												return e.target.value
+										}
+									})()
+
 									setValues(v => ({
 										...v,
-										[name]: e.target.value
+										[name]: value
 									}))
-								}
+								}}
 							/>
 						))}
+						<button
+							type="submit"
+							style={{
+								padding: sizes.medium.space
+							}}
+						>
+							submit
+						</button>
 					</form>
 				)}
 			/>
