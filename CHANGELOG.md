@@ -1,3 +1,4 @@
+- [2024-11-21] [logo touches](https://github.com/RubricLab/ui/commit/15a2076edfd75d23ee97b0b03bc66bc294de9354)
 - [2024-11-21] [form and icon touches](https://github.com/RubricLab/ui/commit/2c7d270921ce33040cc08c3c94ebe33c0d65b9bf)
 - [2024-11-21] [font type issues](https://github.com/RubricLab/ui/commit/5f78fb22222fffa039dd959d928b02a4262fa1fc)
 - [2024-11-21] [mono theme touch](https://github.com/RubricLab/ui/commit/a356c001c23d1e8065553d36740731c2f974ada7)

@@ -1,22 +1,22 @@
-import type { Asset } from '@rubriclab/ui'
+import type { Asset, Hex } from '../../../types'
 
 export const icon: Asset = {
 	light: () => (
-		<svg width="100%" height="100%" viewBox="0 0 900 900">
+		<svg width="100%" height="100%" viewBox="0 0 360 360">
 			<title>Rubric Logo</title>
-			<path d="M300 600V300H400V400H500V300H600V400H500V500H400V600H300Z" fill="black" />
+			<path d="M0,360V0h120v120h120V0h120v120H240v120H120v120H0z" fill="black" />
 		</svg>
 	),
 	dark: () => (
-		<svg width="100%" height="100%" viewBox="0 0 900 900">
+		<svg width="100%" height="100%" viewBox="0 0 360 360">
 			<title>Rubric Logo</title>
-			<path d="M300 600V300H400V400H500V300H600V400H500V500H400V600H300Z" fill="white" />
+			<path d="M0,360V0h120v120h120V0h120v120H240v120H120v120H0z" fill="white" />
 		</svg>
 	),
-	mono: (fill: `#${string}`) => (
-		<svg width="100%" height="100%" viewBox="0 0 900 900">
+	mono: (fill: Hex) => (
+		<svg width="100%" height="100%" viewBox="0 0 360 360">
 			<title>Rubric Logo</title>
-			<path d="M300 600V300H400V400H500V300H600V400H500V500H400V600H300Z" fill={fill} />
+			<path d="M0,360V0h120v120h120V0h120v120H240v120H120v120H0z" fill={fill} />
 		</svg>
 	)
 }
