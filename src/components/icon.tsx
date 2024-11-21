@@ -52,8 +52,8 @@ export function createIcon<
 		return (
 			<div
 				style={{
-					width: `calc(${sizeValue.text} * 1.2)`,
-					height: `calc(${sizeValue.text} * 1.2)`
+					width: `calc(${sizeValue.text})`,
+					height: `calc(${sizeValue.text})`
 				}}
 			>
 				<div
@@ -62,7 +62,9 @@ export function createIcon<
 						height: '100%',
 						width: '100%',
 						alignItems: 'center',
-						justifyContent: 'center'
+						justifyContent: 'center',
+						textAlign: 'center',
+    					lineHeight: 0
 					}}
 				>
 					{fillValue ? (

@@ -81,7 +81,7 @@ export function createButton<
 					justifyContent: 'center',
 					alignItems: 'center',
 					cursor: 'pointer',
-					gap: `calc(${size.space} / 2)`,
+					gap: size.space,
 					border: 'none'
 				}}
 				darkStyles={{
