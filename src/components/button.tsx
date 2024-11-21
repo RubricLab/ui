@@ -1,62 +1,104 @@
+import React from 'react'
 import { z } from 'zod'
-import type { ButtonConfig, ColorsConfig, IconsConfig, SizesConfig } from '../types'
+import type {
+	ButtonConfig,
+	ColorsConfig,
+	DesignSystem,
+	FontsConfig,
+	FormConfig,
+	IconsConfig,
+	LogosConfig,
+	SizesConfig
+} from '../types'
 import { getTupleFromObjectKeys } from '../utils'
 import { Styled } from '../utils/styled'
 import { createIcon } from './icon'
 
 export function createButton<
+	Fonts extends FontsConfig,
+	Logos extends LogosConfig,
 	Colors extends ColorsConfig,
 	Sizes extends SizesConfig,
 	Icons extends IconsConfig,
-	Button extends ButtonConfig<Colors, Sizes>
->(ds: { icons: Icons; colors: Colors; sizes: Sizes; components: { Button: Button } }) {
+	Button extends ButtonConfig<Colors, Sizes>,
+	Form extends FormConfig<Colors, Sizes>
+>(ds: DesignSystem<Fonts, Logos, Colors, Sizes, Icons, Button, Form>) {
 	const {
+		// fonts,
+		// logos,
 		colors,
 		sizes,
 		icons,
-		components: { Button }
+		components: {
+			button
+			// form
+		}
 	} = ds
 
 	const schema = z.object({
 		icon: z.enum(getTupleFromObjectKeys(icons)).optional(),
 		onClick: z.function(),
 		content: z.string(),
-		type: z.enum(getTupleFromObjectKeys(Button))
+		type: z.enum(getTupleFromObjectKeys(button))
 	})
 
-	const component = ({ icon, onClick, content, type }: z.infer<typeof schema>) => {
+	const component = ({
+		icon,
+		onClick,
+		content,
+		type
+	}: {
+		icon?: z.infer<typeof schema.shape.icon>
+		onClick: z.infer<typeof schema.shape.onClick>
+		content: z.infer<typeof schema.shape.content>
+		type: z.infer<typeof schema.shape.type>
+	}) => {
 		if (!type) {
 			throw ''
-		}
+		} // problematic - why do we need this
 
-		const { size, color } = Button[type]
+		const sizeKey = button[type].size
+		const size = sizes[sizeKey]
 
-		const IconComponent = createIcon(ds)
+		const colorKey = button[type].color
+		const color = colors[colorKey]
+
+		if (!size || !color) {
+			throw ''
+		} // problematic - why do we need this
 
 		return (
 			<Styled
 				styles={{
-					backgroundColor: colors[color]?.bg.light,
-					color: colors[color]?.text.light,
-					padding: sizes[size]?.space,
-					margin: `calc(${sizes.medium.space})`,
-					borderRadius: sizes[size]?.rounding,
-					fontSize: sizes[size]?.text,
+					backgroundColor: color.bg.light,
+					color: color.text.light,
+					padding: size.space,
+					margin: sizes.medium.space,
+					borderRadius: size.rounding,
+					fontSize: size.text,
 					fontFamily: 'text',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					cursor: 'pointer',
-					gap: `calc(${sizes[size]?.space} / 2)`,
+					gap: `calc(${size.space} / 2)`,
 					border: 'none'
 				}}
 				darkStyles={{
-					backgroundColor: colors[color]?.bg.dark,
-					color: colors[color]?.text.dark
+					backgroundColor: color.bg.dark,
+					color: color.text.dark
 				}}
 				component={id => (
 					<button id={id} type="button" onClick={onClick}>
-						{icon && <IconComponent icon={icon} fill={color} size={size} />} {content}
+						{icon &&
+							createIcon(ds)({
+								icon,
+								// biome-ignore lint/suspicious/noExplicitAny: tech debt
+								fill: colorKey as any,
+								// biome-ignore lint/suspicious/noExplicitAny: tech debt
+								size: sizeKey as any
+							})}
+						{content}
 					</button>
 				)}
 			/>

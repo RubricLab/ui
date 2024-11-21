@@ -1,8 +1,4 @@
 import type { ReactElement, SVGProps } from 'react'
-import type { createButton } from './components/button'
-import type { createForm } from './components/form'
-import type { createIcon } from './components/icon'
-import type { createLayout } from './components/layout'
 
 export type Font = {
 	format: 'truetype'
@@ -84,29 +80,27 @@ export type FormConfig<Colors extends ColorsConfig, Sizes extends SizesConfig> =
 	}
 }
 
-export type DesignSystemFunction<Returns extends 'System' | 'Components' | 'Create'> = <
+export type ComponentsConfig<Colors extends ColorsConfig, Sizes extends SizesConfig> = {
+	Button: ButtonConfig<Colors, Sizes>
+	Form: FormConfig<Colors, Sizes>
+}
+
+export type DesignSystem<
 	Fonts extends FontsConfig,
+	Logos extends LogosConfig,
 	Colors extends ColorsConfig,
 	Sizes extends SizesConfig,
 	Icons extends IconsConfig,
-	Logos extends LogosConfig,
 	Button extends ButtonConfig<Colors, Sizes>,
 	Form extends FormConfig<Colors, Sizes>
->(ds: {
+> = {
 	fonts: Fonts
+	logos: Logos
 	colors: Colors
 	sizes: Sizes
 	icons: Icons
-	logos: Logos
 	components: {
-		Button: Button
-		Form: Form
+		button: Button
+		form: Form
 	}
-}) => Returns extends 'System'
-	? typeof ds
-	: {
-			Button: ReturnType<typeof createButton<Colors, Sizes, Icons, Button>>
-			Form: ReturnType<typeof createForm<Fonts, Logos, Colors, Sizes, Icons, Form, Button>>
-			Layout: ReturnType<typeof createLayout<Fonts, Colors, Sizes>>
-			Icon: ReturnType<typeof createIcon<Colors, Sizes, Icons>>
-		}
+}

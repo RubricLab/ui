@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { z } from 'zod'
-import { createUI } from '..'
 import type {
 	ButtonConfig,
 	ColorsConfig,
+	DesignSystem,
 	FontsConfig,
 	FormConfig,
 	IconsConfig,
@@ -11,6 +11,7 @@ import type {
 	SizesConfig
 } from '../types'
 import { Styled } from '../utils/styled'
+import { createButton } from './button'
 
 const fieldMap = {
 	text: z.string(),
@@ -39,21 +40,16 @@ export function createForm<
 	Colors extends ColorsConfig,
 	Sizes extends SizesConfig,
 	Icons extends IconsConfig,
-	Form extends FormConfig<Colors, Sizes>,
-	Button extends ButtonConfig<Colors, Sizes>
->(ds: {
-	logos: Logos
-	fonts: Fonts
-	icons: Icons
-	colors: Colors
-	sizes: Sizes
-	components: { Form: Form; Button: Button }
-}) {
+	Button extends ButtonConfig<Colors, Sizes>,
+	Form extends FormConfig<Colors, Sizes>
+>(ds: DesignSystem<Fonts, Logos, Colors, Sizes, Icons, Button, Form>) {
 	const {
+		// fonts,
+		// logos,
 		colors,
-		sizes,
-		icons,
-		components: { Form }
+		sizes
+		// icons,
+		// components: { button, form }
 	} = ds
 
 	const schema = z.object({
@@ -94,14 +90,13 @@ export function createForm<
 			fields,
 			onsubmit
 		}: {
-			title: string
+			title: z.infer<typeof schema.shape.title>
 			fields: Fields
 			onsubmit: (args: Args) => void
 		} // problematic - should be z.infer<typeof schema>
 	) {
 		const [values, setValues] = useState<Args>({} as Args)
 
-		const { Button } = createUI(ds)
 		return (
 			<Styled
 				styles={{
@@ -171,13 +166,14 @@ export function createForm<
 							/>
 						))}
 						<div style={{ margin: `calc(-${sizes.medium.space} / 2)` }}>
-							<Button
-								onClick={() => {
+							{createButton(ds)({
+								onClick: () => {
 									onsubmit(values)
-								}}
-								content={'Submit Form'}
-								type={'primary'}
-							/>
+								},
+								content: 'Submit Form',
+								// biome-ignore lint/suspicious/noExplicitAny: tech debt
+								type: 'primary' as any
+							})}
 						</div>
 					</form>
 				)}

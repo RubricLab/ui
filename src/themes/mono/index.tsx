@@ -86,7 +86,7 @@ export const monoTheme = createTheme({
 		wordMark
 	},
 	components: {
-		Button: {
+		button: {
 			primary: {
 				color: 'contrast',
 				size: 'medium'
@@ -100,11 +100,11 @@ export const monoTheme = createTheme({
 				size: 'medium'
 			}
 		},
-		Form: {
+		form: {
 			primary: {
 				color: 'primary',
 				size: 'small'
 			}
 		}
 	}
-})
+} as const)

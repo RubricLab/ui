@@ -1,14 +1,35 @@
 import type { ReactElement } from 'react'
 import { z } from 'zod'
-import type { ColorsConfig, FontsConfig, SizesConfig } from '../types'
+import type {
+	ButtonConfig,
+	ColorsConfig,
+	DesignSystem,
+	FontsConfig,
+	FormConfig,
+	IconsConfig,
+	LogosConfig,
+	SizesConfig
+} from '../types'
 import { FontFaces } from '../utils/fonts'
 import { Styled } from '../utils/styled'
 
 export function createLayout<
 	Fonts extends FontsConfig,
+	Logos extends LogosConfig,
 	Colors extends ColorsConfig,
-	Sizes extends SizesConfig
->({ fonts, colors, sizes }: { fonts: Fonts; colors: Colors; sizes: Sizes }) {
+	Sizes extends SizesConfig,
+	Icons extends IconsConfig,
+	Button extends ButtonConfig<Colors, Sizes>,
+	Form extends FormConfig<Colors, Sizes>
+>(ds: DesignSystem<Fonts, Logos, Colors, Sizes, Icons, Button, Form>) {
+	const {
+		fonts,
+		// logos,
+		colors,
+		sizes
+		// icons
+		// components: { button, form }
+	} = ds
 	const schema = z.object({ page: z.custom<ReactElement>() })
 
 	function component({ page }: z.infer<typeof schema>) {
