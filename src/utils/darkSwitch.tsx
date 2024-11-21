@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { Styled } from '~/utils/styled'
+import { Styled } from '../utils/styled'
 
 export function DarkSwitch({
 	component,

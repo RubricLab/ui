@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import { z } from 'zod'
-import type { ColorsConfig, FormConfig, IconsConfig, SizesConfig } from '../types'
+import { createUI } from '..'
+import type {
+	ButtonConfig,
+	ColorsConfig,
+	FontsConfig,
+	FormConfig,
+	IconsConfig,
+	LogosConfig,
+	SizesConfig
+} from '../types'
 import { Styled } from '../utils/styled'
 
 const fieldMap = {
@@ -25,16 +34,28 @@ type Field = {
 }
 
 export function createForm<
+	Fonts extends FontsConfig,
+	Logos extends LogosConfig,
 	Colors extends ColorsConfig,
 	Sizes extends SizesConfig,
 	Icons extends IconsConfig,
-	Form extends FormConfig<Colors, Sizes>
->({
-	colors,
-	sizes,
-	icons,
-	components: { Form }
-}: { icons: Icons; colors: Colors; sizes: Sizes; components: { Form: Form } }) {
+	Form extends FormConfig<Colors, Sizes>,
+	Button extends ButtonConfig<Colors, Sizes>
+>(ds: {
+	logos: Logos
+	fonts: Fonts
+	icons: Icons
+	colors: Colors
+	sizes: Sizes
+	components: { Form: Form; Button: Button }
+}) {
+	const {
+		colors,
+		sizes,
+		icons,
+		components: { Form }
+	} = ds
+
 	const schema = z.object({
 		title: z.string(),
 		fields: z.array(
@@ -79,71 +100,85 @@ export function createForm<
 		} // problematic - should be z.infer<typeof schema>
 	) {
 		const [values, setValues] = useState<Args>({} as Args)
+
+		const { Button } = createUI(ds)
 		return (
 			<Styled
 				styles={{
 					backgroundColor: colors.primary.bg.light,
 					color: colors.primary.text.light,
-					margin: sizes.medium.space,
 					borderRadius: sizes.medium.rounding,
 					fontSize: sizes.medium.text,
 					display: 'flex',
-					flexDirection: 'column',
-					gap: sizes.medium.space
+					margin: `calc(${sizes.medium.space} / 2)`,
+					fontFamily: 'display',
+					flexDirection: 'column'
 				}}
-				darkStyles={{}}
+				darkStyles={{
+					backgroundColor: colors.primary.bg.dark,
+					color: colors.primary.text.dark
+				}}
 				component={id => (
-					<form
-						id={id}
-						onSubmit={e => {
-							e.preventDefault()
-							onsubmit(values)
-						}}
-					>
-						<p style={{ margin: 0 }}>{title}</p>
+					<form id={id}>
+						<p style={{ margin: `calc(${sizes.medium.space} / 2)` }}>{title}</p>
 						{fields.map(({ name, type, placeholder }) => (
-							<input
+							<Styled
 								key={name}
-								name={name}
-								type={type}
-								style={{
-									margin: 0,
-									padding: sizes.medium.space
+								styles={{
+									margin: `calc(${sizes.medium.space} / 2)`,
+									padding: sizes.medium.space,
+									fontFamily: 'text',
+									fontSize: sizes.medium.text,
+									color: colors.secondary.text.light,
+									backgroundColor: colors.secondary.bg.light,
+									border: 'none'
 								}}
-								placeholder={placeholder}
-								onChange={e => {
-									const value = (() => {
-										switch (type) {
-											case 'number':
-												return Number(e.target.value)
-
-											case 'checkbox':
-											case 'radio':
-												return e.target.checked
-
-											case 'date':
-											case 'time':
-												return new Date(e.target.value)
-											default:
-												return e.target.value
-										}
-									})()
-
-									setValues(v => ({
-										...v,
-										[name]: value
-									}))
+								darkStyles={{
+									color: colors.secondary.text.dark,
+									backgroundColor: colors.secondary.bg.dark
 								}}
+								component={id => (
+									<input
+										id={id}
+										name={name}
+										type={type}
+										placeholder={placeholder}
+										onChange={e => {
+											const value = (() => {
+												switch (type) {
+													case 'number':
+														return Number(e.target.value)
+
+													case 'checkbox':
+													case 'radio':
+														return e.target.checked
+
+													case 'date':
+													case 'time':
+														return new Date(e.target.value)
+													default:
+														return e.target.value
+												}
+											})()
+
+											setValues(v => ({
+												...v,
+												[name]: value
+											}))
+										}}
+									/>
+								)}
 							/>
 						))}
-						<button
-							type="submit"
-							style={{
-								padding: sizes.medium.space
-							}}
-						>
-							submit
-						</button>
+						<div style={{ margin: `calc(-${sizes.medium.space} / 2)` }}>
+							<Button
+								onClick={() => {
+									onsubmit(values)
+								}}
+								content={'Submit Form'}
+								type={'primary'}
+							/>
+						</div>
 					</form>
 				)}
 			/>

@@ -1,27 +1,17 @@
 import { createButton } from './components/button'
 import { createForm } from './components/form'
+import { createIcon } from './components/icon'
+import { createLayout } from './components/layout'
 
-import type { ButtonConfig, ColorsConfig, FormConfig, IconsConfig, SizesConfig } from './types'
+import type { DesignSystemFunction } from './types'
 
-export function createUI<
-	Colors extends ColorsConfig,
-	Sizes extends SizesConfig,
-	Icons extends IconsConfig,
-	Button extends ButtonConfig<Colors, Sizes>,
-	Form extends FormConfig<Colors, Sizes>
->(ds: {
-	colors: Colors
-	sizes: Sizes
-	icons: Icons
-	components: {
-		Button: Button
-		Form: Form
-	}
-}) {
-	return {
-		Button: createButton(ds),
-		Form: createForm(ds)
-	}
-}
+export const createUI: DesignSystemFunction<'Components'> = ds => ({
+	Button: createButton(ds),
+	Form: createForm(ds),
+	Layout: createLayout(ds),
+	Icon: createIcon(ds)
+})
+
+export * from './themes'
 
 export * from './types'
