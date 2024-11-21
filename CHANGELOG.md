@@ -1,3 +1,4 @@
+- [2024-11-20] [form](https://github.com/RubricLab/ui/commit/684869b501abfb5cb3d8264d7119928db10448ac)
 - [2024-11-20] [UI GENERICS UNLOCK](https://github.com/RubricLab/ui/commit/fd1be189a62563f74cb23bb2558467673cb961d2)
 - [2024-11-20] [lfg](https://github.com/RubricLab/ui/commit/ba6de24d716aed67545ef2128dbebb3baf75ccff)
 - [2024-11-20] [wipwip](https://github.com/RubricLab/ui/commit/8850890c236ed24f6fe1b19ebfa6fbaae463d160)

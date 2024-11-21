@@ -41,3 +41,25 @@ export type SizesConfig = {
 export type IconsConfig = {
 	[key: string]: Asset
 }
+
+export type ButtonConfig<Colors extends ColorsConfig, Sizes extends SizesConfig> = {
+	primary: {
+		color: keyof Colors
+		size: keyof Sizes
+	}
+	[key: string]: {
+		color: keyof Colors
+		size: keyof Sizes
+	}
+}
+
+export type FormConfig<Colors extends ColorsConfig, Sizes extends SizesConfig> = {
+	primary: {
+		color: keyof Colors
+		size: keyof Sizes
+	}
+	[key: string]: {
+		color: keyof Colors
+		size: keyof Sizes
+	}
+}
