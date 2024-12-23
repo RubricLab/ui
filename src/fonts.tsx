@@ -1,6 +1,6 @@
-import type { FontsConfig } from '../types'
+import type { FontsConfig } from './types'
 
-export function FontFaces({ fonts }: { fonts: FontsConfig }) {
+export function Fonts({ fonts }: { fonts: FontsConfig }) {
 	return (
 		<style>
 			{Object.entries(fonts)

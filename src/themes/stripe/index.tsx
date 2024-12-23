@@ -18,70 +18,70 @@ export const stripeTheme = createTheme({
 	},
 	colors: {
 		active: {
-			light: '#0570DE',
-			dark: '#0570DE'
+			light: '#635BFF',
+			dark: '#7A73FF'
 		},
 		focus: {
-			light: '#A2D7F7',
-			dark: '#A2D7F7'
+			light: '#E6E5FF',
+			dark: '#1E2340'
 		},
 		neutral: {
-			light: '#D5DBE1',
-			dark: '#D5DBE1'
+			light: '#F6F8FA',
+			dark: '#1A1F36'
 		},
 		disabled: {
-			light: '#BDC4CD',
-			dark: '#BDC4CD'
+			light: '#E3E8EF',
+			dark: '#2A2F45'
 		},
 		bg: {
 			light: '#FFFFFF',
-			dark: '#000000'
+			dark: '#030519'
 		},
 		text: {
-			light: '#000000',
-			dark: '#FFFFFF'
+			light: '#1A1F36',
+			dark: '#F6F8FA'
 		},
 		border: {
-			light: '#000000',
-			dark: '#FFFFFF'
+			light: '#E3E8EF',
+			dark: '#2A2F45'
 		},
 		shadow: {
-			light: 'rgba(0,0,0,0.2)',
-			dark: 'rgba(0,0,0,0.5)'
+			light: 'rgba(0,0,0,0.05)',
+			dark: 'rgba(0,0,0,0.2)'
 		},
 		error: {
-			light: '#DF1B41',
-			dark: '#DF1B41'
+			light: '#FF4242',
+			dark: '#FF5C5C'
 		},
 		success: {
-			light: '#008000',
-			dark: '#008000'
+			light: '#24B47E',
+			dark: '#32D49B'
 		},
 		warning: {
-			light: '#FFA500',
-			dark: '#FFA500'
+			light: '#F5B014',
+			dark: '#FFB82E'
 		}
 	},
 	sizes: {
 		title: {
-			text: '25px',
-			space: '2rem',
-			rounding: '2rem'
+			text: '24px',
+			space: '1.25rem',
+			rounding: '0.75rem'
 		},
 		subtitle: {
-			text: '25px',
-			space: '2rem',
-			rounding: '2rem'
+			text: '20px',
+			space: '1rem',
+			rounding: '0.5rem'
 		},
 		content: {
-			text: '25px',
-			space: '2rem',
-			rounding: '2rem'
+			text: '16px',
+			space: '0.75rem',
+			rounding: '0.375rem'
 		},
 		information: {
-			text: '25px',
-			space: '2rem',
-			rounding: '2rem'
+			text: '14px',
+			space: '0.5rem',
+			rounding: '0.25rem'
 		}
 	},
 	icons: {

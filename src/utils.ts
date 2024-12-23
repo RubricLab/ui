@@ -1,4 +1,4 @@
-import { type Dispatch, type ReactElement, type SetStateAction, useState } from 'react'
+import { type Dispatch, type ReactElement, type SetStateAction, useMemo, useState } from 'react'
 import { type AnyZodObject, type ZodType, z } from 'zod'
 import type { ComponentWithSchema, DesignSystem } from './types'
 
@@ -29,16 +29,20 @@ export function createStatefulComponent<State extends ZodType, Schema extends An
 }) {
 	return (designSystem: DesignSystem) => (stateSchema: State) => {
 		const [state, setState] = useState<z.infer<State>>()
-		const Component: ComponentWithSchema<Schema> = props => {
-			return render({
-				designSystem,
-				props,
-				state,
-				setState
-			})
-		}
 
-		Component.schema = createSchema({ stateSchema, designSystem })
+		// biome-ignore lint/correctness/useExhaustiveDependencies: required to avoid re-rendering on state change
+		const Component = useMemo(() => {
+			const Component: ComponentWithSchema<Schema> = props => {
+				return render({
+					designSystem,
+					props,
+					state,
+					setState
+				})
+			}
+			Component.schema = createSchema({ stateSchema, designSystem })
+			return Component
+		}, [stateSchema, designSystem])
 
 		return [state, Component] as const
 	}
@@ -57,6 +61,31 @@ export function createStaticComponent<Schema extends AnyZodObject>({
 		}
 
 		Component.schema = createSchema({ designSystem })
+
+		return Component
+	}
+}
+
+export function createLayoutComponent<Schema extends AnyZodObject>({
+	createSchema,
+	render
+}: {
+	createSchema: ({ designSystem }: { designSystem: DesignSystem }) => Schema
+	render: (params: {
+		designSystem: DesignSystem
+		props: z.infer<Schema> & { children: ReactElement | ReactElement[] }
+	}) => ReactElement
+}) {
+	return (designSystem: DesignSystem) => {
+		const Component = ((props: z.infer<Schema> & { children: ReactElement | ReactElement[] }) => {
+			return render({ designSystem, props })
+		}) as ComponentWithSchema<Schema>
+
+		const childrenSchema = z.object({
+			children: z.union([z.custom<ReactElement>(), z.array(z.custom<ReactElement>())])
+		})
+
+		Component.schema = createSchema({ designSystem }).extend(childrenSchema.shape) as Schema
 
 		return Component
 	}

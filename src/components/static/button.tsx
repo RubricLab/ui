@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react'
 import { z } from 'zod'
+import { styled } from '../../styled'
 import type { DesignSystem } from '../../types'
 import { createStaticComponent, createZodEnumOfKeysFromObject } from '../../utils'
 
@@ -9,18 +10,19 @@ export function createButton(ds: DesignSystem) {
 			z.object({
 				label: z.string(),
 				icon: createZodEnumOfKeysFromObject(icons),
-				onClick: z.function().returns(z.void())
+				onClick: z.function().returns(z.void()),
+				disabled: z.boolean().optional()
 			}),
-		render: ({ props: { label, icon, onClick } }) => {
+		render: ({ props: { label, icon, onClick, disabled } }) => {
 			const handleClick = (e: MouseEvent) => {
 				e.preventDefault()
 				onClick()
 			}
 
 			return (
-				<button type="button" onClick={handleClick}>
+				<styled.button ds={ds} type="button" onClick={handleClick} disabled={disabled}>
 					{label}
-				</button>
+				</styled.button>
 			)
 		}
 	})(ds)

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { styled } from '../../styled'
 import type { DesignSystem } from '../../types'
 import { createStatefulComponent } from '../../utils'
 
@@ -12,9 +13,10 @@ export function createSelect(ds: DesignSystem) {
 					options: z.array(z.object({ label: z.string(), value: stateSchema }))
 				}),
 			render: ({ props: { label, placeholder, options }, state, setState }) => (
-				<label>
+				<styled.label ds={ds}>
 					{label}
-					<select
+					<styled.select
+						ds={ds}
 						value={JSON.stringify(state)}
 						onChange={({ target: { value } }) => setState(JSON.parse(value) ?? undefined)}
 					>
@@ -24,8 +26,8 @@ export function createSelect(ds: DesignSystem) {
 								{item.label}
 							</option>
 						))}
-					</select>
-				</label>
+					</styled.select>
+				</styled.label>
 			),
 			_state: stateSchema
 		})(ds)(stateSchema)

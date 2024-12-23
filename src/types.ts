@@ -59,18 +59,18 @@ export type Asset = {
 	mono: (fill: Hex) => ReactElement<SVGProps<SVGSVGElement>>
 }
 
-type FontsConfig = {
+export type FontsConfig = {
 	body: Font
 	heading: Font
 	monospace: Font
 }
 
-type LogosConfig = {
+export type LogosConfig = {
 	icon: Asset
 	wordMark: Asset
 }
 
-type ColorsConfig = {
+export type ColorsConfig = {
 	active: Color
 	focus: Color
 	neutral: Color
@@ -83,15 +83,14 @@ type ColorsConfig = {
 	success: Color
 	warning: Color
 }
-
-type SizesConfig = {
+export type SizesConfig = {
 	title: Size
 	subtitle: Size
 	content: Size
 	information: Size
 }
 
-type IconsConfig = {
+export type IconsConfig = {
 	github: Asset
 	google: Asset
 }
