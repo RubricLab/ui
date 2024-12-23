@@ -108,3 +108,64 @@ export type ComponentWithSchema<Schema extends AnyZodObject> = ((
 ) => JSX.Element) & {
 	schema: Schema
 }
+
+type FILE_TYPE =
+	// Wildcards
+	| '*/*'
+	// Images
+	| 'image/*'
+	| 'image/jpeg'
+	| 'image/png'
+	| 'image/gif'
+	| 'image/webp'
+	| 'image/svg+xml'
+	| 'image/bmp'
+	| 'image/x-icon'
+	// Audio
+	| 'audio/*'
+	| 'audio/mpeg'
+	| 'audio/wav'
+	| 'audio/ogg'
+	| 'audio/midi'
+	| 'audio/aac'
+	| 'audio/webm'
+	// Video
+	| 'video/*'
+	| 'video/mp4'
+	| 'video/webm'
+	| 'video/ogg'
+	| 'video/quicktime'
+	| 'video/x-msvideo'
+	// Documents
+	| 'application/pdf'
+	| 'application/msword'
+	| 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+	| 'application/vnd.ms-excel'
+	| 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+	| 'application/vnd.ms-powerpoint'
+	| 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+	// Archives
+	| 'application/zip'
+	| 'application/x-rar-compressed'
+	| 'application/x-7z-compressed'
+	| 'application/x-tar'
+	| 'application/gzip'
+	// Text & Code
+	| 'text/*'
+	| 'text/plain'
+	| 'text/html'
+	| 'text/css'
+	| 'text/javascript'
+	| 'text/csv'
+	| 'text/markdown'
+	| 'application/json'
+	| 'application/xml'
+	| 'application/javascript'
+	| 'application/typescript'
+
+export type ZodFile = z.ZodObject<{
+	type: z.ZodLiteral<FILE_TYPE>
+	file: z.ZodType<File>
+	size: z.ZodNumber
+	name: z.ZodString
+}>[]

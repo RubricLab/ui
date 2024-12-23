@@ -167,6 +167,16 @@ type ButtonProps = DesignSystemProp & React.ButtonHTMLAttributes<HTMLButtonEleme
 type IconProps = DesignSystemProp & { icon: string }
 type HtmlProps = DesignSystemProp & React.HtmlHTMLAttributes<HTMLHtmlElement>
 type BodyProps = DesignSystemProp & React.HTMLAttributes<HTMLBodyElement>
+type DivProps = DesignSystemProp & React.HTMLAttributes<HTMLDivElement>
+type TextareaProps = DesignSystemProp & React.TextareaHTMLAttributes<HTMLTextAreaElement>
+type UploadProps = DesignSystemProp &
+	React.HTMLAttributes<HTMLDivElement> & {
+		active?: boolean
+	}
+type TextProps = DesignSystemProp &
+	React.HTMLAttributes<HTMLDivElement> & {
+		variant?: 'default' | 'secondary' | 'truncate'
+	}
 
 export const styled = {
 	html: createStyledComponent<HtmlProps>('div', ds => ({
@@ -373,12 +383,130 @@ export const styled = {
 		}
 	})),
 
+	div: createStyledComponent<DivProps>('div', ds => ({
+		base: {
+			color: ds.colors.text.light
+		},
+		dark: {
+			color: ds.colors.text.dark
+		}
+	})),
+
+	textarea: createStyledComponent<TextareaProps>('textarea', ds => ({
+		base: {
+			display: 'block',
+			width: '100%',
+			boxSizing: 'border-box',
+			padding: ds.sizes.content.space,
+			fontSize: ds.sizes.content.text,
+			fontFamily: 'body',
+			borderRadius: ds.sizes.content.rounding,
+			border: `1px solid ${ds.colors.border.light}`,
+			backgroundColor: ds.colors.bg.light,
+			color: ds.colors.text.light,
+			minHeight: '100px',
+			resize: 'vertical'
+		},
+		dark: {
+			backgroundColor: ds.colors.bg.dark,
+			color: ds.colors.text.dark,
+			border: `1px solid ${ds.colors.border.dark}`
+		},
+		focus: {
+			outline: 'none',
+			borderColor: ds.colors.active.light,
+			boxShadow: `0 0 0 2px ${ds.colors.focus.light}`
+		},
+		darkFocus: {
+			borderColor: ds.colors.active.dark,
+			boxShadow: `0 0 0 2px ${ds.colors.focus.dark}`
+		},
+		disabled: {
+			backgroundColor: ds.colors.disabled.light,
+			cursor: 'not-allowed'
+		},
+		darkDisabled: {
+			backgroundColor: ds.colors.disabled.dark,
+			cursor: 'not-allowed'
+		}
+	})),
+
 	icon: createStyledComponent<IconProps>('svg', ds => ({
 		base: {
 			width: '1em',
 			height: '1em',
 			display: 'inline-block',
 			verticalAlign: 'middle'
+		}
+	})),
+
+	text: createStyledComponent<TextProps>('div', ds => ({
+		base: {
+			color: ds.colors.text.light,
+			fontSize: ds.sizes.content.text,
+			fontFamily: 'body',
+			lineHeight: 1.5,
+			'[data-active] &': {
+				color: 'white'
+			}
+		},
+		dark: {
+			color: ds.colors.text.dark,
+			'[data-active] &': {
+				color: 'white'
+			}
+		},
+		variants: {
+			secondary: {
+				fontSize: '0.9em',
+				opacity: 0.7
+			},
+			truncate: {
+				overflow: 'hidden',
+				textOverflow: 'ellipsis',
+				whiteSpace: 'nowrap'
+			}
+		}
+	})),
+
+	upload: createStyledComponent<UploadProps>('div', ds => ({
+		base: {
+			display: 'flex',
+			flexDirection: 'column',
+			gap: '0.5rem',
+			width: '100%',
+			boxSizing: 'border-box',
+			padding: ds.sizes.content.space,
+			fontSize: ds.sizes.content.text,
+			fontFamily: 'body',
+			borderRadius: ds.sizes.content.rounding,
+			border: `2px dashed ${ds.colors.border.light}`,
+			backgroundColor: ds.colors.bg.light,
+			color: ds.colors.text.light,
+			cursor: 'pointer',
+			transition: 'all 0.2s ease-in-out'
+		},
+		hover: {
+			borderColor: ds.colors.active.light,
+			backgroundColor: ds.colors.focus.light
+		},
+		dark: {
+			backgroundColor: ds.colors.bg.dark,
+			color: ds.colors.text.dark,
+			border: `2px dashed ${ds.colors.border.dark}`
+		},
+		darkHover: {
+			borderColor: ds.colors.active.dark,
+			backgroundColor: ds.colors.focus.dark
+		},
+		focus: {
+			outline: 'none',
+			borderColor: ds.colors.active.light,
+			boxShadow: `0 0 0 2px ${ds.colors.focus.light}`
+		},
+		darkFocus: {
+			borderColor: ds.colors.active.dark,
+			boxShadow: `0 0 0 2px ${ds.colors.focus.dark}`
 		}
 	}))
 }
