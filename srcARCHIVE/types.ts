@@ -1,6 +1,4 @@
-import type { SVGProps } from 'react'
-
-import type { ReactElement } from 'react'
+import type { ReactElement, SVGProps } from 'react'
 
 export type Font =
 	| {
@@ -11,6 +9,12 @@ export type Font =
 			format: 'opentype'
 			base64: `data:font/opentype;charset=utf-8;base64,${string}`
 	  }
+
+export type FontsConfig = {
+	display: Font
+	text: Font
+	[key: string]: Font
+}
 
 export type Hex = `#${string}`
 
@@ -59,47 +63,31 @@ export type Asset = {
 	mono: (fill: Hex) => ReactElement<SVGProps<SVGSVGElement>>
 }
 
-type FontsConfig = {
-	body: Font
-	heading: Font
-	monospace: Font
+export type ColorsConfig = ColorPalette
+
+export type SizesConfig = SizePalatte
+
+export type IconsConfig = {
+	[key: string]: Asset
 }
 
-type LogosConfig = {
+export type LogosConfig = {
 	icon: Asset
 	wordMark: Asset
 }
 
-type ColorsConfig = {
-	active: Color
-	focus: Color
-	neutral: Color
-	disabled: Color
-	bg: Color
-	text: Color
-	border: Color
-	shadow: Shadow
-	error: Color
-	success: Color
-	warning: Color
-}
+export type HorizontalPlacement = 'left' | 'right' | 'center'
 
-type SizesConfig = {
-	title: Size
-	subtitle: Size
-	content: Size
-	information: Size
-}
-
-type IconsConfig = {
-	github: Asset
-	google: Asset
-}
-
-export type DesignSystem = {
-	fonts: FontsConfig
-	logos: LogosConfig
-	colors: ColorsConfig
-	sizes: SizesConfig
-	icons: IconsConfig
+export type DesignSystem<
+	Fonts extends FontsConfig,
+	Logos extends LogosConfig,
+	Colors extends ColorsConfig,
+	Sizes extends SizesConfig,
+	Icons extends IconsConfig
+> = {
+	fonts: Fonts
+	logos: Logos
+	colors: Colors
+	sizes: Sizes
+	icons: Icons
 }

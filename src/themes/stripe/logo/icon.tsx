@@ -1,4 +1,4 @@
-import type { Asset, Hex } from '../../../types'
+import type { Asset, Hex } from '../../../../srcARCHIVE/types'
 
 export const icon: Asset = {
 	light: () => (
