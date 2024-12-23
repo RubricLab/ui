@@ -92,4 +92,4 @@ export const stripeTheme = createTheme({
 		icon,
 		wordMark
 	}
-})
+} as const)

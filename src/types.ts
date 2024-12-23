@@ -1,6 +1,6 @@
-import type { SVGProps } from 'react'
+import type { JSX, ReactElement, SVGProps } from 'react'
 
-import type { ReactElement } from 'react'
+import type { AnyZodObject, z } from 'zod'
 
 export type Font =
 	| {
@@ -102,4 +102,10 @@ export type DesignSystem = {
 	colors: ColorsConfig
 	sizes: SizesConfig
 	icons: IconsConfig
+}
+
+export type ComponentWithSchema<Schema extends AnyZodObject> = ((
+	props: z.infer<Schema>
+) => JSX.Element) & {
+	schema: Schema
 }
