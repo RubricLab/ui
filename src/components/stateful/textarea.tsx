@@ -15,49 +15,43 @@ export function createTextarea(ds: DesignSystem) {
 					disabled: z.boolean().optional()
 				}),
 			render: ({ props: { label, placeholder, maxLength, disabled }, state, setState }) => {
-				const id = `textarea-${label.toLowerCase().replace(/\s+/g, '-')}`
-
-				const labelElement = (
-					<Styled.Label
-						ds={ds}
-						attributes={{
-							htmlFor: id,
-							children: label
-						}}
-					/>
-				)
-
-				const textareaElement = (
-					<Styled.Textarea
-						ds={ds}
-						attributes={{
-							id,
-							value: state,
-							placeholder,
-							maxLength,
-							disabled,
-							onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => setState(e.target.value)
-						}}
-					/>
-				)
-
-				const counterElement = maxLength && (
-					<Styled.Text
-						ds={ds}
-						attributes={{
-							style: { fontSize: '0.8em', textAlign: 'right' },
-							children: `${(state ?? '').length}/${maxLength}`
-						}}
-					/>
-				)
+				const key = `${label.toLowerCase().replace(/\s+/g, '-')}-textarea`
 
 				return (
 					<Styled.Flex
 						ds={ds}
 						direction="column"
-						gap="content"
 						attributes={{
-							children: [labelElement, textareaElement, counterElement].filter(Boolean)
+							children: [
+								<Styled.Label
+									key={`${key}-label`}
+									ds={ds}
+									attributes={{
+										children: [
+											label,
+											<Styled.Textarea
+												key={`${key}-textarea`}
+												ds={ds}
+												attributes={{
+													value: state,
+													placeholder,
+													maxLength,
+													disabled,
+													onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => setState(e.target.value)
+												}}
+											/>
+										]
+									}}
+								/>,
+								<Styled.Text
+									key={`${key}-counter`}
+									ds={ds}
+									attributes={{
+										style: { fontSize: '0.8em', textAlign: 'right' },
+										children: `${(state ?? '').length}/${maxLength}`
+									}}
+								/>
+							].filter(Boolean)
 						}}
 					/>
 				)

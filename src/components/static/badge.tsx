@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { styled } from '../../style'
+import { Styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStaticComponent, createZodEnumOfKeysFromObject } from '../../utils'
 
@@ -12,13 +12,17 @@ export function createBadge(ds: DesignSystem) {
 				icon: createZodEnumOfKeysFromObject(icons).optional()
 			}),
 		render: ({ props: { content, variant, icon } }) => {
-			const iconColor = variant === 'default' ? ds.colors.text.light : ds.colors.bg.light
-
+			const key = `${content.toString().toLowerCase().replace(/\s+/g, '-')}-badge`
 			return (
-				<styled.badge ds={ds} data-variant={variant}>
-					{icon && <styled.icon ds={ds}>{ds.icons[icon].mono(iconColor)}</styled.icon>}
-					{content}
-				</styled.badge>
+				<Styled.Badge
+					ds={ds}
+					variant={variant}
+					attributes={{
+						children: [icon && <Styled.Icon key={`${key}-icon`} ds={ds} icon={icon} />, content].filter(
+							Boolean
+						)
+					}}
+				/>
 			)
 		}
 	})(ds)

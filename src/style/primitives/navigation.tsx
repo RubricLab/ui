@@ -18,10 +18,9 @@ export function Nav({ ds, overrides, attributes }: NavProps) {
 		base: {
 			display: 'flex',
 			alignItems: 'center',
-			gap: ds.sizes.content.space,
+			width: '100%',
 			backgroundColor: ds.colors.bg.light,
 			color: ds.colors.text.light,
-			padding: ds.sizes.content.space,
 			boxSizing: 'border-box'
 		},
 		dark: {
@@ -200,7 +199,8 @@ export function Sidebar({ ds, width = '250px', overrides, attributes }: SidebarP
 			backgroundColor: ds.colors.bg.light,
 			color: ds.colors.text.light,
 			padding: ds.sizes.content.space,
-			gap: ds.sizes.information.space
+			gap: ds.sizes.information.space,
+			zIndex: 5000
 		},
 		dark: {
 			backgroundColor: ds.colors.bg.dark,

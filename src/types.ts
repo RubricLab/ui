@@ -97,6 +97,9 @@ export type SizesConfig = {
 export type IconsConfig = {
 	github: Asset
 	google: Asset
+	chevronLeft: Asset
+	chevronRight: Asset
+	settings: Asset
 }
 
 export type AnimationTransition =

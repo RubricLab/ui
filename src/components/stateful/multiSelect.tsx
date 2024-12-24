@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { styled } from '../../style'
+import { Styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStatefulComponent } from '../../utils'
 
@@ -13,35 +13,61 @@ export function createMultiSelect(ds: DesignSystem) {
 					options: z.array(z.object({ label: z.string(), value: stateSchema }))
 				}),
 			render: ({ props: { label, placeholder, options }, state, setState }) => {
+				const key = `${label.toLowerCase().replace(/\s+/g, '-')}-multiselect`
 				const selectedValues = state || []
 				const selectedOptions = options.filter(option =>
 					selectedValues.some(value => JSON.stringify(value) === JSON.stringify(option.value))
 				)
 
 				return (
-					<styled.label ds={ds}>
-						{label}
-						<styled.select
-							ds={ds}
-							multiple
-							value={selectedOptions.map(option => JSON.stringify(option.value))}
-							onChange={({ target }) => {
-								const selected = Array.from(target.selectedOptions).map(option => JSON.parse(option.value))
-								setState(selected)
-							}}
-						>
-							{placeholder && (
-								<option value="" disabled>
-									{placeholder}
-								</option>
-							)}
-							{options.map((option, index) => (
-								<option key={index} value={JSON.stringify(option.value)}>
-									{option.label}
-								</option>
-							))}
-						</styled.select>
-					</styled.label>
+					<Styled.Label
+						ds={ds}
+						attributes={{
+							children: (
+								<Styled.Flex
+									ds={ds}
+									direction="column"
+									gap="content"
+									attributes={{
+										children: [
+											label,
+											<Styled.Select
+												key={`${key}-select`}
+												ds={ds}
+												attributes={{
+													multiple: true,
+													value: selectedOptions.map(option => JSON.stringify(option.value)),
+													onChange: (e: React.ChangeEvent<HTMLSelectElement>) => {
+														const selected = Array.from(e.target.selectedOptions).map(option =>
+															JSON.parse(option.value)
+														)
+														setState(selected)
+													},
+													children: [
+														placeholder && (
+															<option key={`${key}-placeholder`} value="" disabled>
+																{placeholder}
+															</option>
+														),
+														...options.map((option, index) => (
+															<option key={`${key}-option-${index}`} value={JSON.stringify(option.value)}>
+																{option.label}
+															</option>
+														))
+													].filter(Boolean)
+												}}
+												overrides={{
+													base: {
+														minHeight: '120px' // Give more space for multiple selections
+													}
+												}}
+											/>
+										]
+									}}
+								/>
+							)
+						}}
+					/>
 				)
 			},
 			_state: z.array(stateSchema)

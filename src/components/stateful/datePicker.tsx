@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { styled } from '../../style'
+import { Styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStatefulComponent } from '../../utils'
 
@@ -16,6 +16,8 @@ export function createDatePicker(ds: DesignSystem) {
 					disabled: z.boolean().optional()
 				}),
 			render: ({ props: { label, placeholder, min, max, disabled }, state, setState }) => {
+				const id = `datepicker-${label.toLowerCase().replace(/\s+/g, '-')}`
+
 				const handleChange = (value: string) => {
 					if (!value) {
 						setState(null)
@@ -31,20 +33,41 @@ export function createDatePicker(ds: DesignSystem) {
 					}
 				}
 
+				const labelElement = (
+					<Styled.Label
+						ds={ds}
+						attributes={{
+							htmlFor: id,
+							children: label
+						}}
+					/>
+				)
+
+				const inputElement = (
+					<Styled.Input
+						ds={ds}
+						type="datetime-local"
+						attributes={{
+							id,
+							value: state ? new Date(state).toISOString().slice(0, 16) : '',
+							min,
+							max,
+							disabled,
+							placeholder,
+							onChange: (e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)
+						}}
+					/>
+				)
+
 				return (
-					<styled.label ds={ds}>
-						{label}
-						<styled.input
-							ds={ds}
-							type="datetime-local"
-							value={state ? new Date(state).toISOString().slice(0, 16) : ''}
-							min={min}
-							max={max}
-							disabled={disabled}
-							placeholder={placeholder}
-							onChange={e => handleChange(e.target.value)}
-						/>
-					</styled.label>
+					<Styled.Flex
+						ds={ds}
+						direction="column"
+						gap="content"
+						attributes={{
+							children: [labelElement, inputElement]
+						}}
+					/>
 				)
 			},
 			_state: stateSchema

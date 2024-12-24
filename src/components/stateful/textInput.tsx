@@ -14,41 +14,29 @@ export function createTextInput(ds: DesignSystem) {
 					disabled: z.boolean().optional()
 				}),
 			render: ({ props: { label, placeholder, disabled }, state, setState }) => {
-				const id = `input-${label.toLowerCase().replace(/\s+/g, '-')}`
-
-				const labelElement = (
-					<Styled.Label
-						ds={ds}
-						attributes={{
-							htmlFor: id,
-							children: label
-						}}
-					/>
-				)
-
-				const inputElement = (
-					<Styled.Input
-						ds={ds}
-						type="text"
-						attributes={{
-							id,
-							value: state,
-							placeholder,
-							disabled,
-							onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-								setState(e.target.value)
-							}
-						}}
-					/>
-				)
+				const key = `${label.toLowerCase().replace(/\s+/g, '-')}-input`
 
 				return (
-					<Styled.Flex
+					<Styled.Label
+						key={`${key}-label`}
 						ds={ds}
-						direction="column"
-						gap="content"
 						attributes={{
-							children: [labelElement, inputElement]
+							children: [
+								label,
+								<Styled.Input
+									key={`${key}-input`}
+									ds={ds}
+									type="text"
+									attributes={{
+										value: state,
+										placeholder,
+										disabled,
+										onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+											setState(e.target.value)
+										}
+									}}
+								/>
+							]
 						}}
 					/>
 				)

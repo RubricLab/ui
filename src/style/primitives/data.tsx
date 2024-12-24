@@ -399,7 +399,8 @@ export function Icon({
 			justifyContent: 'center',
 			width: size,
 			height: size
-		}
+		},
+		dark: {}
 	}
 	if (overrides) Object.assign(styleDef, overrides)
 

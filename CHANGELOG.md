@@ -1,3 +1,4 @@
+- [2024-12-24] [stash](https://github.com/RubricLab/ui/commit/93d51acb191bb7d77c011f75fbbb1f720ad4bd5c)
 - [2024-12-24] [checkpoint - breadth](https://github.com/RubricLab/ui/commit/36040fe9f7d336822fea7007fe40f2562d6b9848)
 - [2024-12-24] [stash](https://github.com/RubricLab/ui/commit/d5cf1f01b4d02e0edde381193ad7c809f65ba9d1)
 - [2024-12-23] [checkpoint](https://github.com/RubricLab/ui/commit/8a3b9d9fb49cee1d0b02d1ea41e4f2029bc640e6)

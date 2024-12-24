@@ -1,18 +1,21 @@
 'use client'
 
+import { chevronLeft } from './icons/chevronLeft'
+import { chevronRight } from './icons/chevronRight'
 import { github } from './icons/github'
 import { google } from './icons/google'
+import { settings } from './icons/settings'
 import { icon } from './logo/icon'
 import { wordMark } from './logo/wordmark'
 
 import { createTheme } from '../../utils'
-import { kongtext } from './fonts/kongtext'
+// import { kongtext } from './fonts/kongtext'
 import { matter } from './fonts/matter'
 import { neubit } from './fonts/neuebit'
 
 export const stripeTheme = createTheme({
 	fonts: {
-		heading: kongtext,
+		heading: matter,
 		body: matter,
 		monospace: neubit
 	},
@@ -86,7 +89,10 @@ export const stripeTheme = createTheme({
 	},
 	icons: {
 		github,
-		google
+		google,
+		chevronLeft,
+		chevronRight,
+		settings
 	},
 	logos: {
 		icon,

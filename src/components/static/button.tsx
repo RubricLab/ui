@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react'
 import { z } from 'zod'
-import { styled } from '../../style'
+import { Styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStaticComponent, createZodEnumOfKeysFromObject } from '../../utils'
 
@@ -11,21 +11,28 @@ export function createButton(ds: DesignSystem) {
 				label: z.string(),
 				icon: createZodEnumOfKeysFromObject(icons),
 				onClick: z.function().returns(z.void()),
-				disabled: z.boolean().optional()
+				disabled: z.boolean().optional(),
+				variant: z.enum(['primary', 'secondary', 'destructive']).default('primary')
 			}),
-		render: ({ props: { label, icon, onClick, disabled } }) => {
+		render: ({ props: { label, icon, onClick, disabled = false, variant } }) => {
 			const handleClick = (e: MouseEvent) => {
 				e.preventDefault()
 				onClick()
 			}
 
+			const key = `${label.toLowerCase().replace(/\s+/g, '-')}-button`
+
 			return (
-				<styled.button ds={ds} type="button" onClick={handleClick} disabled={disabled}>
-					<styled.icon ds={ds}>
-						{ds.icons[icon].mono(disabled ? ds.colors.disabled.light : ds.colors.text.light)}
-					</styled.icon>
-					{label}
-				</styled.button>
+				<Styled.Button
+					ds={ds}
+					variant={variant}
+					disabled={disabled}
+					attributes={{
+						type: 'button',
+						onClick: handleClick,
+						children: [icon && <Styled.Icon key={`${key}-icon`} ds={ds} icon={icon} />, label]
+					}}
+				/>
 			)
 		}
 	})(ds)
