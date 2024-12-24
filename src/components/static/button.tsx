@@ -21,6 +21,9 @@ export function createButton(ds: DesignSystem) {
 
 			return (
 				<styled.button ds={ds} type="button" onClick={handleClick} disabled={disabled}>
+					<styled.icon ds={ds}>
+						{ds.icons[icon].mono(disabled ? ds.colors.disabled.light : ds.colors.text.light)}
+					</styled.icon>
 					{label}
 				</styled.button>
 			)

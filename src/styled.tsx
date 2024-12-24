@@ -164,7 +164,7 @@ type LabelProps = DesignSystemProp & React.LabelHTMLAttributes<HTMLLabelElement>
 type SelectProps = DesignSystemProp & React.SelectHTMLAttributes<HTMLSelectElement>
 type CheckboxProps = DesignSystemProp & React.InputHTMLAttributes<HTMLInputElement>
 type ButtonProps = DesignSystemProp & React.ButtonHTMLAttributes<HTMLButtonElement>
-type IconProps = DesignSystemProp & { icon: string }
+type IconProps = DesignSystemProp & React.HTMLAttributes<HTMLSpanElement>
 type HtmlProps = DesignSystemProp & React.HtmlHTMLAttributes<HTMLHtmlElement>
 type BodyProps = DesignSystemProp & React.HTMLAttributes<HTMLBodyElement>
 type DivProps = DesignSystemProp & React.HTMLAttributes<HTMLDivElement>
@@ -177,6 +177,7 @@ type TextProps = DesignSystemProp &
 	React.HTMLAttributes<HTMLDivElement> & {
 		variant?: 'default' | 'secondary' | 'truncate'
 	}
+type BadgeProps = DesignSystemProp & React.HTMLAttributes<HTMLDivElement>
 
 export const styled = {
 	html: createStyledComponent<HtmlProps>('div', ds => ({
@@ -431,12 +432,14 @@ export const styled = {
 		}
 	})),
 
-	icon: createStyledComponent<IconProps>('svg', ds => ({
+	icon: createStyledComponent<IconProps>('span', ds => ({
 		base: {
-			width: '1em',
-			height: '1em',
-			display: 'inline-block',
-			verticalAlign: 'middle'
+			display: 'inline-flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+
+			width: ds.sizes.information.text,
+			height: ds.sizes.information.text
 		}
 	})),
 
@@ -507,6 +510,82 @@ export const styled = {
 		darkFocus: {
 			borderColor: ds.colors.active.dark,
 			boxShadow: `0 0 0 2px ${ds.colors.focus.dark}`
+		}
+	})),
+
+	'default-badge': createStyledComponent<BadgeProps>('div', ds => ({
+		base: {
+			display: 'inline-flex',
+			alignItems: 'center',
+			gap: ds.sizes.information.space,
+			padding: `${ds.sizes.information.space} ${ds.sizes.content.space}`,
+			fontSize: ds.sizes.information.text,
+			borderRadius: ds.sizes.information.rounding,
+			fontWeight: 'bold',
+			fontFamily: 'body',
+			backgroundColor: ds.colors.neutral.light,
+			color: ds.colors.text.light
+		},
+		dark: {
+			backgroundColor: ds.colors.neutral.dark,
+			color: ds.colors.text.dark
+		}
+	})),
+
+	'success-badge': createStyledComponent<BadgeProps>('div', ds => ({
+		base: {
+			display: 'inline-flex',
+			alignItems: 'center',
+			gap: ds.sizes.information.space,
+			padding: `${ds.sizes.information.space} ${ds.sizes.content.space}`,
+			fontSize: ds.sizes.information.text,
+			borderRadius: ds.sizes.information.rounding,
+			fontWeight: 'bold',
+			fontFamily: 'body',
+			backgroundColor: ds.colors.success.light,
+			color: ds.colors.bg.light
+		},
+		dark: {
+			backgroundColor: ds.colors.success.dark,
+			color: ds.colors.bg.dark
+		}
+	})),
+
+	'error-badge': createStyledComponent<BadgeProps>('div', ds => ({
+		base: {
+			display: 'inline-flex',
+			alignItems: 'center',
+			gap: ds.sizes.information.space,
+			padding: `${ds.sizes.information.space} ${ds.sizes.content.space}`,
+			fontSize: ds.sizes.information.text,
+			borderRadius: ds.sizes.information.rounding,
+			fontWeight: 'bold',
+			fontFamily: 'body',
+			backgroundColor: ds.colors.error.light,
+			color: ds.colors.bg.light
+		},
+		dark: {
+			backgroundColor: ds.colors.error.dark,
+			color: ds.colors.bg.dark
+		}
+	})),
+
+	'warning-badge': createStyledComponent<BadgeProps>('div', ds => ({
+		base: {
+			display: 'inline-flex',
+			alignItems: 'center',
+			gap: ds.sizes.information.space,
+			padding: `${ds.sizes.information.space} ${ds.sizes.content.space}`,
+			fontSize: ds.sizes.information.text,
+			borderRadius: ds.sizes.information.rounding,
+			fontWeight: 'bold',
+			fontFamily: 'body',
+			backgroundColor: ds.colors.warning.light,
+			color: ds.colors.bg.light
+		},
+		dark: {
+			backgroundColor: ds.colors.warning.dark,
+			color: ds.colors.bg.dark
 		}
 	}))
 }
