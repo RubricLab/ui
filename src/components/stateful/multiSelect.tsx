@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { styled } from '../../styled'
+import { styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStatefulComponent } from '../../utils'
 

@@ -1,6 +1,6 @@
 import { type DragEvent, useState } from 'react'
 import { z } from 'zod'
-import { styled } from '../../styled'
+import { styled } from '../../style'
 import type { DesignSystem, ZodFile } from '../../types'
 import { createStatefulComponent } from '../../utils'
 

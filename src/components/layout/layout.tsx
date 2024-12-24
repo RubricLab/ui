@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 import { Fonts } from '../../fonts'
-import { styled } from '../../styled'
+import { styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createLayoutComponent } from '../../utils'
 

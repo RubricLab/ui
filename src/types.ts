@@ -2,6 +2,10 @@ import type { JSX, ReactElement, SVGProps } from 'react'
 
 import type { AnyZodObject, z } from 'zod'
 
+/* ------------------------------------------------------------------
+   1) Original Definitions
+------------------------------------------------------------------ */
+
 export type Font =
 	| {
 			format: 'truetype'
@@ -13,7 +17,6 @@ export type Font =
 	  }
 
 export type Hex = `#${string}`
-
 export type RGBA = `rgba(${number},${number},${number},${number})`
 
 export type Color = {
@@ -83,6 +86,7 @@ export type ColorsConfig = {
 	success: Color
 	warning: Color
 }
+
 export type SizesConfig = {
 	title: Size
 	subtitle: Size
@@ -95,12 +99,97 @@ export type IconsConfig = {
 	google: Asset
 }
 
+export type AnimationTransition =
+	| 'ease-in-out'
+	| 'ease-in'
+	| 'ease-out'
+	| 'linear'
+	| 'cubic-bezier(0.19, 1, 0.22, 1)'
+
+export type Animation = `${number}ms ${AnimationTransition}`
+
+export type AnimationsConfig = {
+	quick: Animation
+	normal: Animation
+	slow: Animation
+}
+
+export type OpacitiesConfig = {
+	subtle: number
+	intense: number
+}
+
+export type ZIndicesConfig = {
+	dropdown: number
+	modal: number
+	toast: number
+}
+
+export type BorderType =
+	| 'solid'
+	| 'dashed'
+	| 'dotted'
+	| 'double'
+	| 'groove'
+	| 'ridge'
+	| 'inset'
+	| 'outset'
+
+export type Border = `${number}px ${BorderType}`
+
+export type BordersConfig = {
+	thin: Border
+	thick: Border
+	dashed: Border
+}
+
+export type BreakpointsConfig = {
+	sm: `${number}px`
+	md: `${number}px`
+	lg: `${number}px`
+	xl: `${number}px`
+}
+
+export type SpacingScale = {
+	xs: `${number}rem`
+	sm: `${number}rem`
+	md: `${number}rem`
+	lg: `${number}rem`
+	xl: `${number}rem`
+}
+
+export type TypographyConfig = {
+	headings: {
+		lineHeight: number
+		fontWeight: number
+		letterSpacing?: string
+	}
+	body: {
+		lineHeight: number
+		fontWeight: number
+		letterSpacing?: string
+	}
+}
+
+export type ExtendedShadowsConfig = {
+	sm: RGBA
+	md: RGBA
+	lg: RGBA
+}
 export type DesignSystem = {
 	fonts: FontsConfig
 	logos: LogosConfig
 	colors: ColorsConfig
 	sizes: SizesConfig
 	icons: IconsConfig
+	animations: AnimationsConfig
+	opacities: OpacitiesConfig
+	zIndices: ZIndicesConfig
+	borders: BordersConfig
+	breakpoints: BreakpointsConfig
+	spacing: SpacingScale
+	typography: TypographyConfig
+	shadows: ExtendedShadowsConfig
 }
 
 export type ComponentWithSchema<Schema extends AnyZodObject> = ((

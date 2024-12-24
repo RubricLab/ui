@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { styled } from '../../styled'
+import { Styled } from '../../style'
 import type { DesignSystem } from '../../types'
 import { createStatefulComponent } from '../../utils'
 
@@ -14,24 +14,54 @@ export function createTextarea(ds: DesignSystem) {
 					maxLength: z.number().optional(),
 					disabled: z.boolean().optional()
 				}),
-			render: ({ props: { label, placeholder, maxLength, disabled }, state, setState }) => (
-				<styled.label ds={ds}>
-					{label}
-					<styled.textarea
+			render: ({ props: { label, placeholder, maxLength, disabled }, state, setState }) => {
+				const id = `textarea-${label.toLowerCase().replace(/\s+/g, '-')}`
+
+				const labelElement = (
+					<Styled.Label
 						ds={ds}
-						value={state}
-						placeholder={placeholder}
-						maxLength={maxLength}
-						disabled={disabled}
-						onChange={({ target: { value } }) => setState(value)}
+						attributes={{
+							htmlFor: id,
+							children: label
+						}}
 					/>
-					{maxLength && (
-						<styled.div ds={ds} style={{ fontSize: '0.8em', textAlign: 'right' }}>
-							{(state ?? '').length}/{maxLength}
-						</styled.div>
-					)}
-				</styled.label>
-			),
+				)
+
+				const textareaElement = (
+					<Styled.Textarea
+						ds={ds}
+						attributes={{
+							id,
+							value: state,
+							placeholder,
+							maxLength,
+							disabled,
+							onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => setState(e.target.value)
+						}}
+					/>
+				)
+
+				const counterElement = maxLength && (
+					<Styled.Text
+						ds={ds}
+						attributes={{
+							style: { fontSize: '0.8em', textAlign: 'right' },
+							children: `${(state ?? '').length}/${maxLength}`
+						}}
+					/>
+				)
+
+				return (
+					<Styled.Flex
+						ds={ds}
+						direction="column"
+						gap="content"
+						attributes={{
+							children: [labelElement, textareaElement, counterElement].filter(Boolean)
+						}}
+					/>
+				)
+			},
 			_state: stateSchema
 		})(ds)(stateSchema)
 }

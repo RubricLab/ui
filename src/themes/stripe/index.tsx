@@ -91,5 +91,54 @@ export const stripeTheme = createTheme({
 	logos: {
 		icon,
 		wordMark
+	},
+	animations: {
+		quick: '100ms ease-in-out',
+		normal: '200ms ease-in-out',
+		slow: '300ms ease-in-out'
+	},
+	opacities: {
+		subtle: 0.1,
+		intense: 0.9
+	},
+	zIndices: {
+		modal: 2000,
+		dropdown: 1000,
+		toast: 3000
+	},
+	borders: {
+		thin: '1px solid',
+		thick: '2px solid',
+		dashed: '1px dashed'
+	},
+	breakpoints: {
+		sm: '640px',
+		md: '768px',
+		lg: '1024px',
+		xl: '1280px'
+	},
+	spacing: {
+		xs: '0.25rem',
+		sm: '0.5rem',
+		md: '1rem',
+		lg: '1.5rem',
+		xl: '2rem'
+	},
+	typography: {
+		headings: {
+			lineHeight: 1.25,
+			fontWeight: 600,
+			letterSpacing: '0.01em'
+		},
+		body: {
+			lineHeight: 1.5,
+			fontWeight: 400,
+			letterSpacing: '0.01em'
+		}
+	},
+	shadows: {
+		sm: 'rgba(0, 0, 0, 0.05)',
+		md: 'rgba(0, 0, 0, 0.1)',
+		lg: 'rgba(0, 0, 0, 0.15)'
 	}
 } as const)
