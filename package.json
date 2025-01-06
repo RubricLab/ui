@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.45",
+  "version": "5.0.46",
   "main": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,

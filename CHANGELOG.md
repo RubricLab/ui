@@ -1,3 +1,4 @@
+- [2025-01-06] [Remove unused props to fix downstream build](https://github.com/RubricLab/ui/commit/95cbfd7e6affcf896371b9524e9815f4332a56b2)
 - [2024-12-24] [stash](https://github.com/RubricLab/ui/commit/93d51acb191bb7d77c011f75fbbb1f720ad4bd5c)
 - [2024-12-24] [checkpoint - breadth](https://github.com/RubricLab/ui/commit/36040fe9f7d336822fea7007fe40f2562d6b9848)
 - [2024-12-24] [stash](https://github.com/RubricLab/ui/commit/d5cf1f01b4d02e0edde381193ad7c809f65ba9d1)

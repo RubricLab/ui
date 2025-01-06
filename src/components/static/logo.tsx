@@ -11,7 +11,7 @@ export function createLogo(ds: DesignSystem) {
 				href: z.string().optional(),
 				size: z.enum(['small', 'medium', 'large']).default('medium')
 			}),
-		render: ({ props: { variant, href, size } }) => {
+		render: ({ props: { href, size } }) => {
 			const logo = (
 				<Styled.Icon
 					ds={ds}

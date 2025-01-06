@@ -480,7 +480,7 @@ interface TooltipProps {
 export function Tooltip({
 	ds,
 	open = false,
-	position = 'top',
+	// position = 'top',
 	overrides,
 	attributes
 }: TooltipProps) {
@@ -533,7 +533,7 @@ interface PopoverProps {
 export function Popover({
 	ds,
 	open = false,
-	position = 'bottom',
+	// position = 'bottom',
 	overrides,
 	attributes
 }: PopoverProps) {

@@ -22,7 +22,7 @@ interface PortalProps {
  * Portal: purely structural, so we typically don’t do AllStates styling.
  * We’ll keep it minimal.
  */
-export function Portal({ ds, container, children }: PortalProps) {
+export function Portal({ container, children }: PortalProps) {
 	return createPortal(children, container || document.body)
 }
 
