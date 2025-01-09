@@ -1,12 +1,12 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.50",
+  "version": "5.0.51",
   "main": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
   "scripts": {
     "build": "NODE_ENV=production bun run build.ts",
-    "watch": "bun run build --watch",
+    "watch": "bun run scripts/generateCssTypes.ts",
     "prepare": "bun x simple-git-hooks",
     "bleed": "bun x npm-check-updates -u",
     "format": "bun x biome format --write .",
@@ -30,6 +30,7 @@
   "bugs": "https://github.com/RubricLab/ui/issues",
   "devDependencies": {
     "@rubriclab/config": "*",
+    "@rubriclab/codegen": "*",
     "@types/bun": "latest",
     "next": "^15.0.3",
     "typescript": "^5.6.2"
@@ -41,7 +42,7 @@
   },
   "type": "module",
   "dependencies": {
-    "zod": "^3.23.8"
+    "zod": "3.23.8"
   },
   "publishConfig": {
     "@RubricLab:registry": "https://registry.npmjs.org",

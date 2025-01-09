@@ -6,7 +6,7 @@ export type ChartLineProps = {
 	children: ReactNode
 }
 
-const ChartLine: FC<ChartLineProps> = ({ maxValue, children }) => {
+const ChartLine: FC<ChartLineProps> = ({ children }) => {
 	return (
 		<div className={styles['chart-line']}>
 			<svg
