@@ -1,0 +1,42 @@
+:where(.image--banner, .image--hero, .image--thumbnail, .image--feature, .image--background) {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.image--banner {
+	width: 100%;
+	border-radius: var(--rounding-subtle);
+	box-shadow: var(--shadow-sm);
+}
+
+.image--hero {
+	width: 100%;
+	border-radius: var(--rounding-rounded);
+	box-shadow: var(--shadow-lg);
+	margin-bottom: var(--spacing-lg);
+}
+
+.image--thumbnail {
+	width: var(--spacing-xl);
+	height: var(--spacing-xl);
+	object-fit: cover;
+	border-radius: var(--rounding-subtle);
+}
+
+.image--feature {
+	width: 100%;
+	border-radius: var(--rounding-rounded);
+	box-shadow: var(--shadow-md);
+	margin-bottom: var(--spacing-md);
+}
+
+.image--background {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: var(--z-index-base);
+}

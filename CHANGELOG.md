@@ -1,3 +1,4 @@
+- [2025-01-09] [image component](https://github.com/RubricLab/ui/commit/722c2a0f5843324b5a21580f92d2bca0adbed871)
 - [2025-01-09] [restart](https://github.com/RubricLab/ui/commit/4632bc1265eab33bf684c0034c6a161324a7778a)
 - [2025-01-06] [Remove unused props to fix downstream build](https://github.com/RubricLab/ui/commit/95cbfd7e6affcf896371b9524e9815f4332a56b2)
 - [2024-12-24] [stash](https://github.com/RubricLab/ui/commit/93d51acb191bb7d77c011f75fbbb1f720ad4bd5c)
