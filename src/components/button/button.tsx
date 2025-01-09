@@ -2,14 +2,18 @@ import type { ReactNode } from 'react'
 import styles from './button.module.css'
 
 export type ButtonProps = {
-	role: 'primary' | 'secondary' | 'success' | 'danger'
+	ROLE: 'primary' | 'secondary' | 'success' | 'danger'
 	children: ReactNode
 	onClick: () => void
 }
 
-export default function Button({ role, children, onClick }: ButtonProps) {
+export default function Button({ ROLE, children, onClick }: ButtonProps) {
 	return (
-		<button type="button" onClick={onClick} className={styles[`button--${role}`]}>
+		<button
+			className={`${styles.button} ${styles[`button--${ROLE}`]}`}
+			type="button"
+			onClick={onClick}
+		>
 			{children}
 		</button>
 	)

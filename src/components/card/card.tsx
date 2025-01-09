@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './card.module.css'
 
 export type CardProps = {
@@ -8,7 +8,7 @@ export type CardProps = {
 	icon?: ReactNode
 }
 
-const Card: FC<CardProps> = ({ role, title, children, icon }) => {
+export default function Card({ role, title, children, icon }: CardProps) {
 	return (
 		<div className={styles.card} data-role={role}>
 			<div className={styles.card__content}>
@@ -23,5 +23,3 @@ const Card: FC<CardProps> = ({ role, title, children, icon }) => {
 		</div>
 	)
 }
-
-export default Card

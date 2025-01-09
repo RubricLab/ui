@@ -1,19 +1,75 @@
+.button {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--radius-rounded);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	font-weight: var(--typography-body-weight);
+	transition: all var(--transition-fast);
+	cursor: pointer;
+	border: none;
+	position: relative;
+	z-index: var(--z-base);
+}
+
+.button:hover {
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-sm);
+}
+
+.button:active {
+	transform: translateY(0);
+	box-shadow: var(--shadow-none);
+	transition-duration: calc(var(--transition-fast) / 2);
+}
+
 .button--primary {
-	background-color: var(--primary);
-	color: white;
+	background-color: var(--color-primary);
+	color: var(--color-text);
+}
+
+.button--primary:hover {
+	background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+}
+
+.button--primary:active {
+	background-color: color-mix(in srgb, var(--color-primary) 80%, black);
 }
 
 .button--secondary {
-	background-color: var(--secondary);
-	color: white;
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+}
+
+.button--secondary:hover {
+	background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
+}
+
+.button--secondary:active {
+	background-color: color-mix(in srgb, var(--color-secondary) 80%, black);
 }
 
 .button--success {
-	background-color: var(--success);
-	color: white;
+	background-color: var(--color-success);
+	color: var(--color-text);
+}
+
+.button--success:hover {
+	background-color: color-mix(in srgb, var(--color-success) 90%, black);
+}
+
+.button--success:active {
+	background-color: color-mix(in srgb, var(--color-success) 80%, black);
 }
 
 .button--danger {
-	background-color: var(--danger);
-	color: white;
+	background-color: var(--color-danger);
+	color: var(--color-text);
+}
+
+.button--danger:hover {
+	background-color: color-mix(in srgb, var(--color-danger) 90%, black);
+}
+
+.button--danger:active {
+	background-color: color-mix(in srgb, var(--color-danger) 80%, black);
 }
