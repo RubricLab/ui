@@ -1,3 +1,4 @@
+- [2025-01-09] [Add CN helper and tests](https://github.com/RubricLab/ui/commit/7e5f0ac361b182b3c8b7750e5a00af8c70a5fcf5)
 - [2025-01-09] [breadth](https://github.com/RubricLab/ui/commit/518bb0a116e0185ef1274f74396f70e2ec318d4d)
 - [2025-01-09] [image component](https://github.com/RubricLab/ui/commit/722c2a0f5843324b5a21580f92d2bca0adbed871)
 - [2025-01-09] [restart](https://github.com/RubricLab/ui/commit/4632bc1265eab33bf684c0034c6a161324a7778a)

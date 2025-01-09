@@ -5,7 +5,7 @@ export function buildRootCSSVars(ds: DesignSystem): string {
 	const dark = ds.colors.dark
 
 	const spacingEntries = Object.entries(ds.spacing)
-		.map(([key, val]) => `--spacing-${key}: ${val};`)
+		.map(([key, val]) => `--spacing-${key}: ${val};`) // eg. --spacing-md: 1rem;
 		.join('\n  ')
 
 	const lightModeCSS = `
@@ -32,6 +32,9 @@ export function buildRootCSSVars(ds: DesignSystem): string {
     --color-danger: ${dark.danger};
     --color-background: ${dark.background};
     --color-text: ${dark.text};
+
+    /* Spacing */
+    ${spacingEntries}
   }
 }
 `.trim()
