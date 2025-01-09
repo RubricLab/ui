@@ -1,12 +1,11 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.46",
+  "version": "5.0.47",
   "main": "src/index.ts",
   "description": "UI package by Rubric Labs",
   "private": false,
   "scripts": {
     "build": "NODE_ENV=production bun run build.ts",
-    "tailwind": "bun x tailwindcss -i ./src/styles.css -o ./dist/output.css",
     "watch": "bun run build --watch",
     "prepare": "bun x simple-git-hooks",
     "bleed": "bun x npm-check-updates -u",
