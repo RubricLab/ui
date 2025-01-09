@@ -1,0 +1,7 @@
+.table-row {
+	transition: var(--transitions-fast);
+}
+
+.table-row:hover {
+	background: var(--background);
+}

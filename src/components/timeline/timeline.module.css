@@ -1,0 +1,35 @@
+/* Timeline container */
+.timeline {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+	padding: var(--spacing-lg) 0;
+}
+
+/* Connecting line */
+.timeline::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--primary);
+	opacity: 0.2;
+	left: calc(var(--spacing-lg) / 2);
+}
+
+/* Desktop styles */
+@media (min-width: var(--breakpoints-md)) {
+	.timeline {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.timeline::before {
+		left: 0;
+		top: var(--spacing-lg);
+		height: 2px;
+		width: 100%;
+	}
+}

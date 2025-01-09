@@ -1,0 +1,33 @@
+.input {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.input__label {
+	font-size: 0.875em;
+	color: var(--text);
+}
+
+.input__field {
+	width: 100%;
+	height: var(--spacing-xl);
+	padding: var(--spacing-sm);
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: var(--background);
+	border: 1px solid var(--primary);
+	border-radius: var(--rounding-subtle);
+	outline: none;
+	transition: var(--transitions-fast);
+}
+
+.input__field:focus {
+	box-shadow: var(--shadow-sm);
+}
+
+/* Type-specific adjustments */
+.input__field[type="number"] {
+	font-variant-numeric: tabular-nums;
+}

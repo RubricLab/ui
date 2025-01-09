@@ -1,0 +1,38 @@
+.nav-item {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	transition: var(--transitions-fast);
+}
+
+/* Primary navigation */
+.nav-item[data-role="primary"] {
+	color: var(--primary);
+	font-weight: var(--typography-weight-emphasis);
+	padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Secondary navigation */
+.nav-item[data-role="secondary"] {
+	color: var(--text);
+	padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Utility navigation */
+.nav-item[data-role="utility"] {
+	color: var(--text);
+	font-size: 0.875em;
+	padding: var(--spacing-xs);
+}
+
+/* Current page indicator */
+.nav-item[aria-current="page"] {
+	background: var(--primary);
+	color: var(--background);
+	border-radius: var(--rounding-subtle);
+}
+
+/* Hover state */
+.nav-item:hover {
+	opacity: 0.8;
+}

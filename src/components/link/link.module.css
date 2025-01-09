@@ -1,0 +1,30 @@
+/* Base styles shared by all roles */
+:where(.link--inline, .link--action) {
+	text-decoration: none;
+	transition: var(--transitions-fast);
+}
+
+/* Inline text links */
+.link--inline {
+	color: var(--primary);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.link--inline:hover {
+	color: var(--secondary);
+}
+
+/* Action links */
+.link--action {
+	color: var(--primary);
+	font-weight: var(--typography-weight-emphasis);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--rounding-pill);
+	border: 1px solid var(--primary);
+}
+
+.link--action:hover {
+	background: var(--primary);
+	color: white;
+}

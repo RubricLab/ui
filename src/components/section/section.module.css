@@ -1,0 +1,31 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.section__header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.section__title {
+	margin: 0;
+	font-size: var(--typography-size-lg);
+	font-weight: var(--typography-weight-emphasis);
+	color: var(--text);
+	line-height: 1.2;
+}
+
+.section__description {
+	font-size: var(--typography-size-sm);
+	color: var(--text);
+	line-height: 1.5;
+}
+
+.section__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}

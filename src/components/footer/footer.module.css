@@ -1,0 +1,27 @@
+.footer {
+	width: 100%;
+	background: var(--background);
+	border-top: 1px solid var(--primary);
+	padding: var(--spacing-lg) 0;
+}
+
+.footer__content {
+	max-width: var(--breakpoints-lg);
+	margin: 0 auto;
+	padding: 0 var(--spacing-md);
+	display: grid;
+	gap: var(--spacing-lg);
+}
+
+/* Responsive layout */
+@media (min-width: var(--breakpoints-md)) {
+	.footer__content {
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+}
+
+@media (max-width: calc(var(--breakpoints-md) - 1px)) {
+	.footer__content {
+		grid-template-columns: 1fr;
+	}
+}

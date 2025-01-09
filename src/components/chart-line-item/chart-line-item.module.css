@@ -1,0 +1,23 @@
+.chart-line-item__line {
+	stroke: var(--primary);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.chart-line-item__point {
+	fill: var(--background);
+	stroke: var(--primary);
+	stroke-width: 2;
+	transition: r var(--transitions-fast);
+}
+
+.chart-line-item__point:hover {
+	r: 2.5;
+}
+
+.chart-line-item__label {
+	fill: var(--text);
+	font-size: 4px;
+	font-family: inherit;
+}

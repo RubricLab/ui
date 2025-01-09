@@ -1,0 +1,30 @@
+.text-area {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.text-area__label {
+	font-size: 0.875em;
+	color: var(--text);
+}
+
+.text-area__field {
+	width: 100%;
+	min-height: var(--spacing-xl);
+	padding: var(--spacing-sm);
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: var(--background);
+	border: 1px solid var(--primary);
+	border-radius: var(--rounding-subtle);
+	outline: none;
+	resize: vertical;
+	line-height: 1.4;
+	transition: var(--transitions-fast);
+}
+
+.text-area__field:focus {
+	box-shadow: var(--shadow-sm);
+}

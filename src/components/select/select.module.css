@@ -1,0 +1,47 @@
+.select {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.select__label {
+	font-size: 0.875em;
+	color: var(--text);
+}
+
+.select__field {
+	width: 100%;
+	height: var(--spacing-xl);
+	padding: var(--spacing-sm);
+	padding-right: var(--spacing-xl);
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: var(--background);
+	border: 1px solid var(--primary);
+	border-radius: var(--rounding-subtle);
+	outline: none;
+	cursor: pointer;
+	appearance: none;
+	transition: var(--transitions-fast);
+}
+
+.select__field:focus {
+	box-shadow: var(--shadow-sm);
+}
+
+.select__icon {
+	position: absolute;
+	right: var(--spacing-sm);
+	bottom: var(--spacing-sm);
+	width: var(--spacing-md);
+	height: var(--spacing-md);
+	fill: currentColor;
+	pointer-events: none;
+}
+
+/* Hide default arrow in IE */
+.select__field::-ms-expand {
+	display: none;
+}

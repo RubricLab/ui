@@ -1,0 +1,95 @@
+.card {
+	border-radius: var(--rounding-subtle);
+	overflow: hidden;
+}
+
+.card__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
+}
+
+.card__header {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.card__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--spacing-lg);
+	height: var(--spacing-lg);
+}
+
+.card__icon svg {
+	width: var(--spacing-md);
+	height: var(--spacing-md);
+}
+
+.card__title {
+	margin: 0;
+	font-size: var(--typography-size-md);
+	font-weight: var(--typography-weight-emphasis);
+	line-height: 1.2;
+}
+
+.card__body {
+	font-size: var(--typography-size-sm);
+	line-height: 1.5;
+}
+
+/* Info card */
+.card[data-role="info"] {
+	background: var(--background);
+	border: 1px solid var(--primary);
+}
+
+.card[data-role="info"] .card__icon {
+	color: var(--primary);
+}
+
+/* Success card */
+.card[data-role="success"] {
+	background: var(--success-subtle);
+	border: 1px solid var(--success);
+}
+
+.card[data-role="success"] .card__icon {
+	color: var(--success);
+}
+
+/* Warning card */
+.card[data-role="warning"] {
+	background: var(--warning-subtle);
+	border: 1px solid var(--warning);
+}
+
+.card[data-role="warning"] .card__icon {
+	color: var(--warning);
+}
+
+/* Danger card */
+.card[data-role="danger"] {
+	background: var(--danger-subtle);
+	border: 1px solid var(--danger);
+}
+
+.card[data-role="danger"] .card__icon {
+	color: var(--danger);
+}
+
+/* Feature card */
+.card[data-role="feature"] {
+	background: var(--background);
+	border: 1px solid var(--primary);
+	box-shadow: var(--shadow-md);
+}
+
+.card[data-role="feature"] .card__icon {
+	color: var(--primary);
+	background: var(--primary-subtle);
+	border-radius: var(--rounding-subtle);
+}

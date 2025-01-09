@@ -1,0 +1,31 @@
+.pill {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.875em;
+	border-radius: var(--rounding-pill);
+	padding: 0 var(--spacing-sm);
+	height: var(--spacing-md);
+}
+
+/* Status pills */
+.pill[data-role="status"] {
+	background: var(--primary);
+	color: var(--background);
+	font-weight: var(--typography-weight-emphasis);
+}
+
+/* Count pills */
+.pill[data-role="count"] {
+	background: var(--background);
+	color: var(--text);
+	border: 1px solid var(--primary);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Label pills */
+.pill[data-role="label"] {
+	background: var(--background);
+	color: var(--text);
+	border: 1px solid var(--primary);
+	opacity: 0.8;
+}

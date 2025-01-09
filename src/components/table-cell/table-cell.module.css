@@ -1,0 +1,29 @@
+.table-cell {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-bottom: 1px solid var(--primary);
+}
+
+/* Header cells */
+.table-cell[data-role="header"] {
+	background: var(--background);
+	font-weight: var(--typography-weight-emphasis);
+	text-align: left;
+}
+
+/* Data cells */
+.table-cell[data-role="data"] {
+	color: var(--text);
+}
+
+/* Alignment variations */
+.table-cell[data-align="left"] {
+	text-align: left;
+}
+
+.table-cell[data-align="center"] {
+	text-align: center;
+}
+
+.table-cell[data-align="right"] {
+	text-align: right;
+}

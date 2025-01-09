@@ -1,0 +1,33 @@
+.page {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.page__nav {
+	position: sticky;
+	top: 0;
+	z-index: var(--z-index-nav);
+	background: var(--background);
+}
+
+.page__main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: var(--breakpoints-lg);
+	margin: 0 auto;
+	padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.page__footer {
+	width: 100%;
+	background: var(--background);
+}
+
+/* Responsive adjustments */
+@media (max-width: calc(var(--breakpoints-md) - 1px)) {
+	.page__main {
+		padding: var(--spacing-md) var(--spacing-sm);
+	}
+}
