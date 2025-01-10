@@ -1,3 +1,4 @@
+- [2025-01-09] [half refactor](https://github.com/RubricLab/ui/commit/366e9a1d3034edbc05b132dc1c95a2a0e316f64a)
 - [2025-01-09] [new DS interface, themes](https://github.com/RubricLab/ui/commit/bf359ae9fc6ebf26744fa6049e8e679261b189ef)
 - [2025-01-09] [Add types and typegen](https://github.com/RubricLab/ui/commit/8209ef1b0e5d0cf18a135ff61083272b54e31c74)
 - [2025-01-09] [Add CN helper and tests](https://github.com/RubricLab/ui/commit/7e5f0ac361b182b3c8b7750e5a00af8c70a5fcf5)

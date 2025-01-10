@@ -1,22 +1,55 @@
 .nav {
+	/* Layout */
 	width: 100%;
-	border-bottom: 1px solid var(--primary);
-	background: var(--background);
+	position: sticky;
+	top: 0;
+	z-index: var(--z-base);
+
+	/* Typography */
+	font-family: "Matter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+
+	/* Visual */
+	background-color: var(--color-surface-base);
+	border-bottom: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+	box-shadow: var(--shadow-sm);
+
+	/* Interactive */
+	transition: background-color var(--transition-fast) var(--animation-quick-timing), border-color
+		var(--transition-fast) var(--animation-quick-timing), box-shadow var(--transition-fast)
+		var(--animation-quick-timing);
 }
 
 .nav__content {
+	/* Layout */
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	max-width: var(--breakpoints-lg);
+	gap: var(--spacing-md);
+	max-width: var(--breakpoint-lg);
 	margin: 0 auto;
-	padding: var(--spacing-sm) var(--spacing-md);
+	padding: var(--spacing-md) var(--spacing-lg);
+
+	/* Visual */
+	position: relative;
 }
 
 /* Responsive adjustments */
-@media (max-width: calc(var(--breakpoints-md) - 1px)) {
+@media (max-width: var(--breakpoint-md)) {
 	.nav__content {
-		padding: var(--spacing-sm);
+		padding: var(--spacing-sm) var(--spacing-md);
 		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+	}
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.nav {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+		box-shadow: var(--shadow-sm);
 	}
 }

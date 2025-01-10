@@ -1,5 +1,4 @@
 import type { DesignSystem } from '../../types/DesignSystem'
-import kong from './fonts/kong'
 import matter from './fonts/matter'
 import { arrowDown } from './icons/arrowDown'
 import { arrowLeft } from './icons/arrowLeft'
@@ -92,9 +91,9 @@ export default {
 
 	typography: {
 		fonts: {
-			body: kong,
+			body: matter,
 			heading: matter,
-			monospace: kong
+			monospace: matter
 		},
 		scale: {
 			headline: { fontSize: '32px', lineHeight: '40px', fontWeight: 700 },

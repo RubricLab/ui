@@ -1,18 +1,25 @@
 .table-cell {
 	padding: var(--spacing-sm) var(--spacing-md);
-	border-bottom: 1px solid var(--primary);
+	border-bottom: var(--border-thin-width) var(--border-thin-style) var(--color-surface-base);
+	transition: background-color var(--transition-fast) var(--animation-quick-timing);
 }
 
 /* Header cells */
 .table-cell[data-role="header"] {
-	background: var(--background);
-	font-weight: var(--typography-weight-emphasis);
+	background: var(--color-surface-base);
+	color: var(--color-brand-text);
+	font-weight: var(--typography-subHeadline-weight);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
 	text-align: left;
 }
 
 /* Data cells */
 .table-cell[data-role="data"] {
-	color: var(--text);
+	color: var(--color-surface-text);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
 }
 
 /* Alignment variations */
@@ -26,4 +33,14 @@
 
 .table-cell[data-align="right"] {
 	text-align: right;
+}
+
+@media (prefers-color-scheme: dark) {
+	.table-cell {
+		border-bottom-color: var(--color-surface-subtle);
+	}
+
+	.table-cell[data-role="header"] {
+		background: var(--color-surface-subtle);
+	}
 }

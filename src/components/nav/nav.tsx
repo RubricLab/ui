@@ -1,16 +1,15 @@
-import type { FC, ReactNode } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 import styles from './nav.module.css'
 
-export type NavProps = {
+export interface NavProps extends HTMLAttributes<HTMLElement> {
+	/** Navigation content */
 	children: ReactNode
 }
 
-const Nav: FC<NavProps> = ({ children }) => {
+export default function Nav({ children, className, ...props }: NavProps) {
 	return (
-		<div className={styles.nav}>
+		<nav className={`${styles.nav} ${className || ''}`} {...props}>
 			<div className={styles.nav__content}>{children}</div>
-		</div>
+		</nav>
 	)
 }
-
-export default Nav

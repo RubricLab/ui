@@ -1,31 +1,80 @@
 .pill {
+	/* Layout */
 	display: inline-flex;
 	align-items: center;
-	font-size: 0.875em;
-	border-radius: var(--rounding-pill);
-	padding: 0 var(--spacing-sm);
 	height: var(--spacing-md);
+	padding-inline: var(--spacing-sm);
+	box-sizing: border-box;
+
+	/* Typography */
+	font-family: var(--typography-body-family);
+	font-size: var(--typography-small-size);
+	line-height: var(--typography-small-line-height);
+	letter-spacing: var(--typography-small-letter-spacing);
+
+	/* Visual */
+	border-radius: var(--radius-pill);
+	transition: all var(--transition-fast) var(--animation-quick-timing);
 }
 
 /* Status pills */
-.pill[data-role="status"] {
-	background: var(--primary);
-	color: var(--background);
-	font-weight: var(--typography-weight-emphasis);
+.pill--status {
+	/* Visual */
+	background-color: var(--color-brand-base);
+	color: var(--color-brand-text);
+	font-weight: var(--typography-small-weight-emphasis);
+}
+
+.pill--status:hover {
+	background-color: var(--color-brand-focus);
 }
 
 /* Count pills */
-.pill[data-role="count"] {
-	background: var(--background);
-	color: var(--text);
-	border: 1px solid var(--primary);
+.pill--count {
+	/* Visual */
+	background-color: var(--color-surface-base);
+	color: var(--color-surface-text);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-base);
+
+	/* Typography */
 	font-variant-numeric: tabular-nums;
+	font-weight: var(--typography-small-weight);
+}
+
+.pill--count:hover {
+	border-color: var(--color-brand-focus);
+	color: var(--color-brand-focus);
 }
 
 /* Label pills */
-.pill[data-role="label"] {
-	background: var(--background);
-	color: var(--text);
-	border: 1px solid var(--primary);
-	opacity: 0.8;
+.pill--label {
+	/* Visual */
+	background-color: var(--color-surface-base);
+	color: var(--color-text-subtle);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+}
+
+.pill--label:hover {
+	border-color: var(--color-brand-base);
+	color: var(--color-surface-text);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.pill--status {
+		background-color: var(--color-brand-base);
+		color: var(--color-brand-text);
+	}
+
+	.pill--count {
+		background-color: var(--color-surface-base);
+		color: var(--color-surface-text);
+		border-color: var(--color-brand-base);
+	}
+
+	.pill--label {
+		background-color: var(--color-surface-base);
+		color: var(--color-text-subtle);
+		border-color: var(--color-brand-subtle);
+	}
 }

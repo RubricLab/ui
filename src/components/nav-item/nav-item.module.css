@@ -1,38 +1,68 @@
 .nav-item {
+	/* Base Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 400);
+
+	/* Layout */
 	display: inline-flex;
 	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
 	text-decoration: none;
-	transition: var(--transitions-fast);
+	border-radius: var(--radius-pill);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	background-color: transparent;
+
+	/* Interactive */
+	cursor: pointer;
+	transition-property: color, background-color, transform;
+	transition-duration: var(--transition-fast);
+	transition-timing-function: var(--animation-quick-timing);
 }
 
-/* Primary navigation */
-.nav-item[data-role="primary"] {
-	color: var(--primary);
-	font-weight: var(--typography-weight-emphasis);
-	padding: var(--spacing-xs) var(--spacing-sm);
+.nav-item:hover {
+	color: var(--color-brand-text);
+	background-color: var(--color-brand-subtle);
 }
 
-/* Secondary navigation */
-.nav-item[data-role="secondary"] {
-	color: var(--text);
-	padding: var(--spacing-xs) var(--spacing-sm);
-}
-
-/* Utility navigation */
-.nav-item[data-role="utility"] {
-	color: var(--text);
-	font-size: 0.875em;
-	padding: var(--spacing-xs);
+.nav-item:active {
+	color: var(--color-brand-focus);
+	background-color: var(--color-brand-subtle);
+	transform: translateY(1px);
 }
 
 /* Current page indicator */
 .nav-item[aria-current="page"] {
-	background: var(--primary);
-	color: var(--background);
-	border-radius: var(--rounding-subtle);
+	background-color: var(--color-brand-base);
+	color: var(--color-surface-text);
+	font-weight: var(--typography-body-weight, 500);
 }
 
-/* Hover state */
-.nav-item:hover {
-	opacity: 0.8;
+.nav-item[aria-current="page"]:hover {
+	background-color: var(--color-brand-focus);
+}
+
+.nav-item[aria-current="page"]:active {
+	background-color: var(--color-brand-active);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.nav-item {
+		color: var(--color-surface-text);
+	}
+
+	.nav-item:hover {
+		background-color: var(--color-brand-subtle);
+	}
+
+	.nav-item[aria-current="page"] {
+		color: var(--color-surface-text);
+	}
 }

@@ -1,33 +1,82 @@
 .page {
+	/* Layout */
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
+	box-sizing: border-box;
+
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+
+	/* Visual */
+	background-color: var(--color-surface-base);
+	color: var(--color-surface-text);
 }
 
-.page__nav {
+.page__header {
+	/* Layout */
 	position: sticky;
 	top: 0;
-	z-index: var(--z-index-nav);
-	background: var(--background);
+	z-index: 100;
+	box-sizing: border-box;
+	inline-size: 100%;
+
+	/* Visual */
+	background-color: var(--color-surface-base);
+	border-bottom: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+	box-shadow: var(--shadow-sm);
+
+	/* Interactive */
+	transition: background-color var(--transition-fast) var(--animation-quick-timing), border-color
+		var(--transition-fast) var(--animation-quick-timing), box-shadow var(--transition-fast)
+		var(--animation-quick-timing);
 }
 
 .page__main {
+	/* Layout */
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	max-width: var(--breakpoints-lg);
-	margin: 0 auto;
-	padding: var(--spacing-lg) var(--spacing-md);
+	box-sizing: border-box;
+	inline-size: min(100% - var(--spacing-lg), var(--breakpoint-lg));
+	margin-inline: auto;
+	padding-block: var(--spacing-xl);
+
+	/* Visual */
+	position: relative;
 }
 
 .page__footer {
-	width: 100%;
-	background: var(--background);
+	/* Layout */
+	box-sizing: border-box;
+	inline-size: 100%;
+
+	/* Visual */
+	background-color: var(--color-surface-base);
+	border-top: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
 }
 
 /* Responsive adjustments */
-@media (max-width: calc(var(--breakpoints-md) - 1px)) {
+@media (max-width: var(--breakpoint-md)) {
 	.page__main {
-		padding: var(--spacing-md) var(--spacing-sm);
+		inline-size: min(100% - var(--spacing-md), var(--breakpoint-lg));
+		padding-block: var(--spacing-lg);
+	}
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.page {
+		background-color: var(--color-surface-base);
+		color: var(--color-surface-text);
+	}
+
+	.page__header,
+	.page__footer {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
 	}
 }

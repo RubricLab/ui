@@ -1,15 +1,15 @@
-import type { FC, ReactNode } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 import styles from './section.module.css'
 
-export type SectionProps = {
+export interface SectionProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
 	title?: ReactNode
 	description?: ReactNode
 	children: ReactNode
 }
 
-const Section: FC<SectionProps> = ({ title, description, children }) => {
+export default function Section({ title, description, children, className }: SectionProps) {
 	return (
-		<section className={styles.section}>
+		<section className={`${styles.section} ${className || ''}`}>
 			{(title || description) && (
 				<header className={styles.section__header}>
 					{title && <h2 className={styles.section__title}>{title}</h2>}
@@ -20,5 +20,3 @@ const Section: FC<SectionProps> = ({ title, description, children }) => {
 		</section>
 	)
 }
-
-export default Section

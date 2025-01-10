@@ -1,32 +1,91 @@
-import type { ChangeEvent, FC } from 'react'
+import type { ChangeEvent, InputHTMLAttributes } from 'react'
 import styles from './search.module.css'
 
-export type SearchProps = {
-	role: 'nav' | 'page' | 'filter'
+export type SearchRole = 'nav' | 'page' | 'filter'
+export type SearchValidation = 'success' | 'error'
+
+export interface SearchProps
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'type' | 'role'> {
+	/** The semantic role of the search */
+	ROLE: SearchRole
+	/** Current value */
 	value: string
+	/** Change handler */
 	onChange: (value: string) => void
+	/** Placeholder text */
 	placeholder?: string
+	/** Label for screen readers */
+	label?: string
+	/** Validation state */
+	validation?: SearchValidation
+	/** Validation message */
+	validationMessage?: string
 }
 
-const Search: FC<SearchProps> = ({ role, value, onChange, placeholder = 'Search...' }) => {
+export default function Search({
+	ROLE,
+	value,
+	onChange,
+	placeholder = 'Search...',
+	label = 'Search',
+	className,
+	id: providedId,
+	disabled,
+	validation,
+	validationMessage,
+	...props
+}: SearchProps) {
+	// Generate stable ID for accessibility
+	const id = providedId || `search-${ROLE}`
+	const validationId = `${id}-validation`
+
+	// Handle change events
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		onChange(e.target.value)
 	}
 
 	return (
-		<div className={styles.search} data-role={role}>
-			<input
-				type="search"
-				value={value}
-				onChange={handleChange}
-				placeholder={placeholder}
-				className={styles.search__input}
-			/>
-			<svg viewBox="0 0 24 24" className={styles.search__icon} aria-hidden="true">
-				<path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-			</svg>
+		<div
+			className={`${styles.search} ${styles[`search--${ROLE}`]} ${validation ? styles[`search--${validation}`] : ''} ${className || ''}`}
+			data-validation={validation}
+		>
+			<label htmlFor={id} className={styles.search__label}>
+				{label}
+			</label>
+			<div className={styles.search__wrapper}>
+				<input
+					type="search"
+					id={id}
+					value={value}
+					onChange={handleChange}
+					placeholder={placeholder}
+					disabled={disabled}
+					className={styles.search__input}
+					aria-invalid={validation === 'error'}
+					aria-describedby={validationMessage ? validationId : undefined}
+					{...props}
+				/>
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					className={styles.search__icon}
+					aria-hidden="true"
+					focusable="false"
+				>
+					<path
+						fillRule="evenodd"
+						clipRule="evenodd"
+						d="M11.5 7a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04z"
+						fill="currentColor"
+					/>
+				</svg>
+			</div>
+			{validationMessage && (
+				<span id={validationId} className={styles.search__validation}>
+					{validationMessage}
+				</span>
+			)}
 		</div>
 	)
 }
-
-export default Search

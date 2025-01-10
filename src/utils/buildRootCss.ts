@@ -82,6 +82,25 @@ export function buildRootCSSVars(ds: DesignSystem): string {
 			.join('\n  ')}
 }
 
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Body Font';
+  src: url(${ds.typography.fonts.body.base64}) format('${ds.typography.fonts.body.format}');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Heading Font';
+  src: url(${ds.typography.fonts.heading.base64}) format('${ds.typography.fonts.heading.format}');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monospace Font';
+  src: url(${ds.typography.fonts.monospace.base64}) format('${ds.typography.fonts.monospace.format}');
+  font-display: swap;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     /* Colors - Dark Mode */

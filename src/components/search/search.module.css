@@ -1,61 +1,204 @@
 .search {
+	/* Layout */
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	width: 100%;
+}
+
+.search__label {
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 500);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	cursor: pointer;
+	user-select: none;
+
+	/* Accessibility */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.search__wrapper {
+	/* Layout */
 	position: relative;
 	display: flex;
 	align-items: center;
+	width: 100%;
 }
 
 .search__input {
+	/* Layout */
 	width: 100%;
-	border: none;
-	background: none;
+	padding-inline: var(--spacing-md) var(--spacing-xl);
+	box-sizing: border-box;
+
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 400);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	background-color: var(--color-surface-subtle);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+	border-radius: var(--radius-rounded);
 	outline: none;
-	padding-right: var(--spacing-xl);
-	font-family: inherit;
+	transition: all var(--transition-fast) var(--animation-quick-timing);
+}
+
+.search__input:hover {
+	border-color: var(--color-brand-base);
+	background-color: var(--color-surface-base);
+}
+
+.search__input:focus {
+	border-color: var(--color-brand-focus);
+	background-color: var(--color-surface-subtle);
+	box-shadow: 0 0 0 2px var(--color-brand-subtle);
+}
+
+.search__input:disabled {
+	background-color: var(--color-surface-base);
+	border-color: var(--color-brand-subtle);
+	color: var(--color-brand-text);
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 .search__icon {
+	/* Layout */
 	position: absolute;
 	right: var(--spacing-sm);
 	width: var(--spacing-md);
 	height: var(--spacing-md);
-	fill: currentColor;
 	pointer-events: none;
+
+	/* Visual */
+	color: var(--color-surface-text);
+	opacity: 0.5;
+	transition: opacity var(--transition-fast) var(--animation-quick-timing);
+}
+
+.search__input:focus + .search__icon,
+.search__input:not(:placeholder-shown) + .search__icon {
+	opacity: 1;
+}
+
+.search__validation {
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 400);
+
+	/* Layout */
+	margin-top: var(--spacing-xs);
+}
+
+/* Validation States */
+.search--error .search__input {
+	border-color: var(--color-destructive-base);
+	background-color: var(--color-destructive-subtle);
+}
+
+.search--error .search__input:focus {
+	box-shadow: 0 0 0 2px var(--color-destructive-subtle);
+}
+
+.search--error .search__validation {
+	color: var(--color-destructive-text);
+}
+
+.search--success .search__input {
+	border-color: var(--color-success-base);
+	background-color: var(--color-success-subtle);
+}
+
+.search--success .search__input:focus {
+	box-shadow: 0 0 0 2px var(--color-success-subtle);
+}
+
+.search--success .search__validation {
+	color: var(--color-success-text);
 }
 
 /* Nav search */
-.search[data-role="nav"] {
-	background: var(--background);
-	border: 1px solid var(--primary);
-	border-radius: var(--rounding-pill);
-}
-
-.search[data-role="nav"] .search__input {
+.search--nav .search__input {
 	height: var(--spacing-lg);
-	padding-left: var(--spacing-md);
-	font-size: 0.875em;
+	font-size: var(--typography-body-size);
+	border-radius: var(--radius-pill);
 }
 
 /* Page search */
-.search[data-role="page"] {
-	background: var(--background);
-	border: 2px solid var(--primary);
-	border-radius: var(--rounding-subtle);
-}
-
-.search[data-role="page"] .search__input {
+.search--page .search__input {
 	height: var(--spacing-xl);
-	padding-left: var(--spacing-md);
-	font-size: 1em;
+	border-width: calc(var(--border-thin-width) * 2);
 }
 
 /* Filter search */
-.search[data-role="filter"] {
-	background: var(--background);
-	border-bottom: 1px solid var(--primary);
+.search--filter .search__input {
+	height: var(--spacing-lg);
+	font-size: var(--typography-body-size);
+	border-radius: 0;
+	border-width: 0 0 var(--border-thin-width) 0;
+	background-color: transparent;
 }
 
-.search[data-role="filter"] .search__input {
-	height: var(--spacing-lg);
-	padding-left: var(--spacing-sm);
-	font-size: 0.875em;
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.search__input {
+		color: var(--color-surface-text);
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+	}
+
+	.search__input:hover {
+		border-color: var(--color-brand-base);
+		background-color: var(--color-surface-subtle);
+	}
+
+	.search__input:focus {
+		border-color: var(--color-brand-focus);
+		background-color: var(--color-surface-base);
+		box-shadow: 0 0 0 2px var(--color-brand-subtle);
+	}
+
+	.search__input:disabled {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+		color: var(--color-brand-text);
+		opacity: 0.5;
+	}
+
+	.search__icon {
+		color: var(--color-surface-text);
+	}
+
+	/* Dark mode validation states */
+	.search--error .search__input {
+		background-color: var(--color-destructive-subtle);
+	}
+
+	.search--success .search__input {
+		background-color: var(--color-success-subtle);
+	}
 }

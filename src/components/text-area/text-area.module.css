@@ -1,30 +1,152 @@
 .text-area {
+	/* Layout */
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xs);
+	width: 100%;
 }
 
 .text-area__label {
-	font-size: 0.875em;
-	color: var(--text);
+	/* Typography */
+	font-family: var(--typography-body-family);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: 500;
+
+	/* Visual */
+	color: var(--color-surface-text);
+	cursor: pointer;
+	user-select: none;
 }
 
 .text-area__field {
+	/* Layout */
 	width: 100%;
 	min-height: var(--spacing-xl);
 	padding: var(--spacing-sm);
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background: var(--background);
-	border: 1px solid var(--primary);
-	border-radius: var(--rounding-subtle);
+	box-sizing: border-box;
+
+	/* Typography */
+	font-family: var(--typography-body-family);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	background-color: var(--color-surface-subtle);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+	border-radius: var(--radius-rounded);
 	outline: none;
 	resize: vertical;
-	line-height: 1.4;
-	transition: var(--transitions-fast);
+	transition: all var(--transition-fast) var(--animation-quick-timing);
+}
+
+.text-area__field:hover {
+	border-color: var(--color-brand-base);
+	background-color: var(--color-surface-base);
 }
 
 .text-area__field:focus {
-	box-shadow: var(--shadow-sm);
+	border-color: var(--color-brand-focus);
+	background-color: var(--color-surface-subtle);
+	box-shadow: 0 0 0 2px var(--color-brand-subtle);
+}
+
+.text-area__field:disabled {
+	background-color: var(--color-surface-base);
+	border-color: var(--color-brand-subtle);
+	color: var(--color-brand-text);
+	opacity: 0.5;
+	cursor: not-allowed;
+	resize: none;
+}
+
+/* Error state */
+.text-area--error .text-area__label {
+	color: var(--color-destructive-text);
+}
+
+.text-area--error .text-area__field {
+	border-color: var(--color-destructive-base);
+	background-color: var(--color-destructive-subtle);
+}
+
+.text-area--error .text-area__field:hover {
+	border-color: var(--color-destructive-focus);
+}
+
+.text-area--error .text-area__field:focus {
+	border-color: var(--color-destructive-focus);
+	box-shadow: 0 0 0 2px var(--color-destructive-subtle);
+}
+
+/* Success state */
+.text-area--success .text-area__label {
+	color: var(--color-success-text);
+}
+
+.text-area--success .text-area__field {
+	border-color: var(--color-success-base);
+	background-color: var(--color-success-subtle);
+}
+
+.text-area--success .text-area__field:hover {
+	border-color: var(--color-success-focus);
+}
+
+.text-area--success .text-area__field:focus {
+	border-color: var(--color-success-focus);
+	box-shadow: 0 0 0 2px var(--color-success-subtle);
+}
+
+.text-area__error,
+.text-area__success {
+	/* Typography */
+	font-family: var(--typography-body-family);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	margin-top: var(--spacing-xs);
+}
+
+.text-area__error {
+	color: var(--color-destructive-text);
+}
+
+.text-area__success {
+	color: var(--color-success-text);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.text-area__label {
+		color: var(--color-surface-text);
+	}
+
+	.text-area__field {
+		color: var(--color-surface-text);
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+	}
+
+	.text-area__field:hover {
+		border-color: var(--color-brand-base);
+		background-color: var(--color-surface-subtle);
+	}
+
+	.text-area__field:focus {
+		border-color: var(--color-brand-focus);
+		background-color: var(--color-surface-base);
+		box-shadow: 0 0 0 2px var(--color-brand-subtle);
+	}
+
+	.text-area__field:disabled {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+		color: var(--color-brand-text);
+		opacity: 0.5;
+	}
 }

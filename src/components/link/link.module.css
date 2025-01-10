@@ -1,30 +1,77 @@
-/* Base styles shared by all roles */
-:where(.link--inline, .link--action) {
+/* Base styles shared by all links */
+.link--inline,
+.link--action {
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
 	text-decoration: none;
-	transition: var(--transitions-fast);
+
+	/* Interactive behavior */
+	cursor: pointer;
+	transition-property: color, background-color, border-color, text-decoration-color;
+	transition-duration: var(--transition-fast);
+	transition-timing-function: var(--animation-quick-timing);
 }
 
 /* Inline text links */
 .link--inline {
-	color: var(--primary);
+	color: var(--color-brand-text);
 	text-decoration: underline;
+	text-decoration-color: var(--color-brand-subtle);
 	text-underline-offset: 0.2em;
+	text-decoration-thickness: 1px;
+	font-weight: var(--typography-body-weight, 400);
 }
 
 .link--inline:hover {
-	color: var(--secondary);
+	color: var(--color-brand-focus);
+	text-decoration-color: var(--color-brand-focus);
+}
+
+.link--inline:active {
+	color: var(--color-brand-active);
+	text-decoration-color: var(--color-brand-active);
 }
 
 /* Action links */
 .link--action {
-	color: var(--primary);
-	font-weight: var(--typography-weight-emphasis);
-	padding: var(--spacing-xs) var(--spacing-sm);
-	border-radius: var(--rounding-pill);
-	border: 1px solid var(--primary);
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--radius-pill);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-base);
+	color: var(--color-brand-text);
+	font-weight: var(--typography-body-weight, 500);
+	background-color: transparent;
 }
 
 .link--action:hover {
-	background: var(--primary);
-	color: white;
+	background-color: var(--color-brand-subtle);
+	border-color: var(--color-brand-focus);
+	color: var(--color-brand-focus);
+}
+
+.link--action:active {
+	background-color: var(--color-brand-base);
+	border-color: var(--color-brand-active);
+	color: var(--color-surface-text);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.link--action {
+		background-color: transparent;
+	}
+
+	.link--action:hover {
+		background-color: var(--color-brand-subtle);
+	}
+
+	.link--action:active {
+		background-color: var(--color-brand-base);
+	}
 }

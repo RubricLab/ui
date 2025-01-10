@@ -1,104 +1,174 @@
 .card {
-	border-radius: var(--radius-subtle);
-	background-color: var(--color-background);
-	transition: all var(--transition-fast);
-	overflow: hidden;
+	/* Core structure */
+	border-radius: var(--radius-rounded);
+	background-color: var(--color-surface-base);
+	border: var(--border-thin-width) var(--border-thin-style) transparent;
+
+	/* Layering and depth */
+	position: relative;
 	z-index: var(--z-base);
+	box-shadow: var(--shadow-sm);
+
+	/* Motion design */
+	transition-property: transform, box-shadow, border-color, background-color;
+	transition-duration: var(--transition-normal);
+	transition-timing-function: var(--animation-normal-timing);
+
+	/* Container behavior */
+	overflow: hidden;
+	backdrop-filter: blur(8px);
 }
 
 .card__content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
+	gap: var(--spacing-md);
+	padding: var(--spacing-lg) var(--spacing-xl);
 }
 
 .card__header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--spacing-md);
 }
 
 .card__icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: var(--spacing-lg);
-	height: var(--spacing-lg);
-	border-radius: var(--radius-subtle);
+	width: var(--spacing-xl);
+	height: var(--spacing-xl);
+	border-radius: var(--radius-pill);
+	transition: background-color var(--transition-fast) var(--animation-quick-timing);
 }
 
 .card__title {
 	margin: 0;
-	font-size: var(--typography-subHeadline-size);
-	line-height: var(--typography-subHeadline-line-height);
-	font-weight: var(--typography-subHeadline-weight);
-	color: var(--color-text);
+	font-size: var(--typography-headline-size);
+	line-height: var(--typography-headline-line-height);
+	font-weight: var(--typography-headline-weight);
+	letter-spacing: var(--typography-heading-letter-spacing);
+	color: var(--color-surface-text);
 }
 
 .card__body {
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	font-weight: var(--typography-body-weight);
-	color: var(--color-text);
+	letter-spacing: var(--typography-body-letter-spacing);
+	color: var(--color-surface-text);
 }
 
-/* Info card */
-.card[data-role="info"] {
-	border: 1px solid var(--color-primary);
-	box-shadow: var(--shadow-sm);
+/* Brand card */
+.card[data-role="brand"] {
+	background-color: color-mix(in srgb, var(--color-brand-subtle) 15%, var(--color-surface-base));
+	border-color: var(--color-brand-base);
 }
 
-.card[data-role="info"] .card__icon {
-	color: var(--color-primary);
-	background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+.card[data-role="brand"] .card__icon {
+	color: var(--color-brand-text);
+	background-color: var(--color-brand-base);
+}
+
+.card[data-role="brand"]:hover {
+	background-color: color-mix(in srgb, var(--color-brand-subtle) 25%, var(--color-surface-base));
+	border-color: var(--color-brand-focus);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.card[data-role="brand"]:hover .card__icon {
+	background-color: var(--color-brand-focus);
+}
+
+/* Information card */
+.card[data-role="information"] {
+	background-color: color-mix(in srgb, var(--color-surface-subtle) 15%, var(--color-surface-base));
+	border-color: var(--color-surface-base);
+}
+
+.card[data-role="information"] .card__icon {
+	color: var(--color-surface-text);
+	background-color: var(--color-surface-base);
+}
+
+.card[data-role="information"]:hover {
+	background-color: color-mix(in srgb, var(--color-surface-subtle) 25%, var(--color-surface-base));
+	border-color: var(--color-surface-subtle);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
 }
 
 /* Success card */
 .card[data-role="success"] {
-	border: 1px solid var(--color-success);
-	box-shadow: var(--shadow-sm);
+	background-color: color-mix(in srgb, var(--color-success-subtle) 15%, var(--color-surface-base));
+	border-color: var(--color-success-base);
 }
 
 .card[data-role="success"] .card__icon {
-	color: var(--color-success);
-	background-color: color-mix(in srgb, var(--color-success) 10%, transparent);
+	color: var(--color-success-text);
+	background-color: var(--color-success-base);
+}
+
+.card[data-role="success"]:hover {
+	background-color: color-mix(in srgb, var(--color-success-subtle) 25%, var(--color-surface-base));
+	border-color: var(--color-success-focus);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.card[data-role="success"]:hover .card__icon {
+	background-color: var(--color-success-focus);
 }
 
 /* Warning card */
 .card[data-role="warning"] {
-	border: 1px solid var(--color-secondary);
-	box-shadow: var(--shadow-sm);
+	background-color: color-mix(in srgb, var(--color-warning-subtle) 15%, var(--color-surface-base));
+	border-color: var(--color-warning-base);
 }
 
 .card[data-role="warning"] .card__icon {
-	color: var(--color-secondary);
-	background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+	color: var(--color-warning-text);
+	background-color: var(--color-warning-base);
 }
 
-/* Danger card */
-.card[data-role="danger"] {
-	border: 1px solid var(--color-danger);
-	box-shadow: var(--shadow-sm);
-}
-
-.card[data-role="danger"] .card__icon {
-	color: var(--color-danger);
-	background-color: color-mix(in srgb, var(--color-danger) 10%, transparent);
-}
-
-/* Feature card */
-.card[data-role="feature"] {
-	border: 1px solid var(--color-primary);
-	box-shadow: var(--shadow-md);
-}
-
-.card[data-role="feature"] .card__icon {
-	color: var(--color-primary);
-	background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
-}
-
-.card:hover {
+.card[data-role="warning"]:hover {
+	background-color: color-mix(in srgb, var(--color-warning-subtle) 25%, var(--color-surface-base));
+	border-color: var(--color-warning-focus);
 	box-shadow: var(--shadow-md);
 	transform: translateY(-2px);
+}
+
+.card[data-role="warning"]:hover .card__icon {
+	background-color: var(--color-warning-focus);
+}
+
+/* Destructive card */
+.card[data-role="destructive"] {
+	background-color: color-mix(
+		in srgb,
+		var(--color-destructive-subtle) 15%,
+		var(--color-surface-base)
+	);
+	border-color: var(--color-destructive-base);
+}
+
+.card[data-role="destructive"] .card__icon {
+	color: var(--color-destructive-text);
+	background-color: var(--color-destructive-base);
+}
+
+.card[data-role="destructive"]:hover {
+	background-color: color-mix(
+		in srgb,
+		var(--color-destructive-subtle) 25%,
+		var(--color-surface-base)
+	);
+	border-color: var(--color-destructive-focus);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.card[data-role="destructive"]:hover .card__icon {
+	background-color: var(--color-destructive-focus);
 }

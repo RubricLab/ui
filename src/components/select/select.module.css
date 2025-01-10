@@ -1,47 +1,212 @@
 .select {
-	position: relative;
+	/* Layout */
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xs);
+	width: 100%;
+	position: relative;
 }
 
 .select__label {
-	font-size: 0.875em;
-	color: var(--text);
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 500);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	cursor: pointer;
+	user-select: none;
+}
+
+.select__required {
+	color: var(--color-destructive-text);
+}
+
+.select__wrapper {
+	position: relative;
+	width: 100%;
 }
 
 .select__field {
+	/* Layout */
 	width: 100%;
 	height: var(--spacing-xl);
-	padding: var(--spacing-sm);
-	padding-right: var(--spacing-xl);
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background: var(--background);
-	border: 1px solid var(--primary);
-	border-radius: var(--rounding-subtle);
+	padding: 0 var(--spacing-xl) 0 var(--spacing-md);
+	box-sizing: border-box;
+
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 400);
+
+	/* Visual */
+	color: var(--color-surface-text);
+	background-color: var(--color-surface-subtle);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
+	border-radius: var(--radius-rounded);
 	outline: none;
 	cursor: pointer;
 	appearance: none;
-	transition: var(--transitions-fast);
+	transition: all var(--transition-fast) var(--animation-quick-timing);
+}
+
+.select__field:hover {
+	border-color: var(--color-brand-base);
+	background-color: var(--color-surface-base);
 }
 
 .select__field:focus {
-	box-shadow: var(--shadow-sm);
+	border-color: var(--color-brand-focus);
+	background-color: var(--color-surface-subtle);
+	box-shadow: 0 0 0 2px var(--color-brand-subtle);
+}
+
+.select__field:disabled {
+	background-color: var(--color-surface-base);
+	border-color: var(--color-brand-subtle);
+	color: var(--color-brand-text);
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Placeholder styling */
+.select__field option[value=""][disabled] {
+	color: var(--color-brand-text);
+	opacity: 0.5;
 }
 
 .select__icon {
 	position: absolute;
 	right: var(--spacing-sm);
-	bottom: var(--spacing-sm);
+	top: 50%;
+	transform: translateY(-50%);
 	width: var(--spacing-md);
 	height: var(--spacing-md);
-	fill: currentColor;
+	color: var(--color-surface-text);
+	opacity: 0.5;
 	pointer-events: none;
+	transition: all var(--transition-fast) var(--animation-quick-timing);
 }
 
-/* Hide default arrow in IE */
-.select__field::-ms-expand {
-	display: none;
+.select__field:focus + .select__icon,
+.select__field:not(:placeholder-shown) + .select__icon {
+	opacity: 1;
+	transform: translateY(-50%) rotate(180deg);
+}
+
+/* Error state */
+.select--error .select__label {
+	color: var(--color-destructive-text);
+}
+
+.select--error .select__field {
+	border-color: var(--color-destructive-base);
+	background-color: var(--color-destructive-subtle);
+}
+
+.select--error .select__field:hover {
+	border-color: var(--color-destructive-focus);
+}
+
+.select--error .select__field:focus {
+	border-color: var(--color-destructive-focus);
+	box-shadow: 0 0 0 2px var(--color-destructive-subtle);
+}
+
+.select--error .select__icon {
+	color: var(--color-destructive-text);
+}
+
+/* Success state */
+.select--success .select__label {
+	color: var(--color-success-text);
+}
+
+.select--success .select__field {
+	border-color: var(--color-success-base);
+	background-color: var(--color-success-subtle);
+}
+
+.select--success .select__field:hover {
+	border-color: var(--color-success-focus);
+}
+
+.select--success .select__field:focus {
+	border-color: var(--color-success-focus);
+	box-shadow: 0 0 0 2px var(--color-success-subtle);
+}
+
+.select--success .select__icon {
+	color: var(--color-success-text);
+}
+
+.select__error,
+.select__success {
+	/* Typography */
+	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+	font-weight: var(--typography-body-weight, 400);
+	margin-top: var(--spacing-xs);
+}
+
+.select__error {
+	color: var(--color-destructive-text);
+}
+
+.select__success {
+	color: var(--color-success-text);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.select__label {
+		color: var(--color-surface-text);
+	}
+
+	.select__field {
+		color: var(--color-surface-text);
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+	}
+
+	.select__field:hover {
+		border-color: var(--color-brand-base);
+		background-color: var(--color-surface-subtle);
+	}
+
+	.select__field:focus {
+		border-color: var(--color-brand-focus);
+		background-color: var(--color-surface-base);
+		box-shadow: 0 0 0 2px var(--color-brand-subtle);
+	}
+
+	.select__field:disabled {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-brand-subtle);
+		color: var(--color-brand-text);
+		opacity: 0.5;
+	}
+
+	.select__icon {
+		color: var(--color-surface-text);
+	}
+
+	/* Dark mode validation states */
+	.select--error .select__field {
+		background-color: var(--color-destructive-subtle);
+	}
+
+	.select--success .select__field {
+		background-color: var(--color-success-subtle);
+	}
 }

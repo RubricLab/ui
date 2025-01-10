@@ -1,23 +1,43 @@
-import type { FC, ReactNode } from 'react'
+import type { HTMLAttributes } from 'react'
 import styles from './tag.module.css'
 
-export type TagProps = {
-	role: 'filter' | 'selection' | 'category'
-	children: ReactNode
+export type TagRole = 'filter' | 'selection' | 'category'
+
+export interface TagProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'role' | 'children'> {
+	/** The semantic role of the tag */
+	ROLE: TagRole
+	/** Tag content */
+	children: string
+	/** Callback when remove button is clicked */
 	onRemove: () => void
 }
 
-const Tag: FC<TagProps> = ({ role, children, onRemove }) => {
+export default function Tag({ ROLE, children, onRemove, className, ...props }: TagProps) {
 	return (
-		<span className={styles.tag} data-role={role}>
+		<span className={`${styles.tag} ${styles[`tag--${ROLE}`]} ${className || ''}`} {...props}>
 			<span className={styles.tag__content}>{children}</span>
-			<button type="button" className={styles.tag__remove} onClick={onRemove} aria-label="Remove">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+			<button
+				type="button"
+				className={styles.tag__remove}
+				onClick={onRemove}
+				aria-label={`Remove ${children} tag`}
+			>
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<path
+						fillRule="evenodd"
+						clipRule="evenodd"
+						d="M8 7.293l3.146-3.147.708.708L8.707 8l3.147 3.146-.708.708L8 8.707l-3.146 3.147-.708-.708L7.293 8 4.146 4.854l.708-.708L8 7.293z"
+						fill="currentColor"
+					/>
 				</svg>
 			</button>
 		</span>
 	)
 }
-
-export default Tag

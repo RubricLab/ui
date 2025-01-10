@@ -1,7 +1,13 @@
 .table-row {
-	transition: var(--transitions-fast);
+	transition: background-color var(--transition-fast) var(--animation-quick-timing);
 }
 
 .table-row:hover {
-	background: var(--background);
+	background: var(--color-surface-base);
+}
+
+@media (prefers-color-scheme: dark) {
+	.table-row:hover {
+		background: var(--color-surface-subtle);
+	}
 }

@@ -1,75 +1,125 @@
 .button {
-	padding: var(--spacing-sm) var(--spacing-md);
-	border-radius: var(--radius-rounded);
+	/* Typography */
+	font-family: var(--typography-body-family);
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
 	font-weight: var(--typography-body-weight);
-	transition: all var(--transition-fast);
-	cursor: pointer;
+
+	/* Layout */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-xs);
+	height: var(--spacing-xl);
+	padding: 0 var(--spacing-md);
+	box-sizing: border-box;
+
+	/* Visual */
 	border: none;
-	position: relative;
-	z-index: var(--z-base);
+	border-radius: var(--radius-rounded);
+	cursor: pointer;
+	transition: all var(--transition-fast) var(--animation-quick-timing);
 }
 
-.button:hover {
-	transform: translateY(-1px);
-	box-shadow: var(--shadow-sm);
+.button:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--color-brand-subtle);
 }
 
-.button:active {
-	transform: translateY(0);
-	box-shadow: var(--shadow-none);
-	transition-duration: calc(var(--transition-fast) / 2);
+.button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
-.button--primary {
-	background-color: var(--color-primary);
-	color: var(--color-text);
+/* Brand - Primary action */
+.button--brand {
+	background-color: var(--color-brand-base);
+	color: var(--color-brand-text);
 }
 
-.button--primary:hover {
-	background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+.button--brand:hover:not(:disabled) {
+	background-color: var(--color-brand-focus);
 }
 
-.button--primary:active {
-	background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+.button--brand:active:not(:disabled) {
+	background-color: var(--color-brand-active);
 }
 
-.button--secondary {
-	background-color: var(--color-secondary);
-	color: var(--color-text);
+/* Information - Secondary action */
+.button--information {
+	background-color: var(--color-surface-base);
+	color: var(--color-surface-text);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-brand-subtle);
 }
 
-.button--secondary:hover {
-	background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
+.button--information:hover:not(:disabled) {
+	border-color: var(--color-brand-base);
+	background-color: var(--color-surface-subtle);
 }
 
-.button--secondary:active {
-	background-color: color-mix(in srgb, var(--color-secondary) 80%, black);
+.button--information:active:not(:disabled) {
+	border-color: var(--color-brand-focus);
+	background-color: var(--color-surface-base);
 }
 
+/* Success */
 .button--success {
-	background-color: var(--color-success);
-	color: var(--color-text);
+	background-color: var(--color-success-base);
+	color: var(--color-success-text);
 }
 
-.button--success:hover {
-	background-color: color-mix(in srgb, var(--color-success) 90%, black);
+.button--success:hover:not(:disabled) {
+	background-color: var(--color-success-focus);
 }
 
-.button--success:active {
-	background-color: color-mix(in srgb, var(--color-success) 80%, black);
+.button--success:active:not(:disabled) {
+	background-color: var(--color-success-active);
 }
 
-.button--danger {
-	background-color: var(--color-danger);
-	color: var(--color-text);
+/* Warning */
+.button--warning {
+	background-color: var(--color-warning-base);
+	color: var(--color-warning-text);
 }
 
-.button--danger:hover {
-	background-color: color-mix(in srgb, var(--color-danger) 90%, black);
+.button--warning:hover:not(:disabled) {
+	background-color: var(--color-warning-focus);
 }
 
-.button--danger:active {
-	background-color: color-mix(in srgb, var(--color-danger) 80%, black);
+.button--warning:active:not(:disabled) {
+	background-color: var(--color-warning-active);
+}
+
+/* Destructive */
+.button--destructive {
+	background-color: var(--color-destructive-base);
+	color: var(--color-destructive-text);
+}
+
+.button--destructive:hover:not(:disabled) {
+	background-color: var(--color-destructive-focus);
+}
+
+.button--destructive:active:not(:disabled) {
+	background-color: var(--color-destructive-active);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.button--information {
+		background-color: var(--color-surface-base);
+		color: var(--color-surface-text);
+		border-color: var(--color-brand-subtle);
+	}
+
+	.button--information:hover:not(:disabled) {
+		border-color: var(--color-brand-base);
+		background-color: var(--color-surface-subtle);
+	}
+
+	.button--information:active:not(:disabled) {
+		border-color: var(--color-brand-focus);
+		background-color: var(--color-surface-base);
+	}
 }

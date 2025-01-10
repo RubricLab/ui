@@ -96,8 +96,8 @@ export default {
 
 	typography: {
 		fonts: {
-			body: kong,
-			heading: matter,
+			body: matter,
+			heading: kong,
 			monospace: kong
 		},
 		scale: {
