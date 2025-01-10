@@ -4,6 +4,7 @@ const styles: {
 "dropdown__trigger": string
 "dropdown__icon": string
 "dropdown__content": string
+"dropdown__label": string
 }
 export default styles
 }

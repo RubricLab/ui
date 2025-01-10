@@ -3,16 +3,16 @@ import { useState } from 'react'
 import styles from './dropdown.module.css'
 
 export type DropdownProps = {
-	role: 'menu' | 'filter' | 'details'
+	ROLE: 'menu' | 'filter' | 'details'
 	label: ReactNode
 	children: ReactNode
 }
 
-const Dropdown: FC<DropdownProps> = ({ role, label, children }) => {
+const Dropdown: FC<DropdownProps> = ({ ROLE, label, children }) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
-		<div className={styles.dropdown} data-role={role}>
+		<div className={styles.dropdown} data-role={ROLE}>
 			<button
 				type="button"
 				className={styles.dropdown__trigger}

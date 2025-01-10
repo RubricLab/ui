@@ -3,6 +3,7 @@ import Card from './components/card/card'
 import ChartBar from './components/chart-bar/chart-bar'
 import ChartLineItem from './components/chart-line-item/chart-line-item'
 import ChartLine from './components/chart-line/chart-line'
+import DropdownItem from './components/dropdown-item/dropdown-item'
 import Dropdown from './components/dropdown/dropdown'
 import FooterSection from './components/footer-section/footer-section'
 import Footer from './components/footer/footer'
@@ -23,6 +24,7 @@ import TableRow from './components/table-row/table-row'
 import Table from './components/table/table'
 import Tag from './components/tag/tag'
 import TextArea from './components/text-area/text-area'
+import Text from './components/text/text'
 import TimelineItem from './components/timeline-item/timeline-item'
 import Timeline from './components/timeline/timeline'
 import type { DesignSystem } from './types/DesignSystem'
@@ -36,6 +38,7 @@ export function createUI(ds: DesignSystem) {
 		ChartLine: createComponent(ChartLine)(ds),
 		ChartLineItem: createComponent(ChartLineItem)(ds),
 		Dropdown: createComponent(Dropdown)(ds),
+		DropdownItem: createComponent(DropdownItem)(ds),
 		Footer: createComponent(Footer)(ds),
 		FooterSection: createComponent(FooterSection)(ds),
 		Heading: createComponent(Heading)(ds),
@@ -55,6 +58,7 @@ export function createUI(ds: DesignSystem) {
 		TableRow: createComponent(TableRow)(ds),
 		Tag: createComponent(Tag)(ds),
 		TextArea: createComponent(TextArea)(ds),
+		Text: createComponent(Text)(ds),
 		Timeline: createComponent(Timeline)(ds),
 		TimelineItem: createComponent(TimelineItem)(ds)
 	} as const

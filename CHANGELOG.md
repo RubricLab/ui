@@ -1,3 +1,4 @@
+- [2025-01-10] [Add dropdown item and text](https://github.com/RubricLab/ui/commit/c65bb610f39c9a2f48124cd636260853594c4d0c)
 - [2025-01-10] [table cell ROLE and export types](https://github.com/RubricLab/ui/commit/27544ac041479d36638a7d84f053eb9bd74ad069)
 - [2025-01-10] [Remove unused spinner styles](https://github.com/RubricLab/ui/commit/d6f24e09bed39d42fb0b0d0f31f6c44c47543945)
 - [2025-01-10] [react types](https://github.com/RubricLab/ui/commit/2f019652196009aefd639277706c855e561795e3)
