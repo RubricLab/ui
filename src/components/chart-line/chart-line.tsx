@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import styles from './chart-line.module.css'
 
 export type Point = {
@@ -6,12 +5,13 @@ export type Point = {
 	y: number
 }
 
-export type ChartLineProps = {
+const ChartLine = ({
+	points,
+	maxValue
+}: {
 	points: Point[]
 	maxValue: number
-}
-
-const ChartLine: FC<ChartLineProps> = ({ points, maxValue }) => {
+}) => {
 	// Convert points to SVG coordinates
 	const svgPoints = points.map(point => ({
 		x: point.x,

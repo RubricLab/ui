@@ -1,11 +1,11 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './footer-section.module.css'
 
-export type FooterSectionProps = {
+const FooterSection = ({
+	children
+}: {
 	children: ReactNode
-}
-
-const FooterSection: FC<FooterSectionProps> = ({ children }) => {
+}) => {
 	return <div className={styles['footer-section']}>{children}</div>
 }
 

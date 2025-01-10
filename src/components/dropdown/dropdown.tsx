@@ -2,13 +2,15 @@ import type { FC, ReactNode } from 'react'
 import { useState } from 'react'
 import styles from './dropdown.module.css'
 
-export type DropdownProps = {
+const Dropdown = ({
+	ROLE,
+	label,
+	children
+}: {
 	ROLE: 'menu' | 'filter' | 'details'
 	label: ReactNode
 	children: ReactNode
-}
-
-const Dropdown: FC<DropdownProps> = ({ ROLE, label, children }) => {
+}) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (

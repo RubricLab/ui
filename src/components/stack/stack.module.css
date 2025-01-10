@@ -1,0 +1,21 @@
+.stack {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-sm);
+}
+
+.stack--between {
+	justify-content: space-between;
+}
+
+.stack--start {
+	justify-content: flex-start;
+}
+
+.stack--end {
+	justify-content: flex-end;
+}
+
+.stack--center {
+	justify-content: center;
+}

@@ -1,7 +1,12 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './table-row.module.css'
 
-export type TableRowProps = {
+const TableRow = ({
+	children,
+	isHeader,
+	id,
+	selected
+}: {
 	/** The content of the row */
 	children: ReactNode
 	/** Whether this is a header row */
@@ -10,9 +15,7 @@ export type TableRowProps = {
 	id?: string
 	/** Optional selected state */
 	selected?: boolean
-}
-
-const TableRow: FC<TableRowProps> = ({ children, isHeader, id, selected }) => {
+}) => {
 	return (
 		<tr
 			className={styles['table-row']}

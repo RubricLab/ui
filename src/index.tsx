@@ -12,6 +12,8 @@ import Heading from './components/heading/heading'
 import Image from './components/image/image'
 import Input from './components/input/input'
 import Link from './components/link/link'
+import ListItem from './components/list-item/list-item'
+import List from './components/list/list'
 import Modal from './components/modal/modal'
 import NavItem from './components/nav-item/nav-item'
 import Nav from './components/nav/nav'
@@ -21,6 +23,7 @@ import Search from './components/search/search'
 import Section from './components/section/section'
 import SelectOption from './components/select-option/select-option'
 import Select from './components/select/select'
+import Stack from './components/stack/stack'
 import TableCell from './components/table-cell/table-cell'
 import TableRow from './components/table-row/table-row'
 import Table from './components/table/table'
@@ -50,10 +53,13 @@ export {
 	NavItem,
 	Page,
 	Pill,
+	List,
+	ListItem,
 	Search,
 	Section,
 	Select,
 	SelectOption,
+	Stack,
 	Table,
 	TableCell,
 	TableRow,

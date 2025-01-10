@@ -1,16 +1,18 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './table.module.css'
 
-export type TableProps = {
+const Table = ({
+	children,
+	caption,
+	description
+}: {
 	/** The content of the table */
 	children: ReactNode
 	/** Optional caption for the table */
 	caption?: string
 	/** Optional description for screen readers */
 	description?: string
-}
-
-const Table: FC<TableProps> = ({ children, caption, description }) => {
+}) => {
 	return (
 		<section className={styles.table__wrapper} aria-label={caption || 'Data table'}>
 			<table className={styles.table} aria-describedby={description ? 'table-desc' : undefined}>

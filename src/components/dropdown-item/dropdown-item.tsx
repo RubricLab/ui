@@ -1,14 +1,15 @@
 import type { ReactNode } from 'react'
-import type { FC } from 'react'
 import styles from './dropdown-item.module.css'
 
-export type DropdownItemProps = {
+const DropdownItem = ({
+	label,
+	href,
+	onClick
+}: {
 	label: ReactNode
 	href?: string
 	onClick?: () => void
-}
-
-const DropdownItem: FC<DropdownItemProps> = ({ label, href, onClick }) => {
+}) => {
 	const Element = href ? 'a' : 'button'
 
 	return (

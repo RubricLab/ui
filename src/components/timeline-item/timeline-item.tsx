@@ -1,13 +1,14 @@
-import type { FC } from 'react'
 import styles from './timeline-item.module.css'
 
-export type TimelineItemProps = {
+const TimelineItem = ({
+	step,
+	title,
+	children
+}: {
 	step: number
 	title: string
 	children: string
-}
-
-const TimelineItem: FC<TimelineItemProps> = ({ step, title, children }) => {
+}) => {
 	return (
 		<div className={styles['timeline-item']}>
 			<div className={styles['timeline-item__marker']}>

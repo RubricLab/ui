@@ -1,7 +1,14 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './table-cell.module.css'
 
-export type TableCellProps = {
+const TableCell = ({
+	ROLE,
+	children,
+	align = 'left',
+	scope,
+	id,
+	headers
+}: {
 	/** The role of the cell (header or data) */
 	ROLE: 'header' | 'data'
 	/** The content of the cell */
@@ -14,9 +21,7 @@ export type TableCellProps = {
 	id?: string
 	/** Optional headers this cell is described by */
 	headers?: string
-}
-
-const TableCell: FC<TableCellProps> = ({ ROLE, children, align = 'left', scope, id, headers }) => {
+}) => {
 	const Tag = ROLE === 'header' ? 'th' : 'td'
 	const scopeAttr = ROLE === 'header' ? { scope: scope || 'col' } : {}
 

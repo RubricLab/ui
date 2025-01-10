@@ -1,11 +1,11 @@
 import type { FC, ReactNode } from 'react'
 import styles from './timeline.module.css'
 
-export type TimelineProps = {
+const Timeline = ({
+	children
+}: {
 	children: ReactNode
-}
-
-const Timeline: FC<TimelineProps> = ({ children }) => {
+}) => {
 	return <div className={styles.timeline}>{children}</div>
 }
 
