@@ -55,11 +55,7 @@ export function buildRootCSSVars(ds: DesignSystem): string {
 
   /* Animations */
   ${Object.entries(ds.animations)
-			.map(
-				([key, val]) =>
-					`--animation-${key}-duration: ${val.duration};
-  --animation-${key}-timing: ${val.timing};`
-			)
+			.map(([key, val]) => `--animation-${key}-timing: ${val.timing};`)
 			.join('\n  ')}
 
   /* Transitions */

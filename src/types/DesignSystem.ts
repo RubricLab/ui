@@ -166,15 +166,12 @@ export type AnimationTiming = 'ease-in-out' | 'ease-in' | 'ease-out' | 'linear' 
 
 export interface AnimationsConfig {
 	quick: {
-		duration: Ms
 		timing: AnimationTiming
 	}
 	normal: {
-		duration: Ms
 		timing: AnimationTiming
 	}
 	slow: {
-		duration: Ms
 		timing: AnimationTiming
 	}
 }

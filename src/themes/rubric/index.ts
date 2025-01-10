@@ -177,21 +177,18 @@ export default {
 
 	animations: {
 		quick: {
-			duration: '150ms',
 			timing: 'ease-out'
 		},
 		normal: {
-			duration: '300ms',
 			timing: 'ease-out'
 		},
 		slow: {
-			duration: '500ms',
 			timing: 'ease-out'
 		}
 	},
 
 	transitions: {
-		fast: '150ms',
+		fast: '0ms',
 		normal: '300ms',
 		slow: '500ms'
 	},
