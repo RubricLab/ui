@@ -57,6 +57,7 @@
 	/* Layout */
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: column;
 	gap: var(--spacing-md);
 	align-items: flex-start;
 }
