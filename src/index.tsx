@@ -28,42 +28,38 @@ import TextArea from './components/text-area/text-area'
 import Text from './components/text/text'
 import TimelineItem from './components/timeline-item/timeline-item'
 import Timeline from './components/timeline/timeline'
-import type { DesignSystem } from './types/DesignSystem'
-import createComponent from './utils/createComponent'
 
-export function createUI(ds: DesignSystem) {
-	return {
-		Button: createComponent(Button)(ds),
-		Card: createComponent(Card)(ds),
-		Chart: createComponent(Chart)(ds),
-		ChartBarItem: createComponent(ChartBarItem)(ds),
-		ChartLine: createComponent(ChartLine)(ds),
-		ChartLineItem: createComponent(ChartLineItem)(ds),
-		Dropdown: createComponent(Dropdown)(ds),
-		DropdownItem: createComponent(DropdownItem)(ds),
-		Footer: createComponent(Footer)(ds),
-		FooterSection: createComponent(FooterSection)(ds),
-		Heading: createComponent(Heading)(ds),
-		Image: createComponent(Image)(ds),
-		Input: createComponent(Input)(ds),
-		Link: createComponent(Link)(ds),
-		Nav: createComponent(Nav)(ds),
-		NavItem: createComponent(NavItem)(ds),
-		Page: createComponent(Page)(ds),
-		Pill: createComponent(Pill)(ds),
-		Search: createComponent(Search)(ds),
-		Section: createComponent(Section)(ds),
-		Select: createComponent(Select)(ds),
-		SelectOption: createComponent(SelectOption)(ds),
-		Table: createComponent(Table)(ds),
-		TableCell: createComponent(TableCell)(ds),
-		TableRow: createComponent(TableRow)(ds),
-		Tag: createComponent(Tag)(ds),
-		TextArea: createComponent(TextArea)(ds),
-		Text: createComponent(Text)(ds),
-		Timeline: createComponent(Timeline)(ds),
-		TimelineItem: createComponent(TimelineItem)(ds)
-	} as const
+export {
+	Button,
+	Card,
+	Chart,
+	ChartBarItem,
+	ChartLine,
+	ChartLineItem,
+	Dropdown,
+	DropdownItem,
+	Footer,
+	FooterSection,
+	Heading,
+	Image,
+	Input,
+	Link,
+	Nav,
+	NavItem,
+	Page,
+	Pill,
+	Search,
+	Section,
+	Select,
+	SelectOption,
+	Table,
+	TableCell,
+	TableRow,
+	Tag,
+	TextArea,
+	Text,
+	Timeline,
+	TimelineItem
 }
 
 export { default as RubricDesignSystem } from './themes/rubric'
