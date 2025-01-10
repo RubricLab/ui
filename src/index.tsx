@@ -12,6 +12,7 @@ import Heading from './components/heading/heading'
 import Image from './components/image/image'
 import Input from './components/input/input'
 import Link from './components/link/link'
+import Modal from './components/modal/modal'
 import NavItem from './components/nav-item/nav-item'
 import Nav from './components/nav/nav'
 import Page from './components/page/page'
@@ -44,6 +45,7 @@ export {
 	Image,
 	Input,
 	Link,
+	Modal,
 	Nav,
 	NavItem,
 	Page,

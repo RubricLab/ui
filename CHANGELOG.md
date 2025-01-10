@@ -1,3 +1,4 @@
+- [2025-01-10] [Add basic modal](https://github.com/RubricLab/ui/commit/7d944541523d90c4d97f1ecc2f0eaec13dd6a1d2)
 - [2025-01-10] [Remove table hover border](https://github.com/RubricLab/ui/commit/e5faee554837af2d12feb618b9a0695c5ee82784)
 - [2025-01-10] [Remove card hover effects](https://github.com/RubricLab/ui/commit/8dc351bd89d0e5edf7b6b5348813376e9cd19415)
 - [2025-01-10] [Fix pill wrap](https://github.com/RubricLab/ui/commit/1b206ef89397ce50812f88fb8e2881b4ef4badfe)
