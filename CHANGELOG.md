@@ -1,3 +1,4 @@
+- [2025-01-10] [Make tag look better](https://github.com/RubricLab/ui/commit/822f862f93645c939c903ddf1a62c7b3e6ca179a)
 - [2025-01-10] [Only show tag if onRemove is defined](https://github.com/RubricLab/ui/commit/f034d2e965e023b5307f96d0a97de51ed0c8e183)
 - [2025-01-10] [Remove unused animation duration field](https://github.com/RubricLab/ui/commit/1071aaf8b123140e6e8b084fa63f6cc8ad27414e)
 - [2025-01-10] [Add dropdown item and text](https://github.com/RubricLab/ui/commit/c65bb610f39c9a2f48124cd636260853594c4d0c)

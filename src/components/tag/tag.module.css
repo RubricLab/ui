@@ -4,7 +4,7 @@
 	align-items: center;
 	gap: var(--spacing-xs);
 	height: var(--spacing-lg);
-	padding-inline-start: var(--spacing-sm);
+	padding: var(--spacing-xs) var(--spacing-sm);
 	box-sizing: border-box;
 
 	/* Typography */
@@ -25,12 +25,15 @@
 	line-height: 1;
 }
 
+.tag:has(.tag__remove) {
+	padding-right: var(--spacing-xs);
+}
+
 .tag__remove {
 	/* Layout */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: var(--spacing-lg);
 	height: 100%;
 	padding: 0;
 	box-sizing: border-box;

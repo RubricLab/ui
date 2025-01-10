@@ -16,13 +16,13 @@ export default function Tag({ ROLE, children, onRemove, className, ...props }: T
 	return (
 		<span className={`${styles.tag} ${styles[`tag--${ROLE}`]} ${className || ''}`} {...props}>
 			<span className={styles.tag__content}>{children}</span>
-			<button
-				type="button"
-				className={styles.tag__remove}
-				onClick={onRemove}
-				aria-label={`Remove ${children} tag`}
-			>
-				{onRemove && (
+			{onRemove && (
+				<button
+					type="button"
+					className={styles.tag__remove}
+					onClick={onRemove}
+					aria-label={`Remove ${children} tag`}
+				>
 					<svg
 						width="16"
 						height="16"
@@ -38,8 +38,8 @@ export default function Tag({ ROLE, children, onRemove, className, ...props }: T
 							fill="currentColor"
 						/>
 					</svg>
-				)}
-			</button>
+				</button>
+			)}
 		</span>
 	)
 }
