@@ -3,7 +3,7 @@ import styles from './table-cell.module.css'
 
 export type TableCellProps = {
 	/** The role of the cell (header or data) */
-	role: 'header' | 'data'
+	ROLE: 'header' | 'data'
 	/** The content of the cell */
 	children: ReactNode
 	/** Text alignment within the cell */
@@ -16,14 +16,14 @@ export type TableCellProps = {
 	headers?: string
 }
 
-const TableCell: FC<TableCellProps> = ({ role, children, align = 'left', scope, id, headers }) => {
-	const Tag = role === 'header' ? 'th' : 'td'
-	const scopeAttr = role === 'header' ? { scope: scope || 'col' } : {}
+const TableCell: FC<TableCellProps> = ({ ROLE, children, align = 'left', scope, id, headers }) => {
+	const Tag = ROLE === 'header' ? 'th' : 'td'
+	const scopeAttr = ROLE === 'header' ? { scope: scope || 'col' } : {}
 
 	return (
 		<Tag
 			className={styles['table-cell']}
-			data-role={role}
+			data-role={ROLE}
 			data-align={align}
 			{...scopeAttr}
 			id={id}

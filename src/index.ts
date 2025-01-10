@@ -62,3 +62,4 @@ export function createUI(ds: DesignSystem) {
 
 export { default as RubricDesignSystem } from './themes/rubric'
 export { default as StripeDesignSystem } from './themes/stripe'
+export * from './types/DesignSystem'

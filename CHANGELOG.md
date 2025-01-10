@@ -1,3 +1,4 @@
+- [2025-01-10] [table cell ROLE and export types](https://github.com/RubricLab/ui/commit/27544ac041479d36638a7d84f053eb9bd74ad069)
 - [2025-01-10] [Remove unused spinner styles](https://github.com/RubricLab/ui/commit/d6f24e09bed39d42fb0b0d0f31f6c44c47543945)
 - [2025-01-10] [react types](https://github.com/RubricLab/ui/commit/2f019652196009aefd639277706c855e561795e3)
 - [2025-01-09] [half refactor](https://github.com/RubricLab/ui/commit/366e9a1d3034edbc05b132dc1c95a2a0e316f64a)
