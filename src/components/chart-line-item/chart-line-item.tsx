@@ -3,22 +3,17 @@ import styles from './chart-line-item.module.css'
 export type ChartLineItemProps = {
 	x: number
 	y: number
-	maxValue: number
 	label: string
 }
 
-const ChartLineItem = ({ x, y, maxValue, label }: ChartLineItemProps) => {
-	// Convert to SVG coordinates
-	const svgX = x * 100
-	const svgY = 100 - (y / maxValue) * 100
-
+const ChartLineItem = ({ x, y, label }: ChartLineItemProps) => {
 	return (
 		<>
 			{/* Data point */}
-			<circle className={styles['chart-line-item__point']} cx={svgX} cy={svgY} />
+			<circle className={styles['chart-line-item__point']} cx={x} cy={100 - y} />
 
 			{/* Label */}
-			<text className={styles['chart-line-item__label']} x={svgX} y="105" textAnchor="middle">
+			<text className={styles['chart-line-item__label']} x={x} y={100 - y} textAnchor="middle">
 				{label}
 			</text>
 		</>

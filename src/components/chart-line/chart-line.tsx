@@ -14,7 +14,7 @@ export type ChartLineProps = {
 const ChartLine: FC<ChartLineProps> = ({ points, maxValue }) => {
 	// Convert points to SVG coordinates
 	const svgPoints = points.map(point => ({
-		x: point.x * 100,
+		x: point.x,
 		y: 100 - (point.y / maxValue) * 100
 	}))
 

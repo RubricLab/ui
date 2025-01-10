@@ -1,15 +1,22 @@
 .chart-line-item__point {
-	r: 1.5;
+	r: 2;
 	fill: var(--color-brand-base);
-	transition: r var(--transitions-fast);
+	transition: fill var(--transition-normal) var(--animation-quick-timing);
 }
 
 .chart-line-item__point:hover {
-	r: 2.5;
+	fill: var(--color-brand-focus);
 }
 
 .chart-line-item__label {
+	font-size: 0.25rem;
 	fill: var(--color-surface-text);
-	font-size: var(--typography-detail-size);
 	font-family: inherit;
+	opacity: 0;
+	transition: opacity var(--transition-normal) var(--animation-quick-timing);
+	pointer-events: none;
+}
+
+.chart-line-item__point:hover + .chart-line-item__label {
+	opacity: 1;
 }

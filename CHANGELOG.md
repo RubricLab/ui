@@ -1,3 +1,4 @@
+- [2025-01-10] [Improve charts](https://github.com/RubricLab/ui/commit/0aea72e666e2ecef154e9b4909952d07d7eb4511)
 - [2025-01-10] [Add line and bar chart](https://github.com/RubricLab/ui/commit/8de4cd8b0086f48d4116b96cc859f947ad6b629b)
 - [2025-01-10] [Make tag look better](https://github.com/RubricLab/ui/commit/822f862f93645c939c903ddf1a62c7b3e6ca179a)
 - [2025-01-10] [Only show tag if onRemove is defined](https://github.com/RubricLab/ui/commit/f034d2e965e023b5307f96d0a97de51ed0c8e183)

@@ -1,23 +1,14 @@
-.chart-bar-item {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: var(--color-surface-base);
-	gap: 0.5rem;
-	height: 100%;
-}
-
 .chart-bar-item__fill {
 	fill: var(--color-brand-base);
-	transition: height var(--transitions-fast) var(--animation-quick-timing);
-}
-
-.chart-bar-item__label {
-	font-size: var(--typography-detail-size);
-	fill: var(--color-surface-text);
+	transition: height var(--transition-normal) var(--animation-quick-timing);
 }
 
 .chart-bar-item__fill:hover {
 	fill: var(--color-brand-focus);
+}
+
+.chart-bar-item__label {
+	font-size: 0.25rem;
+	fill: var(--color-surface-text);
+	font-family: inherit;
 }
