@@ -1,3 +1,4 @@
+- [2025-01-10] [react types](https://github.com/RubricLab/ui/commit/2f019652196009aefd639277706c855e561795e3)
 - [2025-01-09] [half refactor](https://github.com/RubricLab/ui/commit/366e9a1d3034edbc05b132dc1c95a2a0e316f64a)
 - [2025-01-09] [new DS interface, themes](https://github.com/RubricLab/ui/commit/bf359ae9fc6ebf26744fa6049e8e679261b189ef)
 - [2025-01-09] [Add types and typegen](https://github.com/RubricLab/ui/commit/8209ef1b0e5d0cf18a135ff61083272b54e31c74)
