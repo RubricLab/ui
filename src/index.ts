@@ -1,8 +1,9 @@
 import Button from './components/button/button'
 import Card from './components/card/card'
-import ChartBar from './components/chart-bar/chart-bar'
+import ChartBarItem from './components/chart-bar-item/chart-bar-item'
 import ChartLineItem from './components/chart-line-item/chart-line-item'
 import ChartLine from './components/chart-line/chart-line'
+import Chart from './components/chart/chart'
 import DropdownItem from './components/dropdown-item/dropdown-item'
 import Dropdown from './components/dropdown/dropdown'
 import FooterSection from './components/footer-section/footer-section'
@@ -34,7 +35,8 @@ export function createUI(ds: DesignSystem) {
 	return {
 		Button: createComponent(Button)(ds),
 		Card: createComponent(Card)(ds),
-		ChartBar: createComponent(ChartBar)(ds),
+		Chart: createComponent(Chart)(ds),
+		ChartBarItem: createComponent(ChartBarItem)(ds),
 		ChartLine: createComponent(ChartLine)(ds),
 		ChartLineItem: createComponent(ChartLineItem)(ds),
 		Dropdown: createComponent(Dropdown)(ds),

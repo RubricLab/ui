@@ -1,14 +1,6 @@
-.chart-line-item__line {
-	stroke: var(--primary);
-	stroke-width: 2;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-}
-
 .chart-line-item__point {
-	fill: var(--background);
-	stroke: var(--primary);
-	stroke-width: 2;
+	r: 1.5;
+	fill: var(--color-brand-base);
 	transition: r var(--transitions-fast);
 }
 
@@ -17,7 +9,7 @@
 }
 
 .chart-line-item__label {
-	fill: var(--text);
-	font-size: 4px;
+	fill: var(--color-surface-text);
+	font-size: var(--typography-detail-size);
 	font-family: inherit;
 }

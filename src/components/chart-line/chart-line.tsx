@@ -1,30 +1,40 @@
-import type { FC, ReactNode } from 'react'
+import type { FC } from 'react'
 import styles from './chart-line.module.css'
 
-export type ChartLineProps = {
-	maxValue: number
-	children: ReactNode
+export type Point = {
+	x: number
+	y: number
 }
 
-const ChartLine: FC<ChartLineProps> = ({ children }) => {
+export type ChartLineProps = {
+	points: Point[]
+	maxValue: number
+}
+
+const ChartLine: FC<ChartLineProps> = ({ points, maxValue }) => {
+	// Convert points to SVG coordinates
+	const svgPoints = points.map(point => ({
+		x: point.x * 100,
+		y: 100 - (point.y / maxValue) * 100
+	}))
+
 	return (
-		<div className={styles['chart-line']}>
-			<svg
-				viewBox="0 0 100 100"
-				preserveAspectRatio="none"
-				className={styles['chart-line__svg']}
-				role="img"
-				aria-label="Line chart"
-			>
-				{/* Grid lines */}
-				<g className={styles['chart-line__grid']}>
-					{[0, 25, 50, 75, 100].map(y => (
-						<line key={y} x1="0" y1={y} x2="100" y2={y} />
-					))}
-				</g>
-				{children}
-			</svg>
-		</div>
+		<>
+			{svgPoints.map((point, index) => {
+				if (index === 0) return null
+				const prevPoint = svgPoints[index - 1]
+				return (
+					<line
+						key={index}
+						className={styles['chart-line__segment']}
+						x1={prevPoint?.x}
+						y1={prevPoint?.y}
+						x2={point.x}
+						y2={point.y}
+					/>
+				)
+			})}
+		</>
 	)
 }
 

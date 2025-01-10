@@ -1,34 +1,6 @@
-.chart-line {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--background);
-	border-radius: var(--rounding-subtle);
-	border: 1px solid var(--primary);
-	aspect-ratio: 16 / 9;
-}
-
-.chart-line__svg {
-	width: 100%;
-	height: 100%;
-	overflow: visible;
-}
-
-/* Grid lines */
-.chart-line__grid line {
-	stroke: var(--primary);
-	stroke-width: 0.5;
-	opacity: 0.1;
-}
-
-/* Responsive adjustments */
-@media (max-width: calc(var(--breakpoints-md) - 1px)) {
-	.chart-line {
-		margin: 0 calc(var(--spacing-sm) * -1);
-		padding: var(--spacing-md) var(--spacing-sm);
-		border-radius: 0;
-		border-left: 0;
-		border-right: 0;
-	}
+.chart-line__segment {
+	stroke: var(--color-brand-base);
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }

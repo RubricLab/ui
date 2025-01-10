@@ -20,7 +20,7 @@ const Table: FC<TableProps> = ({ children, caption, description }) => {
 						{description}
 					</caption>
 				)}
-				{children}
+				<tbody>{children}</tbody>
 			</table>
 		</section>
 	)
