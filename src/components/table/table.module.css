@@ -7,10 +7,6 @@
 	transition: border-color var(--transition-fast) var(--animation-quick-timing);
 }
 
-.table__wrapper:hover {
-	border-color: var(--color-brand-base);
-}
-
 .table {
 	width: 100%;
 	border-collapse: collapse;
