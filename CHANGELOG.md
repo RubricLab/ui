@@ -1,3 +1,4 @@
+- [2025-01-10] [Remove card hover effects](https://github.com/RubricLab/ui/commit/8dc351bd89d0e5edf7b6b5348813376e9cd19415)
 - [2025-01-10] [Fix pill wrap](https://github.com/RubricLab/ui/commit/1b206ef89397ce50812f88fb8e2881b4ef4badfe)
 - [2025-01-10] [Export layout](https://github.com/RubricLab/ui/commit/27dbfeeb8d9b3a990699f17b7e53448b4e15a71f)
 - [2025-01-10] [Improve charts](https://github.com/RubricLab/ui/commit/0aea72e666e2ecef154e9b4909952d07d7eb4511)

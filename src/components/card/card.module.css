@@ -70,17 +70,6 @@
 	background-color: var(--color-brand-base);
 }
 
-.card[data-role="brand"]:hover {
-	background-color: color-mix(in srgb, var(--color-brand-subtle) 25%, var(--color-surface-base));
-	border-color: var(--color-brand-focus);
-	box-shadow: var(--shadow-md);
-	transform: translateY(-2px);
-}
-
-.card[data-role="brand"]:hover .card__icon {
-	background-color: var(--color-brand-focus);
-}
-
 /* Information card */
 .card[data-role="information"] {
 	background-color: color-mix(in srgb, var(--color-surface-subtle) 15%, var(--color-surface-base));
@@ -90,13 +79,6 @@
 .card[data-role="information"] .card__icon {
 	color: var(--color-surface-text);
 	background-color: var(--color-surface-base);
-}
-
-.card[data-role="information"]:hover {
-	background-color: color-mix(in srgb, var(--color-surface-subtle) 25%, var(--color-surface-base));
-	border-color: var(--color-surface-subtle);
-	box-shadow: var(--shadow-md);
-	transform: translateY(-2px);
 }
 
 /* Success card */
@@ -110,17 +92,6 @@
 	background-color: var(--color-success-base);
 }
 
-.card[data-role="success"]:hover {
-	background-color: color-mix(in srgb, var(--color-success-subtle) 25%, var(--color-surface-base));
-	border-color: var(--color-success-focus);
-	box-shadow: var(--shadow-md);
-	transform: translateY(-2px);
-}
-
-.card[data-role="success"]:hover .card__icon {
-	background-color: var(--color-success-focus);
-}
-
 /* Warning card */
 .card[data-role="warning"] {
 	background-color: color-mix(in srgb, var(--color-warning-subtle) 15%, var(--color-surface-base));
@@ -130,17 +101,6 @@
 .card[data-role="warning"] .card__icon {
 	color: var(--color-warning-text);
 	background-color: var(--color-warning-base);
-}
-
-.card[data-role="warning"]:hover {
-	background-color: color-mix(in srgb, var(--color-warning-subtle) 25%, var(--color-surface-base));
-	border-color: var(--color-warning-focus);
-	box-shadow: var(--shadow-md);
-	transform: translateY(-2px);
-}
-
-.card[data-role="warning"]:hover .card__icon {
-	background-color: var(--color-warning-focus);
 }
 
 /* Destructive card */
@@ -156,19 +116,4 @@
 .card[data-role="destructive"] .card__icon {
 	color: var(--color-destructive-text);
 	background-color: var(--color-destructive-base);
-}
-
-.card[data-role="destructive"]:hover {
-	background-color: color-mix(
-		in srgb,
-		var(--color-destructive-subtle) 25%,
-		var(--color-surface-base)
-	);
-	border-color: var(--color-destructive-focus);
-	box-shadow: var(--shadow-md);
-	transform: translateY(-2px);
-}
-
-.card[data-role="destructive"]:hover .card__icon {
-	background-color: var(--color-destructive-focus);
 }
