@@ -16,7 +16,6 @@
 
 	/* Container behavior */
 	overflow: hidden;
-	backdrop-filter: blur(8px);
 }
 
 .card__content {

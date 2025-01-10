@@ -1,3 +1,4 @@
+- [2025-01-10] [rm backdrop filter from card](https://github.com/RubricLab/ui/commit/17b0fd17025438b1c73d59f6765e42e8f53b009e)
 - [2025-01-10] [full screen modal](https://github.com/RubricLab/ui/commit/ff329fe2abd024e83c2c4809dba4b45d07ef2139)
 - [2025-01-10] [Col-flex section content](https://github.com/RubricLab/ui/commit/5bd67e9da2fbbefa6f244fc43520c2c8c0e501ab)
 - [2025-01-10] [Add basic modal](https://github.com/RubricLab/ui/commit/7d944541523d90c4d97f1ecc2f0eaec13dd6a1d2)
