@@ -20,7 +20,7 @@ export default function Pill({ ROLE, children, className, ...props }: PillProps)
 			role={ariaRole}
 			{...props}
 		>
-			{children}
+			<span className={styles.pill__content}>{children}</span>
 		</span>
 	)
 }

@@ -2,19 +2,26 @@
 	/* Layout */
 	display: inline-flex;
 	align-items: center;
-	height: var(--spacing-md);
-	padding-inline: var(--spacing-sm);
+	height: var(--spacing-lg);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	max-width: 100%;
 	box-sizing: border-box;
 
 	/* Typography */
 	font-family: var(--typography-body-family);
-	font-size: var(--typography-small-size);
-	line-height: var(--typography-small-line-height);
-	letter-spacing: var(--typography-small-letter-spacing);
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
 
 	/* Visual */
 	border-radius: var(--radius-pill);
 	transition: all var(--transition-fast) var(--animation-quick-timing);
+}
+
+.pill__content {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* Status pills */

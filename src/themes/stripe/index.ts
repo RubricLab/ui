@@ -99,7 +99,7 @@ export default {
 			headline: { fontSize: '32px', lineHeight: '40px', fontWeight: 700 },
 			subHeadline: { fontSize: '24px', lineHeight: '32px', fontWeight: 600 },
 			body: { fontSize: '16px', lineHeight: '24px', fontWeight: 400 },
-			detail: { fontSize: '8px', lineHeight: '16px', fontWeight: 400 }
+			detail: { fontSize: '10px', lineHeight: '16px', fontWeight: 400 }
 		},
 		settings: {
 			headingLineHeight: 1.2,
