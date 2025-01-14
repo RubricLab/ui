@@ -1,3 +1,4 @@
+- [2025-01-14] [add contrast color](https://github.com/RubricLab/ui/commit/f209d2132d46cd8cccdd3feb25a6c7cb5a7fb690)
 - [2025-01-14] [some ts issues](https://github.com/RubricLab/ui/commit/00c7c21aaf998d366bdc7266cf36624ebea4f55f)
 - [2025-01-14] [lint, fix ts](https://github.com/RubricLab/ui/commit/4c9a6ce780c1e08c231673f046748ae748c1ebfe)
 - [2025-01-14] [loader](https://github.com/RubricLab/ui/commit/95c4c27ef044a614d1781b62e39092bf2252ef53)

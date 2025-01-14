@@ -38,6 +38,7 @@ export interface ColorStates {
 	active: DSColor
 	subtle: DSColor
 	text: DSColor
+	contrast: DSColor
 }
 
 export interface ThemePalette {
