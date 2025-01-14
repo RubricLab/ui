@@ -83,12 +83,13 @@
 /* Selection tags */
 .tag--selection {
 	background-color: var(--color-brand-base);
-	color: var(--color-brand-text);
+	color: var(--color-brand-contrast);
 	border: var(--border-thin-width) var(--border-thin-style) transparent;
 }
 
 .tag--selection:hover {
 	background-color: var(--color-brand-focus);
+	color: var(--color-brand-text);
 }
 
 /* Category tags */

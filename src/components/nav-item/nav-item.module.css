@@ -40,16 +40,18 @@
 /* Current page indicator */
 .nav-item[aria-current="page"] {
 	background-color: var(--color-brand-base);
-	color: var(--color-surface-text);
+	color: var(--color-brand-contrast);
 	font-weight: var(--typography-body-weight, 500);
 }
 
 .nav-item[aria-current="page"]:hover {
 	background-color: var(--color-brand-focus);
+	color: var(--color-brand-text);
 }
 
 .nav-item[aria-current="page"]:active {
 	background-color: var(--color-brand-active);
+	color: var(--color-brand-text);
 }
 
 /* Dark mode adjustments */

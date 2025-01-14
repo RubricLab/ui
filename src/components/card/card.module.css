@@ -65,7 +65,7 @@
 }
 
 .card[data-role="brand"] .card__icon {
-	color: var(--color-brand-text);
+	color: var(--color-brand-contrast);
 	background-color: var(--color-brand-base);
 }
 
@@ -87,7 +87,7 @@
 }
 
 .card[data-role="success"] .card__icon {
-	color: var(--color-success-text);
+	color: var(--color-success-contrast);
 	background-color: var(--color-success-base);
 }
 
@@ -98,7 +98,7 @@
 }
 
 .card[data-role="warning"] .card__icon {
-	color: var(--color-warning-text);
+	color: var(--color-warning-contrast);
 	background-color: var(--color-warning-base);
 }
 
@@ -113,6 +113,6 @@
 }
 
 .card[data-role="destructive"] .card__icon {
-	color: var(--color-destructive-text);
+	color: var(--color-destructive-contrast);
 	background-color: var(--color-destructive-base);
 }

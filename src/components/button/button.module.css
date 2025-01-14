@@ -35,7 +35,7 @@
 /* Brand - Primary action */
 .button--brand {
 	background-color: var(--color-brand-base);
-	color: var(--color-brand-text);
+	color: var(--color-brand-contrast);
 }
 
 .button--brand:hover:not(:disabled) {
@@ -66,7 +66,7 @@
 /* Success */
 .button--success {
 	background-color: var(--color-success-base);
-	color: var(--color-success-text);
+	color: var(--color-success-contrast);
 }
 
 .button--success:hover:not(:disabled) {
@@ -80,7 +80,7 @@
 /* Warning */
 .button--warning {
 	background-color: var(--color-warning-base);
-	color: var(--color-warning-text);
+	color: var(--color-warning-contrast);
 }
 
 .button--warning:hover:not(:disabled) {
@@ -94,7 +94,7 @@
 /* Destructive */
 .button--destructive {
 	background-color: var(--color-destructive-base);
-	color: var(--color-destructive-text);
+	color: var(--color-destructive-contrast);
 }
 
 .button--destructive:hover:not(:disabled) {

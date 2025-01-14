@@ -70,7 +70,7 @@
 @media (prefers-color-scheme: dark) {
 	.pill--status {
 		background-color: var(--color-brand-base);
-		color: var(--color-brand-text);
+		color: var(--color-brand-contrast);
 	}
 
 	.pill--count {
