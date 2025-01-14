@@ -28,7 +28,8 @@ export default {
 				focus: '#333333',
 				active: '#666666',
 				subtle: '#F5F5F5',
-				text: '#000000'
+				text: '#000000',
+				contrast: '#FFFFFF'
 			},
 			surface: {
 				base: '#F5F5F5',
@@ -40,21 +41,24 @@ export default {
 				focus: '#FF6961',
 				active: '#CC2F26',
 				subtle: '#FFE5E5',
-				text: '#800000'
+				text: '#800000',
+				contrast: '#FFFFFF'
 			},
 			success: {
 				base: '#34C759',
 				focus: '#5CD97B',
 				active: '#2A9F47',
 				subtle: '#E5F7E8',
-				text: '#1F7A34'
+				text: '#1F7A34',
+				contrast: '#FFFFFF'
 			},
 			warning: {
 				base: '#FFBD2E',
 				focus: '#FFCC66',
 				active: '#CC9725',
 				subtle: '#FFF7E5',
-				text: '#805C1D'
+				text: '#805C1D',
+				contrast: '#FFFFFF'
 			}
 		},
 		dark: {
@@ -63,7 +67,8 @@ export default {
 				focus: '#E6E6E6',
 				active: '#CCCCCC',
 				subtle: '#333333',
-				text: '#FFFFFF'
+				text: '#FFFFFF',
+				contrast: '#000000'
 			},
 			surface: {
 				base: '#1A1A1A',
@@ -75,21 +80,24 @@ export default {
 				focus: '#FF6961',
 				active: '#CC2F26',
 				subtle: '#331A1A',
-				text: '#FF8080'
+				text: '#FF8080',
+				contrast: '#FFFFFF'
 			},
 			success: {
 				base: '#34C759',
 				focus: '#5CD97B',
 				active: '#2A9F47',
 				subtle: '#1A331E',
-				text: '#80CC94'
+				text: '#80CC94',
+				contrast: '#FFFFFF'
 			},
 			warning: {
 				base: '#FFBD2E',
 				focus: '#FFCC66',
 				active: '#CC9725',
 				subtle: '#332B1A',
-				text: '#FFD480'
+				text: '#FFD480',
+				contrast: '#FFFFFF'
 			}
 		}
 	},
