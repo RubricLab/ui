@@ -1,0 +1,162 @@
+/* Base styles shared by all code blocks */
+.code-block--code,
+.code-block--negative-diff,
+.code-block--positive-diff {
+	/* Typography */
+	font-family: "Monospace Font", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco,
+		Consolas, monospace;
+	font-size: var(--typography-body-size);
+	line-height: var(--typography-body-line-height);
+	letter-spacing: var(--typography-body-letter-spacing);
+
+	/* Colors */
+	background-color: var(--color-surface-subtle);
+	color: var(--color-surface-text);
+
+	/* Layout */
+	display: block;
+	padding: 0;
+	margin: var(--spacing-md) 0;
+	border-radius: var(--radius-rounded);
+	border: var(--border-thin-width) var(--border-thin-style) var(--color-surface-subtle);
+	overflow-x: auto;
+
+	/* Interactive behavior */
+	transition-property: background-color, border-color;
+	transition-duration: var(--transition-fast);
+	transition-timing-function: var(--animation-quick-timing);
+}
+
+/* Code content wrapper */
+.code-block--code > code,
+.code-block--negative-diff > code,
+.code-block--positive-diff > code {
+	display: block;
+	padding: var(--spacing-md);
+}
+
+/* Line numbers container */
+.code-block--line-numbers {
+	display: table;
+	width: 100%;
+	counter-reset: line;
+}
+
+.code-block--line-numbers > code {
+	display: table;
+	width: 100%;
+}
+
+/* Individual line styling */
+.code-block--line-numbers > code > span {
+	display: table-row;
+	counter-increment: line;
+}
+
+.code-block--line-numbers > code > span::before {
+	display: table-cell;
+	text-align: right;
+	padding-right: var(--spacing-md);
+	width: 3em;
+	color: var(--color-surface-text);
+	opacity: 0.5;
+	content: counter(line);
+	user-select: none;
+}
+
+/* Diff styling */
+.code-block--negative-diff {
+	background-color: var(--color-destructive-subtle);
+	border-color: var(--color-destructive-base);
+}
+
+.code-block--negative-diff > code > span {
+	display: table-row;
+	background-color: var(--color-destructive-subtle);
+	color: var(--color-destructive-text);
+}
+
+.code-block--negative-diff > code > span::after {
+	display: table-cell;
+	content: "-";
+	padding-left: var(--spacing-sm);
+	color: var(--color-destructive-text);
+}
+
+.code-block--positive-diff {
+	background-color: var(--color-success-subtle);
+	border-color: var(--color-success-base);
+}
+
+.code-block--positive-diff > code > span {
+	display: table-row;
+	background-color: var(--color-success-subtle);
+	color: var(--color-success-text);
+}
+
+.code-block--positive-diff > code > span::after {
+	display: table-cell;
+	content: "+";
+	padding-left: var(--spacing-sm);
+	color: var(--color-success-text);
+}
+
+/* Syntax highlighting - Common elements */
+.code-block--javascript .token--keyword,
+.code-block--typescript .token--keyword {
+	color: inherit;
+}
+
+.code-block--javascript .token--string,
+.code-block--typescript .token--string {
+	color: inherit;
+}
+
+.code-block--javascript .token--number,
+.code-block--typescript .token--number {
+	color: inherit;
+}
+
+.code-block--javascript .token--function,
+.code-block--typescript .token--function {
+	color: inherit;
+}
+
+.code-block--javascript .token--comment,
+.code-block--typescript .token--comment {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.code-block--javascript .token--operator,
+.code-block--typescript .token--operator {
+	color: inherit;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.code-block--code {
+		background-color: var(--color-surface-base);
+		border-color: var(--color-surface-subtle);
+	}
+
+	.code-block--negative-diff {
+		background-color: color-mix(in srgb, var(--color-destructive-subtle) 30%, transparent);
+		border-color: var(--color-destructive-base);
+	}
+
+	.code-block--negative-diff > code > span {
+		background-color: color-mix(in srgb, var(--color-destructive-subtle) 30%, transparent);
+		color: var(--color-destructive-text);
+	}
+
+	.code-block--positive-diff {
+		background-color: color-mix(in srgb, var(--color-success-subtle) 30%, transparent);
+		border-color: var(--color-success-base);
+	}
+
+	.code-block--positive-diff > code > span {
+		background-color: color-mix(in srgb, var(--color-success-subtle) 30%, transparent);
+		color: var(--color-success-text);
+	}
+}

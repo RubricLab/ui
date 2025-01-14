@@ -1,3 +1,4 @@
+- [2025-01-14] [code-block](https://github.com/RubricLab/ui/commit/7223e5f56a4adbd1989c3187103b279ea489ba4f)
 - [2025-01-10] [Inline props. Add stack and list. Remove card blur.](https://github.com/RubricLab/ui/commit/64f9b2c7dbfb876aea6c020ac7bb5c97c0075659)
 - [2025-01-10] [rm backdrop filter from card](https://github.com/RubricLab/ui/commit/17b0fd17025438b1c73d59f6765e42e8f53b009e)
 - [2025-01-10] [full screen modal](https://github.com/RubricLab/ui/commit/ff329fe2abd024e83c2c4809dba4b45d07ef2139)

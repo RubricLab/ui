@@ -4,6 +4,7 @@ import ChartBarItem from './components/chart-bar-item/chart-bar-item'
 import ChartLineItem from './components/chart-line-item/chart-line-item'
 import ChartLine from './components/chart-line/chart-line'
 import Chart from './components/chart/chart'
+import CodeBlock from './components/code-block/code-block'
 import DropdownItem from './components/dropdown-item/dropdown-item'
 import Dropdown from './components/dropdown/dropdown'
 import FooterSection from './components/footer-section/footer-section'
@@ -36,6 +37,7 @@ import Timeline from './components/timeline/timeline'
 export {
 	Button,
 	Card,
+	CodeBlock,
 	Chart,
 	ChartBarItem,
 	ChartLine,
