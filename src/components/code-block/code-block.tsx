@@ -99,8 +99,8 @@ function tokenize(code: string, language: CodeBlockLanguage): Token[] {
 			}
 		}
 
-		if (!matched) {
-			tokens.push({ type: 'plain', content: remaining[0] })
+		if (!matched && remaining.length > 0) {
+			tokens.push({ type: 'plain', content: remaining[0] || '' })
 			remaining = remaining.slice(1)
 		}
 	}
@@ -121,9 +121,9 @@ export default function CodeBlock({
 
 	return (
 		<pre
-			className={`${styles[`code-block--${ROLE}`]} ${styles[`code-block--${language}`]} ${
-				showLineNumbers ? styles['code-block--line-numbers'] : ''
-			} ${className || ''}`}
+			className={`${styles[`code-block--${ROLE}`]} ${
+				styles[`code-block--${language}` as keyof typeof styles] || ''
+			} ${showLineNumbers ? styles['code-block--line-numbers'] : ''} ${className || ''}`}
 			{...props}
 		>
 			<code>
@@ -132,7 +132,10 @@ export default function CodeBlock({
 					return (
 						<span key={index}>
 							{tokens.map((token, tokenIndex) => (
-								<span key={tokenIndex} className={styles[`token--${token.type}`]}>
+								<span
+									key={tokenIndex}
+									className={styles[`token--${token.type}` as keyof typeof styles] || ''}
+								>
 									{token.content}
 								</span>
 							))}

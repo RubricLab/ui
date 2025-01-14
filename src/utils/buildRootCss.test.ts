@@ -1,6 +1,6 @@
 import { expect, it } from 'bun:test'
-import { buildRootCSSVars } from './buildRootCss'
 import ds from '~/themes/rubric'
+import { buildRootCSSVars } from './buildRootCss'
 
 it('should build root css vars', () => {
 	const css = buildRootCSSVars(ds)
