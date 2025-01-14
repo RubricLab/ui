@@ -1,31 +1,25 @@
-import type { ButtonHTMLAttributes } from 'react'
 import styles from './button.module.css'
 
 export type ButtonRole = 'brand' | 'information' | 'success' | 'destructive' | 'warning'
 
-export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'role'> {
+export interface ButtonProps {
 	/** The semantic role of the button */
 	ROLE: ButtonRole
+	/** The children to render inside the button */
+	children: React.ReactNode
+	/** The onClick handler */
+	onClick: () => void
+	/** Whether the button is disabled */
+	disabled?: boolean
 }
 
-export default function Button({
-	ROLE,
-	children,
-	className,
-	type = 'button',
-	disabled,
-	'aria-label': ariaLabel,
-	'aria-describedby': ariaDescribedBy,
-	...props
-}: ButtonProps) {
+export default function Button({ ROLE, children, onClick, disabled }: ButtonProps) {
 	return (
 		<button
-			className={`${styles.button} ${styles[`button--${ROLE}`]} ${className || ''}`}
-			type={type}
+			className={`${styles.button} ${styles[`button--${ROLE}`]}`}
+			type="button"
 			disabled={disabled}
-			aria-label={ariaLabel}
-			aria-describedby={ariaDescribedBy}
-			{...props}
+			onClick={onClick}
 		>
 			{children}
 		</button>

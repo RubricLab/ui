@@ -1,0 +1,69 @@
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--spacing-md);
+	height: var(--spacing-md);
+	position: relative;
+}
+
+.icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.iconLight,
+.iconDark {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Show light variant in light mode, hide in dark mode */
+.iconLight {
+	opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+	.iconLight {
+		opacity: 0;
+	}
+}
+
+/* Hide dark variant in light mode, show in dark mode */
+.iconDark {
+	opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	.iconDark {
+		opacity: 1;
+	}
+}
+
+/* Brand - Primary */
+.icon--brand {
+	color: var(--color-brand-base);
+}
+
+/* Information - Secondary */
+.icon--information {
+	color: var(--color-surface-text);
+}
+
+/* Success */
+.icon--success {
+	color: var(--color-success-base);
+}
+
+/* Warning */
+.icon--warning {
+	color: var(--color-warning-base);
+}
+
+/* Destructive */
+.icon--destructive {
+	color: var(--color-destructive-base);
+}
