@@ -1,3 +1,4 @@
+- [2025-01-14] [rm fav](https://github.com/RubricLab/ui/commit/48390661959a0323288669781a23717824c22893)
 - [2025-01-14] [icon, fav](https://github.com/RubricLab/ui/commit/204b15e3b71310661fbb2b435dfbb0b2ec37064b)
 - [2025-01-14] [fix pills](https://github.com/RubricLab/ui/commit/c7d7f021ace51ea6cab49cce7b2bfecb3f0df3a7)
 - [2025-01-14] [fix themes](https://github.com/RubricLab/ui/commit/f80d6e50d38038f356d2f573fd300e57e942568b)

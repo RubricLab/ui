@@ -7,7 +7,6 @@ import Chart from './components/chart/chart'
 import CodeBlock from './components/code-block/code-block'
 import DropdownItem from './components/dropdown-item/dropdown-item'
 import Dropdown from './components/dropdown/dropdown'
-import createFavicon from './components/favicon/favicon'
 import FooterSection from './components/footer-section/footer-section'
 import Footer from './components/footer/footer'
 import Heading from './components/heading/heading'
@@ -55,7 +54,6 @@ export function createUI<DS extends DesignSystem>(ds: DS) {
 		Heading,
 		Image,
 		Icon: createIcon(ds),
-		Favicon: createFavicon(ds),
 		Layout: createLayout(ds),
 		Loader,
 		Input,
