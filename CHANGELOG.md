@@ -1,3 +1,4 @@
+- [2025-01-14] [fix pills](https://github.com/RubricLab/ui/commit/c7d7f021ace51ea6cab49cce7b2bfecb3f0df3a7)
 - [2025-01-14] [fix themes](https://github.com/RubricLab/ui/commit/f80d6e50d38038f356d2f573fd300e57e942568b)
 - [2025-01-14] [contrast color](https://github.com/RubricLab/ui/commit/ee2f3da837f0f3612e85141b24cf198b95ca004c)
 - [2025-01-14] [add contrast color](https://github.com/RubricLab/ui/commit/f209d2132d46cd8cccdd3feb25a6c7cb5a7fb690)

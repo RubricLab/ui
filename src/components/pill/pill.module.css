@@ -28,12 +28,18 @@
 .pill--status {
 	/* Visual */
 	background-color: var(--color-brand-base);
-	color: var(--color-brand-text);
+	color: var(--color-brand-contrast);
 	font-weight: var(--typography-small-weight-emphasis);
 }
 
 .pill--status:hover {
 	background-color: var(--color-brand-focus);
+	color: var(--color-brand-contrast);
+}
+
+.pill--status:active {
+	background-color: var(--color-brand-active);
+	color: var(--color-brand-contrast);
 }
 
 /* Count pills */
@@ -50,7 +56,7 @@
 
 .pill--count:hover {
 	border-color: var(--color-brand-focus);
-	color: var(--color-brand-focus);
+	color: var(--color-brand-contrast);
 }
 
 /* Label pills */
@@ -68,20 +74,12 @@
 
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
-	.pill--status {
-		background-color: var(--color-brand-base);
-		color: var(--color-brand-contrast);
-	}
-
+	/* Only override styles that differ from light mode */
 	.pill--count {
-		background-color: var(--color-surface-base);
-		color: var(--color-surface-text);
 		border-color: var(--color-brand-base);
 	}
 
 	.pill--label {
-		background-color: var(--color-surface-base);
-		color: var(--color-text-subtle);
 		border-color: var(--color-brand-subtle);
 	}
 }
