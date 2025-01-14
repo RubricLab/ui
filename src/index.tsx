@@ -15,6 +15,7 @@ import Input from './components/input/input'
 import Link from './components/link/link'
 import ListItem from './components/list-item/list-item'
 import List from './components/list/list'
+import Loader from './components/loader/loader'
 import Modal from './components/modal/modal'
 import NavItem from './components/nav-item/nav-item'
 import Nav from './components/nav/nav'
@@ -44,6 +45,7 @@ export {
 	ChartLineItem,
 	Dropdown,
 	DropdownItem,
+	Loader,
 	Footer,
 	FooterSection,
 	Heading,
