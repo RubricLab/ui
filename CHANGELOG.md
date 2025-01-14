@@ -1,3 +1,4 @@
+- [2025-01-14] [dropdown roles](https://github.com/RubricLab/ui/commit/721d51c5839da805c27a112b77115bc18cd84700)
 - [2025-01-14] [code block types](https://github.com/RubricLab/ui/commit/e23a3f36e6a325e855f0a509ec22964788d8edfd)
 - [2025-01-14] [code-block](https://github.com/RubricLab/ui/commit/7223e5f56a4adbd1989c3187103b279ea489ba4f)
 - [2025-01-10] [Inline props. Add stack and list. Remove card blur.](https://github.com/RubricLab/ui/commit/64f9b2c7dbfb876aea6c020ac7bb5c97c0075659)
