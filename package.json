@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.83",
+  "version": "5.0.84",
   "main": "src/index.tsx",
   "description": "UI package by Rubric Labs",
   "private": false,
@@ -42,7 +42,7 @@
   },
   "type": "module",
   "dependencies": {
-    "zod": "3.24.1"
+    "zod": "3.24.2"
   },
   "publishConfig": {
     "@RubricLab:registry": "https://registry.npmjs.org",
