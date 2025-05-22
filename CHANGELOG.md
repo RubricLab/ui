@@ -1,3 +1,4 @@
+- [2025-05-22] [bump zod](https://github.com/RubricLab/ui/commit/8d99387ecf6ca68674a493466f4dcd395244cd4f)
 - [2025-05-21] [return layout creator](https://github.com/RubricLab/ui/commit/577f8041962463a52f752053ac613179f0b02f76)
 - [2025-05-21] [client issue, dep versions](https://github.com/RubricLab/ui/commit/1c9905a2b36a1a9e8687690ef7640e6a2943b41a)
 - [2025-04-07] [bump zod](https://github.com/RubricLab/ui/commit/5d7d230ca42f233ec146fedec4dd8c6cfccfa6cd)
