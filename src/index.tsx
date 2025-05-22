@@ -54,7 +54,7 @@ export function createUI<DS extends DesignSystem>(ds: DS) {
 		Heading,
 		Image,
 		Icon: createIcon(ds),
-		Layout: createLayout(ds),
+		CreateLayout: createLayout(ds),
 		Loader,
 		Input,
 		Link,
