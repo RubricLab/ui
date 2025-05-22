@@ -1,6 +1,6 @@
 {
   "name": "@rubriclab/ui",
-  "version": "5.0.84",
+  "version": "5.0.88",
   "main": "src/index.tsx",
   "description": "UI package by Rubric Labs",
   "private": false,
@@ -32,17 +32,17 @@
     "@rubriclab/codegen": "*",
     "@rubriclab/config": "*",
     "@types/bun": "latest",
-    "@types/react": "latest",
-    "typescript": "^5.7.3"
+    "@types/react": "19.1.0",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "typescript": "^5.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^18.3.1"
+    "react": "19.1.0",
+    "react-dom": "^19.1.0"
   },
   "type": "module",
   "dependencies": {
-    "zod": "3.24.2"
+    "zod": "3.25.20"
   },
   "publishConfig": {
     "@RubricLab:registry": "https://registry.npmjs.org",

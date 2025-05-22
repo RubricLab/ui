@@ -1,3 +1,4 @@
+- [2025-05-21] [client issue, dep versions](https://github.com/RubricLab/ui/commit/1c9905a2b36a1a9e8687690ef7640e6a2943b41a)
 - [2025-04-07] [bump zod](https://github.com/RubricLab/ui/commit/5d7d230ca42f233ec146fedec4dd8c6cfccfa6cd)
 - [2025-01-14] [rm fav](https://github.com/RubricLab/ui/commit/48390661959a0323288669781a23717824c22893)
 - [2025-01-14] [icon, fav](https://github.com/RubricLab/ui/commit/204b15e3b71310661fbb2b435dfbb0b2ec37064b)
