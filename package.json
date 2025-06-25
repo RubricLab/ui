@@ -1,55 +1,49 @@
 {
-  "name": "@rubriclab/ui",
-  "version": "5.0.84",
-  "main": "src/index.tsx",
-  "description": "UI package by Rubric Labs",
-  "private": false,
-  "scripts": {
-    "build": "NODE_ENV=production bun run build.ts",
-    "watch": "bun run scripts/generateCssTypes.ts",
-    "prepare": "bun x simple-git-hooks",
-    "bleed": "bun x npm-check-updates -u",
-    "format": "bun x biome format --write .",
-    "lint": "bun x biome check . && bun x biome lint .",
-    "lint:fix": "bun x biome check --fix --unsafe . && bun x biome lint --write --unsafe .",
-    "clean": "rm -rf .next && rm -rf node_modules"
-  },
-  "keywords": [
-    "tailwindcss",
-    "react",
-    "ui",
-    "bun",
-    "genui"
-  ],
-  "license": "gonuts",
-  "homepage": "https://github.com/RubricLab/ui#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RubricLab/ui.git"
-  },
-  "bugs": "https://github.com/RubricLab/ui/issues",
-  "devDependencies": {
-    "@rubriclab/codegen": "*",
-    "@rubriclab/config": "*",
-    "@types/bun": "latest",
-    "@types/react": "latest",
-    "typescript": "^5.7.3"
-  },
-  "peerDependencies": {
-    "typescript": "^5.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^18.3.1"
-  },
-  "type": "module",
-  "dependencies": {
-    "zod": "3.24.2"
-  },
-  "publishConfig": {
-    "@RubricLab:registry": "https://registry.npmjs.org",
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "simple-git-hooks": {
-    "post-commit": "bun run rubriclab-postcommit"
-  }
+	"name": "@rubriclab/ui",
+	"version": "5.0.85",
+	"main": "src/index.tsx",
+	"description": "UI package by Rubric Labs",
+	"private": false,
+	"scripts": {
+		"build": "NODE_ENV=production bun run build.ts",
+		"watch": "bun run scripts/generateCssTypes.ts",
+		"prepare": "bun x @rubriclab/package prepare",
+		"bleed": "bun x npm-check-updates -u",
+		"format": "bun x biome format --write .",
+		"lint": "bun x biome check . && bun x biome lint .",
+		"lint:fix": "bun x biome check --fix --unsafe . && bun x biome lint --write --unsafe .",
+		"clean": "rm -rf .next && rm -rf node_modules"
+	},
+	"keywords": ["tailwindcss", "react", "ui", "bun", "genui"],
+	"license": "gonuts",
+	"homepage": "https://github.com/RubricLab/ui#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RubricLab/ui.git"
+	},
+	"bugs": "https://github.com/RubricLab/ui/issues",
+	"devDependencies": {
+		"@rubriclab/codegen": "*",
+		"@rubriclab/config": "*",
+		"@types/bun": "latest",
+		"@types/react": "latest",
+		"typescript": "^5.7.3"
+	},
+	"peerDependencies": {
+		"typescript": "^5.2.2",
+		"react": "^19.0.0",
+		"react-dom": "^18.3.1"
+	},
+	"type": "module",
+	"dependencies": {
+		"zod": "3.24.2"
+	},
+	"publishConfig": {
+		"@RubricLab:registry": "https://registry.npmjs.org",
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"simple-git-hooks": {
+		"post-commit": "bun x @rubriclab/package post-commit"
+	}
 }
