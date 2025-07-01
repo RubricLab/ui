@@ -31,7 +31,7 @@ const CrossMono = (fill: DSColor) => (
 )
 
 export const cross: Asset = {
-	light: CrossLight,
 	dark: CrossDark,
+	light: CrossLight,
 	mono: CrossMono
 }

@@ -1,3 +1,4 @@
+- [2025-07-01] [run format](https://github.com/RubricLab/ui/commit/96c1ba05c115a67850efbfb4e1254a9d792286d4)
 - [2025-07-01] [consolidate format script for packages](https://github.com/RubricLab/ui/commit/8405d18f751e211405d3271d219c21682068e676)
 - [2025-06-25] [Use package post-commit hooks](https://github.com/RubricLab/ui/commit/ef7f92e70f8afb4323840db4a3cf557e5975e7cb)
 - [2025-04-07] [bump zod](https://github.com/RubricLab/ui/commit/5d7d230ca42f233ec146fedec4dd8c6cfccfa6cd)

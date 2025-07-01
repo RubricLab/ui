@@ -31,7 +31,7 @@ const SettingsMono = (fill: DSColor) => (
 )
 
 export const settings: Asset = {
-	light: SettingsLight,
 	dark: SettingsDark,
+	light: SettingsLight,
 	mono: SettingsMono
 }

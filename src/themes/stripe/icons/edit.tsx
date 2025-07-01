@@ -31,7 +31,7 @@ const EditMono = (fill: DSColor) => (
 )
 
 export const edit: Asset = {
-	light: EditLight,
 	dark: EditDark,
+	light: EditLight,
 	mono: EditMono
 }

@@ -2,8 +2,9 @@
 .link--inline,
 .link--action {
 	/* Typography */
-	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, sans-serif;
+	font-family:
+		"Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, sans-serif;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);

@@ -28,7 +28,7 @@ const ArrowRightMono = (fill: DSColor) => (
 )
 
 export const arrowRight: Asset = {
-	light: ArrowRightLight,
 	dark: ArrowRightDark,
+	light: ArrowRightLight,
 	mono: ArrowRightMono
 }

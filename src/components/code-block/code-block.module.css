@@ -3,8 +3,9 @@
 .code-block--negative-diff,
 .code-block--positive-diff {
 	/* Typography */
-	font-family: "Monospace Font", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco,
-		Consolas, monospace;
+	font-family:
+		"Monospace Font", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco, Consolas,
+		monospace;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);

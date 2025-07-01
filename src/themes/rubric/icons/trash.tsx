@@ -28,7 +28,7 @@ const TrashMono = (fill: DSColor) => (
 )
 
 export const trash: Asset = {
-	light: TrashLight,
 	dark: TrashDark,
+	light: TrashLight,
 	mono: TrashMono
 }

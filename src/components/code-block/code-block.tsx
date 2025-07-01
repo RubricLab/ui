@@ -34,50 +34,50 @@ type Token = {
 }
 
 function tokenize(code: string, language: CodeBlockLanguage): Token[] {
-	if (language === 'plain') return [{ type: 'plain', content: code }]
+	if (language === 'plain') return [{ content: code, type: 'plain' }]
 
 	const tokens: Token[] = []
 
 	// Basic tokenization patterns
 	const patterns = {
+		css: [
+			{ pattern: /[\w-]+(?=\s*:)/g, type: 'property' as const },
+			{ pattern: /:\s*[^;]+/g, type: 'value' as const },
+			{ pattern: /[^{]+(?={)/g, type: 'selector' as const }
+		],
+		html: [
+			{ pattern: /<\/?[\w-]+/g, type: 'tag' as const },
+			{ pattern: /\s[\w-]+(?=\s*=\s*["'])/g, type: 'attr-name' as const },
+			{ pattern: /=\s*(["'])(?:(?!\1)[^\\]|\\.)*\1/g, type: 'attr-value' as const }
+		],
 		javascript: [
 			{
-				type: 'keyword' as const,
 				pattern:
-					/\b(const|let|var|function|return|if|else|for|while|class|extends|import|export|default|from|async|await)\b/g
+					/\b(const|let|var|function|return|if|else|for|while|class|extends|import|export|default|from|async|await)\b/g,
+				type: 'keyword' as const
 			},
-			{ type: 'string' as const, pattern: /(["'`])(?:(?!\1)[^\\]|\\.)*\1/g },
-			{ type: 'number' as const, pattern: /\b\d+\.?\d*\b/g },
-			{ type: 'function' as const, pattern: /\b\w+(?=\s*\()/g },
-			{ type: 'comment' as const, pattern: /\/\/.*$|\/\*[\s\S]*?\*\//g },
-			{ type: 'operator' as const, pattern: /[+\-*/%=<>!&|^~?:]+/g }
+			{ pattern: /(["'`])(?:(?!\1)[^\\]|\\.)*\1/g, type: 'string' as const },
+			{ pattern: /\b\d+\.?\d*\b/g, type: 'number' as const },
+			{ pattern: /\b\w+(?=\s*\()/g, type: 'function' as const },
+			{ pattern: /\/\/.*$|\/\*[\s\S]*?\*\//g, type: 'comment' as const },
+			{ pattern: /[+\-*/%=<>!&|^~?:]+/g, type: 'operator' as const }
+		],
+		json: [
+			{ pattern: /"[\w-]+"\s*:/g, type: 'property' as const },
+			{ pattern: /:\s*(["'])(?:(?!\1)[^\\]|\\.)*\1/g, type: 'string' as const },
+			{ pattern: /\b\d+\.?\d*\b/g, type: 'number' as const }
 		],
 		typescript: [
 			{
-				type: 'keyword' as const,
 				pattern:
-					/\b(const|let|var|function|return|if|else|for|while|class|extends|import|export|default|from|async|await|type|interface|enum)\b/g
+					/\b(const|let|var|function|return|if|else|for|while|class|extends|import|export|default|from|async|await|type|interface|enum)\b/g,
+				type: 'keyword' as const
 			},
-			{ type: 'string' as const, pattern: /(["'`])(?:(?!\1)[^\\]|\\.)*\1/g },
-			{ type: 'number' as const, pattern: /\b\d+\.?\d*\b/g },
-			{ type: 'function' as const, pattern: /\b\w+(?=\s*\()/g },
-			{ type: 'comment' as const, pattern: /\/\/.*$|\/\*[\s\S]*?\*\//g },
-			{ type: 'operator' as const, pattern: /[+\-*/%=<>!&|^~?:]+/g }
-		],
-		html: [
-			{ type: 'tag' as const, pattern: /<\/?[\w\-]+/g },
-			{ type: 'attr-name' as const, pattern: /\s[\w\-]+(?=\s*=\s*["'])/g },
-			{ type: 'attr-value' as const, pattern: /=\s*(["'])(?:(?!\1)[^\\]|\\.)*\1/g }
-		],
-		css: [
-			{ type: 'property' as const, pattern: /[\w-]+(?=\s*:)/g },
-			{ type: 'value' as const, pattern: /:\s*[^;]+/g },
-			{ type: 'selector' as const, pattern: /[^{]+(?={)/g }
-		],
-		json: [
-			{ type: 'property' as const, pattern: /"[\w-]+"\s*:/g },
-			{ type: 'string' as const, pattern: /:\s*(["'])(?:(?!\1)[^\\]|\\.)*\1/g },
-			{ type: 'number' as const, pattern: /\b\d+\.?\d*\b/g }
+			{ pattern: /(["'`])(?:(?!\1)[^\\]|\\.)*\1/g, type: 'string' as const },
+			{ pattern: /\b\d+\.?\d*\b/g, type: 'number' as const },
+			{ pattern: /\b\w+(?=\s*\()/g, type: 'function' as const },
+			{ pattern: /\/\/.*$|\/\*[\s\S]*?\*\//g, type: 'comment' as const },
+			{ pattern: /[+\-*/%=<>!&|^~?:]+/g, type: 'operator' as const }
 		]
 	}
 
@@ -92,7 +92,7 @@ function tokenize(code: string, language: CodeBlockLanguage): Token[] {
 			const match = pattern.exec(remaining)
 
 			if (match && match.index === 0) {
-				tokens.push({ type, content: match[0] })
+				tokens.push({ content: match[0], type })
 				remaining = remaining.slice(match[0].length)
 				matched = true
 				break
@@ -100,7 +100,7 @@ function tokenize(code: string, language: CodeBlockLanguage): Token[] {
 		}
 
 		if (!matched && remaining.length > 0) {
-			tokens.push({ type: 'plain', content: remaining[0] || '' })
+			tokens.push({ content: remaining[0] || '', type: 'plain' })
 			remaining = remaining.slice(1)
 		}
 	}

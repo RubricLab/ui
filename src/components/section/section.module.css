@@ -7,8 +7,9 @@
 	padding-block: var(--spacing-lg);
 
 	/* Typography */
-	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, sans-serif;
+	font-family:
+		"Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, sans-serif;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);
@@ -31,8 +32,9 @@
 	padding: 0;
 
 	/* Typography */
-	font-family: "Heading Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, sans-serif;
+	font-family:
+		"Heading Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, sans-serif;
 	font-size: var(--typography-heading-3-size);
 	line-height: var(--typography-heading-3-line-height);
 	letter-spacing: var(--typography-heading-3-letter-spacing);

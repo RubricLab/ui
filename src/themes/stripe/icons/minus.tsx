@@ -22,7 +22,7 @@ const MinusMono = (fill: DSColor) => (
 )
 
 export const minus: Asset = {
-	light: MinusLight,
 	dark: MinusDark,
+	light: MinusLight,
 	mono: MinusMono
 }

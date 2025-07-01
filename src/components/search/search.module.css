@@ -8,8 +8,9 @@
 
 .search__label {
 	/* Typography */
-	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family:
+		"Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);
@@ -47,8 +48,9 @@
 	box-sizing: border-box;
 
 	/* Typography */
-	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family:
+		"Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);
@@ -103,8 +105,9 @@
 
 .search__validation {
 	/* Typography */
-	font-family: "Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family:
+		"Body Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: var(--typography-body-size);
 	line-height: var(--typography-body-line-height);
 	letter-spacing: var(--typography-body-letter-spacing);

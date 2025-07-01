@@ -1,17 +1,17 @@
 {
-	"name": "@rubriclab/ui",
-	"version": "5.0.86",
-	"main": "src/index.tsx",
-	"description": "UI package by Rubric Labs",
-	"private": false,
-	"scripts": {
-		"build": "NODE_ENV=production bun run build.ts",
-		"watch": "bun run scripts/generateCssTypes.ts",
-		"prepare": "bun x @rubriclab/package prepare",
-		"bleed": "bun x npm-check-updates -u",
-		"clean": "rm -rf .next && rm -rf node_modules",
-		"format": "bun x biome check . --write"
+	"bugs": "https://github.com/RubricLab/ui/issues",
+	"dependencies": {
+		"zod": "3.24.2"
 	},
+	"description": "UI package by Rubric Labs",
+	"devDependencies": {
+		"@rubriclab/codegen": "*",
+		"@rubriclab/config": "*",
+		"@types/bun": "latest",
+		"@types/react": "latest",
+		"typescript": "^5.7.3"
+	},
+	"homepage": "https://github.com/RubricLab/ui#readme",
 	"keywords": [
 		"tailwindcss",
 		"react",
@@ -20,34 +20,34 @@
 		"genui"
 	],
 	"license": "gonuts",
-	"homepage": "https://github.com/RubricLab/ui#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/RubricLab/ui.git"
-	},
-	"bugs": "https://github.com/RubricLab/ui/issues",
-	"devDependencies": {
-		"@rubriclab/codegen": "*",
-		"@rubriclab/config": "*",
-		"@types/bun": "latest",
-		"@types/react": "latest",
-		"typescript": "^5.7.3"
-	},
+	"main": "src/index.tsx",
+	"name": "@rubriclab/ui",
 	"peerDependencies": {
-		"typescript": "^5.2.2",
 		"react": "^19.0.0",
-		"react-dom": "^18.3.1"
+		"react-dom": "^18.3.1",
+		"typescript": "^5.2.2"
 	},
-	"type": "module",
-	"dependencies": {
-		"zod": "3.24.2"
-	},
+	"private": false,
 	"publishConfig": {
 		"@RubricLab:registry": "https://registry.npmjs.org",
 		"access": "public",
 		"registry": "https://registry.npmjs.org"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RubricLab/ui.git"
+	},
+	"scripts": {
+		"bleed": "bun x npm-check-updates -u",
+		"build": "NODE_ENV=production bun run build.ts",
+		"clean": "rm -rf .next && rm -rf node_modules",
+		"format": "bun x biome check . --write",
+		"prepare": "bun x @rubriclab/package prepare",
+		"watch": "bun run scripts/generateCssTypes.ts"
+	},
 	"simple-git-hooks": {
 		"post-commit": "bun x @rubriclab/package post-commit"
-	}
+	},
+	"type": "module",
+	"version": "5.0.87"
 }

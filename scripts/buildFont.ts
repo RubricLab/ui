@@ -12,10 +12,10 @@ function getFilePartsFromPath(path: string) {
 	const lastPart = pathParts[pathParts.length - 1]
 	const [fileName, extension] = lastPart.split('.')
 	return {
-		path: safePath,
-		location: firstPart,
+		extension,
 		fileName,
-		extension
+		location: firstPart,
+		path: safePath
 	}
 }
 
@@ -44,8 +44,8 @@ export async function buildFont(fontPath: string) {
 	})()
 
 	const font = {
-		format: fontConfig.format,
-		base64: `data:${fontConfig.mimeType};charset=utf-8;base64,${base64Font}`
+		base64: `data:${fontConfig.mimeType};charset=utf-8;base64,${base64Font}`,
+		format: fontConfig.format
 	} as const
 
 	const content = `import type { Font } from '@rubriclab/ui'

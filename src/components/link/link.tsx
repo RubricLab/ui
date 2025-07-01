@@ -17,9 +17,9 @@ export interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>,
 export default function Link({ ROLE, href, children, external, className, ...props }: LinkProps) {
 	const externalProps = external
 		? {
-				target: '_blank',
+				'aria-label': `${typeof children === 'string' ? children : ''} (opens in new tab)`,
 				rel: 'noopener noreferrer',
-				'aria-label': `${typeof children === 'string' ? children : ''} (opens in new tab)`
+				target: '_blank'
 			}
 		: {}
 

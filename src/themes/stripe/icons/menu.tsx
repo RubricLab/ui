@@ -22,7 +22,7 @@ const MenuMono = (fill: DSColor) => (
 )
 
 export const menu: Asset = {
-	light: MenuLight,
 	dark: MenuDark,
+	light: MenuLight,
 	mono: MenuMono
 }

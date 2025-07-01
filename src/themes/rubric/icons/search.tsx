@@ -31,7 +31,7 @@ const SearchMono = (fill: DSColor) => (
 )
 
 export const search: Asset = {
-	light: SearchLight,
 	dark: SearchDark,
+	light: SearchLight,
 	mono: SearchMono
 }

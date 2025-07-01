@@ -16,85 +16,178 @@ import { trash } from './icons/trash'
 import { wordmark } from './icons/wordmark'
 
 export default {
-	colors: {
-		light: {
-			brand: {
-				base: '#635BFF',
-				focus: '#7A73FF',
-				active: '#4B44FF',
-				subtle: '#F7F6FF',
-				text: '#1A1433',
-				contrast: '#FFFFFF'
-			},
-			surface: {
-				base: '#F6F9FC',
-				subtle: '#FFFFFF',
-				text: '#0A2540'
-			},
-			destructive: {
-				base: '#FF4D4F',
-				focus: '#FF7875',
-				active: '#FF1F1F',
-				subtle: '#FFF1F0',
-				text: '#820014',
-				contrast: '#FFFFFF'
-			},
-			success: {
-				base: '#20C933',
-				focus: '#4CD95E',
-				active: '#17A329',
-				subtle: '#F6FFF8',
-				text: '#135E1F',
-				contrast: '#FFFFFF'
-			},
-			warning: {
-				base: '#FAAD14',
-				focus: '#FFC53D',
-				active: '#D48806',
-				subtle: '#FFF7E6',
-				text: '#874D00',
-				contrast: '#FFFFFF'
-			}
+	animations: {
+		normal: {
+			timing: 'ease-in-out'
 		},
+		quick: {
+			timing: 'ease-in-out'
+		},
+		slow: {
+			timing: 'ease-in-out'
+		}
+	},
+
+	borders: {
+		thick: { style: 'solid', width: '2px' },
+		thin: { style: 'solid', width: '1px' }
+	},
+
+	breakpoints: {
+		lg: '992px',
+		md: '768px',
+		sm: '576px',
+		xl: '1200px',
+		xs: '0px',
+		xxl: '1400px'
+	},
+	colors: {
 		dark: {
 			brand: {
-				base: '#635BFF',
-				focus: '#7A73FF',
 				active: '#4B44FF',
+				base: '#635BFF',
+				contrast: '#FFFFFF',
+				focus: '#7A73FF',
 				subtle: '#1A1433',
-				text: '#F7F6FF',
-				contrast: '#FFFFFF'
+				text: '#F7F6FF'
+			},
+			destructive: {
+				active: '#FF1F1F',
+				base: '#FF4D4F',
+				contrast: '#FFFFFF',
+				focus: '#FF7875',
+				subtle: '#2A1215',
+				text: '#FFA39E'
+			},
+			success: {
+				active: '#17A329',
+				base: '#20C933',
+				contrast: '#FFFFFF',
+				focus: '#4CD95E',
+				subtle: '#162312',
+				text: '#95EB9C'
 			},
 			surface: {
 				base: '#212121',
 				subtle: '#121212',
 				text: '#FFFFFF'
 			},
+			warning: {
+				active: '#D48806',
+				base: '#FAAD14',
+				contrast: '#FFFFFF',
+				focus: '#FFC53D',
+				subtle: '#2B2111',
+				text: '#FFE58F'
+			}
+		},
+		light: {
+			brand: {
+				active: '#4B44FF',
+				base: '#635BFF',
+				contrast: '#FFFFFF',
+				focus: '#7A73FF',
+				subtle: '#F7F6FF',
+				text: '#1A1433'
+			},
 			destructive: {
-				base: '#FF4D4F',
-				focus: '#FF7875',
 				active: '#FF1F1F',
-				subtle: '#2A1215',
-				text: '#FFA39E',
-				contrast: '#FFFFFF'
+				base: '#FF4D4F',
+				contrast: '#FFFFFF',
+				focus: '#FF7875',
+				subtle: '#FFF1F0',
+				text: '#820014'
 			},
 			success: {
-				base: '#20C933',
-				focus: '#4CD95E',
 				active: '#17A329',
-				subtle: '#162312',
-				text: '#95EB9C',
-				contrast: '#FFFFFF'
+				base: '#20C933',
+				contrast: '#FFFFFF',
+				focus: '#4CD95E',
+				subtle: '#F6FFF8',
+				text: '#135E1F'
+			},
+			surface: {
+				base: '#F6F9FC',
+				subtle: '#FFFFFF',
+				text: '#0A2540'
 			},
 			warning: {
-				base: '#FAAD14',
-				focus: '#FFC53D',
 				active: '#D48806',
-				subtle: '#2B2111',
-				text: '#FFE58F',
-				contrast: '#FFFFFF'
+				base: '#FAAD14',
+				contrast: '#FFFFFF',
+				focus: '#FFC53D',
+				subtle: '#FFF7E6',
+				text: '#874D00'
 			}
 		}
+	},
+
+	extendedShadows: {
+		lg: 'rgba(0,0,0,0.3)',
+		md: 'rgba(0,0,0,0.15)',
+		sm: 'rgba(0,0,0,0.05)'
+	},
+
+	icons: {
+		arrowDown,
+		arrowLeft,
+		arrowRight,
+		arrowUp,
+		cross,
+		edit,
+		menu,
+		minus,
+		plus,
+		search,
+		settings,
+		trash
+	},
+
+	logos: {
+		icon,
+		wordmark
+	},
+
+	rounding: {
+		pill: '9999px',
+		rounded: '4px',
+		subtle: '2px'
+	},
+
+	shadows: {
+		lg: {
+			blurRadius: '16px',
+			color: 'rgba(0,0,0,0.2)',
+			offsetX: '0px',
+			offsetY: '8px'
+		},
+		md: {
+			blurRadius: '8px',
+			color: 'rgba(0,0,0,0.1)',
+			offsetX: '0px',
+			offsetY: '4px'
+		},
+		sm: {
+			blurRadius: '2px',
+			color: 'rgba(0,0,0,0.1)',
+			offsetX: '0px',
+			offsetY: '1px'
+		}
+	},
+
+	spacing: {
+		lg: '24px',
+		md: '16px',
+		sm: '8px',
+		xl: '32px',
+		xs: '4px',
+		xxl: '40px'
+	},
+
+	transitions: {
+		fast: '0ms',
+		normal: '300ms',
+		slow: '500ms'
 	},
 
 	typography: {
@@ -104,110 +197,16 @@ export default {
 			monospace: matter
 		},
 		scale: {
-			headline: { fontSize: '32px', lineHeight: '40px', fontWeight: 700 },
-			subHeadline: { fontSize: '24px', lineHeight: '32px', fontWeight: 600 },
-			body: { fontSize: '16px', lineHeight: '24px', fontWeight: 400 },
-			detail: { fontSize: '10px', lineHeight: '16px', fontWeight: 400 }
+			body: { fontSize: '16px', fontWeight: 400, lineHeight: '24px' },
+			detail: { fontSize: '10px', fontWeight: 400, lineHeight: '16px' },
+			headline: { fontSize: '32px', fontWeight: 700, lineHeight: '40px' },
+			subHeadline: { fontSize: '24px', fontWeight: 600, lineHeight: '32px' }
 		},
 		settings: {
-			headingLineHeight: 1.2,
+			bodyLetterSpacing: 'normal',
 			bodyLineHeight: 1.5,
 			headingLetterSpacing: '0.5px',
-			bodyLetterSpacing: 'normal'
+			headingLineHeight: 1.2
 		}
-	},
-
-	icons: {
-		arrowLeft,
-		arrowRight,
-		arrowUp,
-		arrowDown,
-		cross,
-		plus,
-		minus,
-		edit,
-		trash,
-		search,
-		settings,
-		menu
-	},
-
-	logos: {
-		icon,
-		wordmark
-	},
-
-	spacing: {
-		xs: '4px',
-		sm: '8px',
-		md: '16px',
-		lg: '24px',
-		xl: '32px',
-		xxl: '40px'
-	},
-
-	rounding: {
-		subtle: '2px',
-		rounded: '4px',
-		pill: '9999px'
-	},
-
-	shadows: {
-		sm: {
-			offsetX: '0px',
-			offsetY: '1px',
-			blurRadius: '2px',
-			color: 'rgba(0,0,0,0.1)'
-		},
-		md: {
-			offsetX: '0px',
-			offsetY: '4px',
-			blurRadius: '8px',
-			color: 'rgba(0,0,0,0.1)'
-		},
-		lg: {
-			offsetX: '0px',
-			offsetY: '8px',
-			blurRadius: '16px',
-			color: 'rgba(0,0,0,0.2)'
-		}
-	},
-
-	extendedShadows: {
-		sm: 'rgba(0,0,0,0.05)',
-		md: 'rgba(0,0,0,0.15)',
-		lg: 'rgba(0,0,0,0.3)'
-	},
-
-	animations: {
-		quick: {
-			timing: 'ease-in-out'
-		},
-		normal: {
-			timing: 'ease-in-out'
-		},
-		slow: {
-			timing: 'ease-in-out'
-		}
-	},
-
-	transitions: {
-		fast: '0ms',
-		normal: '300ms',
-		slow: '500ms'
-	},
-
-	borders: {
-		thin: { width: '1px', style: 'solid' },
-		thick: { width: '2px', style: 'solid' }
-	},
-
-	breakpoints: {
-		xs: '0px',
-		sm: '576px',
-		md: '768px',
-		lg: '992px',
-		xl: '1200px',
-		xxl: '1400px'
 	}
 } satisfies DesignSystem

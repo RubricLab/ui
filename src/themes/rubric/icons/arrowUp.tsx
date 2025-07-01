@@ -22,7 +22,7 @@ const ArrowUpMono = (fill: DSColor) => (
 )
 
 export const arrowUp: Asset = {
-	light: ArrowUpLight,
 	dark: ArrowUpDark,
+	light: ArrowUpLight,
 	mono: ArrowUpMono
 }

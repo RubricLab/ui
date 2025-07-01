@@ -22,7 +22,7 @@ const IconMono = (fill: DSColor) => (
 )
 
 export const icon: Asset = {
-	light: IconLight,
 	dark: IconDark,
+	light: IconLight,
 	mono: IconMono
 }

@@ -31,7 +31,7 @@ const WordmarkMono = (fill: DSColor) => (
 )
 
 export const wordmark: Asset = {
-	light: WordmarkLight,
 	dark: WordmarkDark,
+	light: WordmarkLight,
 	mono: WordmarkMono
 }

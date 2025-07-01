@@ -19,10 +19,10 @@ export default function Loader({ ROLE, label, progress, className, ...props }: L
 		<div
 			className={`${styles.loader} ${styles[`loader--${ROLE}`]} ${className || ''}`}
 			role={validProgress !== undefined ? 'progressbar' : 'status'}
-			aria-label={label || 'Loading'}
-			aria-valuenow={validProgress}
-			aria-valuemin={validProgress !== undefined ? 0 : undefined}
-			aria-valuemax={validProgress !== undefined ? 100 : undefined}
+			// aria-label={label || 'Loading'}
+			// aria-valuenow={validProgress}
+			// aria-valuemin={validProgress !== undefined ? 0 : undefined}
+			// aria-valuemax={validProgress !== undefined ? 100 : undefined}
 			{...props}
 		>
 			{ROLE === 'spinner' && (

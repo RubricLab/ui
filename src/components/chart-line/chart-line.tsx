@@ -5,13 +5,7 @@ export type Point = {
 	y: number
 }
 
-const ChartLine = ({
-	points,
-	maxValue
-}: {
-	points: Point[]
-	maxValue: number
-}) => {
+const ChartLine = ({ points, maxValue }: { points: Point[]; maxValue: number }) => {
 	// Convert points to SVG coordinates
 	const svgPoints = points.map(point => ({
 		x: point.x,

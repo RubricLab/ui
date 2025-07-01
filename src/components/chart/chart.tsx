@@ -9,7 +9,7 @@ export type ChartProps = {
 
 const Chart = ({ children, width = 500, height = 500 }: ChartProps) => {
 	return (
-		<div className={styles.chart} style={{ width, height }}>
+		<div className={styles.chart} style={{ height, width }}>
 			<svg
 				viewBox={'0 0 100 100'}
 				preserveAspectRatio="none"

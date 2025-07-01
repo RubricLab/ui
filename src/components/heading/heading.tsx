@@ -6,10 +6,10 @@ export type HeadingRole = 'page' | 'section' | 'subsection' | 'minor'
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4'
 
 const roleToTag: Record<HeadingRole, HeadingTag> = {
+	minor: 'h4',
 	page: 'h1',
 	section: 'h2',
-	subsection: 'h3',
-	minor: 'h4'
+	subsection: 'h3'
 }
 
 export interface HeadingProps extends Omit<HTMLAttributes<HTMLHeadingElement>, 'role'> {

@@ -4,16 +4,30 @@ import { z } from 'zod'
 
 const build = () => {
 	generate({
-		watch: true,
-		buildFile: ({ path }) => `${path}.d.ts`,
-		watchDir: 'src/components',
-		recursive: true,
 		acceptedFileTypes: ['.css'],
+		buildFile: ({ path }) => `${path}.d.ts`,
+		getContext: async files => {
+			return files.map(file => {
+				const css = readFileSync(`${file.path}.css`, 'utf-8')
+
+				const classNames = css
+					.match(/\.[\w-]+\s/g)
+					?.map(className => className.slice(1, -1).trim()) as string[]
+
+				const uniqueClassNames = [...new Set(classNames)]
+
+				return {
+					classNames: uniqueClassNames,
+					fileName: file.name
+				}
+			})
+		},
+		recursive: true,
 		template: createTemplate(
 			z.array(
 				z.object({
-					fileName: z.string(),
-					classNames: z.array(z.string())
+					classNames: z.array(z.string()),
+					fileName: z.string()
 				})
 			),
 			(context, options) => {
@@ -30,22 +44,8 @@ const build = () => {
 					)}`.replaceAll('  ', '')
 			}
 		),
-		getContext: async files => {
-			return files.map(file => {
-				const css = readFileSync(`${file.path}.css`, 'utf-8')
-
-				const classNames = css
-					.match(/\.[\w-]+\s/g)
-					?.map(className => className.slice(1, -1).trim()) as string[]
-
-				const uniqueClassNames = [...new Set(classNames)]
-
-				return {
-					fileName: file.name,
-					classNames: uniqueClassNames
-				}
-			})
-		}
+		watch: true,
+		watchDir: 'src/components'
 	})
 }
 
