@@ -1,13 +1,9 @@
 {
-	"extends": "../../apps/web/tsconfig.json",
+	"extends": "@rubriclab/config/tsconfig",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@/types": ["./src/types"],
-			"@/types/*": ["./src/types/*"],
-			"@/utils": ["./src/utils"],
-			"@/utils/*": ["./src/utils/*"]
+			"@/*": ["./src/*"]
 		}
 	},
 	"include": ["src/**/*"],
