@@ -1,7 +1,7 @@
 export * from './alert'
 export * from './alert-dialog'
 export * from './button'
-export * from './chart'
+// export * from './chart'
 export * from './checkbox'
 export * from './code'
 export * from './container'

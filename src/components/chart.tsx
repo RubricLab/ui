@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
-import { Container, Empty, Heading } from '..'
 import type { ChartProps } from '../types'
+import { Container } from './container'
+import { Empty } from './empty'
+import { Heading } from './heading'
 
 const chartStrokeColors = ['#F6C750', '#E63525', '#050D4C', '#D4EBEE', '#74B06F']
 
@@ -41,7 +43,7 @@ export const Chart = ({
 	)
 
 	const seriesNames = React.useMemo(
-		() => [...new Set(data.flatMap(point => point.y.map(metric => metric.series)))],
+		() => Array.from(new Set(data.flatMap(point => point.y.map(metric => metric.series)))),
 		[data]
 	)
 
