@@ -1,7 +1,7 @@
 'use client'
 
 import type React from 'react'
-import type { InputProps } from '@/types'
+import type { InputProps } from './types'
 import { Container } from './container'
 import { Label } from './label'
 import { RequiredIndicator } from './required-indicator'

@@ -1,6 +1,6 @@
 'use client'
 
-import type { ContainerProps, ContainerVariantEnum } from '@/types'
+import type { ContainerProps, ContainerVariantEnum } from './types'
 import { cn } from '@/utils'
 import type { z } from 'zod/v4'
 import {

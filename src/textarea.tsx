@@ -1,6 +1,6 @@
 'use client'
 
-import type { TextareaProps, TextareaVariantEnum } from '@/types'
+import type { TextareaProps, TextareaVariantEnum } from './types'
 import { cn } from '@/utils'
 import type { z } from 'zod/v4'
 import { Container } from './container'

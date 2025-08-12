@@ -9,7 +9,7 @@ import type {
 	DrawerProps,
 	DrawerTitleProps,
 	DrawerTriggerProps
-} from '@/types/ui/drawer'
+} from './types/drawer'
 import { cn } from '@/utils'
 import type * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'

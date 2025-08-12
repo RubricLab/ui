@@ -9,7 +9,7 @@ import type {
 	DialogProps,
 	DialogTitleProps,
 	DialogTriggerProps
-} from '@/types/ui/dialog'
+} from './types/dialog'
 import { cn } from '@/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import type * as React from 'react'

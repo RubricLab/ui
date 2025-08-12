@@ -1,6 +1,6 @@
 'use client'
 
-import type { ChartProps } from '@/types'
+import type { ChartProps } from './types'
 import * as React from 'react'
 import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
 import { Container, Empty, Heading } from '.'

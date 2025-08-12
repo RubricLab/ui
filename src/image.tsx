@@ -1,6 +1,6 @@
 'use client'
 
-import type { ImageProps } from '@/types'
+import type { ImageProps } from './types'
 import { cn } from '@/utils'
 import NextImage from 'next/image'
 import { roundedClasses } from './classes'

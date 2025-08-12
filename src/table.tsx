@@ -9,7 +9,7 @@ import type {
 	TableProps,
 	TableRowProps,
 	TableVariantEnum
-} from '@/types'
+} from './types'
 import type * as React from 'react'
 import type { z } from 'zod/v4'
 import { cn } from '@/utils'

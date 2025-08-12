@@ -11,7 +11,7 @@ import type {
 	TextVariantEnum,
 	WidthEnum,
 	WrapEnum
-} from '@/types'
+} from './types'
 import type { z } from 'zod/v4'
 
 export const gapClasses: Record<z.infer<typeof SizeEnum>, string> = {

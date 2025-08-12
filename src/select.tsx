@@ -9,7 +9,7 @@ import type {
 	SelectSeparatorProps,
 	SelectTriggerProps,
 	SelectValueProps
-} from '@/types'
+} from './types'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { ChevronDownIcon, ChevronUpIcon, ChevronsUpDownIcon } from 'lucide-react'
 import type * as React from 'react'

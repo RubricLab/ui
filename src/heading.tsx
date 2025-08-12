@@ -1,6 +1,6 @@
 'use client'
 
-import type { HeadingProps } from '@/types'
+import type { HeadingProps } from './types'
 import { cn } from '@/utils'
 import { headingLevelClasses, textVariantClasses } from './classes'
 

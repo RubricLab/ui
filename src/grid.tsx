@@ -1,6 +1,6 @@
 'use client'
 
-import type { GridProps } from '@/types'
+import type { GridProps } from './types'
 import { cn } from '@/utils'
 import { gapClasses, heightClasses, widthClasses } from './classes'
 

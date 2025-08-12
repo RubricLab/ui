@@ -1,6 +1,6 @@
 'use client'
 
-import type { LinkProps, LinkVariantEnum } from '@/types'
+import type { LinkProps, LinkVariantEnum } from './types'
 import { cn } from '@/utils'
 import { ArrowUpRightIcon } from 'lucide-react'
 import NextLink from 'next/link'

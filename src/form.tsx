@@ -7,7 +7,7 @@ import type {
 	FormHeaderProps,
 	FormProps,
 	FormTitleProps
-} from '@/types'
+} from './types'
 import { Container } from './container'
 import { Heading } from './heading'
 import { Text } from './text'

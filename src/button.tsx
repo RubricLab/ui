@@ -1,6 +1,6 @@
 'use client'
 
-import type { ButtonProps, IconNames } from '@/types'
+import type { ButtonProps, IconNames } from './types'
 import { cva } from 'class-variance-authority'
 import type { LucideIcon } from 'lucide-react'
 import * as LucideIcons from 'lucide-react'

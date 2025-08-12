@@ -1,6 +1,6 @@
 'use client'
 
-import type { TextProps } from '@/types'
+import type { TextProps } from './types'
 import { cn } from '@/utils'
 import { textSizeClasses, textVariantClasses } from './classes'
 

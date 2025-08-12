@@ -1,6 +1,6 @@
 'use client'
 
-import type { CheckboxProps } from '@/types'
+import type { CheckboxProps } from './types'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { CheckIcon } from 'lucide-react'
 import type * as React from 'react'

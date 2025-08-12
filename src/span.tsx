@@ -1,4 +1,4 @@
-import type { TextVariantEnum } from '@/types'
+import type { TextVariantEnum } from './types'
 import { cn } from '@/utils'
 import type { z } from 'zod/v4'
 import { textVariantClasses } from './classes'

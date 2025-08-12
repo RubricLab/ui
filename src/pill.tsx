@@ -1,4 +1,4 @@
-import type { PillProps, PillSizeEnum, PillVariantEnum } from '@/types'
+import type { PillProps, PillSizeEnum, PillVariantEnum } from './types'
 import { cn } from '@/utils/cn'
 import type { z } from 'zod/v4'
 
