@@ -1,0 +1,15 @@
+{
+	"extends": "../../apps/web/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/types": ["./src/types"],
+			"@/types/*": ["./src/types/*"],
+			"@/utils": ["./src/utils"],
+			"@/utils/*": ["./src/utils/*"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
