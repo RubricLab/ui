@@ -20,17 +20,9 @@ const Input: React.FC<InputProps> = ({
 }) => {
 	return (
 		<Container gap="sm" overflow="visible">
-			{(label || description) && (
-				<Container gap="xs">
-					{label && <Label htmlFor={id}>{label}</Label>}
-					{description && (
-						<Text size="xs" variant="tertiary">
-							{description}
-						</Text>
-					)}
-				</Container>
-			)}
-			<div className="relative w-full">
+			{label && <Label htmlFor={id}>{label}</Label>}
+			{/* TODO: remove className in container */}
+			<Container className="relative" width="full">
 				<input
 					id={id}
 					type={type}
@@ -44,7 +36,12 @@ const Input: React.FC<InputProps> = ({
 					maxLength={maxLength}
 				/>
 				{required && <RequiredIndicator />}
-			</div>
+			</Container>
+			{description && (
+				<Text size="xs" variant="tertiary">
+					{description}
+				</Text>
+			)}
 		</Container>
 	)
 }
