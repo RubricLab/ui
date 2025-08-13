@@ -1,11 +1,10 @@
 import { camelToPascal, cn } from '@/utils'
 import { cva } from 'class-variance-authority'
-import type { LucideIcon } from 'lucide-react'
-import * as LucideIcons from 'lucide-react'
 import Link from 'next/link'
 import type * as React from 'react'
 import { widthClasses } from '../styles'
 import type { ButtonProps, IconNames } from '../types'
+import { Icon as UiIcon } from './icon'
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 const buttonVariants = cva(
@@ -65,17 +64,29 @@ const buttonVariants = cva(
 )
 
 interface ButtonContentProps {
-	Icon: LucideIcon | null
+	iconName: IconNames | null
 	arrangement: ButtonProps['arrangement']
 	children: React.ReactNode
 }
 
-const ButtonContent = ({ arrangement, Icon, children }: ButtonContentProps) => (
+const ButtonContent = ({ arrangement, iconName, children }: ButtonContentProps) => (
 	<>
-		{Icon && arrangement === 'leadingIcon' && <Icon className="size-4 opacity-80" />}
+		{iconName && arrangement === 'leadingIcon' && (
+			<span className="opacity-80">
+				<UiIcon name={iconName} />
+			</span>
+		)}
 		{arrangement !== 'hiddenLabel' && children}
-		{Icon && arrangement === 'leadingLabel' && <Icon className="size-4 opacity-80" />}
-		{Icon && arrangement === 'hiddenLabel' && <Icon className="size-4 opacity-80" />}
+		{iconName && arrangement === 'leadingLabel' && (
+			<span className="opacity-80">
+				<UiIcon name={iconName} />
+			</span>
+		)}
+		{iconName && arrangement === 'hiddenLabel' && (
+			<span className="opacity-80">
+				<UiIcon name={iconName} />
+			</span>
+		)}
 	</>
 )
 
@@ -93,10 +104,10 @@ const Button: React.FC<ButtonProps> = ({
 	onMouseEnter,
 	onMouseLeave
 }) => {
-	const Icon = icon ? (LucideIcons[camelToPascal(icon) as IconNames] as LucideIcon) : null
+	const iconName = icon ? (camelToPascal(icon) as IconNames) : null
 
 	const buttonContent = (
-		<ButtonContent arrangement={arrangement} Icon={Icon}>
+		<ButtonContent arrangement={arrangement} iconName={iconName}>
 			{label}
 		</ButtonContent>
 	)
