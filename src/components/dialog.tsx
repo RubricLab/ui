@@ -15,8 +15,16 @@ import type {
 import { Button } from './button'
 import { Container } from './container'
 
-const Dialog: React.FC<DialogProps> = ({ children }) => {
-	return <DialogPrimitive.Root data-slot="dialog">{children}</DialogPrimitive.Root>
+const Dialog: React.FC<DialogProps> = ({ children, open, onOpenChange }) => {
+	return (
+		<DialogPrimitive.Root
+			data-slot="dialog"
+			{...(open !== undefined ? { open } : {})}
+			{...(onOpenChange ? { onOpenChange } : {})}
+		>
+			{children}
+		</DialogPrimitive.Root>
+	)
 }
 
 const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false }) => {
@@ -24,7 +32,7 @@ const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false
 		<DialogPrimitive.Trigger
 			data-slot="dialog-trigger"
 			asChild={asChild}
-			className={textSizeClasses.sm}
+			className={cn(textSizeClasses.sm, 'w-full')}
 		>
 			{/* To ensure children are wrapped in one parent is asChild is true */}
 			{asChild ? <div>{children}</div> : children}

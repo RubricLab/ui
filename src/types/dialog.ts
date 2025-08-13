@@ -22,6 +22,8 @@ export const DialogBodySchema = z.object({})
 
 export type DialogProps = {
 	children: React.ReactNode
+	open?: boolean // additional
+	onOpenChange?: (val: boolean) => void // additional
 }
 
 export type DialogTitleProps = { children: React.ReactNode }
