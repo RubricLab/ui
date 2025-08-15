@@ -1,9 +1,14 @@
-import { cn } from '@/utils'
-import { headingLevelClasses, textVariantClasses } from '../styles/classes'
+import { fontClasses, headingLevelClasses, textVariantClasses } from '../styles/classes'
 import type { HeadingProps } from '../types'
+import { cn } from '../utils'
 
-export const Heading: React.FC<HeadingProps> = ({ children, level = '1', variant = 'primary' }) => {
-	const className = cn(headingLevelClasses[level], textVariantClasses[variant])
+export const Heading: React.FC<HeadingProps> = ({
+	children,
+	level = '1',
+	variant = 'primary',
+	font = 'sans'
+}) => {
+	const className = cn(headingLevelClasses[level], textVariantClasses[variant], fontClasses[font])
 
 	switch (level) {
 		case '1':

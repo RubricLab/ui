@@ -1,6 +1,6 @@
-import { cn } from '@/utils'
-import { textSizeClasses, textVariantClasses } from '../styles/classes'
+import { fontClasses, textSizeClasses, textVariantClasses } from '../styles/classes'
 import type { TextProps } from '../types'
+import { cn } from '../utils'
 
 export const Text: React.FC<TextProps> = ({
 	children,
@@ -8,7 +8,8 @@ export const Text: React.FC<TextProps> = ({
 	size = 'sm',
 	bold,
 	italic,
-	underline
+	underline,
+	font = 'sans'
 }) => {
 	return (
 		<span
@@ -17,7 +18,8 @@ export const Text: React.FC<TextProps> = ({
 				textVariantClasses[variant],
 				bold && 'font-bold',
 				italic && 'italic',
-				underline && 'underline underline-offset-2'
+				underline && 'underline underline-offset-2',
+				fontClasses[font]
 			)}
 		>
 			{children}

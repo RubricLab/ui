@@ -1,5 +1,5 @@
 import { z } from 'zod/v4'
-import { TextVariantEnum } from './general'
+import { FontEnum, TextVariantEnum } from './general'
 
 export const TextSizeEnum = z.enum(['xs', 'sm', 'md', 'lg', 'xl'])
 
@@ -8,7 +8,8 @@ export const TextPropsSchema = z.object({
 	italic: z.boolean().nullable(),
 	underline: z.boolean().nullable(),
 	variant: TextVariantEnum.nullable(),
-	size: TextSizeEnum.nullable()
+	size: TextSizeEnum.nullable(),
+	font: FontEnum.nullable()
 })
 
 export type TextProps = {
@@ -18,4 +19,5 @@ export type TextProps = {
 	underline?: boolean
 	variant?: z.infer<typeof TextVariantEnum>
 	size?: z.infer<typeof TextSizeEnum>
+	font?: z.infer<typeof FontEnum>
 }

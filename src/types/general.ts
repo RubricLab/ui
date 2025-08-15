@@ -82,3 +82,5 @@ export const OverflowEnum = z.enum(['visible', 'hidden', 'scroll', 'auto'])
 export const WrapEnum = z.enum(['wrap', 'nowrap', 'wrap-reverse'])
 
 export const TextVariantEnum = z.enum(['primary', 'secondary', 'tertiary', 'muted'])
+
+export const FontEnum = z.enum(['sans', 'mono', 'serif'])

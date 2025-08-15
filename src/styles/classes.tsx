@@ -4,6 +4,7 @@ import type {
 	ArrangementEnum,
 	BorderEnum,
 	DimensionEnum,
+	FontEnum,
 	HeadingLevelEnum,
 	JustifyEnum,
 	OverflowEnum,
@@ -128,4 +129,10 @@ export const headingLevelClasses: Record<z.infer<typeof HeadingLevelEnum>, strin
 	'2': 'text-lg font-semibold',
 	'3': 'text-base font-semibold',
 	'4': 'text-base font-light'
+}
+
+export const fontClasses: Record<z.infer<typeof FontEnum>, string> = {
+	mono: 'font-mono',
+	sans: 'font-sans',
+	serif: 'font-serif'
 }
