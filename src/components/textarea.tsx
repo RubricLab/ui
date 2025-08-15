@@ -22,20 +22,12 @@ const Textarea: React.FC<TextareaProps> = ({
 	value,
 	onChange,
 	defaultValue,
-	disabled
+	disabled,
+	maxLength
 }) => {
 	return (
 		<Container gap="sm">
-			{(label || description) && (
-				<Container gap="xs">
-					{label && <Label htmlFor={id}>{label}</Label>}
-					{description && (
-						<Text size="xs" variant="tertiary">
-							{description}
-						</Text>
-					)}
-				</Container>
-			)}
+			<Container gap="xs">{label && <Label htmlFor={id}>{label}</Label>}</Container>
 			{/* TODO: remove className */}
 			<Container className="relative">
 				<textarea
@@ -51,9 +43,15 @@ const Textarea: React.FC<TextareaProps> = ({
 					onChange={onChange}
 					defaultValue={defaultValue}
 					disabled={disabled}
+					maxLength={maxLength}
 				/>
 				{required && <RequiredIndicator />}
 			</Container>
+			{description && (
+				<Text size="xs" variant="tertiary">
+					{description}
+				</Text>
+			)}
 		</Container>
 	)
 }

@@ -21,6 +21,7 @@ export const IconEnum = z.enum([
 	'externalLink',
 	'house',
 	'instagram',
+	'list',
 	'link',
 	'mail',
 	'messageSquare',

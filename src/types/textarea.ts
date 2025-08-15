@@ -24,5 +24,6 @@ export type TextareaProps = {
 	rows?: number
 	value?: string // additional
 	disabled?: boolean
+	maxLength?: number // additional
 	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void // additional
 }
