@@ -9,9 +9,13 @@ export const ErrorState = ({
 	message: string
 }) => {
 	return (
-		<Container gap="sm" padding="md">
-			<Text bold>{name}</Text>
-			<Text variant="secondary">{message}</Text>
+		<Container gap="sm" padding="md" border="all" className="bg-destructive/10">
+			<Text bold>
+				<span className="text-destructive">Error: {name}</span>
+			</Text>
+			<Text variant="secondary">
+				<span className="text-destructive">{message}</span>
+			</Text>
 		</Container>
 	)
 }
