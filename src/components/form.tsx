@@ -38,13 +38,19 @@ const FormFooter: React.FC<FormFooterProps> = ({ children }) => {
 	)
 }
 
-const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
+const Form: React.FC<FormProps> = ({ children, onSubmit, action, method }) => {
 	return (
 		<form
-			onSubmit={e => {
-				e.preventDefault()
-				onSubmit?.(e)
-			}}
+			onSubmit={
+				onSubmit
+					? e => {
+							e.preventDefault()
+							onSubmit(e)
+						}
+					: undefined
+			}
+			action={action}
+			method={method}
 			className="w-full"
 		>
 			<Container gap="md" width="full">
