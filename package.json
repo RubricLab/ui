@@ -1,5 +1,5 @@
 {
-	"name": "@fabric/ui",
+	"name": "@rubriclab/fabric-ui",
 	"version": "0.1.0",
 	"private": false,
 	"publishConfig": {
