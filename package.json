@@ -1,6 +1,6 @@
 {
 	"name": "@rubriclab/fabric-ui",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"private": false,
 	"publishConfig": {
 		"access": "public"
@@ -42,6 +42,13 @@
 		"@rubriclab/config": "^0.0.15",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
-		"typescript": "^5"
+		"typescript": "^5",
+		"@rubriclab/package": "^0.0.121"
+	},
+	"scripts": {
+		"prepare": "bun x @rubriclab/package prepare"
+	},
+	"simple-git-hooks": {
+		"post-commit": "bun x @rubriclab/package post-commit"
 	}
 }
