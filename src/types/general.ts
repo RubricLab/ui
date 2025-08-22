@@ -15,6 +15,7 @@ export const IconEnum = z.enum([
 	'chevronRight',
 	'chevronDown',
 	'chevronUp',
+	'chevronsUpDown',
 	'download',
 	'ellipsis',
 	'ellipsisVertical',
@@ -61,6 +62,19 @@ export const JustifyEnum = z.enum(['start', 'center', 'end', 'between', 'around'
 export const AlignEnum = z.enum(['start', 'center', 'end', 'stretch', 'baseline'])
 
 export const DimensionEnum = z.enum(['fit', 'full', 'screen'])
+
+export const HeightEnum = z.enum([
+	'3xs',
+	'2xs',
+	'xs',
+	'sm',
+	'md',
+	'lg',
+	'xl',
+	'fit',
+	'full',
+	'screen'
+])
 
 export const WidthEnum = z.enum([
 	'3xs',

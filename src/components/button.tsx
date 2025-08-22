@@ -21,8 +21,8 @@ const buttonVariants = cva(
 			},
 			size: {
 				sm: 'h-6 text-sm',
-				md: 'h-8 text-sm',
-				lg: 'h-10'
+				md: 'h-9 text-sm',
+				lg: 'h-12'
 			},
 			arrangement: {
 				hiddenLabel: '',
@@ -52,12 +52,12 @@ const buttonVariants = cva(
 			{
 				size: 'md',
 				arrangement: 'hiddenLabel',
-				className: 'h-8 w-8 text-sm'
+				className: 'h-9 w-9 text-sm'
 			},
 			{
 				size: 'lg',
 				arrangement: 'hiddenLabel',
-				className: 'h-10 w-10'
+				className: 'h-12 w-12'
 			}
 		]
 	}

@@ -15,7 +15,10 @@ export const InputTypeEnum = z.enum([
 	'week'
 ])
 
+export const InputVariantEnum = z.enum(['primary', 'ghost'])
+
 export const InputPropsSchema = z.object({
+	variant: InputVariantEnum.default('primary'),
 	defaultValue: z.string().nullable(),
 	label: z.string().nullable(),
 	description: z.string().nullable(),
@@ -27,6 +30,7 @@ export const InputPropsSchema = z.object({
 
 export type InputProps = {
 	id?: string
+	variant?: z.infer<typeof InputVariantEnum>
 	defaultValue?: string
 	label?: string
 	description?: string

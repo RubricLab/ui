@@ -21,8 +21,7 @@ const containerVariantClasses: Record<z.infer<typeof ContainerVariantEnum>, stri
 	ghost: ''
 }
 
-// Note: className isn't available to the LLM, it is just left here for developer convenience
-export const Container: React.FC<ContainerProps & { className?: string }> = ({
+export const Container: React.FC<ContainerProps> = ({
 	id,
 	children,
 	arrangement = 'column',

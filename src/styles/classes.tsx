@@ -3,9 +3,9 @@ import type {
 	AlignEnum,
 	ArrangementEnum,
 	BorderEnum,
-	DimensionEnum,
 	FontEnum,
 	HeadingLevelEnum,
+	HeightEnum,
 	JustifyEnum,
 	OverflowEnum,
 	SizeEnum,
@@ -75,7 +75,14 @@ export const borderClasses: Record<z.infer<typeof BorderEnum>, string> = {
 	none: 'border-none'
 }
 
-export const heightClasses: Record<z.infer<typeof DimensionEnum>, string> = {
+export const heightClasses: Record<z.infer<typeof HeightEnum>, string> = {
+	'3xs': 'h-64',
+	'2xs': 'h-72',
+	xs: 'h-80',
+	sm: 'h-80',
+	md: 'h-112',
+	lg: 'h-128',
+	xl: 'h-144',
 	fit: 'h-fit',
 	full: 'h-full',
 	screen: 'h-screen'
@@ -125,9 +132,9 @@ export const textSizeClasses: Record<z.infer<typeof TextSizeEnum>, string> = {
 }
 
 export const headingLevelClasses: Record<z.infer<typeof HeadingLevelEnum>, string> = {
-	'1': 'text-2xl',
-	'2': 'text-lg font-semibold',
-	'3': 'text-base font-semibold',
+	'1': 'text-2xl font-semibold',
+	'2': 'text-xl',
+	'3': 'text-lg',
 	'4': 'text-base font-light'
 }
 

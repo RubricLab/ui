@@ -1,7 +1,12 @@
 import { cn } from '@/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import type * as React from 'react'
-import { headingLevelClasses, textSizeClasses, textVariantClasses } from '../styles/classes'
+import { 
+	headingLevelClasses,
+	paddingClasses,
+	textSizeClasses,
+	textVariantClasses 
+} from '../styles/classes'
 import type {
 	DialogBodyProps,
 	DialogContentProps,
@@ -73,13 +78,16 @@ const DialogOverlay: React.FC<React.ComponentProps<typeof DialogPrimitive.Overla
 	)
 }
 
-const DialogContent: React.FC<DialogContentProps> = ({ children }) => {
+const DialogContent: React.FC<DialogContentProps> = ({ children, padding = 'lg' }) => {
 	return (
 		<DialogPortal data-slot="dialog-portal">
 			<DialogOverlay />
 			<DialogPrimitive.Content
 				data-slot="dialog-content"
-				className="data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-lg"
+				className={cn(
+					'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] border bg-background shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-lg',
+					paddingClasses[padding]
+				)}
 			>
 				<Container gap="sm">{children}</Container>
 				<DialogClose />
