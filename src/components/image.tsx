@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import NextImage from 'next/image'
 import { roundedClasses } from '../styles/classes'
 import type { ImageProps } from '../types'

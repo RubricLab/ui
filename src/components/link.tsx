@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import { ArrowUpRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import type { z } from 'zod/v4'

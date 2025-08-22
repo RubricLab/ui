@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import type React from 'react'
 import type z4 from 'zod/v4'
 import type { InputProps, InputVariantEnum } from '../types'

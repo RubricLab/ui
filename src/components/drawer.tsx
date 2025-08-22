@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import type * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 import { headingLevelClasses, textSizeClasses, textVariantClasses } from '../styles/classes'

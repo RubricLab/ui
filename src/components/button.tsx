@@ -1,4 +1,4 @@
-import { camelToPascal, cn } from '@/utils'
+import { camelToPascal, cn } from '../utils'
 import { cva } from 'class-variance-authority'
 import Link from 'next/link'
 import type * as React from 'react'

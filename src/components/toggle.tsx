@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn'
+import { cn } from '../utils'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { type VariantProps, cva } from 'class-variance-authority'
 import * as React from 'react'

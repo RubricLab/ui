@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import { Command as CommandPrimitive } from 'cmdk'
 import type * as React from 'react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './dialog'

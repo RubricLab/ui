@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import { AsteriskIcon } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 

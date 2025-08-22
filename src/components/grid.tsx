@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '../utils'
 import { gapClasses, heightClasses, widthClasses } from '../styles/classes'
 import type { GridProps } from '../types'
 
