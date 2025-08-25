@@ -1,3 +1,4 @@
+- [2025-08-24] [pass biome checks (pending format)](https://github.com/RubricLab/fabric-ui/commit/99302b43e63f0b17464e57861b54653a97788560)
 - [2025-08-24] [specify biome config is not root](https://github.com/RubricLab/fabric-ui/commit/16845581d6070fd15d19bc86fe3fbd0324df1246)
 - [2025-08-24] [specific config version](https://github.com/RubricLab/fabric-ui/commit/8f9f5afcb7a4f5e0becee029553ccffc0356fc96)
 - [2025-08-24] [biome config](https://github.com/RubricLab/fabric-ui/commit/6b793d55380d99c7d876dfc7121b063b3da9eda8)
