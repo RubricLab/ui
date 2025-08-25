@@ -1,3 +1,4 @@
+- [2025-08-24] [biome config](https://github.com/RubricLab/fabric-ui/commit/6b793d55380d99c7d876dfc7121b063b3da9eda8)
 - [2025-08-24] [add gitignore](https://github.com/RubricLab/fabric-ui/commit/ec26069806f17295fec8cae2bde4df6c4789466d)
 - [2025-08-22] [add minimal docs](https://github.com/RubricLab/fabric-ui/commit/cc3cab30417f8e85aed61501efe75e9264164f8b)
 - [2025-08-22] [add missing cmdk dep](https://github.com/RubricLab/fabric-ui/commit/be2b0d6f5af0f6dde119e59a102c2230a2473257)
