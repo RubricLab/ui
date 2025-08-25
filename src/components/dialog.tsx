@@ -1,11 +1,10 @@
-import { cn } from '../utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import type * as React from 'react'
-import { 
+import {
 	headingLevelClasses,
 	paddingClasses,
 	textSizeClasses,
-	textVariantClasses 
+	textVariantClasses
 } from '../styles/classes'
 import type {
 	DialogBodyProps,
@@ -17,6 +16,7 @@ import type {
 	DialogTitleProps,
 	DialogTriggerProps
 } from '../types/dialog'
+import { cn } from '../utils'
 import { Button } from './button'
 import { Container } from './container'
 

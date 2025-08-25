@@ -5,11 +5,11 @@ export const TextSizeEnum = z.enum(['xs', 'sm', 'md', 'lg', 'xl'])
 
 export const TextPropsSchema = z.object({
 	bold: z.boolean().nullable(),
+	font: FontEnum.nullable(),
 	italic: z.boolean().nullable(),
-	underline: z.boolean().nullable(),
-	variant: TextVariantEnum.nullable(),
 	size: TextSizeEnum.nullable(),
-	font: FontEnum.nullable()
+	underline: z.boolean().nullable(),
+	variant: TextVariantEnum.nullable()
 })
 
 export type TextProps = {

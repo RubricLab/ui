@@ -1,4 +1,3 @@
-import { cn } from '../utils'
 import type * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 import { headingLevelClasses, textSizeClasses, textVariantClasses } from '../styles/classes'
@@ -12,6 +11,7 @@ import type {
 	DrawerTitleProps,
 	DrawerTriggerProps
 } from '../types/drawer'
+import { cn } from '../utils'
 import { Button } from './button'
 import { Container } from './container'
 

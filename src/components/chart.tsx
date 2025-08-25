@@ -11,8 +11,8 @@ const chartStrokeColors = ['#F6C750', '#E63525', '#050D4C', '#D4EBEE', '#74B06F'
 const tooltipContentStyle = {
 	background: 'var(--background)',
 	border: '1px solid var(--border)',
-	color: 'var(--foreground)',
 	borderRadius: 4,
+	color: 'var(--foreground)',
 	fontSize: 12
 } as const
 
@@ -55,9 +55,9 @@ export const Chart = ({
 		switch (variant) {
 			case 'line': {
 				return (
-					<div style={{ width, height }}>
+					<div style={{ height, width }}>
 						<ResponsiveContainer width="100%" height="100%">
-							<LineChart data={transformedData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+							<LineChart data={transformedData} margin={{ bottom: 5, left: 20, right: 30, top: 5 }}>
 								{seriesNames.map((series, index) => {
 									const color = chartStrokeColors[index % chartStrokeColors.length]
 									return (
@@ -86,9 +86,9 @@ export const Chart = ({
 			}
 			case 'bar': {
 				return (
-					<div style={{ width, height }}>
+					<div style={{ height, width }}>
 						<ResponsiveContainer width="100%" height="100%">
-							<BarChart data={transformedData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+							<BarChart data={transformedData} margin={{ bottom: 5, left: 20, right: 30, top: 5 }}>
 								{seriesNames.map((series, index) => {
 									const color = chartStrokeColors[index % chartStrokeColors.length]
 									return <Bar key={series} dataKey={series} fill={color} fillOpacity={0.8} />

@@ -1,14 +1,14 @@
-import { cn } from '../utils'
 import type { z } from 'zod/v4'
 import type { TextareaProps, TextareaVariantEnum } from '../types'
+import { cn } from '../utils'
 import { Container } from './container'
 import { Label } from './label'
 import { RequiredIndicator } from './required-indicator'
 import { Text } from './text'
 
 const textareaVariantClasses: Record<z.infer<typeof TextareaVariantEnum>, string> = {
-	primary: 'border bg-background px-3 py-2',
-	ghost: 'p-0'
+	ghost: 'p-0',
+	primary: 'border bg-background px-3 py-2'
 }
 
 const Textarea: React.FC<TextareaProps> = ({

@@ -2,10 +2,10 @@ import { z } from 'zod/v4'
 import { DimensionEnum, SizeEnum, WidthEnum } from './general'
 
 export const GridPropsSchema = z.object({
-	rows: z.int().min(0),
 	columns: z.int().min(0),
 	gap: SizeEnum.default('xs'),
 	height: DimensionEnum.default('fit'),
+	rows: z.int().min(0),
 	width: WidthEnum.default('full')
 })
 

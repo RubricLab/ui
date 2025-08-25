@@ -1,4 +1,3 @@
-import { cn } from '../utils'
 import type { z } from 'zod/v4'
 import {
 	alignClasses,
@@ -14,11 +13,12 @@ import {
 	wrapClasses
 } from '../styles/classes'
 import type { ContainerProps, ContainerVariantEnum } from '../types'
+import { cn } from '../utils'
 
 const containerVariantClasses: Record<z.infer<typeof ContainerVariantEnum>, string> = {
+	ghost: '',
 	primary: 'bg-primary text-white',
-	secondary: 'bg-accent',
-	ghost: ''
+	secondary: 'bg-accent'
 }
 
 export const Container: React.FC<ContainerProps> = ({

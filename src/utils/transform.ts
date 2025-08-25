@@ -6,7 +6,10 @@ export const camelToPascal = (input: string): string => {
 export const camelToReadable = ({
 	input,
 	capitalize = false
-}: { input: string; capitalize?: boolean }): string => {
+}: {
+	input: string
+	capitalize?: boolean
+}): string => {
 	if (!input) return ''
 
 	// Add space before capital letters and convert to lowercase
@@ -27,7 +30,10 @@ export const camelToReadable = ({
 export const kebabToReadable = ({
 	input,
 	capitalize = false
-}: { input: string; capitalize?: boolean }): string => {
+}: {
+	input: string
+	capitalize?: boolean
+}): string => {
 	if (!input) return ''
 
 	// Split on hyphens and join with spaces

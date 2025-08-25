@@ -16,9 +16,9 @@ export const DataPointSchema = z.object({
 
 export const ChartPropsSchema = z.object({
 	data: z.array(DataPointSchema),
+	height: z.number().default(200),
 	title: z.string().nullable(),
 	variant: ChartVariantEnum.default('line'),
-	height: z.number().default(200),
 	width: z.number().default(400)
 })
 

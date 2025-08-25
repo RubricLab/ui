@@ -16,119 +16,119 @@ import type {
 } from '../types'
 
 export const gapClasses: Record<z.infer<typeof SizeEnum>, string> = {
-	none: 'gap-0',
-	xs: 'gap-1',
-	sm: 'gap-2',
-	md: 'gap-4',
 	lg: 'gap-6',
-	xl: 'gap-8'
+	md: 'gap-4',
+	none: 'gap-0',
+	sm: 'gap-2',
+	xl: 'gap-8',
+	xs: 'gap-1'
 }
 
 export const paddingClasses: Record<z.infer<typeof SizeEnum>, string> = {
-	none: 'p-0',
-	xs: 'p-1',
-	sm: 'p-2',
-	md: 'p-4',
 	lg: 'p-6',
-	xl: 'p-8'
+	md: 'p-4',
+	none: 'p-0',
+	sm: 'p-2',
+	xl: 'p-8',
+	xs: 'p-1'
 }
 
 export const roundedClasses: Record<z.infer<typeof SizeEnum>, string> = {
-	none: 'rounded-none',
-	xs: 'rounded-xs',
-	sm: 'rounded',
-	md: 'rounded-md',
 	lg: 'rounded-lg',
-	xl: 'rounded-xl'
+	md: 'rounded-md',
+	none: 'rounded-none',
+	sm: 'rounded',
+	xl: 'rounded-xl',
+	xs: 'rounded-xs'
 }
 
 export const arrangementClasses: Record<z.infer<typeof ArrangementEnum>, string> = {
-	row: 'flex',
-	column: 'flex flex-col'
+	column: 'flex flex-col',
+	row: 'flex'
 }
 
 export const justifyClasses: Record<z.infer<typeof JustifyEnum>, string> = {
-	start: 'justify-start',
-	end: 'justify-end',
-	center: 'justify-center',
-	between: 'justify-between',
 	around: 'justify-around',
-	evenly: 'justify-evenly'
+	between: 'justify-between',
+	center: 'justify-center',
+	end: 'justify-end',
+	evenly: 'justify-evenly',
+	start: 'justify-start'
 }
 
 export const alignClasses: Record<z.infer<typeof AlignEnum>, string> = {
-	start: 'items-start',
+	baseline: 'items-baseline',
 	center: 'items-center',
 	end: 'items-end',
-	stretch: 'items-stretch',
-	baseline: 'items-baseline'
+	start: 'items-start',
+	stretch: 'items-stretch'
 }
 
 export const borderClasses: Record<z.infer<typeof BorderEnum>, string> = {
+	all: 'border',
+	bottom: 'border-b',
 	horizontal: 'border-x',
-	vertical: 'border-y',
 	left: 'border-l',
+	none: 'border-none',
 	right: 'border-r',
 	top: 'border-t',
-	bottom: 'border-b',
-	all: 'border',
-	none: 'border-none'
+	vertical: 'border-y'
 }
 
 export const heightClasses: Record<z.infer<typeof HeightEnum>, string> = {
-	'3xs': 'h-64',
 	'2xs': 'h-72',
-	xs: 'h-80',
-	sm: 'h-80',
-	md: 'h-112',
-	lg: 'h-128',
-	xl: 'h-144',
+	'3xs': 'h-64',
 	fit: 'h-fit',
 	full: 'h-full',
-	screen: 'h-screen'
+	lg: 'h-128',
+	md: 'h-112',
+	screen: 'h-screen',
+	sm: 'h-80',
+	xl: 'h-144',
+	xs: 'h-80'
 }
 
 export const widthClasses: Record<z.infer<typeof WidthEnum>, string> = {
-	'3xs': 'w-3xs',
-	'2xs': 'w-2xs',
-	xs: 'w-xs',
-	sm: 'w-sm',
-	md: 'w-md',
-	lg: 'w-lg',
-	xl: 'w-xl',
 	'2xl': 'w-2xl',
+	'2xs': 'w-2xs',
 	'3xl': 'w-3xl',
+	'3xs': 'w-3xs',
 	fit: 'w-fit',
 	full: 'w-full',
-	screen: 'w-screen'
+	lg: 'w-lg',
+	md: 'w-md',
+	screen: 'w-screen',
+	sm: 'w-sm',
+	xl: 'w-xl',
+	xs: 'w-xs'
 }
 
 export const overflowClasses: Record<z.infer<typeof OverflowEnum>, string> = {
-	visible: 'overflow-visible',
+	auto: 'overflow-auto',
 	hidden: 'overflow-hidden',
 	scroll: 'overflow-scroll',
-	auto: 'overflow-auto'
+	visible: 'overflow-visible'
 }
 
 export const wrapClasses: Record<z.infer<typeof WrapEnum>, string> = {
-	wrap: 'flex-wrap',
 	nowrap: 'flex-nowrap',
+	wrap: 'flex-wrap',
 	'wrap-reverse': 'flex-wrap-reverse'
 }
 
 export const textVariantClasses: Record<z.infer<typeof TextVariantEnum>, string> = {
+	muted: 'opacity-30',
 	primary: 'opacity-100',
 	secondary: 'opacity-70',
-	tertiary: 'opacity-50',
-	muted: 'opacity-30'
+	tertiary: 'opacity-50'
 }
 
 export const textSizeClasses: Record<z.infer<typeof TextSizeEnum>, string> = {
-	xs: 'text-xs',
-	sm: 'text-sm',
-	md: 'text-base',
 	lg: 'text-lg',
-	xl: 'text-xl'
+	md: 'text-base',
+	sm: 'text-sm',
+	xl: 'text-xl',
+	xs: 'text-xs'
 }
 
 export const headingLevelClasses: Record<z.infer<typeof HeadingLevelEnum>, string> = {

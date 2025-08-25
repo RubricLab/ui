@@ -1,15 +1,15 @@
-import { cn } from '../utils'
 import type React from 'react'
 import type z4 from 'zod/v4'
 import type { InputProps, InputVariantEnum } from '../types'
+import { cn } from '../utils'
 import { Container } from './container'
 import { Label } from './label'
 import { RequiredIndicator } from './required-indicator'
 import { Text } from './text'
 
 const inputVariantClasses: Record<z4.infer<typeof InputVariantEnum>, string> = {
-	primary: 'border focus-visible:ring-2 focus-visible:ring-accent',
-	ghost: ''
+	ghost: '',
+	primary: 'border focus-visible:ring-2 focus-visible:ring-accent'
 }
 
 const Input: React.FC<InputProps> = ({

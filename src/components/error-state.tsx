@@ -1,13 +1,7 @@
 import { Container } from './container'
 import { Text } from './text'
 
-export const ErrorState = ({
-	name,
-	message
-}: {
-	name: string
-	message: string
-}) => {
+export const ErrorState = ({ name, message }: { name: string; message: string }) => {
 	return (
 		<Container gap="sm" padding="md" border="all" className="bg-destructive/10">
 			<Text bold>

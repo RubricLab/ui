@@ -1,20 +1,20 @@
-import { cn } from '../utils'
 import type * as React from 'react'
 import type { z } from 'zod/v4'
 import type {
 	TableBodyProps,
 	TableCellProps,
 	TableFooterProps,
-	TableHeadProps,
 	TableHeaderProps,
+	TableHeadProps,
 	TableProps,
 	TableRowProps,
 	TableVariantEnum
 } from '../types'
+import { cn } from '../utils'
 
 const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
-	primary: 'bg-accent',
 	ghost: 'bg-background',
+	primary: 'bg-accent',
 	striped: 'bg-background [&_tbody_tr:nth-child(odd)]:bg-accent/80'
 }
 

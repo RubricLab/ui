@@ -8,14 +8,14 @@ const ButtonArrangementEnum = z.enum(['hiddenLabel', 'leadingIcon', 'leadingLabe
 const ButtonSizeEnum = z.enum(['sm', 'md', 'lg'])
 
 export const ButtonPropsSchema = z.object({
-	label: z.string(),
-	type: ButtonTypeEnum.default('button'),
-	href: z.string().nullable(),
-	icon: IconEnum.nullable(),
 	arrangement: ButtonArrangementEnum.default('leadingLabel'),
 	disabled: z.boolean().default(false),
-	variant: VariantEnum.default('secondary'),
+	href: z.string().nullable(),
+	icon: IconEnum.nullable(),
+	label: z.string(),
 	size: ButtonSizeEnum.default('md'),
+	type: ButtonTypeEnum.default('button'),
+	variant: VariantEnum.default('secondary'),
 	width: DimensionEnum.default('fit')
 })
 

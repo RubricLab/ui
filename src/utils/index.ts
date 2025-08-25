@@ -1,9 +1,9 @@
 export { cn } from './cn'
 export {
+	arrayToObject,
 	camelToPascal,
 	camelToReadable,
-	kebabToReadable,
 	capitalize,
-	arrayToObject,
+	kebabToReadable,
 	objectToArray
 } from './transform'

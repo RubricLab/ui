@@ -4,13 +4,13 @@ export const TextareaVariantEnum = z.enum(['primary', 'ghost'])
 
 export const TextareaPropsSchema = z.object({
 	defaultValue: z.string().nullable(),
-	label: z.string().nullable(),
-	variant: TextareaVariantEnum.nullable(),
 	description: z.string().nullable(),
-	required: z.boolean().default(false),
+	disabled: z.boolean().nullable(),
+	label: z.string().nullable(),
 	placeholder: z.string(),
+	required: z.boolean().default(false),
 	rows: z.number().default(3),
-	disabled: z.boolean().nullable()
+	variant: TextareaVariantEnum.nullable()
 })
 
 export type TextareaProps = {

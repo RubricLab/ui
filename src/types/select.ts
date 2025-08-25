@@ -4,10 +4,10 @@ import { z } from 'zod/v4'
 
 export const SelectPropsSchema = z.object({
 	defaultValue: z.string().nullable(),
-	label: z.string().nullable(),
 	description: z.string().nullable(),
-	required: z.boolean().nullable(),
-	disabled: z.boolean().nullable()
+	disabled: z.boolean().nullable(),
+	label: z.string().nullable(),
+	required: z.boolean().nullable()
 })
 
 export const SelectValueSchema = z.object({

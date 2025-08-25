@@ -13,8 +13,8 @@ export const PillVariantEnum = z.enum([
 ])
 
 export const PillPropsSchema = z.object({
-	variant: PillVariantEnum.default('primary'),
-	size: PillSizeEnum.default('md')
+	size: PillSizeEnum.default('md'),
+	variant: PillVariantEnum.default('primary')
 })
 
 export type PillProps = {

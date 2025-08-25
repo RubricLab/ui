@@ -1,6 +1,6 @@
-import { cn } from '../utils'
 import { gapClasses, heightClasses, widthClasses } from '../styles/classes'
 import type { GridProps } from '../types'
+import { cn } from '../utils'
 
 export const Grid: React.FC<GridProps> = ({
 	children,
@@ -14,8 +14,8 @@ export const Grid: React.FC<GridProps> = ({
 		<div
 			className={cn('grid', gapClasses[gap], heightClasses[height], widthClasses[width])}
 			style={{
-				gridTemplateRows: `repeat(${rows}, 1fr)`,
-				gridTemplateColumns: `repeat(${columns}, 1fr)`
+				gridTemplateColumns: `repeat(${columns}, 1fr)`,
+				gridTemplateRows: `repeat(${rows}, 1fr)`
 			}}
 		>
 			{children}

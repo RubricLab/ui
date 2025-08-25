@@ -15,17 +15,17 @@ export const ContainerVariantEnum = z.enum(['primary', 'secondary', 'ghost'])
 
 // Does not container children as that is extended in the root type
 export const ContainerPropsSchema = z.object({
-	arrangement: ArrangementEnum.default('column'),
-	variant: ContainerVariantEnum.default('ghost'),
-	gap: SizeEnum.default('xs'),
-	padding: SizeEnum.default('none'),
-	border: BorderEnum.default('none'),
-	justify: JustifyEnum.default('start'),
 	align: AlignEnum.default('start'),
-	rounded: SizeEnum.default('xs'),
+	arrangement: ArrangementEnum.default('column'),
+	border: BorderEnum.default('none'),
+	gap: SizeEnum.default('xs'),
 	height: HeightEnum.default('fit'),
-	width: WidthEnum.default('full'),
+	justify: JustifyEnum.default('start'),
 	overflow: OverflowEnum.default('hidden'),
+	padding: SizeEnum.default('none'),
+	rounded: SizeEnum.default('xs'),
+	variant: ContainerVariantEnum.default('ghost'),
+	width: WidthEnum.default('full'),
 	wrap: WrapEnum.default('nowrap')
 })
 

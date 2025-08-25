@@ -1,5 +1,5 @@
-import { cn } from '../utils'
 import { AsteriskIcon } from 'lucide-react'
+import { cn } from '../utils'
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 export const RequiredIndicator = ({ className }: { className?: string }) => {

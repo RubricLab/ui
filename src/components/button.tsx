@@ -1,40 +1,15 @@
-import { camelToPascal, cn } from '../utils'
 import { cva } from 'class-variance-authority'
 import Link from 'next/link'
 import type * as React from 'react'
 import { widthClasses } from '../styles'
 import type { ButtonProps, IconNames } from '../types'
+import { camelToPascal, cn } from '../utils'
 import { Icon as UiIcon } from './icon'
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 const buttonVariants = cva(
 	'border transition-all cursor-pointer justify-center inline-flex gap-1 items-center whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
 	{
-		variants: {
-			variant: {
-				primary: 'bg-primary hover:bg-primary/90 text-white border-primary',
-				secondary: 'bg-accent hover:bg-hover',
-				outline: 'bg-background hover:bg-accent',
-				ghost: 'bg-transparent border-transparent hover:border-accent hover:bg-accent',
-				destructive:
-					'bg-destructive/20 text-destructive/80 border-destructive hover:text-destructive/100 hover:bg-destructive/40'
-			},
-			size: {
-				sm: 'h-6 text-sm',
-				md: 'h-9 text-sm',
-				lg: 'h-12'
-			},
-			arrangement: {
-				hiddenLabel: '',
-				leadingIcon: '',
-				leadingLabel: ''
-			}
-		},
-		defaultVariants: {
-			variant: 'primary',
-			size: 'md',
-			arrangement: 'leadingLabel'
-		},
 		compoundVariants: [
 			{
 				arrangement: 'leadingLabel',
@@ -45,21 +20,46 @@ const buttonVariants = cva(
 				className: 'px-2'
 			},
 			{
-				size: 'sm',
 				arrangement: 'hiddenLabel',
-				className: 'h-6 w-6 text-sm'
+				className: 'h-6 w-6 text-sm',
+				size: 'sm'
 			},
 			{
-				size: 'md',
 				arrangement: 'hiddenLabel',
-				className: 'h-9 w-9 text-sm'
+				className: 'h-9 w-9 text-sm',
+				size: 'md'
 			},
 			{
-				size: 'lg',
 				arrangement: 'hiddenLabel',
-				className: 'h-12 w-12'
+				className: 'h-12 w-12',
+				size: 'lg'
 			}
-		]
+		],
+		defaultVariants: {
+			arrangement: 'leadingLabel',
+			size: 'md',
+			variant: 'primary'
+		},
+		variants: {
+			arrangement: {
+				hiddenLabel: '',
+				leadingIcon: '',
+				leadingLabel: ''
+			},
+			size: {
+				lg: 'h-12',
+				md: 'h-9 text-sm',
+				sm: 'h-6 text-sm'
+			},
+			variant: {
+				destructive:
+					'bg-destructive/20 text-destructive/80 border-destructive hover:text-destructive/100 hover:bg-destructive/40',
+				ghost: 'bg-transparent border-transparent hover:border-accent hover:bg-accent',
+				outline: 'bg-background hover:bg-accent',
+				primary: 'bg-primary hover:bg-primary/90 text-white border-primary',
+				secondary: 'bg-accent hover:bg-hover'
+			}
+		}
 	}
 )
 
@@ -117,7 +117,7 @@ const Button: React.FC<ButtonProps> = ({
 			href={href}
 			className={cn(
 				'no-underline',
-				buttonVariants({ variant, arrangement, size }),
+				buttonVariants({ arrangement, size, variant }),
 				arrangement !== 'hiddenLabel' && widthClasses[width] // TODO: clean up
 			)}
 		>
@@ -129,7 +129,7 @@ const Button: React.FC<ButtonProps> = ({
 			onClick={onClick}
 			type={type}
 			className={cn(
-				buttonVariants({ variant, size, arrangement }),
+				buttonVariants({ arrangement, size, variant }),
 				arrangement !== 'hiddenLabel' && widthClasses[width] // TODO: clean up
 			)}
 			onMouseEnter={onMouseEnter}

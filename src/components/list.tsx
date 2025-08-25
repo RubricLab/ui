@@ -1,8 +1,8 @@
-import { cn } from '../utils'
 import type { ReactNode } from 'react'
 import type { z } from 'zod/v4'
 import { gapClasses, textSizeClasses } from '../styles/classes'
 import type { SizeEnum, TextSizeEnum } from '../types'
+import { cn } from '../utils'
 
 export const List = ({
 	children,

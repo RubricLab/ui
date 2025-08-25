@@ -2,11 +2,11 @@ import { z } from 'zod/v4'
 import { SizeEnum } from './general'
 
 export const ImagePropsSchema = z.object({
-	src: z.string(),
 	alt: z.string(),
-	width: z.number().default(800),
 	height: z.number().default(400),
-	rounded: SizeEnum.default('none')
+	rounded: SizeEnum.default('none'),
+	src: z.string(),
+	width: z.number().default(800)
 })
 
 export type ImageProps = {

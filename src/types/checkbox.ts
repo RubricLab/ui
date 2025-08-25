@@ -1,10 +1,10 @@
 import { z } from 'zod/v4'
 
 export const CheckboxPropsSchema = z.object({
-	label: z.string(),
 	description: z.string().nullable(),
-	value: z.boolean().default(false),
-	required: z.boolean().nullable()
+	label: z.string(),
+	required: z.boolean().nullable(),
+	value: z.boolean().default(false)
 })
 
 export type CheckboxProps = {
