@@ -1,3 +1,4 @@
+- [2025-08-24] [add gitignore](https://github.com/RubricLab/fabric-ui/commit/ec26069806f17295fec8cae2bde4df6c4789466d)
 - [2025-08-22] [add minimal docs](https://github.com/RubricLab/fabric-ui/commit/cc3cab30417f8e85aed61501efe75e9264164f8b)
 - [2025-08-22] [add missing cmdk dep](https://github.com/RubricLab/fabric-ui/commit/be2b0d6f5af0f6dde119e59a102c2230a2473257)
 - [2025-08-22] [patch imports to not use "@" (not sure why this gets bugged in packages)](https://github.com/RubricLab/fabric-ui/commit/b12733f5d2a5be371463b4afaa764a6e91122078)

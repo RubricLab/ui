@@ -1,0 +1,75 @@
+# Monorepo .gitignore
+
+# Root level dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Package manager files
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnpm-store/
+.npm/
+
+# Bun
+.bun/
+bun.lockb
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+bun-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+*.lcov
+
+# Build outputs
+dist/
+build/
+.tmp/
+.cache/
+
+# Environment files
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+# .vscode/ (commit vscode settings)
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.tsbuildinfo
+
+# Vercel
+.vercel
+
+# Turbo
+.turbo
