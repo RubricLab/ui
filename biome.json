@@ -1,3 +1,4 @@
 {
-	"extends": ["@rubriclab/config/biome"]
+	"extends": ["@rubriclab/config/biome"],
+	"root": false
 }
