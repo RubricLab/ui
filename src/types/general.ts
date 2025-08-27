@@ -31,9 +31,11 @@ export const IconEnum = z.enum([
 	'phoneIncoming',
 	'play',
 	'plus',
+	'rotateCcw',
 	'settings',
 	'loader',
 	'trash',
+	'undo2',
 	'users',
 	'x'
 ])

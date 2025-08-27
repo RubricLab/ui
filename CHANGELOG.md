@@ -1,3 +1,4 @@
+- [2025-08-27] [Add more icons](https://github.com/RubricLab/fabric-ui/commit/04c2a2b2a9b562e6ccaed8a7d60bb39835ce7e09)
 - [2025-08-27] [Add auto-focus to input](https://github.com/RubricLab/fabric-ui/commit/bc26b12803f9ba3bbce61e82a4e0c81aee44dacd)
 - [2025-08-25] [Update readme](https://github.com/RubricLab/fabric-ui/commit/e9faa91319f5b5b933e5c05d79483c55f64fe878)
 - [2025-08-25] [Run bun format](https://github.com/RubricLab/fabric-ui/commit/9aede214c35a999613877120a9ceba8e3317e812)
