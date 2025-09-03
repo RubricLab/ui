@@ -23,7 +23,8 @@ const Textarea: React.FC<TextareaProps> = ({
 	onChange,
 	defaultValue,
 	disabled,
-	maxLength
+	maxLength,
+	autoFocus = false
 }) => {
 	return (
 		<Container gap="sm">
@@ -44,6 +45,8 @@ const Textarea: React.FC<TextareaProps> = ({
 					defaultValue={defaultValue}
 					disabled={disabled}
 					maxLength={maxLength}
+					// biome-ignore lint/a11y/noAutofocus: autoFocus is intentionally allowed here to support chat and form UX where immediate input focus is desired.
+					autoFocus={autoFocus}
 				/>
 				{required && <RequiredIndicator />}
 			</Container>
