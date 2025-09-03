@@ -1,3 +1,4 @@
+- [2025-09-03] [Remove ring from ghost variant of textarea](https://github.com/RubricLab/fabric-ui/commit/2c5605ee1c196c4f4d0343596e522cee8a4b3e05)
 - [2025-09-03] [Add autofocus to textarea](https://github.com/RubricLab/fabric-ui/commit/e50416244cc7890a987d56a101d5a71fc1ae3136)
 - [2025-08-27] [Add more icons](https://github.com/RubricLab/fabric-ui/commit/04c2a2b2a9b562e6ccaed8a7d60bb39835ce7e09)
 - [2025-08-27] [Add auto-focus to input](https://github.com/RubricLab/fabric-ui/commit/bc26b12803f9ba3bbce61e82a4e0c81aee44dacd)
