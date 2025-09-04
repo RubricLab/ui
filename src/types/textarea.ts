@@ -25,6 +25,7 @@ export type TextareaProps = {
 	value?: string // additional
 	disabled?: boolean
 	maxLength?: number // additional
-	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void // additional
 	autoFocus?: boolean // additional
+	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void // additional
+	onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void // additional
 }

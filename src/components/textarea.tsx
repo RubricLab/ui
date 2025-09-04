@@ -21,6 +21,7 @@ const Textarea: React.FC<TextareaProps> = ({
 	rows = 3,
 	value,
 	onChange,
+	onKeyDown,
 	defaultValue,
 	disabled,
 	maxLength,
@@ -32,6 +33,7 @@ const Textarea: React.FC<TextareaProps> = ({
 			{/* TODO: remove className */}
 			<Container className="relative">
 				<textarea
+					onKeyDown={onKeyDown}
 					id={id}
 					className={cn(
 						'flex w-full resize-none text-sm transition-colors placeholder:opacity-60 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',

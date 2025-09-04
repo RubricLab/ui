@@ -1,3 +1,4 @@
+- [2025-09-04] [Add onKeyDown to textarea](https://github.com/RubricLab/fabric-ui/commit/c0ba5f270a4ce897aca4b5edb04fd616a102efa1)
 - [2025-09-03] [Remove ring from ghost variant of textarea](https://github.com/RubricLab/fabric-ui/commit/2c5605ee1c196c4f4d0343596e522cee8a4b3e05)
 - [2025-09-03] [Add autofocus to textarea](https://github.com/RubricLab/fabric-ui/commit/e50416244cc7890a987d56a101d5a71fc1ae3136)
 - [2025-08-27] [Add more icons](https://github.com/RubricLab/fabric-ui/commit/04c2a2b2a9b562e6ccaed8a7d60bb39835ce7e09)
