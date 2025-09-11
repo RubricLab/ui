@@ -1,3 +1,4 @@
+- [2025-09-11] [Increase height of SelectTrigger and SelectItem components for improved usability](https://github.com/RubricLab/fabric-ui/commit/cbe68935a9ec7306c4b9eb3ea8a591720d4a85b6)
 - [2025-09-05] [add vaul dep](https://github.com/RubricLab/fabric-ui/commit/50a98c07de23a62aa9c41770eea3c545f4d03ab6)
 - [2025-09-04] [Add onKeyDown to textarea](https://github.com/RubricLab/fabric-ui/commit/c0ba5f270a4ce897aca4b5edb04fd616a102efa1)
 - [2025-09-03] [Remove ring from ghost variant of textarea](https://github.com/RubricLab/fabric-ui/commit/2c5605ee1c196c4f4d0343596e522cee8a4b3e05)

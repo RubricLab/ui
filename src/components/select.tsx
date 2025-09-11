@@ -59,7 +59,7 @@ const SelectValue: React.FC<SelectValueProps> = ({ placeholder }) => (
 const SelectTrigger: React.FC<SelectTriggerProps> = ({ children, id }) => (
 	<SelectPrimitive.Trigger
 		id={id}
-		className="flex h-8 w-full cursor-pointer items-center justify-between border bg-background px-3 py-2 text-sm shadow-sm transition-colors hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:opacity-60 [&>span]:line-clamp-1"
+		className="flex h-9 w-full cursor-pointer items-center justify-between border bg-background px-3 py-2 text-sm shadow-sm transition-colors hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:opacity-60 [&>span]:line-clamp-1"
 	>
 		{children}
 		<SelectPrimitive.Icon asChild>
@@ -83,7 +83,7 @@ const SelectContent: React.FC<SelectContentProps> = ({ children }) => (
 const SelectItem: React.FC<SelectItemProps> = ({ children, value }) => (
 	<SelectPrimitive.Item
 		value={value}
-		className="relative flex h-8 w-full cursor-pointer select-none items-center py-1.5 pr-2 pl-2 text-sm outline-none transition-colors focus:bg-accent/60 data-[disabled]:pointer-events-none data-[state=checked]:bg-accent data-[disabled]:opacity-50"
+		className="relative flex h-9 w-full cursor-pointer select-none items-center py-1.5 pr-2 pl-2 text-sm outline-none transition-colors focus:bg-accent/60 data-[disabled]:pointer-events-none data-[state=checked]:bg-accent data-[disabled]:opacity-50"
 	>
 		<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 	</SelectPrimitive.Item>
