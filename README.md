@@ -1,4 +1,4 @@
-# @rubriclab/fabric-ui
+# @rubriclab/ui
 
 A small, typed React UI kit built on Radix UI and Tailwind CSS. Tree‑shakable, accessible, and designed to drop into modern Next.js apps.
 
@@ -6,13 +6,13 @@ A small, typed React UI kit built on Radix UI and Tailwind CSS. Tree‑shakable,
 
 ```bash
 # with bun
-bun add @rubriclab/fabric-ui
+bun add @rubriclab/ui
 
 # with npm
-npm i @rubriclab/fabric-ui
+npm i @rubriclab/ui
 
 # with pnpm
-pnpm add @rubriclab/fabric-ui
+pnpm add @rubriclab/ui
 ```
 
 Peer requirements:
@@ -29,7 +29,7 @@ Recommended: Tailwind CSS for styling (`tailwindcss`, `postcss`, `autoprefixer`)
 2) Import components directly from the package:
 
 ```tsx
-import { Button, Container, Form, Input } from '@rubriclab/fabric-ui'
+import { Button, Container, Form, Input } from '@rubriclab/ui'
 
 export const Example = () => {
 	return (
@@ -190,7 +190,7 @@ Notes:
 All component props are exported via TypeScript types:
 
 ```ts
-import type { ButtonProps } from '@rubriclab/fabric-ui'
+import type { ButtonProps } from '@rubriclab/ui'
 ```
 
 ## Changelog & releases
