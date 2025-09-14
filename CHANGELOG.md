@@ -1,3 +1,4 @@
+- [2025-09-13] [Update primary button variant styles for better contrast](https://github.com/RubricLab/fabric-ui/commit/f5c2b8e0ce6c77512dbde6d361d3cac7cc9dca43)
 - [2025-09-12] [rename to @rubriclab/ui](https://github.com/RubricLab/ui/commit/bdabb149f9607611c9365c5364b551865c46d9a9)
 - [2025-09-11] [Increase height of SelectTrigger and SelectItem components for improved usability](https://github.com/RubricLab/fabric-ui/commit/cbe68935a9ec7306c4b9eb3ea8a591720d4a85b6)
 - [2025-09-05] [add vaul dep](https://github.com/RubricLab/fabric-ui/commit/50a98c07de23a62aa9c41770eea3c545f4d03ab6)
