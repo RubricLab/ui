@@ -27,6 +27,7 @@ export const IconEnum = z.enum([
 	'instagram',
 	'italic',
 	'link',
+	'link2',
 	'list',
 	'listOrdered',
 	'loader',
