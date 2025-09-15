@@ -1,3 +1,4 @@
+- [2025-09-15] [Add additional icons to IconEnum in general.ts](https://github.com/RubricLab/fabric-ui/commit/9ac119c65dee99ad3a3db90f3af60f0da6481a99)
 - [2025-09-13] [Update primary button variant styles for better contrast](https://github.com/RubricLab/fabric-ui/commit/f5c2b8e0ce6c77512dbde6d361d3cac7cc9dca43)
 - [2025-09-12] [rename to @rubriclab/ui](https://github.com/RubricLab/ui/commit/bdabb149f9607611c9365c5364b551865c46d9a9)
 - [2025-09-11] [Increase height of SelectTrigger and SelectItem components for improved usability](https://github.com/RubricLab/fabric-ui/commit/cbe68935a9ec7306c4b9eb3ea8a591720d4a85b6)
