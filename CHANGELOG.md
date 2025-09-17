@@ -1,3 +1,4 @@
+- [2025-09-17] [Refactor components to use rounded utility classes for improved styling consistency](https://github.com/RubricLab/fabric-ui/commit/05c166223733cfe93b5052a0b119d94f1ae5bc69)
 - [2025-09-17] [Add rounded utility classes and update README for new radius token](https://github.com/RubricLab/fabric-ui/commit/a57a3b3f92a6a08cea8bbccd14d58855788a1718)
 - [2025-09-17] [Update Divider component to set default direction to 'horizontal' and modify DividerProps schema for optional direction](https://github.com/RubricLab/fabric-ui/commit/6072a24c43dc170261b3f881917934fe483b597f)
 - [2025-09-15] [Add 'link2' icon to IconEnum in general.ts](https://github.com/RubricLab/fabric-ui/commit/2cab0ecebdb8b1db7776ac70c47c25aa4b584e46)

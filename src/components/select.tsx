@@ -83,7 +83,7 @@ const SelectContent: React.FC<SelectContentProps> = ({ children }) => (
 const SelectItem: React.FC<SelectItemProps> = ({ children, value }) => (
 	<SelectPrimitive.Item
 		value={value}
-		className="relative flex h-9 w-full cursor-pointer select-none items-center py-1.5 pr-2 pl-2 text-sm outline-none transition-colors focus:bg-accent/60 data-[disabled]:pointer-events-none data-[state=checked]:bg-accent data-[disabled]:opacity-50"
+		className="relative flex h-9 w-full cursor-pointer select-none items-center rounded-default py-1.5 pr-2 pl-2 text-sm outline-none transition-colors focus:bg-accent/60 data-[disabled]:pointer-events-none data-[state=checked]:bg-accent data-[disabled]:opacity-50"
 	>
 		<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 	</SelectPrimitive.Item>

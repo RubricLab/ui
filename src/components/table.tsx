@@ -20,29 +20,28 @@ const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
 
 const Table: React.FC<TableProps> = ({ children, variant = 'primary' }) => {
 	return (
-		<table
-			className={cn(
-				'w-full border-collapse rounded-default border text-sm',
-				variant && tableVariantClasses[variant]
-			)}
-		>
-			{children}
-		</table>
+		<div className="w-full overflow-hidden rounded-default border">
+			<table className={cn('w-full text-sm', variant && tableVariantClasses[variant])}>
+				{children}
+			</table>
+		</div>
 	)
 }
 
 const TableHeader: React.FC<TableHeaderProps> = ({ children }) => (
-	<thead className="bg-accent/5">{children}</thead>
+	<thead className="border-b bg-accent/5">{children}</thead>
 )
 
-const TableBody: React.FC<TableBodyProps> = ({ children }) => <tbody>{children}</tbody>
-
-const TableFooter: React.FC<TableFooterProps> = ({ children }) => (
-	<tfoot className="bg-accent/5 font-medium">{children}</tfoot>
+const TableBody: React.FC<TableBodyProps> = ({ children }) => (
+	<tbody className="[&>tr:last-child]:border-b-0 [&>tr]:border-b">{children}</tbody>
 )
 
 const TableRow: React.FC<TableRowProps> = ({ children }) => (
-	<tr className="rounded-default border-b transition-colors">{children}</tr>
+	<tr className="transition-colors">{children}</tr>
+)
+
+const TableFooter: React.FC<TableFooterProps> = ({ children }) => (
+	<tfoot className="bg-accent/5 font-medium">{children}</tfoot>
 )
 
 const TableHead: React.FC<TableHeadProps> = ({ children }) => (
