@@ -8,6 +8,7 @@ import type {
 	HeightEnum,
 	JustifyEnum,
 	OverflowEnum,
+	RoundedEnum,
 	SizeEnum,
 	TextSizeEnum,
 	TextVariantEnum,
@@ -33,7 +34,8 @@ export const paddingClasses: Record<z.infer<typeof SizeEnum>, string> = {
 	xs: 'p-1'
 }
 
-export const roundedClasses: Record<z.infer<typeof SizeEnum>, string> = {
+export const roundedClasses: Record<z.infer<typeof RoundedEnum>, string> = {
+	default: 'rounded-default',
 	lg: 'rounded-lg',
 	md: 'rounded-md',
 	none: 'rounded-none',

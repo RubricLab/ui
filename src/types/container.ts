@@ -6,6 +6,7 @@ import {
 	HeightEnum,
 	JustifyEnum,
 	OverflowEnum,
+	RoundedEnum,
 	SizeEnum,
 	WidthEnum,
 	WrapEnum
@@ -23,7 +24,7 @@ export const ContainerPropsSchema = z.object({
 	justify: JustifyEnum.default('start'),
 	overflow: OverflowEnum.default('hidden'),
 	padding: SizeEnum.default('none'),
-	rounded: SizeEnum.default('xs'),
+	rounded: RoundedEnum.default('default'),
 	variant: ContainerVariantEnum.default('ghost'),
 	width: WidthEnum.default('full'),
 	wrap: WrapEnum.default('nowrap')
@@ -40,7 +41,7 @@ export type ContainerProps = {
 	border?: z.infer<typeof BorderEnum>
 	justify?: z.infer<typeof JustifyEnum>
 	align?: z.infer<typeof AlignEnum>
-	rounded?: z.infer<typeof SizeEnum>
+	rounded?: z.infer<typeof RoundedEnum>
 	height?: z.infer<typeof HeightEnum>
 	width?: z.infer<typeof WidthEnum>
 	overflow?: z.infer<typeof OverflowEnum>

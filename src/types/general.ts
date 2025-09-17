@@ -69,6 +69,8 @@ export const DirectionEnum = z.enum(['vertical', 'horizontal'])
 
 export const SizeEnum = z.enum(['none', 'xs', 'sm', 'md', 'lg', 'xl'])
 
+export const RoundedEnum = z.enum(['none', 'xs', 'sm', 'default', 'md', 'lg', 'xl'])
+
 export const JustifyEnum = z.enum(['start', 'center', 'end', 'between', 'around', 'evenly'])
 
 export const AlignEnum = z.enum(['start', 'center', 'end', 'stretch', 'baseline'])

@@ -28,7 +28,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				id={id}
 				checked={value}
 				onCheckedChange={onChange}
-				className="h-5 w-5 shrink-0 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground"
+				className="h-5 w-5 shrink-0 rounded-default border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground"
 			>
 				<CheckboxPrimitive.Indicator className="flex items-center justify-center">
 					<CheckIcon className="size-3.5" />

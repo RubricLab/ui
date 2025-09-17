@@ -59,7 +59,7 @@ const SelectValue: React.FC<SelectValueProps> = ({ placeholder }) => (
 const SelectTrigger: React.FC<SelectTriggerProps> = ({ children, id }) => (
 	<SelectPrimitive.Trigger
 		id={id}
-		className="flex h-9 w-full cursor-pointer items-center justify-between border bg-background px-3 py-2 text-sm shadow-sm transition-colors hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:opacity-60 [&>span]:line-clamp-1"
+		className="flex h-9 w-full cursor-pointer items-center justify-between rounded-default border bg-background px-3 py-2 text-sm shadow-sm transition-colors hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:opacity-60 [&>span]:line-clamp-1"
 	>
 		{children}
 		<SelectPrimitive.Icon asChild>
@@ -70,7 +70,7 @@ const SelectTrigger: React.FC<SelectTriggerProps> = ({ children, id }) => (
 
 const SelectContent: React.FC<SelectContentProps> = ({ children }) => (
 	<SelectPrimitive.Portal>
-		<SelectPrimitive.Content className="data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=left]:-translate-x-1 data-[side=top]:-translate-y-1 relative z-50 max-h-[--radix-select-content-available-height] min-w-[8rem] origin-[--radix-select-content-transform-origin] overflow-y-auto overflow-x-hidden border bg-background shadow-md data-[side=right]:translate-x-1 data-[side=bottom]:translate-y-1 data-[state=closed]:animate-out data-[state=open]:animate-in">
+		<SelectPrimitive.Content className="data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=left]:-translate-x-1 data-[side=top]:-translate-y-1 relative z-50 max-h-[--radix-select-content-available-height] min-w-[8rem] origin-[--radix-select-content-transform-origin] overflow-y-auto overflow-x-hidden rounded-default border bg-background shadow-md data-[side=right]:translate-x-1 data-[side=bottom]:translate-y-1 data-[state=closed]:animate-out data-[state=open]:animate-in">
 			<SelectScrollUpButton />
 			<SelectPrimitive.Viewport className="h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] p-1">
 				{children}

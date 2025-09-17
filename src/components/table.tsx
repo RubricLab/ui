@@ -21,7 +21,10 @@ const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
 const Table: React.FC<TableProps> = ({ children, variant = 'primary' }) => {
 	return (
 		<table
-			className={cn('w-full border-collapse border text-sm', variant && tableVariantClasses[variant])}
+			className={cn(
+				'w-full border-collapse rounded-default border text-sm',
+				variant && tableVariantClasses[variant]
+			)}
 		>
 			{children}
 		</table>
@@ -39,7 +42,7 @@ const TableFooter: React.FC<TableFooterProps> = ({ children }) => (
 )
 
 const TableRow: React.FC<TableRowProps> = ({ children }) => (
-	<tr className="border-b transition-colors">{children}</tr>
+	<tr className="rounded-default border-b transition-colors">{children}</tr>
 )
 
 const TableHead: React.FC<TableHeadProps> = ({ children }) => (

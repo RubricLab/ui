@@ -105,6 +105,7 @@ Required tokens/variables:
 - destructive → `--destructive`
 - muted → `--muted`
 - muted-foreground → `--muted-foreground`
+- rounded → `--radius`
 
 Recommended setup with Tailwind v4 (`@theme inline`) in your global CSS:
 
@@ -119,6 +120,7 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your global CSS:
   --destructive: oklch(62.72% 0.233 29.22);
   --muted: oklch(98.27% 0.001 95.47);
   --muted-foreground: oklch(13.68% 0.034 0.09);
+  --radius: 8px;
   /* Optional but recommended */
   --accent-foreground: #111111;
 }
@@ -134,6 +136,7 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your global CSS:
     --destructive: oklch(62.72% 0.233 29.22);
     --muted: oklch(15.48% 0.006 89.58);
     --muted-foreground: oklch(86.68% 0.017 261.56);
+    --radius: 8px;
     /* Optional but recommended */
     --accent-foreground: #fafafa;
   }
@@ -150,6 +153,7 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your global CSS:
   --color-destructive: var(--destructive);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --radius-default: var(--radius);  /* Radius token for rounded utilities */
 }
 ```
 

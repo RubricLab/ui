@@ -50,7 +50,7 @@ const JsonTree = ({ data }: { data: unknown }) => {
 export const Code = ({ json }: { json: unknown }) => {
 	return (
 		<Container height="full">
-			<pre className="w-full whitespace-pre-wrap break-words border p-4 font-mono text-sm">
+			<pre className="w-full whitespace-pre-wrap break-words rounded-default border p-4 font-mono text-sm">
 				<JsonTree data={json} />
 			</pre>
 		</Container>

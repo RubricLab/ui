@@ -8,7 +8,7 @@ import { Icon as UiIcon } from './icon'
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 const buttonVariants = cva(
-	'border transition-all cursor-pointer justify-center inline-flex gap-1 items-center whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
+	'border rounded-default transition-all cursor-pointer justify-center inline-flex gap-1 items-center whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
 	{
 		compoundVariants: [
 			{

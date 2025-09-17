@@ -8,7 +8,8 @@ import { Text } from './text'
 
 const textareaVariantClasses: Record<z.infer<typeof TextareaVariantEnum>, string> = {
 	ghost: 'p-0',
-	primary: 'border bg-background px-3 py-2 focus-visible:ring-2 focus-visible:ring-accent'
+	primary:
+		'border rounded-default bg-background px-3 py-2 focus-visible:ring-2 focus-visible:ring-accent'
 }
 
 const Textarea: React.FC<TextareaProps> = ({
