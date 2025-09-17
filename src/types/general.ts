@@ -1,4 +1,9 @@
 import { z } from 'zod/v4'
+import type { IconNames } from './icon'
+
+type PascalToCamel<T extends string> = T extends `${infer First}${infer Rest}`
+	? `${Lowercase<First>}${Rest}`
+	: T
 
 // TODO: add all icon support
 export const IconEnum = z.enum([
@@ -10,6 +15,7 @@ export const IconEnum = z.enum([
 	'braces',
 	'brush',
 	'building',
+	'captions',
 	'check',
 	'chevronDown',
 	'chevronRight',
@@ -18,6 +24,7 @@ export const IconEnum = z.enum([
 	'code',
 	'code2',
 	'contact',
+	'copy',
 	'creditCard',
 	'download',
 	'ellipsis',
@@ -32,11 +39,14 @@ export const IconEnum = z.enum([
 	'listOrdered',
 	'loader',
 	'mail',
+	'maximize',
 	'messageSquare',
+	'minimize',
 	'minus',
 	'move',
 	'pencil',
 	'phoneIncoming',
+	'pause',
 	'play',
 	'plus',
 	'quote',
@@ -48,7 +58,7 @@ export const IconEnum = z.enum([
 	'undo2',
 	'users',
 	'x'
-])
+] satisfies PascalToCamel<IconNames>[])
 
 export const BorderEnum = z.enum([
 	'horizontal',
