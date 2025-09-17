@@ -1,3 +1,4 @@
+- [2025-09-17] [Update Divider component to set default direction to 'horizontal' and modify DividerProps schema for optional direction](https://github.com/RubricLab/fabric-ui/commit/6072a24c43dc170261b3f881917934fe483b597f)
 - [2025-09-15] [Add 'link2' icon to IconEnum in general.ts](https://github.com/RubricLab/fabric-ui/commit/2cab0ecebdb8b1db7776ac70c47c25aa4b584e46)
 - [2025-09-15] [Add additional icons to IconEnum in general.ts](https://github.com/RubricLab/fabric-ui/commit/9ac119c65dee99ad3a3db90f3af60f0da6481a99)
 - [2025-09-13] [Update primary button variant styles for better contrast](https://github.com/RubricLab/fabric-ui/commit/f5c2b8e0ce6c77512dbde6d361d3cac7cc9dca43)
