@@ -38,7 +38,7 @@ const FormFooter: React.FC<FormFooterProps> = ({ children }) => {
 	)
 }
 
-const Form: React.FC<FormProps> = ({ children, onSubmit, action, method }) => {
+const Form: React.FC<FormProps> = ({ children, onSubmit, action, method, onKeyDown }) => {
 	return (
 		<form
 			onSubmit={
@@ -49,6 +49,7 @@ const Form: React.FC<FormProps> = ({ children, onSubmit, action, method }) => {
 						}
 					: undefined
 			}
+			onKeyDown={onKeyDown}
 			action={action}
 			method={method}
 			className="w-full"

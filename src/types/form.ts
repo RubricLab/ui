@@ -25,6 +25,7 @@ export type FormFooterProps = { children: React.ReactNode }
 export type FormProps = {
 	children: React.ReactNode
 	onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void // additional
+	onKeyDown?: (e: React.KeyboardEvent<HTMLFormElement>) => void // additional
 	action?: string // additional
 	method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' // additional
 }
