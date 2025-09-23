@@ -7,7 +7,8 @@ export const SelectPropsSchema = z.object({
 	description: z.string().nullable(),
 	disabled: z.boolean().nullable(),
 	label: z.string().nullable(),
-	required: z.boolean().nullable()
+	required: z.boolean().nullable(),
+	value: z.string().nullable()
 })
 
 export const SelectValueSchema = z.object({
@@ -31,6 +32,7 @@ export const SelectSeparatorSchema = z.object({})
 export type SelectProps = {
 	id?: string // additional
 	defaultValue?: string
+	value?: string
 	label?: string
 	description?: string
 	required?: boolean

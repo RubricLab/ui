@@ -18,6 +18,7 @@ import { Text } from './text'
 
 const Select: React.FC<SelectProps> = ({
 	id,
+	value,
 	defaultValue = '',
 	label,
 	description,
@@ -43,6 +44,7 @@ const Select: React.FC<SelectProps> = ({
 				disabled={disabled}
 				required={required}
 				defaultValue={defaultValue}
+				{...(value !== undefined ? { value } : {})}
 				onValueChange={onValueChange}
 			>
 				{children}
