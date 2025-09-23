@@ -24,6 +24,7 @@ export const InputPropsSchema = z.object({
 	label: z.string().nullable(),
 	placeholder: z.string(),
 	required: z.boolean().default(false),
+	step: z.number().nullable(),
 	type: InputTypeEnum.default('text'),
 	variant: InputVariantEnum.default('primary')
 })
@@ -38,6 +39,7 @@ export type InputProps = {
 	required?: boolean
 	type?: z.infer<typeof InputTypeEnum>
 	disabled?: boolean
+	step?: number
 	value?: string | number // additional
 	maxLength?: number // additional
 	autoFocus?: boolean // additional
