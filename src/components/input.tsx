@@ -25,7 +25,8 @@ const Input: React.FC<InputProps> = ({
 	onChange,
 	maxLength,
 	disabled,
-	autoFocus = false
+	autoFocus = false,
+	onKeyDown
 }) => {
 	return (
 		<Container gap="sm" overflow="visible">
@@ -48,6 +49,7 @@ const Input: React.FC<InputProps> = ({
 					maxLength={maxLength}
 					// biome-ignore lint/a11y/noAutofocus: autoFocus is intentionally allowed here to support chat and form UX where immediate input focus is desired.
 					autoFocus={autoFocus}
+					onKeyDown={onKeyDown}
 				/>
 				{required && <RequiredIndicator />}
 			</Container>

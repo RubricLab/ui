@@ -40,6 +40,7 @@ export type InputProps = {
 	disabled?: boolean
 	value?: string | number // additional
 	maxLength?: number // additional
-	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void // additional
 	autoFocus?: boolean // additional
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void // additional
+	onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> // additional
 }
