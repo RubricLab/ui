@@ -82,9 +82,10 @@ const SelectContent: React.FC<SelectContentProps> = ({ children }) => (
 	</SelectPrimitive.Portal>
 )
 
-const SelectItem: React.FC<SelectItemProps> = ({ children, value }) => (
+const SelectItem: React.FC<SelectItemProps> = ({ children, value, disabled = false }) => (
 	<SelectPrimitive.Item
 		value={value}
+		disabled={disabled}
 		className="relative flex h-9 w-full cursor-pointer select-none items-center rounded-default py-1.5 pr-2 pl-2 text-sm outline-none transition-colors focus:bg-accent/60 data-[disabled]:pointer-events-none data-[state=checked]:bg-accent data-[disabled]:opacity-50"
 	>
 		<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

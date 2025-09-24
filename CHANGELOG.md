@@ -1,3 +1,4 @@
+- [2025-09-24] [Add disabled prop to SelectItem component and update SelectItemProps type definition to include optional disabled property](https://github.com/RubricLab/fabric-ui/commit/4699a201fd5e58acb13ba6162e379aededf800c1)
 - [2025-09-23] [Add step prop to Input component and update InputProps type definition](https://github.com/RubricLab/fabric-ui/commit/9a846a41e6529678eb50f1b2147c3ddaeab25de2)
 - [2025-09-23] [Add onKeyDown prop to Input component and update InputProps type definition](https://github.com/RubricLab/fabric-ui/commit/9aa891b91b317c52cac64a454a9d4f7df731a084)
 - [2025-09-22] [Add value prop to Select component and update SelectProps type definition to include value](https://github.com/RubricLab/fabric-ui/commit/29119aec60e8a6bd211fa9820f99a2c9dff4d456)

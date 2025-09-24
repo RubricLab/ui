@@ -20,6 +20,7 @@ export const SelectTriggerSchema = z.object({})
 export const SelectContentSchema = z.object({})
 
 export const SelectItemSchema = z.object({
+	disabled: z.boolean().nullable(),
 	value: z.string()
 })
 
@@ -55,6 +56,7 @@ export type SelectContentProps = {
 }
 
 export type SelectItemProps = {
+	disabled?: boolean
 	value: string
 	children: React.ReactNode // additional
 }
