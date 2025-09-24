@@ -27,7 +27,9 @@ const Input: React.FC<InputProps> = ({
 	disabled,
 	autoFocus = false,
 	onKeyDown,
-	step
+	step,
+	max,
+	min
 }) => {
 	return (
 		<Container gap="sm" overflow="visible">
@@ -52,6 +54,8 @@ const Input: React.FC<InputProps> = ({
 					autoFocus={autoFocus}
 					onKeyDown={onKeyDown}
 					step={step}
+					min={min}
+					max={max}
 				/>
 				{required && <RequiredIndicator />}
 			</Container>

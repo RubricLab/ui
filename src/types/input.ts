@@ -40,6 +40,8 @@ export type InputProps = {
 	type?: z.infer<typeof InputTypeEnum>
 	disabled?: boolean
 	step?: number
+	min?: number // additional
+	max?: number // additional
 	value?: string | number // additional
 	maxLength?: number // additional
 	autoFocus?: boolean // additional
