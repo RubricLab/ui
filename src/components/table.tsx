@@ -21,7 +21,7 @@ const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
 	({ children, variant = 'primary' }, ref) => {
 		return (
-			<div className="w-full overflow-hidden rounded-default border">
+			<div className="w-full overflow-x-auto rounded-default border">
 				<table ref={ref} className={cn('w-full text-sm', variant && tableVariantClasses[variant])}>
 					{children}
 				</table>
