@@ -1,4 +1,4 @@
-import type * as React from 'react'
+import * as React from 'react'
 import type { z } from 'zod/v4'
 import type {
 	TableBodyProps,
@@ -18,38 +18,70 @@ const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
 	striped: 'bg-background [&_tbody_tr:nth-child(odd)]:bg-accent/80'
 }
 
-const Table: React.FC<TableProps> = ({ children, variant = 'primary' }) => {
-	return (
-		<div className="w-full overflow-hidden rounded-default border">
-			<table className={cn('w-full text-sm', variant && tableVariantClasses[variant])}>
-				{children}
-			</table>
-		</div>
+const Table = React.forwardRef<HTMLTableElement, TableProps>(
+	({ children, variant = 'primary' }, ref) => {
+		return (
+			<div className="w-full overflow-hidden rounded-default border">
+				<table ref={ref} className={cn('w-full text-sm', variant && tableVariantClasses[variant])}>
+					{children}
+				</table>
+			</div>
+		)
+	}
+)
+
+Table.displayName = 'Table'
+
+const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeaderProps>(
+	({ children }, ref) => (
+		<thead ref={ref} className="border-b bg-accent/5">
+			{children}
+		</thead>
 	)
-}
-
-const TableHeader: React.FC<TableHeaderProps> = ({ children }) => (
-	<thead className="border-b bg-accent/5">{children}</thead>
 )
 
-const TableBody: React.FC<TableBodyProps> = ({ children }) => (
-	<tbody className="[&>tr:last-child]:border-b-0 [&>tr]:border-b">{children}</tbody>
+TableHeader.displayName = 'TableHeader'
+
+const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(({ children }, ref) => (
+	<tbody ref={ref} className="[&>tr:last-child]:border-b-0 [&>tr]:border-b">
+		{children}
+	</tbody>
+))
+
+TableBody.displayName = 'TableBody'
+
+const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(({ children }, ref) => (
+	<tr ref={ref} className="transition-colors">
+		{children}
+	</tr>
+))
+
+TableRow.displayName = 'TableRow'
+
+const TableFooter = React.forwardRef<HTMLTableSectionElement, TableFooterProps>(
+	({ children }, ref) => (
+		<tfoot ref={ref} className="bg-accent/5 font-medium">
+			{children}
+		</tfoot>
+	)
 )
 
-const TableRow: React.FC<TableRowProps> = ({ children }) => (
-	<tr className="transition-colors">{children}</tr>
-)
+TableFooter.displayName = 'TableFooter'
 
-const TableFooter: React.FC<TableFooterProps> = ({ children }) => (
-	<tfoot className="bg-accent/5 font-medium">{children}</tfoot>
-)
+const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(({ children }, ref) => (
+	<th ref={ref} className="px-2 py-1.5 text-left font-medium text-foreground/80">
+		{children}
+	</th>
+))
 
-const TableHead: React.FC<TableHeadProps> = ({ children }) => (
-	<th className="px-2 py-1.5 text-left font-medium text-foreground/80">{children}</th>
-)
+TableHead.displayName = 'TableHead'
 
-const TableCell: React.FC<TableCellProps> = ({ children }) => (
-	<td className="p-2 py-1.5 text-foreground/80">{children}</td>
-)
+const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(({ children }, ref) => (
+	<td ref={ref} className="p-2 py-1.5 text-foreground/80">
+		{children}
+	</td>
+))
+
+TableCell.displayName = 'TableCell'
 
 export { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow }
