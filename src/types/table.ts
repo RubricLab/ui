@@ -42,6 +42,7 @@ export type TableFooterProps = {
 
 export type TableRowProps = {
 	children: React.ReactNode
+	className?: string // additional
 	ref?: React.Ref<HTMLTableRowElement> // additional
 }
 

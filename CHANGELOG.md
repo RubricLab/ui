@@ -1,3 +1,4 @@
+- [2025-10-06] [Enhance TableRow component to accept additional className prop for improved styling flexibility and update type definition accordingly](https://github.com/RubricLab/fabric-ui/commit/380b6d7ffc5cf96a4038553a0b5f7767e7008d38)
 - [2025-10-06] [Refactor Table component to use forward refs for improved accessibility and update type definitions to include ref props](https://github.com/RubricLab/fabric-ui/commit/ff99ec7f0532bca7320045403c171a1938d3742f)
 - [2025-09-24] [Add min and max props to Input component and update InputProps type definition](https://github.com/RubricLab/fabric-ui/commit/04449a45dd19c7956a622d1ab3ecc5ebf4444ce8)
 - [2025-09-24] [Add disabled prop to SelectItem component and update SelectItemProps type definition to include optional disabled property](https://github.com/RubricLab/fabric-ui/commit/4699a201fd5e58acb13ba6162e379aededf800c1)

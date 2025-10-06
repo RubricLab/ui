@@ -50,11 +50,13 @@ const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(({ c
 
 TableBody.displayName = 'TableBody'
 
-const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(({ children }, ref) => (
-	<tr ref={ref} className="transition-colors">
-		{children}
-	</tr>
-))
+const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
+	({ children, className }, ref) => (
+		<tr ref={ref} className={cn('transition-colors', className)}>
+			{children}
+		</tr>
+	)
+)
 
 TableRow.displayName = 'TableRow'
 
