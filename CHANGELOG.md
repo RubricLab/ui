@@ -1,3 +1,4 @@
+- [2025-10-07] [Update step prop in Input component to default to 1 and allow 'any' as a valid type in InputProps definition](https://github.com/RubricLab/fabric-ui/commit/fcc2e35322937412e514f40bcb9ea729166d925b)
 - [2025-10-06] [Update Table component to allow horizontal overflow with overflow-x-auto class for better responsiveness](https://github.com/RubricLab/fabric-ui/commit/360f556e4fb4485409f73458b2ac66c17facd2a5)
 - [2025-10-06] [Enhance TableRow component to accept additional className prop for improved styling flexibility and update type definition accordingly](https://github.com/RubricLab/fabric-ui/commit/380b6d7ffc5cf96a4038553a0b5f7767e7008d38)
 - [2025-10-06] [Refactor Table component to use forward refs for improved accessibility and update type definitions to include ref props](https://github.com/RubricLab/fabric-ui/commit/ff99ec7f0532bca7320045403c171a1938d3742f)

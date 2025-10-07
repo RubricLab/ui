@@ -27,7 +27,7 @@ const Input: React.FC<InputProps> = ({
 	disabled,
 	autoFocus = false,
 	onKeyDown,
-	step,
+	step = 1,
 	max,
 	min
 }) => {
