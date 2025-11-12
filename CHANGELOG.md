@@ -1,3 +1,4 @@
+- [2025-11-12] [Wrap codeblock commas and brackets. Patch toggle contrast.](https://github.com/RubricLab/ui/commit/9af47b64492a33f6467f19bc4c797696738a1bce)
 - [2025-11-12] [Bump zod v3 → v4](https://github.com/RubricLab/fabric-ui/commit/cb21b771d6c0750654944aa001c0e243afcddb3a)
 - [2025-11-12] [Support all React libraries](https://github.com/RubricLab/fabric-ui/commit/00c74fac19a8d5e876e390d918e6a87e3480c7a1)
 - [2025-10-07] [Update step prop in Input component to default to 1 and allow 'any' as a valid type in InputProps definition](https://github.com/RubricLab/fabric-ui/commit/fcc2e35322937412e514f40bcb9ea729166d925b)

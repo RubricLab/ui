@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cn } from '../utils'
 
 const toggleVariants = cva(
-	'inline-flex text-nowrap overflow-hidden items-center justify-center rounded-default text-sm transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gap-2',
+	'inline-flex text-nowrap overflow-hidden items-center justify-center rounded-default text-sm transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-foreground [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gap-2',
 	{
 		defaultVariants: {
 			size: 'default',
