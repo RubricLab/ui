@@ -1,5 +1,4 @@
 import { cva } from 'class-variance-authority'
-import Link from 'next/link'
 import type * as React from 'react'
 import { widthClasses } from '../styles'
 import type { ButtonProps, IconNames } from '../types'
@@ -113,7 +112,7 @@ const Button: React.FC<ButtonProps> = ({
 	)
 
 	const buttonElement = href ? (
-		<Link
+		<a
 			href={href}
 			className={cn(
 				'no-underline',
@@ -122,7 +121,7 @@ const Button: React.FC<ButtonProps> = ({
 			)}
 		>
 			{buttonContent}
-		</Link>
+		</a>
 	) : (
 		<button
 			disabled={disabled}

@@ -1,6 +1,6 @@
 # @rubriclab/ui
 
-A small, typed React UI kit built on Radix UI and Tailwind CSS. Tree‑shakable, accessible, and designed to drop into modern Next.js apps.
+A small, typed React UI kit built on Radix UI and Tailwind CSS. Tree‑shakable, accessible, and designed to work with any React application.
 
 ## Installation
 
@@ -18,7 +18,6 @@ pnpm add @rubriclab/ui
 Peer requirements:
 - react ^19.0.0
 - react-dom ^19.0.0
-- next ^15.0.0
 
 Recommended: Tailwind CSS for styling (`tailwindcss`, `postcss`, `autoprefixer`).
 
@@ -85,10 +84,9 @@ Notes:
 
 Browse the `src/components` directory for props and more examples.
 
-## Usage with Next.js
+## Usage
 
-- Works with the App Router (Next 15+).
-- Most components are SSR‑friendly; interactive parts rely on Radix primitives.
+This library works with any React setup (Next.js, Vite, Create React App, Remix, etc.). Most components are SSR‑friendly; interactive parts rely on Radix primitives.
 
 ### Theme variables (Tailwind + globals.css)
 
