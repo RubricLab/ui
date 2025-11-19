@@ -19,10 +19,13 @@ const tableVariantClasses: Record<z.infer<typeof TableVariantEnum>, string> = {
 }
 
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
-	({ children, variant = 'primary' }, ref) => {
+	({ children, variant = 'primary', className }, ref) => {
 		return (
 			<div className="w-full overflow-x-auto rounded-default border">
-				<table ref={ref} className={cn('w-full text-sm', variant && tableVariantClasses[variant])}>
+				<table
+					ref={ref}
+					className={cn('w-full text-sm', variant && tableVariantClasses[variant], className)}
+				>
 					{children}
 				</table>
 			</div>
@@ -33,8 +36,8 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
 Table.displayName = 'Table'
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeaderProps>(
-	({ children }, ref) => (
-		<thead ref={ref} className="border-b bg-accent/5">
+	({ children, className }, ref) => (
+		<thead ref={ref} className={cn('border-b bg-accent/5', className)}>
 			{children}
 		</thead>
 	)
@@ -42,11 +45,13 @@ const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeaderProps>(
 
 TableHeader.displayName = 'TableHeader'
 
-const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(({ children }, ref) => (
-	<tbody ref={ref} className="[&>tr:last-child]:border-b-0 [&>tr]:border-b">
-		{children}
-	</tbody>
-))
+const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(
+	({ children, className }, ref) => (
+		<tbody ref={ref} className={cn('[&>tr:last-child]:border-b-0 [&>tr]:border-b', className)}>
+			{children}
+		</tbody>
+	)
+)
 
 TableBody.displayName = 'TableBody'
 
@@ -61,8 +66,8 @@ const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
 TableRow.displayName = 'TableRow'
 
 const TableFooter = React.forwardRef<HTMLTableSectionElement, TableFooterProps>(
-	({ children }, ref) => (
-		<tfoot ref={ref} className="bg-accent/5 font-medium">
+	({ children, className }, ref) => (
+		<tfoot ref={ref} className={cn('bg-accent/5 font-medium', className)}>
 			{children}
 		</tfoot>
 	)
@@ -70,19 +75,23 @@ const TableFooter = React.forwardRef<HTMLTableSectionElement, TableFooterProps>(
 
 TableFooter.displayName = 'TableFooter'
 
-const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(({ children }, ref) => (
-	<th ref={ref} className="px-2 py-1.5 text-left font-medium text-foreground/80">
-		{children}
-	</th>
-))
+const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
+	({ children, className }, ref) => (
+		<th ref={ref} className={cn('px-2 py-1.5 text-left font-medium text-foreground/80', className)}>
+			{children}
+		</th>
+	)
+)
 
 TableHead.displayName = 'TableHead'
 
-const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(({ children }, ref) => (
-	<td ref={ref} className="p-2 py-1.5 text-foreground/80">
-		{children}
-	</td>
-))
+const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
+	({ children, className }, ref) => (
+		<td ref={ref} className={cn('p-2 py-1.5 text-foreground/80', className)}>
+			{children}
+		</td>
+	)
+)
 
 TableCell.displayName = 'TableCell'
 

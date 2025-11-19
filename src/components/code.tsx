@@ -1,3 +1,4 @@
+import { cn } from '../utils'
 import { Container } from './container'
 
 const JsonTree = ({ data, last = true }: { data: object; last?: boolean }) => {
@@ -47,10 +48,15 @@ const JsonTree = ({ data, last = true }: { data: object; last?: boolean }) => {
 	return <span className="wrap-break-word">{String(data)}</span>
 }
 
-export const Code = ({ json }: { json: object }) => {
+export const Code = ({ json, className }: { json: object; className?: string }) => {
 	return (
 		<Container height="full">
-			<pre className="wrap-break-word w-full whitespace-pre-wrap rounded-default border border-border bg-accent p-4 font-mono text-sm">
+			<pre
+				className={cn(
+					'wrap-break-word w-full whitespace-pre-wrap rounded-default border border-border bg-accent p-4 font-mono text-sm',
+					className
+				)}
+			>
 				<JsonTree data={json} />
 			</pre>
 		</Container>

@@ -2,6 +2,7 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { CheckIcon } from 'lucide-react'
 import type * as React from 'react'
 import type { CheckboxProps } from '../types'
+import { cn } from '../utils'
 import { Container } from './container'
 import { Label } from './label'
 import { RequiredIndicator } from './required-indicator'
@@ -13,7 +14,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	description,
 	required,
 	value = false,
-	onChange = () => {}
+	onChange = () => {},
+	className
 }) => {
 	return (
 		// TODO: remove className
@@ -22,7 +24,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 			gap="sm"
 			align={description ? 'start' : 'center'}
 			width="fit"
-			className="relative"
+			className={cn('relative', className)}
 		>
 			<CheckboxPrimitive.Root
 				id={id}

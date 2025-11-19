@@ -14,4 +14,5 @@ export type LinkProps = {
 	target?: HTMLAttributeAnchorTarget
 	variant?: z.infer<typeof LinkVariantEnum>
 	children: React.ReactNode
+	className?: string // additional
 }

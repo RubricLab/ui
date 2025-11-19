@@ -26,10 +26,11 @@ const Textarea: React.FC<TextareaProps> = ({
 	defaultValue,
 	disabled,
 	maxLength,
-	autoFocus = false
+	autoFocus = false,
+	className
 }) => {
 	return (
-		<Container gap="sm">
+		<Container gap="sm" className={cn(className)}>
 			{label && <Label htmlFor={id}>{label}</Label>}
 			{/* TODO: remove className */}
 			<Container className="relative">

@@ -20,4 +20,5 @@ export type TextProps = {
 	variant?: z.infer<typeof TextVariantEnum>
 	size?: z.infer<typeof TextSizeEnum>
 	font?: z.infer<typeof FontEnum>
+	className?: string // additional
 }

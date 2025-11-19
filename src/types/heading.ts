@@ -14,4 +14,5 @@ export type HeadingProps = {
 	level?: z.infer<typeof HeadingLevelEnum>
 	variant?: z.infer<typeof TextVariantEnum>
 	font?: z.infer<typeof FontEnum>
+	className?: string // additional
 }

@@ -11,6 +11,7 @@ import type {
 	SelectTriggerProps,
 	SelectValueProps
 } from '../types'
+import { cn } from '../utils'
 import { Container } from './container'
 import { Label } from './label'
 import { RequiredIndicator } from './required-indicator'
@@ -25,9 +26,10 @@ const Select: React.FC<SelectProps> = ({
 	required = false,
 	disabled = false,
 	children,
-	onValueChange = () => {}
+	onValueChange = () => {},
+	className
 }) => (
-	<Container gap="sm" overflow="visible">
+	<Container gap="sm" overflow="visible" className={cn(className)}>
 		{(label || description) && (
 			<Container gap="xs">
 				{label && <Label htmlFor={id}>{label}</Label>}

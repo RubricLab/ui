@@ -9,7 +9,8 @@ export const Text: React.FC<TextProps> = ({
 	bold,
 	italic,
 	underline,
-	font = 'sans'
+	font = 'sans',
+	className
 }) => {
 	return (
 		<span
@@ -19,7 +20,8 @@ export const Text: React.FC<TextProps> = ({
 				bold && 'font-bold',
 				italic && 'italic',
 				underline && 'underline underline-offset-2',
-				fontClasses[font]
+				fontClasses[font],
+				className
 			)}
 		>
 			{children}

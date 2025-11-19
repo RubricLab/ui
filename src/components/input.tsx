@@ -29,10 +29,11 @@ const Input: React.FC<InputProps> = ({
 	onKeyDown,
 	step = 1,
 	max,
-	min
+	min,
+	className
 }) => {
 	return (
-		<Container gap="sm" overflow="visible">
+		<Container gap="sm" overflow="visible" className={cn('', className)}>
 			{label && <Label htmlFor={id}>{label}</Label>}
 			{/* TODO: remove className in container */}
 			<Container className="relative" width="full">

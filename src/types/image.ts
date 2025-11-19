@@ -15,4 +15,5 @@ export type ImageProps = {
 	width: number
 	height: number
 	rounded?: z.infer<typeof SizeEnum>
+	className?: string // additional
 }

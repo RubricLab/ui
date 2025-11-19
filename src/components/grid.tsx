@@ -8,11 +8,12 @@ export const Grid: React.FC<GridProps> = ({
 	columns = 1,
 	gap = 'none',
 	height = 'fit',
-	width = 'full'
+	width = 'full',
+	className
 }) => {
 	return (
 		<div
-			className={cn('grid', gapClasses[gap], heightClasses[height], widthClasses[width])}
+			className={cn('grid', gapClasses[gap], heightClasses[height], widthClasses[width], className)}
 			style={{
 				gridTemplateColumns: `repeat(${columns}, 1fr)`,
 				gridTemplateRows: `repeat(${rows}, 1fr)`

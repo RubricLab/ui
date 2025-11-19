@@ -46,5 +46,5 @@ export type ContainerProps = {
 	width?: z.infer<typeof WidthEnum>
 	overflow?: z.infer<typeof OverflowEnum>
 	wrap?: z.infer<typeof WrapEnum>
-	className?: string // Additional: className isn't available to the LLM, it is just left here for developer convenience
+	className?: string // additional
 }

@@ -16,4 +16,5 @@ export type GridProps = {
 	gap?: z.infer<typeof SizeEnum>
 	height?: z.infer<typeof DimensionEnum>
 	width?: z.infer<typeof WidthEnum>
+	className?: string // additional
 }

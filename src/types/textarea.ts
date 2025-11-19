@@ -28,4 +28,5 @@ export type TextareaProps = {
 	autoFocus?: boolean // additional
 	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void // additional
 	onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void // additional
+	className?: string // additional
 }

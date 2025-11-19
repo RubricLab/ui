@@ -1,3 +1,4 @@
+- [2025-11-19] [Add optional classNames to all components for developer convenience without adding classNames to zod schemas](https://github.com/RubricLab/fabric-ui/commit/b1f4809712893d5a03c39237890396a77ac894f8)
 - [2025-11-12] [Wrap codeblock commas and brackets. Patch toggle contrast.](https://github.com/RubricLab/ui/commit/9af47b64492a33f6467f19bc4c797696738a1bce)
 - [2025-11-12] [Bump zod v3 → v4](https://github.com/RubricLab/fabric-ui/commit/cb21b771d6c0750654944aa001c0e243afcddb3a)
 - [2025-11-12] [Support all React libraries](https://github.com/RubricLab/fabric-ui/commit/00c74fac19a8d5e876e390d918e6a87e3480c7a1)

@@ -21,4 +21,5 @@ export type PillProps = {
 	variant?: z.infer<typeof PillVariantEnum>
 	size?: z.infer<typeof PillSizeEnum>
 	children?: React.ReactNode
+	className?: string // additional
 }

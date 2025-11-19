@@ -47,4 +47,5 @@ export type InputProps = {
 	autoFocus?: boolean // additional
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void // additional
 	onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> // additional
+	className?: string // additional
 }

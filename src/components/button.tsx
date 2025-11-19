@@ -101,7 +101,8 @@ const Button: React.FC<ButtonProps> = ({
 	arrangement = 'leadingLabel',
 	icon,
 	onMouseEnter,
-	onMouseLeave
+	onMouseLeave,
+	className
 }) => {
 	const iconName = icon ? (camelToPascal(icon) as IconNames) : null
 
@@ -117,7 +118,8 @@ const Button: React.FC<ButtonProps> = ({
 			className={cn(
 				'no-underline',
 				buttonVariants({ arrangement, size, variant }),
-				arrangement !== 'hiddenLabel' && widthClasses[width] // TODO: clean up
+				arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
+				className
 			)}
 		>
 			{buttonContent}
@@ -129,7 +131,8 @@ const Button: React.FC<ButtonProps> = ({
 			type={type}
 			className={cn(
 				buttonVariants({ arrangement, size, variant }),
-				arrangement !== 'hiddenLabel' && widthClasses[width] // TODO: clean up
+				arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
+				className
 			)}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}

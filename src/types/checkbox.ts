@@ -14,4 +14,5 @@ export type CheckboxProps = {
 	required?: boolean
 	value?: boolean
 	onChange?: (val: boolean) => void // additional
+	className?: string // additional
 }

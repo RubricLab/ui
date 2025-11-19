@@ -32,4 +32,5 @@ export type ButtonProps = {
 	onClick?: () => void // additional
 	onMouseEnter?: () => void // additional
 	onMouseLeave?: () => void // additional
+	className?: string // additional
 }

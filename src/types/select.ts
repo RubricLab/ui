@@ -40,6 +40,7 @@ export type SelectProps = {
 	disabled?: boolean
 	children: React.ReactNode // additional
 	onValueChange?: (val: string) => void // additional
+	className?: string // additional
 }
 
 export type SelectValueProps = {

@@ -18,13 +18,19 @@ const pillSizes: Record<z.infer<typeof PillSizeEnum>, string> = {
 	sm: 'px-2 py-0.5 text-xs gap-1'
 }
 
-export const Pill: React.FC<PillProps> = ({ variant = 'primary', size = 'md', children }) => {
+export const Pill: React.FC<PillProps> = ({
+	variant = 'primary',
+	size = 'md',
+	children,
+	className
+}) => {
 	return (
 		<span
 			className={cn(
 				'inline-flex items-center rounded-full font-light',
 				pillVariants[variant],
-				pillSizes[size]
+				pillSizes[size],
+				className
 			)}
 		>
 			{children}

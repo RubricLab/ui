@@ -7,17 +7,26 @@ import { cn } from '../utils'
 export const List = ({
 	children,
 	size = 'sm',
-	gap = 'none'
+	gap = 'none',
+	className
 }: {
 	children: ReactNode
 	size?: z.infer<typeof TextSizeEnum>
 	gap?: z.infer<typeof SizeEnum>
+	className?: string
 }) => (
-	<ul className={cn('flex list-disc flex-col pl-[12.5px]', textSizeClasses[size], gapClasses[gap])}>
+	<ul
+		className={cn(
+			'flex list-disc flex-col pl-[12.5px]',
+			textSizeClasses[size],
+			gapClasses[gap],
+			className
+		)}
+	>
 		{children}
 	</ul>
 )
 
-export const ListItem = ({ children }: { children: ReactNode }) => (
-	<li className="leading-relaxed">{children}</li>
+export const ListItem = ({ children, className }: { children: ReactNode; className?: string }) => (
+	<li className={cn('leading-relaxed', className)}>{children}</li>
 )

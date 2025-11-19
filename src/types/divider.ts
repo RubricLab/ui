@@ -5,4 +5,5 @@ export const DividerPropsSchema = z.object({ direction: DirectionEnum.nullable()
 
 export type DividerProps = {
 	direction?: z.infer<typeof DirectionEnum>
+	className?: string // additional
 }
