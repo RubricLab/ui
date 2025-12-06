@@ -19,11 +19,11 @@ Peer requirements:
 - react ^19.0.0
 - react-dom ^19.0.0
 
-Recommended: Tailwind CSS for styling (`tailwindcss`, `postcss`, `autoprefixer`).
+Recommended: Tailwind CSS for styling (`tailwindcss` and `postcss`).
 
 ## Quickstart
 
-1) Ensure Tailwind CSS is set up in your app (see Tailwind docs). Components render with utility classNames and look best with your Tailwind theme.
+1) Ensure Tailwind CSS is set up in your app (see [Tailwind docs](https://tailwindcss.com/docs/installation/using-postcss)). Components render with utility `className`s and look best with your Tailwind theme.
 
 2) Import components directly from the package:
 
@@ -34,9 +34,9 @@ export const Example = () => {
 	return (
 		<Container>
 			<Form>
-                <Input placeholder="Title" />
-                <Button type="submit" label="Save" />
-            </Form>
+          <Input placeholder="Title" />
+          <Button type="submit" label="Save" />
+      </Form>
 		</Container>
 	)
 }
@@ -105,9 +105,13 @@ Required tokens/variables:
 - muted-foreground → `--muted-foreground`
 - rounded → `--radius`
 
-Recommended setup with Tailwind v4 (`@theme inline`) in your global CSS:
+Recommended setup with Tailwind v4 (`@theme inline`) in your `./globals.css`:
 
 ```css
+@import "tailwindcss";
+
+@source "./node_modules/@rubriclab/ui";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
