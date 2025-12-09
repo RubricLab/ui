@@ -9,7 +9,7 @@ import { Text } from './text'
 
 const inputVariantClasses: Record<z4.infer<typeof InputVariantEnum>, string> = {
 	ghost: '',
-	primary: 'border border-border focus-visible:ring-2 focus-visible:ring-accent'
+	primary: 'border focus-visible:ring-2 focus-visible:ring-accent'
 }
 
 const Input: React.FC<InputProps> = ({

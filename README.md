@@ -157,6 +157,12 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your `./globals.css`:
   --color-muted-foreground: var(--muted-foreground);
   --radius-default: var(--radius);  /* Radius token for rounded utilities */
 }
+
+@layer base {
+	* {
+		border-color: var(--border, currentColor);
+	}
+}
 ```
 
 Using Tailwind v3 instead? Map tokens in `tailwind.config.{js,ts}` to the same CSS variables:

@@ -53,7 +53,7 @@ export const Code = ({ json, className }: { json: object; className?: string }) 
 		<Container height="full">
 			<pre
 				className={cn(
-					'wrap-break-word w-full whitespace-pre-wrap rounded-default border border-border bg-accent p-4 font-mono text-sm',
+					'wrap-break-word w-full whitespace-pre-wrap rounded-default border bg-accent p-4 font-mono text-sm',
 					className
 				)}
 			>
