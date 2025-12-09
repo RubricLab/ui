@@ -1,3 +1,4 @@
+- [2025-12-09] [Trigger release](https://github.com/RubricLab/ui/commit/af8c880e94f9cd3ef05450dd1e3e10b2493b5417)
 - [2025-12-08] [Apply default border color to inputs](https://github.com/RubricLab/ui/commit/a9ed3f31c1f4de1bfb32376aa3aa1c1a1b9f1bf6)
 - [2025-12-06] [Update docs](https://github.com/RubricLab/ui/commit/f4223f72d0351c410101f557a41c2c7693ea7e6b)
 - [2025-11-19] [Add optional classNames to all components for developer convenience without adding classNames to zod schemas](https://github.com/RubricLab/fabric-ui/commit/b1f4809712893d5a03c39237890396a77ac894f8)

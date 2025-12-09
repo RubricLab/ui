@@ -122,7 +122,7 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your `./globals.css`:
   --destructive: oklch(62.72% 0.233 29.22);
   --muted: oklch(98.27% 0.001 95.47);
   --muted-foreground: oklch(13.68% 0.034 0.09);
-  --radius: 8px;
+  --radius: 0.5rem;
   /* Optional but recommended */
   --accent-foreground: #111111;
 }
@@ -138,7 +138,7 @@ Recommended setup with Tailwind v4 (`@theme inline`) in your `./globals.css`:
     --destructive: oklch(62.72% 0.233 29.22);
     --muted: oklch(15.48% 0.006 89.58);
     --muted-foreground: oklch(86.68% 0.017 261.56);
-    --radius: 8px;
+    --radius: 0.5rem;
     /* Optional but recommended */
     --accent-foreground: #fafafa;
   }
