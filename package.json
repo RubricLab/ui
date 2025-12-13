@@ -46,6 +46,10 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RubricLab/ui.git"
+	},
 	"scripts": {
 		"prepare": "bun x @rubriclab/package prepare"
 	},
@@ -53,5 +57,5 @@
 		"post-commit": "bun x @rubriclab/package post-commit"
 	},
 	"types": "./src/index.ts",
-	"version": "5.1.51"
+	"version": "5.1.52"
 }
