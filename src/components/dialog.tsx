@@ -1,5 +1,5 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import type * as React from 'react'
+import * as React from 'react'
 import {
 	headingLevelClasses,
 	paddingClasses,
@@ -32,9 +32,13 @@ const Dialog: React.FC<DialogProps> = ({ children, open, onOpenChange }) => {
 	)
 }
 
-const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false }) => {
+const DialogTrigger = React.forwardRef<
+	React.ElementRef<typeof DialogPrimitive.Trigger>,
+	DialogTriggerProps
+>(({ children, asChild = false }, ref) => {
 	return (
 		<DialogPrimitive.Trigger
+			ref={ref}
 			data-slot="dialog-trigger"
 			asChild={asChild}
 			className={cn(textSizeClasses.sm, 'w-full')}
@@ -43,7 +47,9 @@ const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false
 			{asChild ? <div>{children}</div> : children}
 		</DialogPrimitive.Trigger>
 	)
-}
+})
+
+DialogTrigger.displayName = DialogPrimitive.Trigger.displayName
 
 const DialogPortal: React.FC<React.ComponentProps<typeof DialogPrimitive.Portal>> = ({
 	...props
@@ -78,11 +84,15 @@ const DialogOverlay: React.FC<React.ComponentProps<typeof DialogPrimitive.Overla
 	)
 }
 
-const DialogContent: React.FC<DialogContentProps> = ({ children, padding = 'lg' }) => {
+const DialogContent = React.forwardRef<
+	React.ElementRef<typeof DialogPrimitive.Content>,
+	DialogContentProps
+>(({ children, padding = 'lg' }, ref) => {
 	return (
 		<DialogPortal data-slot="dialog-portal">
 			<DialogOverlay />
 			<DialogPrimitive.Content
+				ref={ref}
 				data-slot="dialog-content"
 				className={cn(
 					'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] rounded-default border bg-background shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-lg',
@@ -94,7 +104,9 @@ const DialogContent: React.FC<DialogContentProps> = ({ children, padding = 'lg' 
 			</DialogPrimitive.Content>
 		</DialogPortal>
 	)
-}
+})
+
+DialogContent.displayName = DialogPrimitive.Content.displayName
 
 const DialogHeader: React.FC<DialogHeaderProps> = ({ children }) => {
 	return (
@@ -112,24 +124,39 @@ const DialogFooter: React.FC<DialogFooterProps> = ({ children }) => {
 	)
 }
 
-const DialogTitle: React.FC<DialogTitleProps> = ({ children }) => {
+const DialogTitle = React.forwardRef<
+	React.ElementRef<typeof DialogPrimitive.Title>,
+	DialogTitleProps
+>(({ children }, ref) => {
 	return (
-		<DialogPrimitive.Title data-slot="dialog-title" className={cn(headingLevelClasses[2])}>
+		<DialogPrimitive.Title
+			ref={ref}
+			data-slot="dialog-title"
+			className={cn(headingLevelClasses[2])}
+		>
 			{children}
 		</DialogPrimitive.Title>
 	)
-}
+})
 
-const DialogDescription: React.FC<DialogDescriptionProps> = ({ children }) => {
+DialogTitle.displayName = DialogPrimitive.Title.displayName
+
+const DialogDescription = React.forwardRef<
+	React.ElementRef<typeof DialogPrimitive.Description>,
+	DialogDescriptionProps
+>(({ children }, ref) => {
 	return (
 		<DialogPrimitive.Description
+			ref={ref}
 			data-slot="dialog-description"
 			className={cn(textVariantClasses.secondary, textSizeClasses.sm)}
 		>
 			{children}
 		</DialogPrimitive.Description>
 	)
-}
+})
+
+DialogDescription.displayName = DialogPrimitive.Description.displayName
 
 const DialogBody: React.FC<DialogBodyProps> = ({ children }) => {
 	return (

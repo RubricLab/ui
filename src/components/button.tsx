@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority'
-import type * as React from 'react'
+import * as React from 'react'
 import { widthClasses } from '../styles'
 import type { ButtonProps, IconNames } from '../types'
 import { camelToPascal, cn } from '../utils'
@@ -89,69 +89,78 @@ const ButtonContent = ({ arrangement, iconName, children }: ButtonContentProps) 
 	</>
 )
 
-const Button: React.FC<ButtonProps> = ({
-	type = 'button',
-	onClick,
-	disabled = false,
-	label,
-	href,
-	variant = 'secondary',
-	size = 'md',
-	width = 'fit',
-	arrangement = 'leadingLabel',
-	icon,
-	onMouseEnter,
-	onMouseLeave,
-	className
-}) => {
-	const iconName = icon ? (camelToPascal(icon) as IconNames) : null
+type ButtonRef = HTMLButtonElement | HTMLAnchorElement
 
-	const buttonContent = (
-		<ButtonContent arrangement={arrangement} iconName={iconName}>
-			{label}
-		</ButtonContent>
-	)
+const Button = React.forwardRef<ButtonRef, ButtonProps>(
+	(
+		{
+			type = 'button',
+			onClick,
+			disabled = false,
+			label,
+			href,
+			variant = 'secondary',
+			size = 'md',
+			width = 'fit',
+			arrangement = 'leadingLabel',
+			icon,
+			onMouseEnter,
+			onMouseLeave,
+			className
+		},
+		ref
+	) => {
+		const iconName = icon ? (camelToPascal(icon) as IconNames) : null
 
-	const buttonElement = href ? (
-		<a
-			href={href}
-			className={cn(
-				'no-underline',
-				buttonVariants({ arrangement, size, variant }),
-				arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
-				className
-			)}
-		>
-			{buttonContent}
-		</a>
-	) : (
-		<button
-			disabled={disabled}
-			onClick={onClick}
-			type={type}
-			className={cn(
-				buttonVariants({ arrangement, size, variant }),
-				arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
-				className
-			)}
-			onMouseEnter={onMouseEnter}
-			onMouseLeave={onMouseLeave}
-		>
-			{buttonContent}
-		</button>
-	)
-
-	if (arrangement === 'hiddenLabel') {
-		return (
-			<Tooltip>
-				<TooltipTrigger asChild>{buttonElement}</TooltipTrigger>
-				<TooltipContent>{label}</TooltipContent>
-			</Tooltip>
+		const buttonContent = (
+			<ButtonContent arrangement={arrangement} iconName={iconName}>
+				{label}
+			</ButtonContent>
 		)
-	}
 
-	return buttonElement
-}
+		const buttonElement = href ? (
+			<a
+				ref={ref as React.Ref<HTMLAnchorElement>}
+				href={href}
+				className={cn(
+					'no-underline',
+					buttonVariants({ arrangement, size, variant }),
+					arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
+					className
+				)}
+			>
+				{buttonContent}
+			</a>
+		) : (
+			<button
+				ref={ref as React.Ref<HTMLButtonElement>}
+				disabled={disabled}
+				onClick={onClick}
+				type={type}
+				className={cn(
+					buttonVariants({ arrangement, size, variant }),
+					arrangement !== 'hiddenLabel' && widthClasses[width], // TODO: clean up
+					className
+				)}
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+			>
+				{buttonContent}
+			</button>
+		)
+
+		if (arrangement === 'hiddenLabel') {
+			return (
+				<Tooltip>
+					<TooltipTrigger asChild>{buttonElement}</TooltipTrigger>
+					<TooltipContent>{label}</TooltipContent>
+				</Tooltip>
+			)
+		}
+
+		return buttonElement
+	}
+)
 
 Button.displayName = 'Button'
 
