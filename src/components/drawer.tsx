@@ -1,5 +1,5 @@
 import type * as React from 'react'
-import { Drawer as DrawerPrimitive } from 'vaul'
+import { type DialogProps, Drawer as DrawerPrimitive } from 'vaul'
 import { headingLevelClasses, textSizeClasses, textVariantClasses } from '../styles/classes'
 import type {
 	DrawerBodyProps,
@@ -15,9 +15,13 @@ import { cn } from '../utils'
 import { Button } from './button'
 import { Container } from './container'
 
-const Drawer: React.FC<DrawerProps> = ({ children }) => {
+const Drawer: React.FC<DrawerProps & DialogProps> = ({
+	children,
+	direction = 'right',
+	...props
+}) => {
 	return (
-		<DrawerPrimitive.Root data-slot="drawer" direction="right">
+		<DrawerPrimitive.Root data-slot="drawer" direction={direction} {...props}>
 			{children}
 		</DrawerPrimitive.Root>
 	)
