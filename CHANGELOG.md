@@ -1,3 +1,4 @@
+- [2025-12-13] [Add fork icon](https://github.com/RubricLab/ui/commit/008fd0e865269fd8d47bbddb8f13e74dbdbb45ab)
 - [2025-12-09] [Trigger release](https://github.com/RubricLab/ui/commit/af8c880e94f9cd3ef05450dd1e3e10b2493b5417)
 - [2025-12-08] [Apply default border color to inputs](https://github.com/RubricLab/ui/commit/a9ed3f31c1f4de1bfb32376aa3aa1c1a1b9f1bf6)
 - [2025-12-06] [Update docs](https://github.com/RubricLab/ui/commit/f4223f72d0351c410101f557a41c2c7693ea7e6b)

@@ -53,6 +53,7 @@ export const IconEnum = z.enum([
 	'redo2',
 	'rotateCcw',
 	'settings',
+	'split',
 	'strikethrough',
 	'trash',
 	'undo2',
