@@ -1,3 +1,4 @@
+- [2025-12-13] [Standardize publish file name](https://github.com/RubricLab/ui/commit/1b256d2160f52441a43fe45f9280d20dec684a5d)
 - [2025-12-13] [Bump package version](https://github.com/RubricLab/ui/commit/aa3cf682f1fbf580cc41eea60cee41f33ed94a0c)
 - [2025-12-13] [Bump package version](https://github.com/RubricLab/ui/commit/ae00e68a33fc7e728b5de8276ae273b2aa08afd2)
 - [2025-12-13] [Add fork icon](https://github.com/RubricLab/ui/commit/008fd0e865269fd8d47bbddb8f13e74dbdbb45ab)
